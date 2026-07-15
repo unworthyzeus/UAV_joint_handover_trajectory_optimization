@@ -1,0 +1,211 @@
+{
+  "artifact_type": "engineering diagnostic",
+  "trained_performance": false,
+  "disclaimer": "Handcrafted trajectories only. This is not trained performance.",
+  "diagnostic_question": "Can a handcrafted path that never arrives score above direct arrival?",
+  "trace_protocol": {
+    "legacy": "Both paths use the same 12 step horizon. Direct arrival occurs at step 5 and then holds at the goal because the thesis does not terminate on arrival.",
+    "corrected": "The successful path terminates at first safe arrival; the never arrive path ends with a time limit failure."
+  },
+  "source_formulation": {
+    "equation_13": "R_D=1/(1+beta_1 D), R_I=1/(1+beta_2 I), R_h=1/(1+beta_3 h)",
+    "equation_14": "weighted positive terms plus constraint penalties and a binary closer bonus; energy depletion substitutes P4",
+    "arrival_terminal_reward": false,
+    "arrival_termination_in_thesis": false
+  },
+  "action_space_audit": {
+    "legacy_raw_joint_action_count": 41760,
+    "factorization": "5 acceleration x 8 heading x 87 BS x 12 RBG",
+    "mixed_action_interface": {
+      "movement": {
+        "type": "Box",
+        "fields": [
+          "acceleration_mps2",
+          "heading_rad"
+        ],
+        "low": [
+          -5.0,
+          0.0
+        ],
+        "high": [
+          5.0,
+          6.283185307179586
+        ]
+      },
+      "communication": {
+        "type": "MultiDiscrete",
+        "fields": [
+          "base_station",
+          "rbg"
+        ],
+        "cardinalities": [
+          87,
+          12
+        ]
+      }
+    }
+  },
+  "legacy_reward_config": {
+    "beta_delay": 10.0,
+    "beta_interference": 100000.0,
+    "beta_handover": 100.0,
+    "weight_delay": 0.35,
+    "weight_interference": 0.3,
+    "weight_handover": 0.35,
+    "boundary_penalty": -10.0,
+    "rss_penalty": -10.0,
+    "speed_penalty": -10.0,
+    "critical_failure_penalty": -10.0,
+    "closer_bonus": 12.0
+  },
+  "corrected_reward_config": {
+    "success_bonus": 20.0,
+    "failure_penalty": 20.0,
+    "step_cost_per_s": 0.1,
+    "progress_weight": 2.0,
+    "delay_weight": 0.25,
+    "interference_weight": 0.25,
+    "handover_weight": 0.1,
+    "energy_weight": 0.2,
+    "outage_weight": 0.2,
+    "delay_reference_s": 0.1,
+    "interference_reference": 1e-05,
+    "handover_reference": 1.0,
+    "energy_reference_j": 100.0,
+    "outage_reference_s": 0.1,
+    "constraint_violation_penalty": 1.0
+  },
+  "discount_factor": 0.99,
+  "assertions": {
+    "legacy_never_arrive_outscores_direct_undiscounted": true,
+    "legacy_never_arrive_outscores_direct_discounted_gamma_0_99": true,
+    "corrected_direct_outscores_never_arrive_undiscounted": true,
+    "corrected_direct_outscores_never_arrive_discounted_gamma_0_99": true
+  },
+  "episodes": [
+    {
+      "artifact_type": "engineering diagnostic",
+      "trained_performance": false,
+      "episode_name": "direct_arrival",
+      "reward_name": "legacy_equations_13_14",
+      "mission_success": true,
+      "recorded_feasible_success": true,
+      "outcome_class": "recorded_feasible_success",
+      "termination_reason": "goal_reached_then_horizon",
+      "arrival_step": 5,
+      "arrival_time_s": 0.5,
+      "steps": 12,
+      "total_duration_s": 1.2000000000000002,
+      "final_distance_m": 0.0,
+      "undiscounted_return": 71.76435643564356,
+      "discounted_return": 69.95034733344019,
+      "path_length_m": 5.0,
+      "straight_line_distance_m": 5.0,
+      "excess_path_length_m": 0.0,
+      "path_efficiency": 1.0,
+      "total_delay_s": 0.06,
+      "mean_delay_s": 0.005,
+      "total_interference_cost": 1.2e-06,
+      "mean_interference_cost": 1e-07,
+      "total_energy_used_j": 0.0,
+      "mean_energy_used_j": 0.0,
+      "total_outage_s": 0.0,
+      "outage_fraction": 0.0,
+      "handover_count": 0,
+      "recorded_constraint_violations": 0
+    },
+    {
+      "artifact_type": "engineering diagnostic",
+      "trained_performance": false,
+      "episode_name": "never_arrive_oscillation",
+      "reward_name": "legacy_equations_13_14",
+      "mission_success": false,
+      "recorded_feasible_success": false,
+      "outcome_class": "mission_failure",
+      "termination_reason": "time_limit",
+      "arrival_step": null,
+      "arrival_time_s": null,
+      "steps": 12,
+      "total_duration_s": 1.2000000000000002,
+      "final_distance_m": 5.0,
+      "undiscounted_return": 83.76435643564356,
+      "discounted_return": 79.65004235949289,
+      "path_length_m": 12.0,
+      "straight_line_distance_m": 5.0,
+      "excess_path_length_m": null,
+      "path_efficiency": null,
+      "total_delay_s": 0.06,
+      "mean_delay_s": 0.005,
+      "total_interference_cost": 1.2e-06,
+      "mean_interference_cost": 1e-07,
+      "total_energy_used_j": 0.0,
+      "mean_energy_used_j": 0.0,
+      "total_outage_s": 0.0,
+      "outage_fraction": 0.0,
+      "handover_count": 0,
+      "recorded_constraint_violations": 0
+    },
+    {
+      "artifact_type": "engineering diagnostic",
+      "trained_performance": false,
+      "episode_name": "direct_arrival",
+      "reward_name": "mission_first_corrected",
+      "mission_success": true,
+      "recorded_feasible_success": true,
+      "outcome_class": "recorded_feasible_success",
+      "termination_reason": "goal_reached",
+      "arrival_step": 5,
+      "arrival_time_s": 0.5,
+      "steps": 5,
+      "total_duration_s": 0.5,
+      "final_distance_m": 0.0,
+      "undiscounted_return": 21.875,
+      "discounted_return": 21.04979332875,
+      "path_length_m": 5.0,
+      "straight_line_distance_m": 5.0,
+      "excess_path_length_m": 0.0,
+      "path_efficiency": 1.0,
+      "total_delay_s": 0.025,
+      "mean_delay_s": 0.005,
+      "total_interference_cost": 5e-07,
+      "mean_interference_cost": 1e-07,
+      "total_energy_used_j": 0.0,
+      "mean_energy_used_j": 0.0,
+      "total_outage_s": 0.0,
+      "outage_fraction": 0.0,
+      "handover_count": 0,
+      "recorded_constraint_violations": 0
+    },
+    {
+      "artifact_type": "engineering diagnostic",
+      "trained_performance": false,
+      "episode_name": "never_arrive_oscillation",
+      "reward_name": "mission_first_corrected",
+      "mission_success": false,
+      "recorded_feasible_success": false,
+      "outcome_class": "mission_failure",
+      "termination_reason": "time_limit",
+      "arrival_step": null,
+      "arrival_time_s": null,
+      "steps": 12,
+      "total_duration_s": 1.2000000000000002,
+      "final_distance_m": 5.0,
+      "undiscounted_return": -20.3,
+      "discounted_return": -18.167965694168654,
+      "path_length_m": 12.0,
+      "straight_line_distance_m": 5.0,
+      "excess_path_length_m": null,
+      "path_efficiency": null,
+      "total_delay_s": 0.06,
+      "mean_delay_s": 0.005,
+      "total_interference_cost": 1.2e-06,
+      "mean_interference_cost": 1e-07,
+      "total_energy_used_j": 0.0,
+      "mean_energy_used_j": 0.0,
+      "total_outage_s": 0.0,
+      "outage_fraction": 0.0,
+      "handover_count": 0,
+      "recorded_constraint_violations": 0
+    }
+  ]
+}

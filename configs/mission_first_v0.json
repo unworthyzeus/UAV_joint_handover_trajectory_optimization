@@ -1,0 +1,37 @@
+{
+  "version": "mission_first_v0",
+  "goal_tolerance_m": 10.0,
+  "terminal_speed_mps": 1.0,
+  "deadline_s": 200.0,
+  "reward": {
+    "success_bonus": 20.0,
+    "failure_penalty": 20.0,
+    "step_cost_per_s": 0.1,
+    "progress_weight": 2.0,
+    "delay_weight": 0.25,
+    "interference_weight": 0.25,
+    "handover_weight": 0.1,
+    "energy_weight": 0.2,
+    "outage_weight": 0.2,
+    "delay_reference_s": 0.1,
+    "interference_reference": 0.00001,
+    "handover_reference": 1.0,
+    "energy_reference_j": 100.0,
+    "outage_reference_s": 0.1,
+    "constraint_violation_penalty": 1.0
+  },
+  "action": {
+    "status": "executable_unmasked_audit_interface",
+    "flight": "continuous_acceleration_and_heading",
+    "network": "direct_base_station_index",
+    "resource": "direct_rbg_index",
+    "base_station_count": 87,
+    "rbg_count": 12
+  },
+  "target_action": {
+    "network": "masked_stay_or_candidate_handover",
+    "resource": "optional_masked_rbg",
+    "candidate_bs_count": 8
+  },
+  "status": "engineering_starting_point_not_tuned"
+}
