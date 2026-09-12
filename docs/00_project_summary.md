@@ -1,12 +1,25 @@
 # Project Summary
 
+The latest completed work is the strict connectivity study in notes 28–32.
+It restores the sampled RSS and buffer constraints and all three thesis radio
+costs. Full PPO reaches 96.6% / 89.7% standard/longer joint success, while the
+goal directed radio controller reaches 98.0% / 92.5%. Weighted cost improves
+but PPO delay worsens; learned completion differences are uncertain. The
+four page `paper/UAV_connectivity_repair_IEEE.pdf` reports the results. Earlier
+arrival reward findings remain a separate, preserved study.
+
 ## Research Question
 
 Can a UAV jointly choose a safe, mission completing flight trajectory and cellular handover decisions in a realistic urban 5G channel while improving connectivity, delay, interference, energy, and handover performance?
 
 ## Inherited Asset
 
-Marina Bermúdez Granados established a deterministic ray traced Barcelona environment, an MDP, 3GPP A3 handover behavior, radio resource allocation, a greedy controller, and a PPO controller. The environment is the foundation to recover. The controller formulation is the part to redesign.
+Marina Bermúdez Granados describes a deterministic Barcelona radio environment
+[TFM, printed pp. 6–7, Sec. 3.1], A3 and resource allocation [printed p. 9,
+Sec. 3.3.1, Eq. (3)], state/actions/reward [printed p. 12, Sec. 5.2,
+Eqs. (13)–(14)], and PPO plus a greedy controller [printed pp. 13–14,
+Secs. 5.3–5.4]. The received data and completed reimplementation are documented
+in notes 17–25; this initial project summary preserves the earlier plan.
 
 ## Main Baseline Failure
 
@@ -27,4 +40,3 @@ A mission first constrained formulation with an observable Markov state and a mi
 ## Current Limitation
 
 The thesis code URL returns 404 and the channel database is not locally available. Current executable results are formulation diagnostics, not trained policy results.
-

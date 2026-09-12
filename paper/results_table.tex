@@ -1,0 +1,13 @@
+\begin{table*}[t]
+\caption{Frozen results: percentages are mean $\pm$ standard deviation over five training seeds. Standard routes are 200--1000 m; longer routes are 1000--1800 m. Each learned policy evaluates 200 routes per split.}
+\label{tab:results}\centering\footnotesize
+\begin{tabular}{lcccccc}\toprule
+ & \multicolumn{2}{c}{Mission success (\%)} & \multicolumn{2}{c}{Recorded feasible success (\%)} & \multicolumn{2}{c}{Successful episodes}\\
+Treatment & Standard & Longer & Standard & Longer & Standard & Longer\\\midrule
+Legacy & $21.4\pm14.3$ & $0.0\pm0.0$ & $20.8\pm13.9$ & $0.0\pm0.0$ & 214/1000 & 0/1000 \\
+Termination only & $0.0\pm0.0$ & $0.0\pm0.0$ & $0.0\pm0.0$ & $0.0\pm0.0$ & 0/1000 & 0/1000 \\
+Reward only & $100.0\pm0.0$ & $100.0\pm0.0$ & $98.7\pm1.4$ & $96.0\pm1.1$ & 1000/1000 & 1000/1000 \\
+Both & $99.7\pm0.7$ & $36.1\pm12.6$ & $97.8\pm0.8$ & $35.2\pm12.6$ & 997/1000 & 361/1000 \\
+Deterministic reference & 100.0 & 100.0 & 97.0 & 95.5 & 200/200 & 200/200 \\
+\bottomrule\end{tabular}
+\end{table*}

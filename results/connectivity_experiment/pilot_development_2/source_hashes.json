@@ -1,0 +1,7 @@
+{
+  "src/uav_joint_optimization/connectivity_env.py": "1b8114e0bcd3cf3efaeeae0ccefc5670204bb57fe0d8150061060c47f46a2d32",
+  "src/uav_joint_optimization/connectivity_ppo.py": "0f28a4587f8da5e9c9d454502cb79321506df306c7e9c5f57a8f0682806b52e9",
+  "scripts/run_connectivity_experiment.py": "033b2489c5b51cabf60a01cbf97282811b782064e36a3f4752dcc60bf19a2d55",
+  "configs/connectivity_scenarios_v2.json": "c8369258d695efba700fde63a24598224863a6412bf0cb6aec77840630d711ac",
+  "docs/28_connectivity_experiment_protocol.md": "cb8effa74471b4b5e89c4c397dc060f4d6b6f1d7f82798fdb3889e4da97aeabe"
+}

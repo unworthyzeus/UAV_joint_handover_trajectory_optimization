@@ -11,7 +11,15 @@
 
 ## Why
 
-The thesis writes interference as a sum of RSS values and writes transmission rate as bandwidth plus a logarithm of SNR. Those expressions are dimensionally unsafe if implemented literally. The proposal also targets SINR, which requires interference to be included in the rate calculation.
+The thesis writes interference as a sum of RSS values [TFM, printed p. 10,
+Eq. (9)] and rate as bandwidth plus a logarithm of SNR [TFM, printed p. 10,
+Eq. (7)]. SNR is defined in dB [TFM, printed p. 10, Eq. (8)], while the RSS
+budget is explicitly downlink [TFM, printed p. 7, Eq. (1)]. These expressions
+are dimensionally unsafe if implemented literally. Our experiment replaces
+them with a linear downlink cochannel proxy and SINR rate; this changes the
+model as well as power arithmetic. Original implementation behavior remains
+unverified. Add two to printed pages for the PDF counter; see
+[note 25](25_exact_changes_from_tfm.md) for the complete comparison.
 
 ## Current Result
 
@@ -31,4 +39,3 @@ Correcting the equations may change all delay, buffer, outage, and reward distri
 ## Next Step
 
 Run these reference calculations against a small set of raw channel database entries as soon as the data is available.
-

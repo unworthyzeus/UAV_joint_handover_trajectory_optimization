@@ -1,0 +1,20 @@
+{
+  "validation": {
+    "episodes": 64,
+    "success_rate": 0.0,
+    "feasible_success_rate": 0.0,
+    "failure_distance_mean_m": 94.91456460952759,
+    "successful_time_s": null,
+    "successful_path_m": null,
+    "successful_energy_proxy_j": null,
+    "successful_handovers": null,
+    "successful_outage_s": null,
+    "successful_dropped_bits": null,
+    "successful_delay_proxy_mean_s": null,
+    "successful_interference_mean_w": null,
+    "successful_sinr_mean_db": null,
+    "successful_sinr_p05_db": null
+  },
+  "wall_seconds": 42.82218509999984,
+  "steps": 524288
+}

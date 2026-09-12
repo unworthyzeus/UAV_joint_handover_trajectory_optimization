@@ -1,0 +1,2748 @@
+{
+  "episodes": [
+    {
+      "lane": 0,
+      "scenario_id": "42001_0000",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 46.0,
+      "final_distance_m": 4.616648197174072,
+      "final_speed_mps": 0.9826374053955078,
+      "path_m": 531.3629150390625,
+      "straight_distance_m": 501.383056640625,
+      "energy_proxy_j": 7422.9287109375,
+      "handovers": 2,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.07975054532289505,
+      "interference_mean_w": 6.311220809730793e-07,
+      "sinr_mean_db": -7.462679862976074,
+      "sinr_p05_db": -10.309139251708984,
+      "rss_mean_dbm": -39.58695602416992,
+      "raw_return": 23.474033802747726
+    },
+    {
+      "lane": 1,
+      "scenario_id": "42001_0001",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 56.0,
+      "final_distance_m": 8.963194847106934,
+      "final_speed_mps": 1.760809302330017,
+      "path_m": 602.8203735351562,
+      "straight_distance_m": 570.4030151367188,
+      "energy_proxy_j": 8660.6337890625,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.1734387789453779,
+      "interference_mean_w": 3.22696135590661e-07,
+      "sinr_mean_db": -5.256172180175781,
+      "sinr_p05_db": -12.700928688049316,
+      "rss_mean_dbm": -40.51785659790039,
+      "raw_return": 23.68613626435399
+    },
+    {
+      "lane": 2,
+      "scenario_id": "42001_0002",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 53.0,
+      "final_distance_m": 6.709624290466309,
+      "final_speed_mps": 1.7243311405181885,
+      "path_m": 621.5416259765625,
+      "straight_distance_m": 613.27099609375,
+      "energy_proxy_j": 8653.9912109375,
+      "handovers": 4,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.9179697613108835,
+      "interference_mean_w": 5.681542814246948e-07,
+      "sinr_mean_db": -9.284156799316406,
+      "sinr_p05_db": -11.727810859680176,
+      "rss_mean_dbm": -40.96226501464844,
+      "raw_return": 24.344265218824148
+    },
+    {
+      "lane": 3,
+      "scenario_id": "42001_0003",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 51.0,
+      "final_distance_m": 3.176166534423828,
+      "final_speed_mps": 0.7722203731536865,
+      "path_m": 434.55389404296875,
+      "straight_distance_m": 427.44219970703125,
+      "energy_proxy_j": 6806.98583984375,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.28971855861007,
+      "interference_mean_w": 4.546569550823323e-07,
+      "sinr_mean_db": -6.783072471618652,
+      "sinr_p05_db": -15.480802536010742,
+      "rss_mean_dbm": -40.33333206176758,
+      "raw_return": 21.95804100856185
+    },
+    {
+      "lane": 4,
+      "scenario_id": "42001_0004",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 66.0,
+      "final_distance_m": 3.9265525341033936,
+      "final_speed_mps": 1.4802836179733276,
+      "path_m": 833.9599609375,
+      "straight_distance_m": 815.9806518554688,
+      "energy_proxy_j": 11646.4404296875,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 5.709908655647076,
+      "interference_mean_w": 8.13204942253585e-07,
+      "sinr_mean_db": -5.496491432189941,
+      "sinr_p05_db": -15.532205581665039,
+      "rss_mean_dbm": -36.45454406738281,
+      "raw_return": 26.266345620155334
+    },
+    {
+      "lane": 5,
+      "scenario_id": "42001_0005",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 70.0,
+      "final_distance_m": 4.493109226226807,
+      "final_speed_mps": 1.041359543800354,
+      "path_m": 948.2469482421875,
+      "straight_distance_m": 938.6800537109375,
+      "energy_proxy_j": 13086.697265625,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.096393267597471,
+      "interference_mean_w": 3.6262405720728045e-07,
+      "sinr_mean_db": -6.166808605194092,
+      "sinr_p05_db": -15.172051429748535,
+      "rss_mean_dbm": -40.74285888671875,
+      "raw_return": 27.704969219863415
+    },
+    {
+      "lane": 6,
+      "scenario_id": "42001_0006",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 64.0,
+      "final_distance_m": 5.154379367828369,
+      "final_speed_mps": 1.9144779443740845,
+      "path_m": 771.7659912109375,
+      "straight_distance_m": 763.4520874023438,
+      "energy_proxy_j": 10633.3623046875,
+      "handovers": 8,
+      "outage_s": 3.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 12.961372316141478,
+      "interference_mean_w": 7.545820799315095e-07,
+      "sinr_mean_db": -16.066898345947266,
+      "sinr_p05_db": -24.3999080657959,
+      "rss_mean_dbm": -45.0,
+      "raw_return": 24.73256921209395
+    },
+    {
+      "lane": 7,
+      "scenario_id": "42001_0007",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 49.0,
+      "final_distance_m": 8.886873245239258,
+      "final_speed_mps": 1.0266084671020508,
+      "path_m": 580.4814453125,
+      "straight_distance_m": 569.2265014648438,
+      "energy_proxy_j": 7976.77294921875,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.1958181082974283,
+      "interference_mean_w": 3.210998019131712e-07,
+      "sinr_mean_db": -5.736852645874023,
+      "sinr_p05_db": -11.933131217956543,
+      "rss_mean_dbm": -40.93877410888672,
+      "raw_return": 23.913462133146822
+    },
+    {
+      "lane": 8,
+      "scenario_id": "42001_0008",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 42.0,
+      "final_distance_m": 6.333917617797852,
+      "final_speed_mps": 0.996589183807373,
+      "path_m": 415.38433837890625,
+      "straight_distance_m": 403.9866027832031,
+      "energy_proxy_j": 6022.74462890625,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.4851610447679247,
+      "interference_mean_w": 7.10291313934942e-07,
+      "sinr_mean_db": -6.689230918884277,
+      "sinr_p05_db": -14.618619918823242,
+      "rss_mean_dbm": -38.30952453613281,
+      "raw_return": 22.061673713847995
+    },
+    {
+      "lane": 9,
+      "scenario_id": "42001_0009",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 52.0,
+      "final_distance_m": 7.158968925476074,
+      "final_speed_mps": 0.743999183177948,
+      "path_m": 424.49853515625,
+      "straight_distance_m": 386.5405578613281,
+      "energy_proxy_j": 6831.71337890625,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.9959387756310976,
+      "interference_mean_w": 9.751007096470998e-07,
+      "sinr_mean_db": -8.50551700592041,
+      "sinr_p05_db": -18.704896926879883,
+      "rss_mean_dbm": -38.769229888916016,
+      "raw_return": 21.225430853664875
+    },
+    {
+      "lane": 10,
+      "scenario_id": "42001_0010",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 28.0,
+      "final_distance_m": 9.36703109741211,
+      "final_speed_mps": 1.7914705276489258,
+      "path_m": 216.835205078125,
+      "straight_distance_m": 207.2001190185547,
+      "energy_proxy_j": 3528.049560546875,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.34876628113644464,
+      "interference_mean_w": 9.96742126549829e-07,
+      "sinr_mean_db": -6.387427806854248,
+      "sinr_p05_db": -11.680135726928711,
+      "rss_mean_dbm": -36.53571319580078,
+      "raw_return": 20.726382706314325
+    },
+    {
+      "lane": 11,
+      "scenario_id": "42001_0011",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 40.0,
+      "final_distance_m": 9.650422096252441,
+      "final_speed_mps": 1.383493423461914,
+      "path_m": 405.36572265625,
+      "straight_distance_m": 394.49884033203125,
+      "energy_proxy_j": 5765.7919921875,
+      "handovers": 4,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 5.041572644514963,
+      "interference_mean_w": 2.311959473644265e-07,
+      "sinr_mean_db": -7.670350074768066,
+      "sinr_p05_db": -10.099106788635254,
+      "rss_mean_dbm": -43.125,
+      "raw_return": 22.29551798850298
+    },
+    {
+      "lane": 12,
+      "scenario_id": "42001_0012",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 43.0,
+      "final_distance_m": 6.197556972503662,
+      "final_speed_mps": 1.316636323928833,
+      "path_m": 396.085693359375,
+      "straight_distance_m": 357.50433349609375,
+      "energy_proxy_j": 5936.0263671875,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.3062911090484366,
+      "interference_mean_w": 8.573217933401391e-07,
+      "sinr_mean_db": -7.385751247406006,
+      "sinr_p05_db": -15.981983184814453,
+      "rss_mean_dbm": -38.16279220581055,
+      "raw_return": 21.5823927000165
+    },
+    {
+      "lane": 13,
+      "scenario_id": "42001_0013",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 41.0,
+      "final_distance_m": 5.618341445922852,
+      "final_speed_mps": 1.8975613117218018,
+      "path_m": 410.5433044433594,
+      "straight_distance_m": 383.76025390625,
+      "energy_proxy_j": 5971.85498046875,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.8744021554182215,
+      "interference_mean_w": 7.985170227806431e-07,
+      "sinr_mean_db": -5.628660202026367,
+      "sinr_p05_db": -15.4935941696167,
+      "rss_mean_dbm": -36.682926177978516,
+      "raw_return": 22.063143234699965
+    },
+    {
+      "lane": 14,
+      "scenario_id": "42001_0014",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 39.0,
+      "final_distance_m": 6.611790180206299,
+      "final_speed_mps": 1.7894151210784912,
+      "path_m": 397.61083984375,
+      "straight_distance_m": 383.6837463378906,
+      "energy_proxy_j": 5688.18359375,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.6244293128450713,
+      "interference_mean_w": 1.1141834950952518e-06,
+      "sinr_mean_db": -10.172709465026855,
+      "sinr_p05_db": -18.634977340698242,
+      "rss_mean_dbm": -39.74359130859375,
+      "raw_return": 21.564020164310932
+    },
+    {
+      "lane": 15,
+      "scenario_id": "42001_0015",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 57.0,
+      "final_distance_m": 4.686589241027832,
+      "final_speed_mps": 0.4998067617416382,
+      "path_m": 586.2904663085938,
+      "straight_distance_m": 579.5259399414062,
+      "energy_proxy_j": 8416.970703125,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.2365181118662454,
+      "interference_mean_w": 1.0359184004795553e-06,
+      "sinr_mean_db": -9.27871036529541,
+      "sinr_p05_db": -18.780879974365234,
+      "rss_mean_dbm": -39.1929817199707,
+      "raw_return": 23.326175889000297
+    },
+    {
+      "lane": 16,
+      "scenario_id": "42001_0016",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 49.0,
+      "final_distance_m": 8.248178482055664,
+      "final_speed_mps": 1.244325876235962,
+      "path_m": 638.87548828125,
+      "straight_distance_m": 626.844482421875,
+      "energy_proxy_j": 8582.126953125,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 5.423680317112986,
+      "interference_mean_w": 1.0878189277254748e-06,
+      "sinr_mean_db": -11.128000259399414,
+      "sinr_p05_db": -18.822019577026367,
+      "rss_mean_dbm": -40.836734771728516,
+      "raw_return": 23.493344370275736
+    },
+    {
+      "lane": 17,
+      "scenario_id": "42001_0017",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 65.0,
+      "final_distance_m": 6.933285236358643,
+      "final_speed_mps": 0.7671249508857727,
+      "path_m": 817.4603881835938,
+      "straight_distance_m": 805.9486083984375,
+      "energy_proxy_j": 11209.080078125,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.5559136093809054,
+      "interference_mean_w": 2.851919171794529e-07,
+      "sinr_mean_db": -5.755356788635254,
+      "sinr_p05_db": -13.225632667541504,
+      "rss_mean_dbm": -41.53845977783203,
+      "raw_return": 26.490587966516614
+    },
+    {
+      "lane": 18,
+      "scenario_id": "42001_0018",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 68.0,
+      "final_distance_m": 6.309595108032227,
+      "final_speed_mps": 1.7828034162521362,
+      "path_m": 916.9884643554688,
+      "straight_distance_m": 878.2796630859375,
+      "energy_proxy_j": 12703.4482421875,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 5.510013712460504,
+      "interference_mean_w": 9.635805920491775e-07,
+      "sinr_mean_db": -8.681087493896484,
+      "sinr_p05_db": -20.011465072631836,
+      "rss_mean_dbm": -39.07352828979492,
+      "raw_return": 26.510774264112115
+    },
+    {
+      "lane": 19,
+      "scenario_id": "42001_0019",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 71.0,
+      "final_distance_m": 5.208536148071289,
+      "final_speed_mps": 0.521456778049469,
+      "path_m": 926.5625610351562,
+      "straight_distance_m": 905.115234375,
+      "energy_proxy_j": 12989.998046875,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.466874059709445,
+      "interference_mean_w": 1.3037452904555581e-06,
+      "sinr_mean_db": -9.212593078613281,
+      "sinr_p05_db": -16.841529846191406,
+      "rss_mean_dbm": -38.140846252441406,
+      "raw_return": 26.642365097999573
+    },
+    {
+      "lane": 20,
+      "scenario_id": "42001_0020",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 71.0,
+      "final_distance_m": 4.489802837371826,
+      "final_speed_mps": 0.9440560340881348,
+      "path_m": 986.337646484375,
+      "straight_distance_m": 946.724609375,
+      "energy_proxy_j": 13696.5625,
+      "handovers": 2,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 11.658853029123915,
+      "interference_mean_w": 4.2682079567102975e-07,
+      "sinr_mean_db": -8.083491325378418,
+      "sinr_p05_db": -28.3125,
+      "rss_mean_dbm": -41.887325286865234,
+      "raw_return": 28.043160058557987
+    },
+    {
+      "lane": 21,
+      "scenario_id": "42001_0021",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 69.0,
+      "final_distance_m": 5.9764838218688965,
+      "final_speed_mps": 1.0424859523773193,
+      "path_m": 867.8336181640625,
+      "straight_distance_m": 847.6552124023438,
+      "energy_proxy_j": 12235.6015625,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.3728426201943904,
+      "interference_mean_w": 9.077671709588764e-07,
+      "sinr_mean_db": -9.476251602172852,
+      "sinr_p05_db": -17.268156051635742,
+      "rss_mean_dbm": -39.956520080566406,
+      "raw_return": 25.93954559788108
+    },
+    {
+      "lane": 22,
+      "scenario_id": "42001_0022",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 67.0,
+      "final_distance_m": 5.526736736297607,
+      "final_speed_mps": 1.161894679069519,
+      "path_m": 963.6421508789062,
+      "straight_distance_m": 953.1779174804688,
+      "energy_proxy_j": 13225.4111328125,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.2760370865519812,
+      "interference_mean_w": 8.305536167806995e-07,
+      "sinr_mean_db": -8.394392013549805,
+      "sinr_p05_db": -16.95039176940918,
+      "rss_mean_dbm": -39.29850769042969,
+      "raw_return": 27.735812408849597
+    },
+    {
+      "lane": 23,
+      "scenario_id": "42001_0023",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 63.0,
+      "final_distance_m": 9.701177597045898,
+      "final_speed_mps": 1.2079750299453735,
+      "path_m": 869.8948364257812,
+      "straight_distance_m": 853.7169189453125,
+      "energy_proxy_j": 11841.44140625,
+      "handovers": 6,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.6825298196857883,
+      "interference_mean_w": 5.653715766310063e-07,
+      "sinr_mean_db": -9.899884223937988,
+      "sinr_p05_db": -14.94561767578125,
+      "rss_mean_dbm": -41.619049072265625,
+      "raw_return": 26.635453006252646
+    },
+    {
+      "lane": 24,
+      "scenario_id": "42001_0024",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 29.0,
+      "final_distance_m": 5.521480560302734,
+      "final_speed_mps": 1.129934310913086,
+      "path_m": 246.15908813476562,
+      "straight_distance_m": 211.6082000732422,
+      "energy_proxy_j": 3870.562255859375,
+      "handovers": 2,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 7.281519322559752,
+      "interference_mean_w": 8.675344757052542e-07,
+      "sinr_mean_db": -11.155350685119629,
+      "sinr_p05_db": -14.551021575927734,
+      "rss_mean_dbm": -40.13793182373047,
+      "raw_return": 20.597924411296844
+    },
+    {
+      "lane": 25,
+      "scenario_id": "42001_0025",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 71.0,
+      "final_distance_m": 8.82802963256836,
+      "final_speed_mps": 1.6332814693450928,
+      "path_m": 892.7281494140625,
+      "straight_distance_m": 875.4702758789062,
+      "energy_proxy_j": 12241.1669921875,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.4840320751700603,
+      "interference_mean_w": 7.533712972148555e-07,
+      "sinr_mean_db": -4.819215297698975,
+      "sinr_p05_db": -12.327539443969727,
+      "rss_mean_dbm": -36.140846252441406,
+      "raw_return": 27.491274893283844
+    },
+    {
+      "lane": 26,
+      "scenario_id": "42001_0026",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 66.0,
+      "final_distance_m": 5.3098955154418945,
+      "final_speed_mps": 0.7557255625724792,
+      "path_m": 739.5302124023438,
+      "straight_distance_m": 732.7152099609375,
+      "energy_proxy_j": 10464.01171875,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.9933420703746378,
+      "interference_mean_w": 9.498572545611971e-07,
+      "sinr_mean_db": -7.555863857269287,
+      "sinr_p05_db": -12.756237030029297,
+      "rss_mean_dbm": -37.969696044921875,
+      "raw_return": 25.04151677712798
+    },
+    {
+      "lane": 27,
+      "scenario_id": "42001_0027",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 40.0,
+      "final_distance_m": 5.796626091003418,
+      "final_speed_mps": 0.423498272895813,
+      "path_m": 381.133056640625,
+      "straight_distance_m": 369.9246826171875,
+      "energy_proxy_j": 5613.48291015625,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.3548237695824357,
+      "interference_mean_w": 1.043806322797991e-06,
+      "sinr_mean_db": -10.23276424407959,
+      "sinr_p05_db": -19.77705192565918,
+      "rss_mean_dbm": -40.125,
+      "raw_return": 21.427306512370706
+    },
+    {
+      "lane": 28,
+      "scenario_id": "42001_0028",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 76.0,
+      "final_distance_m": 5.736940383911133,
+      "final_speed_mps": 1.98435378074646,
+      "path_m": 957.900146484375,
+      "straight_distance_m": 924.050537109375,
+      "energy_proxy_j": 13532.2158203125,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.6778945863786106,
+      "interference_mean_w": 5.228068263220035e-07,
+      "sinr_mean_db": -6.105762004852295,
+      "sinr_p05_db": -12.139310836791992,
+      "rss_mean_dbm": -39.43421173095703,
+      "raw_return": 27.454393304884434
+    },
+    {
+      "lane": 29,
+      "scenario_id": "42001_0029",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 31.0,
+      "final_distance_m": 9.277691841125488,
+      "final_speed_mps": 1.5161203145980835,
+      "path_m": 306.0308837890625,
+      "straight_distance_m": 294.792724609375,
+      "energy_proxy_j": 4445.455078125,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.9325588451277825,
+      "interference_mean_w": 5.525804949097472e-07,
+      "sinr_mean_db": -8.021471977233887,
+      "sinr_p05_db": -18.073486328125,
+      "rss_mean_dbm": -40.774192810058594,
+      "raw_return": 21.456940073519945
+    },
+    {
+      "lane": 30,
+      "scenario_id": "42001_0030",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 68.0,
+      "final_distance_m": 3.763021230697632,
+      "final_speed_mps": 1.906467318534851,
+      "path_m": 841.1550903320312,
+      "straight_distance_m": 832.5694580078125,
+      "energy_proxy_j": 11815.98828125,
+      "handovers": 8,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.815738759167931,
+      "interference_mean_w": 9.05057715987609e-07,
+      "sinr_mean_db": -8.88315486907959,
+      "sinr_p05_db": -15.704879760742188,
+      "rss_mean_dbm": -39.0,
+      "raw_return": 25.489984456449747
+    },
+    {
+      "lane": 31,
+      "scenario_id": "42001_0031",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 35.0,
+      "final_distance_m": 6.444873332977295,
+      "final_speed_mps": 1.0998977422714233,
+      "path_m": 353.8848876953125,
+      "straight_distance_m": 344.9295349121094,
+      "energy_proxy_j": 5082.169921875,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.5682737754923957,
+      "interference_mean_w": 6.432279958192209e-07,
+      "sinr_mean_db": -8.378209114074707,
+      "sinr_p05_db": -19.135150909423828,
+      "rss_mean_dbm": -40.371429443359375,
+      "raw_return": 21.75235651805997
+    },
+    {
+      "lane": 32,
+      "scenario_id": "42001_0032",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 43.0,
+      "final_distance_m": 7.327239036560059,
+      "final_speed_mps": 1.6166616678237915,
+      "path_m": 481.3773498535156,
+      "straight_distance_m": 472.8653259277344,
+      "energy_proxy_j": 6711.4599609375,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 5.03413268232848,
+      "interference_mean_w": 5.792168332560365e-07,
+      "sinr_mean_db": -9.173474311828613,
+      "sinr_p05_db": -17.34073829650879,
+      "rss_mean_dbm": -41.651161193847656,
+      "raw_return": 22.744412580505013
+    },
+    {
+      "lane": 33,
+      "scenario_id": "42001_0033",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 30.0,
+      "final_distance_m": 3.643719434738159,
+      "final_speed_mps": 0.8799460530281067,
+      "path_m": 250.8488311767578,
+      "straight_distance_m": 233.43203735351562,
+      "energy_proxy_j": 3969.915283203125,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.3448887382944426,
+      "interference_mean_w": 1.2300088106561209e-06,
+      "sinr_mean_db": -9.163426399230957,
+      "sinr_p05_db": -18.818880081176758,
+      "rss_mean_dbm": -38.33333206176758,
+      "raw_return": 20.599860161542892
+    },
+    {
+      "lane": 34,
+      "scenario_id": "42001_0034",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 52.0,
+      "final_distance_m": 5.046282768249512,
+      "final_speed_mps": 0.8647724986076355,
+      "path_m": 552.2593383789062,
+      "straight_distance_m": 540.9691772460938,
+      "energy_proxy_j": 7817.62353515625,
+      "handovers": 4,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.2594249380322604,
+      "interference_mean_w": 7.727837061548388e-07,
+      "sinr_mean_db": -8.548749923706055,
+      "sinr_p05_db": -16.943191528320312,
+      "rss_mean_dbm": -39.769229888916016,
+      "raw_return": 23.04479202441871
+    },
+    {
+      "lane": 35,
+      "scenario_id": "42001_0035",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 33.0,
+      "final_distance_m": 3.593491554260254,
+      "final_speed_mps": 1.4774675369262695,
+      "path_m": 283.3086853027344,
+      "straight_distance_m": 248.49188232421875,
+      "energy_proxy_j": 4488.736328125,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.106117597132018,
+      "interference_mean_w": 7.839454814061217e-07,
+      "sinr_mean_db": -8.006806373596191,
+      "sinr_p05_db": -16.533605575561523,
+      "rss_mean_dbm": -39.09090805053711,
+      "raw_return": 20.60410463064909
+    },
+    {
+      "lane": 36,
+      "scenario_id": "42001_0036",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 74.0,
+      "final_distance_m": 6.757818222045898,
+      "final_speed_mps": 1.8637312650680542,
+      "path_m": 954.03515625,
+      "straight_distance_m": 924.4115600585938,
+      "energy_proxy_j": 13480.6689453125,
+      "handovers": 8,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.8956210178801336,
+      "interference_mean_w": 3.1973935388829913e-07,
+      "sinr_mean_db": -5.443085670471191,
+      "sinr_p05_db": -16.020912170410156,
+      "rss_mean_dbm": -40.83783721923828,
+      "raw_return": 27.392030015587807
+    },
+    {
+      "lane": 37,
+      "scenario_id": "42001_0037",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 51.0,
+      "final_distance_m": 6.225390434265137,
+      "final_speed_mps": 0.07742113620042801,
+      "path_m": 495.7273254394531,
+      "straight_distance_m": 488.1275939941406,
+      "energy_proxy_j": 7279.794921875,
+      "handovers": 2,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.3462144347528617,
+      "interference_mean_w": 9.480694483071977e-07,
+      "sinr_mean_db": -9.07805347442627,
+      "sinr_p05_db": -17.15798568725586,
+      "rss_mean_dbm": -39.33333206176758,
+      "raw_return": 22.495159812271595
+    },
+    {
+      "lane": 38,
+      "scenario_id": "42001_0038",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 45.0,
+      "final_distance_m": 8.97799301147461,
+      "final_speed_mps": 1.774868130683899,
+      "path_m": 531.0874633789062,
+      "straight_distance_m": 520.4871215820312,
+      "energy_proxy_j": 7333.20361328125,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.6975652998106348,
+      "interference_mean_w": 3.607015265237755e-07,
+      "sinr_mean_db": -6.29932165145874,
+      "sinr_p05_db": -14.406318664550781,
+      "rss_mean_dbm": -40.911109924316406,
+      "raw_return": 23.508468758314848
+    },
+    {
+      "lane": 39,
+      "scenario_id": "42001_0039",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 41.0,
+      "final_distance_m": 6.88336181640625,
+      "final_speed_mps": 0.423010915517807,
+      "path_m": 362.767578125,
+      "straight_distance_m": 296.7492370605469,
+      "energy_proxy_j": 5617.20361328125,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.6349699499267265,
+      "interference_mean_w": 7.255534966112109e-07,
+      "sinr_mean_db": -8.49913215637207,
+      "sinr_p05_db": -18.387243270874023,
+      "rss_mean_dbm": -40.04878234863281,
+      "raw_return": 20.389551994390786
+    },
+    {
+      "lane": 40,
+      "scenario_id": "42001_0040",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 30.0,
+      "final_distance_m": 9.951416969299316,
+      "final_speed_mps": 1.1349772214889526,
+      "path_m": 319.226318359375,
+      "straight_distance_m": 307.8355712890625,
+      "energy_proxy_j": 4475.783203125,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.5825425525506337,
+      "interference_mean_w": 2.3411490038445966e-07,
+      "sinr_mean_db": -5.049407958984375,
+      "sinr_p05_db": -13.773639678955078,
+      "rss_mean_dbm": -41.5,
+      "raw_return": 21.801425494253635
+    },
+    {
+      "lane": 41,
+      "scenario_id": "42001_0041",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 51.0,
+      "final_distance_m": 6.184807300567627,
+      "final_speed_mps": 1.989098310470581,
+      "path_m": 599.1408081054688,
+      "straight_distance_m": 580.973388671875,
+      "energy_proxy_j": 8240.072265625,
+      "handovers": 0,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.007110676929062488,
+      "interference_mean_w": 9.404623376533837e-07,
+      "sinr_mean_db": -3.8784778118133545,
+      "sinr_p05_db": -8.224420547485352,
+      "rss_mean_dbm": -34.2156867980957,
+      "raw_return": 24.55668732151389
+    },
+    {
+      "lane": 42,
+      "scenario_id": "42001_0042",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 29.0,
+      "final_distance_m": 8.75143051147461,
+      "final_speed_mps": 1.255500078201294,
+      "path_m": 298.6729736328125,
+      "straight_distance_m": 289.2086486816406,
+      "energy_proxy_j": 4244.4091796875,
+      "handovers": 0,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.0,
+      "interference_mean_w": 2.1874664874868076e-07,
+      "sinr_mean_db": -5.558764934539795,
+      "sinr_p05_db": -6.417185306549072,
+      "rss_mean_dbm": -42.17241287231445,
+      "raw_return": 21.847367383539677
+    },
+    {
+      "lane": 43,
+      "scenario_id": "42001_0043",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 49.0,
+      "final_distance_m": 5.318368911743164,
+      "final_speed_mps": 1.6535418033599854,
+      "path_m": 557.3525390625,
+      "straight_distance_m": 550.4901733398438,
+      "energy_proxy_j": 7727.06201171875,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.4552639970669941,
+      "interference_mean_w": 5.893704944671243e-07,
+      "sinr_mean_db": -7.393936634063721,
+      "sinr_p05_db": -13.76492977142334,
+      "rss_mean_dbm": -39.918365478515625,
+      "raw_return": 23.651273651514202
+    },
+    {
+      "lane": 44,
+      "scenario_id": "42001_0044",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 72.0,
+      "final_distance_m": 7.879652976989746,
+      "final_speed_mps": 1.6242430210113525,
+      "path_m": 925.140869140625,
+      "straight_distance_m": 915.2232055664062,
+      "energy_proxy_j": 12774.423828125,
+      "handovers": 11,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 7.430516679667765,
+      "interference_mean_w": 8.020378526257193e-07,
+      "sinr_mean_db": -11.367044448852539,
+      "sinr_p05_db": -21.770662307739258,
+      "rss_mean_dbm": -41.75,
+      "raw_return": 26.305930932983756
+    },
+    {
+      "lane": 45,
+      "scenario_id": "42001_0045",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 47.0,
+      "final_distance_m": 5.518706798553467,
+      "final_speed_mps": 1.2312391996383667,
+      "path_m": 495.656982421875,
+      "straight_distance_m": 485.43585205078125,
+      "energy_proxy_j": 7052.810546875,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.6367216604821226,
+      "interference_mean_w": 6.520959067664932e-07,
+      "sinr_mean_db": -5.877781867980957,
+      "sinr_p05_db": -18.657695770263672,
+      "rss_mean_dbm": -37.808509826660156,
+      "raw_return": 22.907601688057184
+    },
+    {
+      "lane": 46,
+      "scenario_id": "42001_0046",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 42.0,
+      "final_distance_m": 7.97775936126709,
+      "final_speed_mps": 1.3464547395706177,
+      "path_m": 436.9013977050781,
+      "straight_distance_m": 426.1123962402344,
+      "energy_proxy_j": 6224.78369140625,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.2608156193579947,
+      "interference_mean_w": 8.207980783936364e-07,
+      "sinr_mean_db": -9.192370414733887,
+      "sinr_p05_db": -18.99125099182129,
+      "rss_mean_dbm": -40.19047546386719,
+      "raw_return": 22.167194003239274
+    },
+    {
+      "lane": 47,
+      "scenario_id": "42001_0047",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 67.0,
+      "final_distance_m": 3.9688303470611572,
+      "final_speed_mps": 0.9489806294441223,
+      "path_m": 816.8082885742188,
+      "straight_distance_m": 809.1466674804688,
+      "energy_proxy_j": 11358.236328125,
+      "handovers": 7,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 4.2410191904697845,
+      "interference_mean_w": 9.02587702912841e-07,
+      "sinr_mean_db": -10.30213451385498,
+      "sinr_p05_db": -21.175474166870117,
+      "rss_mean_dbm": -40.86567306518555,
+      "raw_return": 25.36696417722851
+    },
+    {
+      "lane": 48,
+      "scenario_id": "42001_0048",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 66.0,
+      "final_distance_m": 6.112837791442871,
+      "final_speed_mps": 0.2772929072380066,
+      "path_m": 899.4622192382812,
+      "straight_distance_m": 885.7103881835938,
+      "energy_proxy_j": 12385.7783203125,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.3987458472873904,
+      "interference_mean_w": 9.72296449521254e-07,
+      "sinr_mean_db": -8.496770858764648,
+      "sinr_p05_db": -19.55382537841797,
+      "rss_mean_dbm": -38.75757598876953,
+      "raw_return": 26.840480836108327
+    },
+    {
+      "lane": 49,
+      "scenario_id": "42001_0049",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 37.0,
+      "final_distance_m": 5.080480575561523,
+      "final_speed_mps": 0.8146678805351257,
+      "path_m": 262.5793151855469,
+      "straight_distance_m": 213.97076416015625,
+      "energy_proxy_j": 4584.4072265625,
+      "handovers": 2,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.6267955375684274,
+      "interference_mean_w": 9.710394001435692e-07,
+      "sinr_mean_db": -8.193391799926758,
+      "sinr_p05_db": -13.755982398986816,
+      "rss_mean_dbm": -38.378379821777344,
+      "raw_return": 20.23735525086522
+    },
+    {
+      "lane": 50,
+      "scenario_id": "42001_0050",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 67.0,
+      "final_distance_m": 3.819169759750366,
+      "final_speed_mps": 1.01705801486969,
+      "path_m": 892.5584716796875,
+      "straight_distance_m": 884.6834106445312,
+      "energy_proxy_j": 12350.216796875,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 7.394515785597154,
+      "interference_mean_w": 1.1361710179115297e-06,
+      "sinr_mean_db": -10.704459190368652,
+      "sinr_p05_db": -21.14986228942871,
+      "rss_mean_dbm": -40.25373077392578,
+      "raw_return": 25.509873297065496
+    },
+    {
+      "lane": 51,
+      "scenario_id": "42001_0051",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 73.0,
+      "final_distance_m": 4.317482948303223,
+      "final_speed_mps": 1.0623105764389038,
+      "path_m": 1006.585693359375,
+      "straight_distance_m": 999.755615234375,
+      "energy_proxy_j": 13810.4755859375,
+      "handovers": 6,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 4.261091280065171,
+      "interference_mean_w": 1.9005612504181716e-07,
+      "sinr_mean_db": -8.781713485717773,
+      "sinr_p05_db": -14.788715362548828,
+      "rss_mean_dbm": -45.3698616027832,
+      "raw_return": 28.128114828839898
+    },
+    {
+      "lane": 52,
+      "scenario_id": "42001_0052",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 43.0,
+      "final_distance_m": 9.50776481628418,
+      "final_speed_mps": 1.7693986892700195,
+      "path_m": 470.1160583496094,
+      "straight_distance_m": 456.43206787109375,
+      "energy_proxy_j": 6547.388671875,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.3953832082970198,
+      "interference_mean_w": 9.428189465525912e-07,
+      "sinr_mean_db": -7.602630615234375,
+      "sinr_p05_db": -13.331087112426758,
+      "rss_mean_dbm": -38.0,
+      "raw_return": 22.778569526970387
+    },
+    {
+      "lane": 53,
+      "scenario_id": "42001_0053",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 49.0,
+      "final_distance_m": 7.720707893371582,
+      "final_speed_mps": 1.4466469287872314,
+      "path_m": 558.8963623046875,
+      "straight_distance_m": 519.5361328125,
+      "energy_proxy_j": 7792.70458984375,
+      "handovers": 2,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 2.9343582122985805,
+      "interference_mean_w": 7.834745230996174e-07,
+      "sinr_mean_db": -9.078781127929688,
+      "sinr_p05_db": -17.031518936157227,
+      "rss_mean_dbm": -40.367347717285156,
+      "raw_return": 22.551409997045994
+    },
+    {
+      "lane": 54,
+      "scenario_id": "42001_0054",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 53.0,
+      "final_distance_m": 3.2724971771240234,
+      "final_speed_mps": 1.6156105995178223,
+      "path_m": 536.0000610351562,
+      "straight_distance_m": 508.4324951171875,
+      "energy_proxy_j": 7852.3740234375,
+      "handovers": 9,
+      "outage_s": 1.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 6.748484067776996,
+      "interference_mean_w": 6.277614251654807e-07,
+      "sinr_mean_db": -10.770588874816895,
+      "sinr_p05_db": -21.22967529296875,
+      "rss_mean_dbm": -41.98113250732422,
+      "raw_return": 22.168390091508627
+    },
+    {
+      "lane": 55,
+      "scenario_id": "42001_0055",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 44.0,
+      "final_distance_m": 8.992264747619629,
+      "final_speed_mps": 1.6147899627685547,
+      "path_m": 477.8045654296875,
+      "straight_distance_m": 466.05731201171875,
+      "energy_proxy_j": 6711.673828125,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.5549254298358309,
+      "interference_mean_w": 7.398412904535689e-07,
+      "sinr_mean_db": -6.888005256652832,
+      "sinr_p05_db": -13.459859848022461,
+      "rss_mean_dbm": -38.318180084228516,
+      "raw_return": 22.91710347123444
+    },
+    {
+      "lane": 56,
+      "scenario_id": "42001_0056",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 49.0,
+      "final_distance_m": 8.326910018920898,
+      "final_speed_mps": 1.3312336206436157,
+      "path_m": 599.1959838867188,
+      "straight_distance_m": 581.0928955078125,
+      "energy_proxy_j": 8152.50732421875,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.7211084879782734,
+      "interference_mean_w": 4.317067666251001e-07,
+      "sinr_mean_db": -7.974338054656982,
+      "sinr_p05_db": -17.308176040649414,
+      "rss_mean_dbm": -41.8775520324707,
+      "raw_return": 23.802117194980383
+    },
+    {
+      "lane": 57,
+      "scenario_id": "42001_0057",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 30.0,
+      "final_distance_m": 8.530631065368652,
+      "final_speed_mps": 1.4427950382232666,
+      "path_m": 295.9827575683594,
+      "straight_distance_m": 285.23687744140625,
+      "energy_proxy_j": 4285.966796875,
+      "handovers": 0,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 1.1983740032960972,
+      "interference_mean_w": 9.250142985213945e-07,
+      "sinr_mean_db": -9.093462944030762,
+      "sinr_p05_db": -12.579483985900879,
+      "rss_mean_dbm": -39.5,
+      "raw_return": 21.09850598871708
+    },
+    {
+      "lane": 58,
+      "scenario_id": "42001_0058",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 72.0,
+      "final_distance_m": 3.791550874710083,
+      "final_speed_mps": 0.9636659026145935,
+      "path_m": 896.7133178710938,
+      "straight_distance_m": 888.6937255859375,
+      "energy_proxy_j": 12442.947265625,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.5558311531527176,
+      "interference_mean_w": 1.0345149850839637e-06,
+      "sinr_mean_db": -8.800976753234863,
+      "sinr_p05_db": -16.84392547607422,
+      "rss_mean_dbm": -38.83333206176758,
+      "raw_return": 26.36912837252021
+    },
+    {
+      "lane": 59,
+      "scenario_id": "42001_0059",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 30.0,
+      "final_distance_m": 7.432855606079102,
+      "final_speed_mps": 1.4293307065963745,
+      "path_m": 259.1633605957031,
+      "straight_distance_m": 250.72726440429688,
+      "energy_proxy_j": 3954.974609375,
+      "handovers": 1,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.07260169784228007,
+      "interference_mean_w": 2.45154011224713e-07,
+      "sinr_mean_db": -4.965729236602783,
+      "sinr_p05_db": -10.698345184326172,
+      "rss_mean_dbm": -41.099998474121094,
+      "raw_return": 21.246143870055676
+    },
+    {
+      "lane": 60,
+      "scenario_id": "42001_0060",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 58.0,
+      "final_distance_m": 6.366070747375488,
+      "final_speed_mps": 1.5736221075057983,
+      "path_m": 832.3088989257812,
+      "straight_distance_m": 817.35888671875,
+      "energy_proxy_j": 11298.72265625,
+      "handovers": 6,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 0.2461758997162868,
+      "interference_mean_w": 6.679193248750192e-07,
+      "sinr_mean_db": -6.065291881561279,
+      "sinr_p05_db": -15.035684585571289,
+      "rss_mean_dbm": -38.0,
+      "raw_return": 26.71559439599514
+    },
+    {
+      "lane": 61,
+      "scenario_id": "42001_0061",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 59.0,
+      "final_distance_m": 7.110063552856445,
+      "final_speed_mps": 1.1491155624389648,
+      "path_m": 795.933837890625,
+      "straight_distance_m": 782.978759765625,
+      "energy_proxy_j": 10910.5615234375,
+      "handovers": 7,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.992139575718823,
+      "interference_mean_w": 9.686169241600294e-07,
+      "sinr_mean_db": -9.88659381866455,
+      "sinr_p05_db": -20.59671401977539,
+      "rss_mean_dbm": -40.11864471435547,
+      "raw_return": 25.152419846504927
+    },
+    {
+      "lane": 62,
+      "scenario_id": "42001_0062",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 44.0,
+      "final_distance_m": 6.03345251083374,
+      "final_speed_mps": 0.8862220048904419,
+      "path_m": 441.6774597167969,
+      "straight_distance_m": 433.4986877441406,
+      "energy_proxy_j": 6358.529296875,
+      "handovers": 5,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 3.5666537085886705,
+      "interference_mean_w": 9.373453492984978e-07,
+      "sinr_mean_db": -10.167505264282227,
+      "sinr_p05_db": -17.65312385559082,
+      "rss_mean_dbm": -40.522727966308594,
+      "raw_return": 21.9278841689229
+    },
+    {
+      "lane": 63,
+      "scenario_id": "42001_0063",
+      "success": true,
+      "recorded_feasible_success": true,
+      "outcome": "success",
+      "time_s": 27.0,
+      "final_distance_m": 8.199502944946289,
+      "final_speed_mps": 1.1959255933761597,
+      "path_m": 242.7739715576172,
+      "straight_distance_m": 233.91799926757812,
+      "energy_proxy_j": 3652.841064453125,
+      "handovers": 3,
+      "outage_s": 0.0,
+      "dropped_bits": 0.0,
+      "delay_proxy_mean_s": 12.326958318551382,
+      "interference_mean_w": 1.0859035152558742e-06,
+      "sinr_mean_db": -11.16753101348877,
+      "sinr_p05_db": -20.37772560119629,
+      "rss_mean_dbm": -40.88888931274414,
+      "raw_return": 20.396427711471915
+    }
+  ],
+  "traces": [
+    [
+      [
+        3101.0966796875,
+        1040.688720703125,
+        0.0,
+        79
+      ],
+      [
+        3099.727294921875,
+        1038.6844482421875,
+        4.854865550994873,
+        79
+      ],
+      [
+        3096.02099609375,
+        1032.6961669921875,
+        9.237549781799316,
+        79
+      ],
+      [
+        3090.380615234375,
+        1023.3060302734375,
+        12.671225547790527,
+        79
+      ],
+      [
+        3082.948974609375,
+        1011.5039672851562,
+        15.224662780761719,
+        79
+      ],
+      [
+        3074.93994140625,
+        997.94140625,
+        16.300079345703125,
+        79
+      ],
+      [
+        3068.09912109375,
+        983.1235961914062,
+        16.407512664794922,
+        25
+      ],
+      [
+        3060.670166015625,
+        968.2006225585938,
+        17.07053565979004,
+        25
+      ],
+      [
+        3051.985107421875,
+        953.5545654296875,
+        16.9888858795166,
+        25
+      ],
+      [
+        3043.804931640625,
+        938.7760620117188,
+        16.797277450561523,
+        25
+      ],
+      [
+        3035.779296875,
+        924.246337890625,
+        16.403417587280273,
+        25
+      ],
+      [
+        3028.34765625,
+        909.6780395507812,
+        16.340656280517578,
+        24
+      ],
+      [
+        3021.234619140625,
+        895.0060424804688,
+        16.281185150146484,
+        24
+      ],
+      [
+        3014.257080078125,
+        880.3707885742188,
+        16.163410186767578,
+        24
+      ],
+      [
+        3007.652587890625,
+        865.9176635742188,
+        15.622345924377441,
+        24
+      ],
+      [
+        3000.845947265625,
+        851.8518676757812,
+        15.63033390045166,
+        24
+      ],
+      [
+        2994.1943359375,
+        837.7861328125,
+        15.49094295501709,
+        24
+      ],
+      [
+        2987.348876953125,
+        824.0256958007812,
+        15.265020370483398,
+        24
+      ],
+      [
+        2980.960205078125,
+        810.4906616210938,
+        14.715840339660645,
+        24
+      ],
+      [
+        2975.484130859375,
+        796.9783325195312,
+        14.443720817565918,
+        24
+      ],
+      [
+        2969.88818359375,
+        783.9002075195312,
+        14.011340141296387,
+        24
+      ],
+      [
+        2964.57373046875,
+        770.8211669921875,
+        14.243152618408203,
+        24
+      ],
+      [
+        2959.304931640625,
+        757.9954223632812,
+        13.512411117553711,
+        24
+      ],
+      [
+        2953.927001953125,
+        746.0250854492188,
+        12.73486328125,
+        24
+      ],
+      [
+        2949.0712890625,
+        734.2525024414062,
+        12.739657402038574,
+        24
+      ],
+      [
+        2944.526611328125,
+        722.51171875,
+        12.43979549407959,
+        24
+      ],
+      [
+        2940.337158203125,
+        711.0538330078125,
+        11.963510513305664,
+        24
+      ],
+      [
+        2936.503662109375,
+        699.6409301757812,
+        12.116434097290039,
+        24
+      ],
+      [
+        2933.191162109375,
+        688.3543090820312,
+        11.420109748840332,
+        24
+      ],
+      [
+        2930.248779296875,
+        677.5613403320312,
+        10.955401420593262,
+        24
+      ],
+      [
+        2927.0869140625,
+        667.45751953125,
+        10.22518539428711,
+        24
+      ],
+      [
+        2923.68115234375,
+        657.5645141601562,
+        10.700593948364258,
+        24
+      ],
+      [
+        2920.281005859375,
+        647.4338989257812,
+        10.672486305236816,
+        24
+      ],
+      [
+        2917.531005859375,
+        637.3026733398438,
+        10.348841667175293,
+        24
+      ],
+      [
+        2914.7451171875,
+        627.4521484375,
+        10.163582801818848,
+        24
+      ],
+      [
+        2911.64794921875,
+        617.951171875,
+        9.8277587890625,
+        24
+      ],
+      [
+        2909.08349609375,
+        608.3533935546875,
+        10.050372123718262,
+        24
+      ],
+      [
+        2907.4326171875,
+        598.8771362304688,
+        9.223488807678223,
+        24
+      ],
+      [
+        2906.999755859375,
+        589.9408569335938,
+        8.704761505126953,
+        24
+      ],
+      [
+        2907.14794921875,
+        581.5469360351562,
+        8.085737228393555,
+        24
+      ],
+      [
+        2908.290283203125,
+        573.8377685546875,
+        7.635644912719727,
+        24
+      ],
+      [
+        2908.956787109375,
+        568.5345458984375,
+        3.3666536808013916,
+        24
+      ],
+      [
+        2908.298828125,
+        567.3345947265625,
+        1.0179946422576904,
+        24
+      ],
+      [
+        2907.914306640625,
+        569.5916748046875,
+        3.649963855743408,
+        24
+      ],
+      [
+        2907.819091796875,
+        573.935546875,
+        5.046286106109619,
+        24
+      ],
+      [
+        2908.6708984375,
+        579.120849609375,
+        5.574245452880859,
+        24
+      ],
+      [
+        2909.74072265625,
+        582.2090454101562,
+        0.9826374053955078,
+        24
+      ]
+    ],
+    [
+      [
+        4738.67431640625,
+        2407.621337890625,
+        0.0,
+        1
+      ],
+      [
+        4736.478515625,
+        2408.49462890625,
+        4.726554870605469,
+        1
+      ],
+      [
+        4730.16796875,
+        2411.4150390625,
+        9.191441535949707,
+        1
+      ],
+      [
+        4720.4423828125,
+        2416.548583984375,
+        12.807321548461914,
+        1
+      ],
+      [
+        4708.0654296875,
+        2423.347412109375,
+        15.435722351074219,
+        1
+      ],
+      [
+        4693.89111328125,
+        2430.993408203125,
+        16.775543212890625,
+        1
+      ],
+      [
+        4678.11572265625,
+        2437.86181640625,
+        17.734041213989258,
+        28
+      ],
+      [
+        4661.73681640625,
+        2444.735595703125,
+        17.855587005615234,
+        28
+      ],
+      [
+        4645.48095703125,
+        2452.536376953125,
+        18.20728302001953,
+        28
+      ],
+      [
+        4629.24462890625,
+        2460.153564453125,
+        17.661338806152344,
+        28
+      ],
+      [
+        4613.357421875,
+        2467.947265625,
+        17.735107421875,
+        28
+      ],
+      [
+        4597.689453125,
+        2475.576904296875,
+        17.125791549682617,
+        3
+      ],
+      [
+        4582.51416015625,
+        2482.9296875,
+        16.60547637939453,
+        3
+      ],
+      [
+        4567.97998046875,
+        2490.574462890625,
+        16.24202537536621,
+        3
+      ],
+      [
+        4553.85791015625,
+        2498.24462890625,
+        15.899457931518555,
+        3
+      ],
+      [
+        4540.02392578125,
+        2505.447265625,
+        15.298150062561035,
+        3
+      ],
+      [
+        4526.38134765625,
+        2511.906982421875,
+        14.897967338562012,
+        28
+      ],
+      [
+        4513.15283203125,
+        2517.94140625,
+        14.18213176727295,
+        28
+      ],
+      [
+        4500.5419921875,
+        2523.75830078125,
+        13.593831062316895,
+        28
+      ],
+      [
+        4487.91552734375,
+        2529.322265625,
+        14.00458812713623,
+        28
+      ],
+      [
+        4475.494140625,
+        2534.86181640625,
+        13.201051712036133,
+        28
+      ],
+      [
+        4463.349609375,
+        2540.656005859375,
+        13.71118450164795,
+        28
+      ],
+      [
+        4451.09130859375,
+        2546.563720703125,
+        13.504106521606445,
+        28
+      ],
+      [
+        4439.38818359375,
+        2551.907470703125,
+        12.231276512145996,
+        28
+      ],
+      [
+        4428.0654296875,
+        2557.0439453125,
+        12.639488220214844,
+        28
+      ],
+      [
+        4416.98388671875,
+        2562.366455078125,
+        11.947916984558105,
+        28
+      ],
+      [
+        4405.9033203125,
+        2567.548583984375,
+        12.52030086517334,
+        28
+      ],
+      [
+        4394.88671875,
+        2572.346923828125,
+        11.513608932495117,
+        28
+      ],
+      [
+        4384.2841796875,
+        2576.868408203125,
+        11.53929615020752,
+        28
+      ],
+      [
+        4373.9970703125,
+        2581.283203125,
+        10.849695205688477,
+        28
+      ],
+      [
+        4364.25244140625,
+        2585.37890625,
+        10.290741920471191,
+        28
+      ],
+      [
+        4354.4677734375,
+        2588.796142578125,
+        10.470743179321289,
+        1
+      ],
+      [
+        4344.93359375,
+        2592.4384765625,
+        10.019752502441406,
+        1
+      ],
+      [
+        4335.9462890625,
+        2596.6591796875,
+        9.840740203857422,
+        1
+      ],
+      [
+        4327.3984375,
+        2600.74755859375,
+        9.114633560180664,
+        1
+      ],
+      [
+        4319.57080078125,
+        2604.67724609375,
+        8.402944564819336,
+        1
+      ],
+      [
+        4311.970703125,
+        2608.536865234375,
+        8.645883560180664,
+        1
+      ],
+      [
+        4303.6865234375,
+        2612.56396484375,
+        9.7822904586792,
+        1
+      ],
+      [
+        4295.2333984375,
+        2616.65625,
+        9.005509376525879,
+        1
+      ],
+      [
+        4287.5634765625,
+        2620.393798828125,
+        8.063576698303223,
+        1
+      ],
+      [
+        4280.544921875,
+        2623.619873046875,
+        7.385184288024902,
+        1
+      ],
+      [
+        4273.74951171875,
+        2626.66552734375,
+        7.508881568908691,
+        1
+      ],
+      [
+        4266.876953125,
+        2629.630615234375,
+        7.461177825927734,
+        1
+      ],
+      [
+        4259.57275390625,
+        2632.7255859375,
+        8.40418529510498,
+        1
+      ],
+      [
+        4251.84521484375,
+        2635.744873046875,
+        8.19420337677002,
+        1
+      ],
+      [
+        4244.26708984375,
+        2638.50732421875,
+        7.937544822692871,
+        1
+      ],
+      [
+        4236.978515625,
+        2641.400634765625,
+        7.751286506652832,
+        1
+      ],
+      [
+        4229.96337890625,
+        2644.296142578125,
+        7.428403377532959,
+        1
+      ],
+      [
+        4222.9306640625,
+        2647.186279296875,
+        7.7793965339660645,
+        1
+      ],
+      [
+        4215.63671875,
+        2648.8330078125,
+        7.428891181945801,
+        1
+      ],
+      [
+        4210.6953125,
+        2649.380615234375,
+        2.596503734588623,
+        1
+      ],
+      [
+        4210.16845703125,
+        2649.890380859375,
+        1.4161051511764526,
+        3
+      ],
+      [
+        4213.0556640625,
+        2649.432373046875,
+        4.505929470062256,
+        3
+      ],
+      [
+        4218.23974609375,
+        2647.900634765625,
+        6.312131881713867,
+        3
+      ],
+      [
+        4224.5537109375,
+        2645.7734375,
+        7.013661861419678,
+        3
+      ],
+      [
+        4228.81591796875,
+        2643.75830078125,
+        2.5734121799468994,
+        3
+      ],
+      [
+        4228.88330078125,
+        2642.87255859375,
+        1.760809302330017,
+        3
+      ]
+    ],
+    [
+      [
+        3544.2978515625,
+        2016.5072021484375,
+        0.0,
+        29
+      ],
+      [
+        3546.59814453125,
+        2017.1790771484375,
+        4.7926716804504395,
+        29
+      ],
+      [
+        3553.47802734375,
+        2018.7862548828125,
+        9.348184585571289,
+        29
+      ],
+      [
+        3564.679931640625,
+        2020.68798828125,
+        13.385187149047852,
+        29
+      ],
+      [
+        3579.206787109375,
+        2023.0081787109375,
+        16.038970947265625,
+        29
+      ],
+      [
+        3595.576171875,
+        2025.5860595703125,
+        17.10618019104004,
+        29
+      ],
+      [
+        3612.727294921875,
+        2028.62939453125,
+        17.74921989440918,
+        29
+      ],
+      [
+        3630.455078125,
+        2032.1925048828125,
+        18.416566848754883,
+        29
+      ],
+      [
+        3648.4462890625,
+        2035.8408203125,
+        18.299869537353516,
+        29
+      ],
+      [
+        3666.399658203125,
+        2039.7667236328125,
+        18.455707550048828,
+        29
+      ],
+      [
+        3684.24853515625,
+        2043.299072265625,
+        17.946401596069336,
+        29
+      ],
+      [
+        3701.41357421875,
+        2047.38037109375,
+        17.416126251220703,
+        76
+      ],
+      [
+        3717.982177734375,
+        2051.919677734375,
+        16.96038818359375,
+        76
+      ],
+      [
+        3735.386474609375,
+        2055.986083984375,
+        18.786224365234375,
+        28
+      ],
+      [
+        3753.33935546875,
+        2060.34423828125,
+        18.165647506713867,
+        28
+      ],
+      [
+        3770.750244140625,
+        2064.615234375,
+        17.69069480895996,
+        28
+      ],
+      [
+        3787.248779296875,
+        2068.615478515625,
+        16.26384925842285,
+        2
+      ],
+      [
+        3802.876708984375,
+        2072.86962890625,
+        16.13511085510254,
+        2
+      ],
+      [
+        3818.16650390625,
+        2077.31591796875,
+        15.711387634277344,
+        2
+      ],
+      [
+        3832.97998046875,
+        2081.585693359375,
+        15.121566772460938,
+        2
+      ],
+      [
+        3847.24560546875,
+        2084.83056640625,
+        14.18785572052002,
+        2
+      ],
+      [
+        3860.84423828125,
+        2087.68310546875,
+        13.628300666809082,
+        2
+      ],
+      [
+        3874.064697265625,
+        2091.37841796875,
+        13.832117080688477,
+        2
+      ],
+      [
+        3887.27197265625,
+        2095.77001953125,
+        14.015079498291016,
+        2
+      ],
+      [
+        3900.534423828125,
+        2100.427001953125,
+        14.099005699157715,
+        2
+      ],
+      [
+        3913.623046875,
+        2104.275146484375,
+        13.210700035095215,
+        2
+      ],
+      [
+        3925.86962890625,
+        2108.7548828125,
+        13.02637004852295,
+        81
+      ],
+      [
+        3937.32666015625,
+        2112.77099609375,
+        11.467375755310059,
+        81
+      ],
+      [
+        3947.96630859375,
+        2114.831298828125,
+        10.207437515258789,
+        81
+      ],
+      [
+        3957.935302734375,
+        2116.623291015625,
+        10.05054759979248,
+        81
+      ],
+      [
+        3967.675048828125,
+        2118.28173828125,
+        9.709389686584473,
+        81
+      ],
+      [
+        3977.296875,
+        2120.09521484375,
+        9.87668514251709,
+        81
+      ],
+      [
+        3986.923095703125,
+        2122.058837890625,
+        9.772481918334961,
+        81
+      ],
+      [
+        3996.3232421875,
+        2124.03076171875,
+        9.438044548034668,
+        81
+      ],
+      [
+        4005.483642578125,
+        2126.039306640625,
+        9.31810188293457,
+        81
+      ],
+      [
+        4014.6279296875,
+        2128.110107421875,
+        9.434184074401855,
+        81
+      ],
+      [
+        4023.596923828125,
+        2130.92333984375,
+        9.416892051696777,
+        81
+      ],
+      [
+        4032.314697265625,
+        2134.298095703125,
+        9.280123710632324,
+        81
+      ],
+      [
+        4040.877197265625,
+        2137.546142578125,
+        9.035502433776855,
+        81
+      ],
+      [
+        4049.249755859375,
+        2140.58349609375,
+        8.77990436553955,
+        81
+      ],
+      [
+        4057.49755859375,
+        2143.205810546875,
+        8.534377098083496,
+        81
+      ],
+      [
+        4065.577880859375,
+        2146.171630859375,
+        8.719393730163574,
+        81
+      ],
+      [
+        4073.577880859375,
+        2149.57275390625,
+        8.668954849243164,
+        81
+      ],
+      [
+        4081.888916015625,
+        2152.634765625,
+        9.05409049987793,
+        81
+      ],
+      [
+        4090.0966796875,
+        2154.84521484375,
+        7.979698181152344,
+        81
+      ],
+      [
+        4097.4423828125,
+        2156.47802734375,
+        7.074544906616211,
+        81
+      ],
+      [
+        4104.22216796875,
+        2159.126953125,
+        7.5957417488098145,
+        81
+      ],
+      [
+        4111.1640625,
+        2162.466552734375,
+        7.825224876403809,
+        81
+      ],
+      [
+        4118.6064453125,
+        2165.439208984375,
+        8.208226203918457,
+        81
+      ],
+      [
+        4125.70361328125,
+        2168.43310546875,
+        7.213923931121826,
+        81
+      ],
+      [
+        4132.27001953125,
+        2171.351806640625,
+        7.164785385131836,
+        81
+      ],
+      [
+        4139.0439453125,
+        2173.093994140625,
+        6.956893444061279,
+        81
+      ],
+      [
+        4143.6787109375,
+        2173.597412109375,
+        2.3672237396240234,
+        81
+      ],
+      [
+        4143.99462890625,
+        2173.703369140625,
+        1.7243311405181885,
+        81
+      ]
+    ],
+    [
+      [
+        262.34832763671875,
+        3003.985595703125,
+        0.0,
+        53
+      ],
+      [
+        264.2061767578125,
+        3005.366943359375,
+        4.630265712738037,
+        53
+      ],
+      [
+        269.8296203613281,
+        3008.875244140625,
+        8.649524688720703,
+        53
+      ],
+      [
+        278.6689758300781,
+        3013.66064453125,
+        11.456013679504395,
+        53
+      ],
+      [
+        289.4691467285156,
+        3019.211181640625,
+        12.830561637878418,
+        53
+      ],
+      [
+        301.1819152832031,
+        3024.97998046875,
+        13.283415794372559,
+        53
+      ],
+      [
+        312.943359375,
+        3031.38134765625,
+        13.5313720703125,
+        53
+      ],
+      [
+        324.46826171875,
+        3038.15234375,
+        13.205879211425781,
+        53
+      ],
+      [
+        335.816162109375,
+        3044.641357421875,
+        12.938796997070312,
+        53
+      ],
+      [
+        347.0865478515625,
+        3051.182373046875,
+        13.123257637023926,
+        53
+      ],
+      [
+        358.63787841796875,
+        3057.668212890625,
+        13.374859809875488,
+        53
+      ],
+      [
+        369.4591369628906,
+        3064.947265625,
+        12.832525253295898,
+        9
+      ],
+      [
+        380.1978759765625,
+        3071.876953125,
+        12.907708168029785,
+        9
+      ],
+      [
+        391.9911804199219,
+        3077.13671875,
+        12.934846878051758,
+        9
+      ],
+      [
+        403.77752685546875,
+        3081.917724609375,
+        12.503388404846191,
+        9
+      ],
+      [
+        414.7915344238281,
+        3086.841796875,
+        11.6404447555542,
+        9
+      ],
+      [
+        425.2024230957031,
+        3091.874267578125,
+        11.486778259277344,
+        9
+      ],
+      [
+        435.1752014160156,
+        3096.775146484375,
+        10.738945960998535,
+        9
+      ],
+      [
+        444.8024597167969,
+        3101.724853515625,
+        10.911531448364258,
+        9
+      ],
+      [
+        454.6771240234375,
+        3105.99072265625,
+        10.658425331115723,
+        9
+      ],
+      [
+        464.3568115234375,
+        3109.64501953125,
+        10.042366981506348,
+        9
+      ],
+      [
+        473.59466552734375,
+        3113.7880859375,
+        10.216986656188965,
+        9
+      ],
+      [
+        482.5436706542969,
+        3118.429931640625,
+        9.95205307006836,
+        9
+      ],
+      [
+        491.3868713378906,
+        3122.779052734375,
+        9.779840469360352,
+        9
+      ],
+      [
+        500.1410827636719,
+        3126.62890625,
+        9.347064971923828,
+        9
+      ],
+      [
+        508.49859619140625,
+        3130.324462890625,
+        8.92923641204834,
+        9
+      ],
+      [
+        516.1356811523438,
+        3134.281005859375,
+        8.31223201751709,
+        54
+      ],
+      [
+        523.4022827148438,
+        3138.11083984375,
+        8.149083137512207,
+        54
+      ],
+      [
+        530.5964965820312,
+        3141.44091796875,
+        7.7073540687561035,
+        54
+      ],
+      [
+        537.2938232421875,
+        3145.01708984375,
+        7.491983890533447,
+        54
+      ],
+      [
+        543.6534423828125,
+        3148.75,
+        7.256556510925293,
+        54
+      ],
+      [
+        549.9025268554688,
+        3152.642333984375,
+        7.474530220031738,
+        54
+      ],
+      [
+        556.0125122070312,
+        3156.820556640625,
+        7.330842018127441,
+        54
+      ],
+      [
+        561.9264526367188,
+        3160.947021484375,
+        7.091873645782471,
+        54
+      ],
+      [
+        567.6219482421875,
+        3164.797119140625,
+        6.658493995666504,
+        54
+      ],
+      [
+        572.9985961914062,
+        3168.3486328125,
+        6.229022979736328,
+        54
+      ],
+      [
+        577.7092895507812,
+        3172.0791015625,
+        5.835266590118408,
+        14
+      ],
+      [
+        582.3860473632812,
+        3175.90966796875,
+        6.286313533782959,
+        14
+      ],
+      [
+        587.445068359375,
+        3179.597900390625,
+        6.236034870147705,
+        14
+      ],
+      [
+        592.3777465820312,
+        3183.252197265625,
+        6.041630744934082,
+        14
+      ],
+      [
+        597.1195068359375,
+        3186.515625,
+        5.476374626159668,
+        14
+      ],
+      [
+        601.5546875,
+        3189.7685546875,
+        5.5455217361450195,
+        14
+      ],
+      [
+        605.8187255859375,
+        3193.250244140625,
+        5.465073108673096,
+        14
+      ],
+      [
+        610.0160522460938,
+        3196.9287109375,
+        5.708005905151367,
+        14
+      ],
+      [
+        613.9921875,
+        3200.8984375,
+        5.531721591949463,
+        14
+      ],
+      [
+        617.8067626953125,
+        3205.014892578125,
+        5.694215774536133,
+        14
+      ],
+      [
+        620.2384033203125,
+        3209.724365234375,
+        5.288275718688965,
+        16
+      ],
+      [
+        622.6201171875,
+        3213.832763671875,
+        4.78856086730957,
+        16
+      ],
+      [
+        626.4130249023438,
+        3216.6123046875,
+        4.6304097175598145,
+        16
+      ],
+      [
+        629.9546508789062,
+        3219.265380859375,
+        4.241337776184082,
+        16
+      ],
+      [
+        632.11376953125,
+        3222.3466796875,
+        3.5594732761383057,
+        16
+      ],
+      [
+        632.503173828125,
+        3223.689453125,
+        0.7722203731536865,
+        14
+      ]
+    ]
+  ],
+  "scenarios": [
+    {
+      "id": "42001_0000",
+      "start": [
+        3101.096663993871,
+        1040.6887554505076
+      ],
+      "goal": [
+        2908.569982744816,
+        577.7433043124527
+      ],
+      "load_phase": 11
+    },
+    {
+      "id": "42001_0001",
+      "start": [
+        4738.674307694979,
+        2407.621288899628
+      ],
+      "goal": [
+        4220.966190314088,
+        2647.0749438999023
+      ],
+      "load_phase": 0
+    },
+    {
+      "id": "42001_0002",
+      "start": [
+        3544.2978895209144,
+        2016.5072368317078
+      ],
+      "goal": [
+        4137.385185901721,
+        2172.5477584749465
+      ],
+      "load_phase": 0
+    },
+    {
+      "id": "42001_0003",
+      "start": [
+        262.34832388324406,
+        3003.985538583036
+      ],
+      "goal": [
+        630.4422524800514,
+        3221.272654712131
+      ],
+      "load_phase": 5
+    }
+  ],
+  "summary": {
+    "episodes": 64,
+    "success_rate": 1.0,
+    "feasible_success_rate": 1.0,
+    "failure_distance_mean_m": null,
+    "successful_time_s": 51.453125,
+    "successful_path_m": 595.492627620697,
+    "successful_energy_proxy_j": 8413.845741271973,
+    "successful_handovers": 4.109375,
+    "successful_outage_s": 0.171875,
+    "successful_dropped_bits": 0.0,
+    "successful_delay_proxy_mean_s": 2.7862413145848066,
+    "successful_interference_mean_w": 7.358807866566767e-07,
+    "successful_sinr_mean_db": -8.144126202911139,
+    "successful_sinr_p05_db": -16.185468770563602
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "macros": {
+    "FullStd": 96.6,
+    "ArrivalStd": 96.89999999999999,
+    "SuccessDeltaStd": -0.3,
+    "SuccessLowStd": -2.6,
+    "SuccessHighStd": 2.0,
+    "CostChangeStd": -24.535992346830525,
+    "DelayChangeStd": 186.68940592413819,
+    "HandoverChangeStd": -95.53051875696423,
+    "FullFailuresStd": 34,
+    "CommonStd": 945,
+    "FullLong": 89.7,
+    "ArrivalLong": 86.3,
+    "SuccessDeltaLong": 3.4000000000000004,
+    "SuccessLowLong": -1.0024999999999993,
+    "SuccessHighLong": 8.1,
+    "CostChangeLong": -14.674702819021467,
+    "DelayChangeLong": 261.13327793602707,
+    "HandoverChangeLong": -92.82333451662525,
+    "FullFailuresLong": 103,
+    "CommonLong": 802
+  },
+  "exact_replayed_episodes": 5600
+}

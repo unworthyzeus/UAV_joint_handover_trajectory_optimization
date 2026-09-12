@@ -23,6 +23,21 @@ When adding research work, create or update a Markdown note that records:
 6. Do not claim improvement over Marina's baseline until the original code and channel database have been reproduced or an explicitly reimplemented baseline has been validated.
 7. Keep physical quantities and units explicit. Convert dBm to linear power before summation and convert SNR or SINR from dB before applying capacity formulas.
 8. Record all random seeds and report variation across multiple runs for learned policies.
+9. When citing the original TFM for a definition, parameter, method, or result,
+   give its printed page number and the section, equation, table, or figure
+   when available. The PDF viewer page is the printed page plus two. Use
+   `docs/25_exact_changes_from_tfm.md` as the verified definition index. Clearly
+   distinguish original definitions from our replacements and unspecified details.
+10. Preserve the six source/protocol files hashed in
+    `configs/frozen_comparison_v1.json`. Documentation additions about that
+    completed experiment belong in current notes, not retroactive edits to its
+    frozen protocol. A changed implementation needs a separately labeled study.
+    Also preserve every source and protocol file hashed in
+    `configs/frozen_connectivity_v2.json`. Notes 28–32 describe that completed
+    study. Reporting corrections outside a freeze must preserve the original
+    result and explicitly document what changed. V2 enforces the thesis RSS
+    and buffer requirements; the user declined adding a new packet deadline
+    or empty queue arrival condition.
 
 ## Implementation Rules
 
@@ -31,4 +46,3 @@ When adding research work, create or update a Markdown note that records:
 3. Treat safety and minimum connectivity as constraints where possible, rather than relying only on manually balanced reward terms.
 4. Keep continuous motion control separate from masked discrete handover and resource decisions.
 5. Validate environment transitions, rewards, termination, and metrics before long training runs.
-

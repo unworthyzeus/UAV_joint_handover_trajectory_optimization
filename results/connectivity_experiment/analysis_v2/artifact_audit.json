@@ -1,0 +1,227 @@
+{
+  "pdf_sha256": "b4c38224502ad6a4f686030a1c420305e478e80ac308716e0447356564e056f9",
+  "pages": 4,
+  "fonts": {
+    "4": {
+      "name": "IHAIZV+NimbusRomNo9L-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "5": {
+      "name": "BZIVMZ+NimbusRomNo9L-MediItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "6": {
+      "name": "IXFAWU+NimbusRomNo9L-Medi",
+      "type": "Type1",
+      "embedded": true
+    },
+    "12": {
+      "name": "TQTHRL+NimbusRomNo9L-ReguItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "13": {
+      "name": "YEUUOC+CMSY10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "14": {
+      "name": "AKHCZK+CMR10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "24": {
+      "name": "VDVGTR+CMR7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "25": {
+      "name": "CAFSZL+CMMI10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "31": {
+      "name": "DDIEWW+CMMI7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "32": {
+      "name": "FKPJSN+CMMI5",
+      "type": "Type1",
+      "embedded": true
+    },
+    "42": {
+      "name": "PVTTLK+CMSY7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "46": {
+      "name": "JAGKKY+CMEX8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "47": {
+      "name": "NOMARO+CMMI8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "48": {
+      "name": "KPXLOM+CMMI6",
+      "type": "Type1",
+      "embedded": true
+    },
+    "73": {
+      "name": "UTACNV+CMSY8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "74": {
+      "name": "FZDNHS+CMR8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "57": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "76": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    }
+  },
+  "all_fonts_embedded_and_no_type3": true,
+  "unresolved_reference_markers": false,
+  "tfm_citation_count": 24,
+  "tfm_citations": [
+    {
+      "line": 41,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "line": 42,
+      "locator": "p.~10, Eq.~(11)"
+    },
+    {
+      "line": 44,
+      "locator": "p.~11, Eq.~(12), C2 and C4"
+    },
+    {
+      "line": 46,
+      "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
+    },
+    {
+      "line": 63,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "line": 65,
+      "locator": "p.~11, Eq.~(12)"
+    },
+    {
+      "line": 66,
+      "locator": "p.~9, Eq.~(4)"
+    },
+    {
+      "line": 72,
+      "locator": "p.~12, Eq.~(14)"
+    },
+    {
+      "line": 74,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "line": 98,
+      "locator": "p.~7, Table~2; p.~15, Table~3"
+    },
+    {
+      "line": 106,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "line": 107,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "line": 113,
+      "locator": "p.~10, Eqs.~(7)--(8)"
+    },
+    {
+      "line": 114,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "line": 118,
+      "locator": "p.~10, Eq.~(9)"
+    },
+    {
+      "line": 128,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "line": 130,
+      "locator": "p.~9, Sec.~3.2"
+    },
+    {
+      "line": 140,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "line": 145,
+      "locator": "p.~9, Eq.~(3); p.~15, Table~3"
+    },
+    {
+      "line": 149,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "line": 158,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "line": 168,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "line": 176,
+      "locator": "p.~12, Eq.~(13)"
+    },
+    {
+      "line": 208,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    }
+  ],
+  "all_tfm_citations_have_printed_page_locators": true,
+  "frozen_source_checks": {
+    "configs/frozen_comparison_v1.json": {
+      "src/uav_joint_optimization/experiment_env.py": true,
+      "src/uav_joint_optimization/experiment_ppo.py": true,
+      "scripts/run_controlled_experiment.py": true,
+      "configs/controlled_scenarios.json": true,
+      "docs/18_experiment_protocol.md": true,
+      "docs/20_pilots_and_frozen_comparison.md": true
+    },
+    "configs/frozen_connectivity_v2.json": {
+      "src/uav_joint_optimization/connectivity_env.py": true,
+      "src/uav_joint_optimization/connectivity_ppo.py": true,
+      "src/uav_joint_optimization/connectivity_planner.py": true,
+      "scripts/run_connectivity_experiment.py": true,
+      "configs/connectivity_scenarios_v2.json": true,
+      "scripts/analyze_connectivity_experiment.py": true,
+      "docs/28_connectivity_experiment_protocol.md": true
+    }
+  },
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "dataset_matches_original": true,
+  "final_checkpoint_count": 10,
+  "exact_replayed_episodes": 5600,
+  "all_reported_successes_meet_sampled_constraints": true,
+  "render_directory": "C:\\Research\\important_research_because_its_for_n3cat\\UAV_joint_handover_trajectory_optimization\\outputs\\connectivity_paper_review",
+  "visual_review": "Manually inspected final pages 1 through 4: no clipping, overlap, unresolved labels, or stray final page; tables and figures readable.",
+  "all_51_tests_passed": true,
+  "custom_and_checkpoint_cli_checks_passed": true,
+  "overfull_boxes": false
+}

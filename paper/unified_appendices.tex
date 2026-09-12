@@ -1,0 +1,345 @@
+\onecolumn
+\appendices
+\section{Original TFM and Study I: Complete Model and PPO Comparison}
+\label{app:comparison}
+The tables compare the written TFM with Study I. Study II retains these
+settings except for the explicit changes in Appendix~\ref{app:v2changes}. ``Not
+specified'' is an evidence boundary, not an assertion about missing source code.
+All shared changes apply even to our legacy arm. Only reward replacement and
+training arrival termination are treatment factors. The exact observation layouts appear in Appendix~\ref{app:observations}.
+The accompanying note 25 also indexes source definitions and event ordering.
+
+{\centering\footnotesize
+\captionof{table}{Environment, objective, and evaluation comparison. Source locators
+refer to printed TFM pages. Rows describe shared changes unless marked as factors.}
+\label{tab:modelcomparison}
+\begin{tabular}{@{}p{.16\textwidth}p{.37\textwidth}p{.42\textwidth}@{}}
+\toprule
+Item & Original TFM definition & Study I implementation \\
+\midrule
+Radio environment & Barcelona, 2.1 GHz, 100 m, 133 sites, nominal 1 m grid;
+strongest sector RSS~\cite[pp.~6--7, Sec.~3.1, Table~2]{thesis}
+& Received map retained; 87 station operator retained. No ray tracing regeneration;
+exact source version and sentinel remain unverified. \\
+Lookup and geometry & 3D building propagation geometry; lookup and integer
+encoding not specified~\cite[pp.~6--7, Sec.~3.1]{thesis}
+& Native coordinate spacing, nearest lookup, float radio arithmetic; $-128$
+treated as absent path. No collision model. \\
+Motion & Scalar speed/selected heading update; five acceleration and eight
+heading bins~\cite[p.~9, Eq.~(2); pp.~12, 15]{thesis}
+& Inertial velocity, continuous radial/lateral acceleration, norm bound 5 m/s$^2$,
+trapezoidal position update, hard speed cap 25 m/s. \\
+Time and speed & 1 ms in prose, 0.1 s in table; 2000 timesteps; 100 m/s
+penalty threshold~\cite[pp.~14--16, Tables~3--4]{thesis}
+& 1 s steps, 200 s deadline. New time discretization and speed constraint. \\
+Arrival (factor) & 10 m tolerance, stopping intention, no arrival termination
+\cite[p.~9, Sec.~3.2; p.~12, Sec.~5.2; p.~15, Table~3]{thesis}
+& Distance $\leq10$ m and speed $\leq2$ m/s. Training termination varied;
+every evaluation ends at first safe arrival. \\
+Failure handling & Energy termination; boundary/RSS/speed penalties
+\cite[p.~12, Sec.~5.2, Eq.~(14)]{thesis}
+& Energy exhaustion, boundary crossing, five consecutive RSS outages terminate.
+Physical failure precedes arrival; a valid deadline arrival succeeds. \\
+Observations & Position, serving BS, RBG, remaining energy, buffer
+\cite[p.~12, Sec.~5.2]{thesis}
+& 42 scaled features including goal bearing/distance, velocity, time,
+consumed energy, prior arrival, phases, serving SINR, candidates, and masks. \\
+Network actions & Station and RBG requests, A3 inequality
+\cite[p.~9, Eq.~(3); p.~12, Sec.~5.2]{thesis}
+& Stay plus top four RSS stations; $>3$ dB advantage and $>-96$ dBm;
+five second decisions plus observed outage requests; no time to trigger counters. \\
+Resource allocation & Policy requests RBG; availability fallback; random
+occupancy of at least half the groups~\cite[pp.~9, 12, 14--15]{thesis}
+& RBG is not learned. First free group, exactly six occupied groups per station
+in a deterministic pattern; global label phase is not independent load variation. \\
+Rate and interference & Bandwidth plus log of SNR; neighboring RSS sum labeled
+uplink~\cite[p.~10, Eqs.~(7)--(9)]{thesis}
+& Linear downlink cochannel interference, SINR, $B\log_2(1+\mathrm{SINR})$.
+Retain 1.44 MHz and $-103.41$ dBm combined noise; change link interpretation. \\
+Queue and traffic & Poisson formulation, ratio delay, 160 KB, 4800 bit handover
+overhead; conflicting data packet sizes~\cite[pp.~9--10, Eqs.~(4)--(6); pp.~14--15]{thesis}
+& Deterministic 200 kbit/s, decimal 1.28 Mbit cap, same handover overhead.
+Postservice backlog/rate censored at 200 s; record overflow without terminating. \\
+Energy & Mass/efficiency/lift-to-drag expression; capacity labeled 1000 kW
+\cite[p.~10, Eq.~(10); p.~15, Table~3]{thesis}
+& Consumed energy integral of $100+0.4v^2$ W; 100 kJ budget. New uncalibrated
+proxy, not a conversion of original capacity. \\
+Reward (factor) & Positive reciprocals, binary $+12$ progress, penalties
+\cite[p.~12, Eqs.~(13)--(14); p.~15, Table~3]{thesis}
+& Legacy structure uses new common physical inputs and no soft speed penalty.
+Replacement adds first arrival/terminal failure payments, time cost, bounded
+radio costs, and terminal corrected potential shaping. \\
+Deterministic reference & Constant speed, closest discrete heading, viability
+counters~\cite[pp.~13--14, Sec.~5.4]{thesis}
+& Continuous desired velocity tracking with braking; strongest admissible
+station and shared masks. A new reference, not a reproduction of that greedy policy. \\
+Splits and comparison & PPO/greedy and weight comparisons; separate validation
+and test sets not specified~\cite[pp.~15--16, Secs.~6.2--6.3]{thesis}
+& 4096 training, 64 validation, 200 standard test, 200 longer test routes;
+five seeds per treatment, frozen budget. Same map, not a geographic holdout. \\
+Reported outcomes & SNR, outage, interference, remaining energy, handovers,
+example paths~\cite[pp.~16--20, Sec.~7]{thesis}
+& Mission and recorded feasible success first; secondary metrics conditional
+on success; every seed, paired bootstrap and failure counts retained. \\
+\bottomrule
+\end{tabular}
+}
+
+For completeness, our reset sets velocity, queue, consumed energy, counters,
+and prior arrival to zero, associates with the strongest station, and allocates
+its first free group. Each step applies the requested admissible handover before
+motion, evaluates radio after motion, updates queue and energy, checks failure
+and arrival, and then computes reward. The TFM does not fully specify this
+event ordering~\cite[pp.~9--12, Secs.~3.2--5.2]{thesis}.
+The direct energy and packet overflow reward terms removed during the original
+development~\cite[pp.~20--21, Sec.~7.3]{thesis} are not treated as part of its
+final reward. We also do not claim to have reproduced its mass or efficiency
+model, random traffic, counter based handovers, or learned resource allocation.
+
+\clearpage
+{\centering\footnotesize
+\captionof{table}{PPO comparison. The first eleven rows cover every parameter in the
+original Table 4~\cite[p.~16]{thesis}. Further implementation details are not
+fully specified in its Secs. 5.3 and 6.2~\cite[p.~13; pp.~15--16]{thesis}.}
+\label{tab:ppocomparison}
+\begin{tabular}{@{}p{.25\textwidth}p{.20\textwidth}p{.50\textwidth}@{}}
+\toprule
+Parameter & Original TFM & Study I implementation \\
+\midrule
+Episodes & 300 & Fixed interactions, variable number of episodes \\
+Episode timesteps & 2000 & 200, with explicit early terminals \\
+Rollout steps per environment & 8 & 128 \\
+Learning rate & $3\cdot10^{-5}$ & $3\cdot10^{-4}$, constant \\
+Batch size & 32 & 512 \\
+Discount & 0.99 & 0.99, retained \\
+GAE lambda & 0.95 & 0.95, retained \\
+Policy clip & 0.2 & 0.2, retained \\
+Value coefficient & 0.5 & 0.5 applied to half MSE; total coefficient 0.25 MSE \\
+Entropy coefficient & 0.01 & 0.005 \\
+Target KL & 0.03 & No threshold; log diagnostic KL only \\
+\midrule
+Implementation & Stable Baselines & Native PyTorch hybrid PPO \\
+Parallel lanes and update epochs & Not specified & 64 lanes; 8192 samples per rollout; four epochs \\
+Interaction budget & Episodes/timesteps listed & 524,288 per policy, 64 rollout updates \\
+Networks & Not specified & Separate actor/critic, each two 64 unit tanh layers \\
+Policy heads & Discrete action vector listed & 2D Gaussian plus masked five choice categorical \\
+Initialization and variance & Not specified & Orthogonal weights; log standard deviation initialized $-0.5$,
+clamped to $[-2.3,0.5]$ \\
+Optimizer and gradient cap & Adam in pseudocode & Adam, epsilon $10^{-5}$, gradient norm cap 0.5 \\
+Likelihood and entropy details & Not specified & Latent Gaussian likelihood after stored action sampling;
+sum latent Gaussian and categorical entropy \\
+Reward and advantage scaling & Not specified & Running discounted return variance; no reward centering;
+reward clip $[-10,10]$; minibatch advantage normalization \\
+Critic and bootstrap details & Not fully specified & Unclipped half MSE; bootstrap only across nonterminal
+rollout ends, not across mission/deadline terminals \\
+Evaluation and checkpoint rule & Not specified & Gaussian mean and categorical mode; final checkpoint only;
+common raw evaluation reward for every treatment \\
+\bottomrule
+\end{tabular}
+\vspace{1.5em}
+}
+
+\bigskip
+\section{Every Executed Change from Study I to Study II}
+\label{app:v2changes}
+This inventory compares final frozen implementations, including choices that
+were retained. Original locators refer to the written TFM, not recovered code.
+The inherited serialized field \texttt{max\_consecutive\_outage: 5} is unused by
+Study II: its executed step fails on the first violation. Remaining queue at
+arrival and instantaneous switching are retained limitations.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.13\textwidth}p{0.23\textwidth}p{0.31\textwidth}p{0.28\textwidth}@{}}
+\caption{Final Study II differences and original source relationships.}\label{tab:v2changes}\\
+\toprule Item & v1 executed behavior & Final v2 executed behavior & Original source relationship\\\midrule
+\endfirsthead
+\multicolumn{4}{l}{\textit{Continued from previous page}}\\\toprule
+Item & v1 executed behavior & Final v2 executed behavior & Original source relationship\\\midrule
+\endhead
+\bottomrule\endfoot
+Minimum RSS & RSS $\leq$ -96 dBm counts as outage. & RSS < -96 dBm counts as violation; equality is allowed. & Follow C2's $\geq$ inequality \cite[p. 11, Eq. (12)]{thesis} and the numeric minimum \cite[p. 15, Table 3]{thesis}.\\
+Initial RSS & Strongest station selected at reset; no separate persistent initial violation flag. & Check the initial serving RSS and preserve any violation until failure. & Include the initial modeled sample in C2 \cite[p. 11]{thesis}.\\
+Failure rule & Five consecutive sampled outages terminate a flight. & Any single sampled RSS violation terminates a failed joint mission. & Enforce the written C2 at modeled samples \cite[p. 11]{thesis}, rather than reproduce the source's soft reward penalty \cite[p. 12, Eq. (14)]{thesis}.\\
+Buffer overflow & Count lost bits, clip queue, continue flight; disqualify only the subsequent feasible label. & Any overflow ends failure; clipping cannot erase it. & Enforce C4 at the sampled queue update \cite[p. 11, Eq. (12)]{thesis}. Source removal of a direct dump penalty is described on pp. 20--21, Sec. 7.3.\\
+Joint success & Arrival is primary; recorded feasibility permits up to 5\% RSS outage and zero drops. & Arrival plus no prior sampled RSS violation, no overflow, and no physical failure. No additional permissive feasibility label. & Combine source communication constraints \cite[p. 11]{thesis} with explicit destination completion.\\
+Event precedence & Some physical failures override arrival; overflow does not. & RSS, overflow, boundary and energy failure override simultaneous arrival. & New explicit ordering; original source ordering is unspecified \cite[p. 12, Sec. 5.2]{thesis}.\\
+Outstanding queue at arrival & Allowed. & Still allowed and reported. & The source does not specify an empty queue arrival test \cite[pp. 9--12, Secs. 3.2--5.2]{thesis}. We do not claim all generated data has been delivered.\\
+Delay cost & 0.05 * min(D, 1) inside fixed reward. & 0.35 * 10D / (1 + 10D) in full arm. No flat reward plateau at one second. & One minus original reciprocal utility \cite[p. 12, Eq. (13)]{thesis} with equal configuration values \cite[p. 15, Table 3]{thesis}. Smooth saturation remains.\\
+Interference cost & Absent from fixed reward, although measured. & Restore 0.30 * 100000I / (1 + 100000I). & Same reciprocal utility scales and weights \cite[pp. 12, 15]{thesis}. I remains our downlink proxy.\\
+Handover cost & 0.05 * H. & 0.35 * 100H / (1 + 100H). & Restore normalized source utility \cite[p. 12, Eq. (13); p. 15, Table 3]{thesis}.\\
+Positive per step radio utility & Present in reimplemented legacy reward, removed in v1 fixed reward. & Subtract communication cost, so simply staying active does not earn that utility bonus. & Changes the positive reciprocal reward structure \cite[p. 12, Eqs. (13)--(14)]{thesis} while preserving the three normalized tradeoff components.\\
+Learning comparison & Four reward/termination arms; direct acceleration learning. & Two arms: arrival base only versus arrival base minus all three radio costs. Both use strict failure, termination and the same new controller architecture. & A new controlled comparison; neither arm is the source's trained policy.\\
+Network decision timing & Every five seconds, with observed outage exception. & Every modeled second. & Source describes choices each environment step \cite[pp. 9, 12, Secs. 3.3.1, 5.2]{thesis}; a five second interval was our prior assumption.\\
+Network action & Stay plus four strongest candidate stations: five categorical choices. & Stay plus five candidate station slots by 12 groups: 61 choices. & Restores resource choice from the source's BS/RBG action \cite[p. 12, Sec. 5.2]{thesis}.\\
+Station candidate selection & Serving plus strongest four, stable RSS ordering. & Retained. Duplicate serving station slots are masked. & Restricted candidate interface is ours; source lists full BS/RBG choices \cite[p. 12]{thesis}.\\
+A3 condition & Candidate RSS > serving RSS + 3 dB. & Retained; prospective filter cannot bypass it. & Follow the inequality, not the reversed nearby prose \cite[p. 9, Eq. (3); p. 15, Table 3]{thesis}.\\
+Resource allocation & Deterministic first free RBG at reset and handover. & That initialization remains; the controller can choose any currently free RBG, including within the same station. & Source allows RBG requests with fallback \cite[p. 9, Sec. 3.3.1]{thesis}. The exact masking implementation is ours.\\
+Repeating a resource choice & No learned resource choice. & Current serving station/group pair remains a valid pair action; explicit stay also remains. & Avoid a new artificial alternating action mask; this is an implementation decision.\\
+Resource change count & Not independently reported. & Count every station/group change, including same station RBG changes. & Diagnostic addition. Same station resource changes are not counted as handovers.\\
+Switching interruption & Not modeled. & Still not modeled; no extra RBG switching cost. & Source does not provide a calibrated interruption duration \cite[p. 9, Sec. 3.3.1; p. 15, Table 3]{thesis}. This remains a limitation, not a verified original behavior.\\
+Continuous action & Two direct radial/lateral acceleration commands. & Projected reference command plus two bounded learned residuals of scale 0.5, followed by physical projection. & New controller prior; differs from original discrete acceleration and heading \cite[p. 12, Sec. 5.2; p. 15, Table 3]{thesis}.\\
+Safety filter & None. & Predict the next sample; repair unsafe network choice if possible, otherwise try local motion/network alternatives; still fail if unresolved. & New model based constraint handling component; original source describes reward penalties \cite[p. 12, Eq. (14)]{thesis}.\\
+Prospective radio access & Learned policy observes current candidates. & PPO still observes current options. Its shared filter and model based references query the known map at predicted positions. & New information/control architecture, not reproduced source logic.\\
+Observation & 42 features. & 156 features, detailed below. & Original source has six listed state elements \cite[p. 12, Sec. 5.2]{thesis}. Both are reimplementations with repaired state.\\
+PPO network head & Five categorical logits. & 61 categorical logits; continuous and value heads retained. & Original architecture details are not sufficiently specified \cite[p. 13, Sec. 5.3]{thesis}.\\
+Training route lengths & 200--1000 m. & 200--1800 m; longer tests lie within this range. & New study design; original route distribution and independent splits are not documented \cite[pp. 15--16, Secs. 6.2--6.3]{thesis}.\\
+Final route identities & Seeds 42012 and 42013. & Fresh seeds 52012 and 52013. Exact pairs are disjoint from v1 and other v2 splits. & Our explicit split protocol; same map remains shared.\\
+Training seeds & 1101--1105. & 2101--2105. & New repeated experiment; original seed list is unspecified \cite[pp. 15--16]{thesis}.\\
+Final budget & 524,288 interactions each; 20 policies. & Same interactions per policy; 10 policies. & Our PPO budget remains different from 300 episodes and 2,000 maximum steps in the source \cite[p. 16, Table 4]{thesis}.\\
+Deterministic references & Destination braking and strongest admissible RSS. & Four nominal control laws with the same filter: Goal RSS, Goal radio, one step joint search, and three step joint search. & New references, not a recreation of the thesis's discrete constant velocity greedy controller \cite[pp. 13--14, Sec. 5.4]{thesis}.\\
+Secondary comparison & Success conditioned summaries and selected matched comparisons. & Explicit intersections of successful route/seed pairs for radio comparisons, with counts and crossed bootstrap intervals. & Source does not report a matching conditional joint success protocol \cite[pp. 16--20, Sec. 7]{thesis}.\\
+\end{longtable}}
+\clearpage
+\section{Exact Observation and Numerical Interfaces}
+\label{app:observations}
+All indices are zero based. Study I has 42 features; Study II has 156. Both
+replace the original listed position, station, resource, energy and queue vector
+\cite[p.~12, Sec.~5.2]{thesis}. Scales are fixed; no fitted observation normalizer
+is used. Study II removes the prior arrival flag, consecutive outage count and
+five second phase because arrival and RSS failure now terminate immediately.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.13\textwidth}p{0.82\textwidth}@{}}
+\caption{Study I observation indices and scales.}\label{tab:obs1}\\
+\toprule Indices & Features and scaling\\\midrule
+\endfirsthead
+\multicolumn{2}{l}{\textit{Continued from previous page}}\\\toprule
+Indices & Features and scaling\\\midrule
+\endhead
+\bottomrule\endfoot
+0--1 & Position divided by (5000, 3500)\\
+2--3 & Unit vector toward goal; (1, 0) fallback at effectively zero distance\\
+4 & Goal distance / 1000 m\\
+5--6 & Velocity projected onto radial and lateral directions / 25 m/s\\
+7 & Speed / 25 m/s\\
+8 & Elapsed steps / 200; determines remaining time\\
+9 & Queue bits / 1,280,000\\
+10 & Consumed energy / 100,000 J, rather than remaining energy\\
+11 & Whether first safe arrival already occurred\\
+12--13 & Resource label phase / 11 and allocated RBG / 11\\
+14 & (step mod 5) / 5\\
+15 & Serving SINR in dB / 30\\
+16 & Consecutive outage samples / 5\\
+17--21 & Five candidate RSS values, each transformed as (RSS + 70) / 60\\
+22--31 & Candidate station x/y offsets from UAV, both divided by 5000 m\\
+32--36 & Candidate indices within selected operator / 86, not global station IDs or one hot vectors\\
+37--41 & Five Boolean admissibility flags represented as float features\\
+\end{longtable}}
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.13\textwidth}p{0.82\textwidth}@{}}
+\caption{Study II observation indices and scales.}\label{tab:obs2}\\
+\toprule Zero based indices & Definition\\\midrule
+\endfirsthead
+\multicolumn{2}{l}{\textit{Continued from previous page}}\\\toprule
+Zero based indices & Definition\\\midrule
+\endhead
+\bottomrule\endfoot
+0--1 & Position / map dimensions\\
+2--3 & Destination direction unit vector\\
+4 & Destination distance / 1,000 m\\
+5--6 & Radial and lateral velocity / 25 m/s\\
+7 & Speed / 25 m/s\\
+8 & Elapsed decision count / 200\\
+9 & Queue / 1,280,000 bits\\
+10 & Consumed energy / 100,000 J\\
+11--12 & Background phase / 11 and serving RBG / 11\\
+13 & Serving SINR in dB / 30\\
+14--18 & Candidate RSS, transformed as (RSS + 70) / 60\\
+19--28 & Candidate station x/y offsets / 5,000 m\\
+29--33 & Candidate station index / 86\\
+34--94 & log(1 + option\_capacity / 200000) for all 61 network choices\\
+95--155 & Corresponding Boolean action masks as float features\\
+\end{longtable}}
+
+For station index $k$, episode label phase $z$, and group $g$, background
+occupancy is $\ind[(g-(7k+z))\bmod12<6]$. The reset allocator chooses
+$(7k+z+6)\bmod12$. Phase $z$ rotates labels globally; it does not yield independent
+load fields. Each vector lane is an independent single UAV mission. The source
+describes random occupancy of at least half the groups
+\cite[p.~14, Sec.~6.1; p.~15, Table~3]{thesis}.
+
+Both studies use postservice backlog divided by service rate, censored at 200 s,
+as delay. A zero service rate is handled numerically rather than interpreted
+as a measured packet latency. The shared queue generates offered bits and any
+handover overhead, serves the queue at the modeled capacity, records excess
+above its capacity and clips for storage. Study II additionally fails on that
+excess. Stored $-128$ RSS supplies zero power; SINR reporting has a $10^{-15}$
+logarithm floor. These declarations complement the original queue and rate
+expressions~\cite[pp.~9--10, Eqs.~(4)--(9)]{thesis}.
+
+Study I evaluates every checkpoint using the common fixed raw reward by default;
+its stored return is an undiscounted evaluation sum, not its PPO normalized
+training return. Success and physical metrics define the reported comparisons.
+In continuing training, first arrival pays its bonus once; a later failure
+cannot pay the prearrival failure penalty. Study II always terminates on joint
+success or first failure and scores the proposed residual/network action before
+environment projection and safety filtering. Neither study has a separate soft
+speed penalty, since the shared dynamics impose the cap.
+
+\clearpage
+\section{Development Evidence and Artifact Map}
+\label{app:development}
+Development results below use only 64 standard and 32 longer validation routes.
+Each row uses one seed per arm and is exploratory; it does not estimate final
+seed uncertainty. All six Study II pilot checkpoints and source snapshots are
+retained locally. Study I retains six pilots with seeds 41 and 42, including
+the validation curve in Fig.~\ref{fig:pilot}. No pilot checkpoint initializes a
+final policy.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.34\textwidth}p{0.21\textwidth}p{0.2\textwidth}p{0.2\textwidth}@{}}
+\caption{Study II pilot development; percentages are standard / longer joint success.}\label{tab:development}\\
+\toprule Design & Pilot seed and budget per arm & Arrival arm standard / longer joint success & Full arm standard / longer joint success\\\midrule
+\endfirsthead
+\multicolumn{4}{l}{\textit{Continued from previous page}}\\\toprule
+Design & Pilot seed and budget per arm & Arrival arm standard / longer joint success & Full arm standard / longer joint success\\\midrule
+\endhead
+\bottomrule\endfoot
+Direct motion, no filter, short training lengths & 51; 524,288 & 89.1\% / 59.4\% & 92.2\% / 34.4\%\\
+Direct motion, safety filter, short training lengths & 52; 1,048,576 & 92.2\% / 78.1\% & 98.4\% / 75.0\%\\
+Residual motion, safety filter, 200--1800 m training lengths & 53; 524,288 & 96.9\% / 84.4\% & 98.4\% / 87.5\%\\
+\end{longtable}}
+
+The first strict nominal RSS controller completed 95.3\% / 71.9\% of validation
+routes; prospective radio selection completed 96.9\% / 90.6\%. A local joint
+search initially completed 95.3\% / 81.3\% and sometimes preferred stationary
+low cost states. A preference for immediate progress, with the shared filter,
+raised its observed validation completion to 98.4\% / 87.5\%. The filtered
+radio reference reached 96.9\% / 93.8\%. A three step lookahead design initially
+postponed movement at each replan, reaching 70.3\% / 53.1\%; applying progress
+preference to the first predicted step yielded 93.8\% / 87.5\%, still with three
+standard timeouts. These development failures are retained, not hidden by the
+final controller selection.
+
+In the second pilot design, the current station/group pair remained legal in
+addition to explicit stay, eliminating an artificial alternating resource mask.
+The third design introduced the residual braking prior and 200--1800 m training
+range. No communication threshold was relaxed. The full final pilot already
+showed fewer handovers and higher delay, motivating explicit component reporting
+in the frozen comparison. These simultaneous development changes do not identify
+individual causal contributions.
+
+The following artifact families give a reproducible route from source data to
+this paper. They are paths relative to the repository root; private binaries
+are retained locally. Markdown notes 17--27 cover Study I and its audit, notes
+28--32 cover Study II, and note 33 records this consolidation and publication.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{0.16\textwidth}p{0.79\textwidth}@{}}
+\caption{Artifacts and reproducibility boundaries.}\label{tab:artifacts}\\
+\toprule Artifact & Location / purpose\\\midrule
+\endfirsthead
+\multicolumn{2}{l}{\textit{Continued from previous page}}\\\toprule
+Artifact & Location / purpose\\\midrule
+\endhead
+\bottomrule\endfoot
+Original map & dataset/Barcelona\_dataset\_January.h5; unchanged private HDF5, excluded from Git; SHA256 is stored in both freeze manifests.\\
+Study I freeze & configs/frozen\_comparison\_v1.json; six exact source/protocol hashes.\\
+Study II freeze & configs/frozen\_connectivity\_v2.json; seven exact source/protocol hashes.\\
+Routes & configs/controlled\_scenarios.json and configs/connectivity\_scenarios\_v2.json; saved coordinate pairs, phases and seeds.\\
+Outcomes & results/controlled\_experiment/confirmatory\_v1/ and results/connectivity\_experiment/confirmatory\_v2/; final evaluation records, training logs and source snapshots.\\
+Statistics & Corresponding analysis\_v1/ and analysis\_v2/ directories; raw estimators, paired intervals, generated figures and table inputs. Study II report\_statistics.json documents the SINR reporting correction.\\
+Replay & results/controlled\_experiment/connectivity\_audit\_v1/ and results/connectivity\_experiment/replay\_v2/; 4,400 audit and 5,600 final exact replays respectively.\\
+Paper & paper/unified.tex and paper/unified\_appendices.tex; shared generated tables and figures; final consolidated IEEE format draft.\\
+\end{longtable}}

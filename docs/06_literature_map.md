@@ -4,7 +4,7 @@ Only primary papers or institutional records are used for method decisions.
 
 | Topic | Source | Relevance |
 | --- | --- | --- |
-| Legacy baseline | [Bermúdez Granados, 2026](https://upcommons.upc.edu/entities/publication/a8ce08c2-c238-4145-a5ab-5d39b12c6553) | Exact inherited environment and PPO formulation |
+| Legacy baseline | [Bermúdez Granados, 2026](https://upcommons.upc.edu/entities/publication/a8ce08c2-c238-4145-a5ab-5d39b12c6553) | Written environment: printed pp. 6–10; state/actions/reward: p. 12, Sec. 5.2, Eqs. (13)–(14); PPO: pp. 13, 15–16, Algorithm 1 and Table 4. Original code equivalence remains unverified. |
 | Deterministic joint optimization | [Im et al., 2025](https://doaj.org/article/00fb7cc137a444a9a898201e1ecc318c) | Converts a related problem to minimum weight graph search with an optimal polynomial time method |
 | Joint cargo UAV planning and association | [Cherif et al., 2024](https://arxiv.org/abs/2312.02478) | Mission, energy, disconnectivity, and handover objective design |
 | D3QN joint control | [Deng et al., 2023](https://www.6g-sky.net/assets/papers/A_DQN_Based_Mobility_Management_Algorithm_for_Cellular_Connected_UAVs.pdf) | Direct legacy comparison and KPI tradeoffs |

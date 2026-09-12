@@ -4,7 +4,12 @@ Search completed 15 July 2026.
 
 ## Direct Answer
 
-The primary missing dataset is Marina's processed Barcelona radio environment, not the original public building footprints alone. For exact reproduction, the project needs the deterministic received signal strength values at 100 m altitude over a 5,000 by 3,500 metre grid with 1 metre spacing, together with the 133 base station records and the strongest sector selected for each station.
+The primary missing dataset at the time of this search was Marina's processed
+Barcelona radio environment. The required 100 m altitude, 5000 by 3500 m grid,
+nominal 1 m spacing, 133 stations, and strongest sector retention are defined
+in the TFM [printed pp. 6–7, Sec. 3.1, Table 2 and Eq. (1) discussion]. Add
+two for PDF pages. Note 17 records the later received file; note 25 provides
+the complete source definition index and comparison.
 
 The implied final array contains approximately:
 
@@ -35,10 +40,10 @@ Exact baseline reproduction also requires code, metadata, routes, seeds, checkpo
 | --- | --- | --- | --- |
 | C1 | `JointHandoverTrajectoryOptimization` source at the thesis commit | Missing | The printed repository is unavailable, so environment transitions, rewards, termination, and metrics cannot be verified. |
 | C2 | Exact Python, MATLAB, toolbox, Stable Baselines3, Gym, PyTorch, NumPy, and dependency versions | Missing | Library defaults and API behavior can change training results. |
-| C3 | Full PPO policy architecture, initialization, optimizer settings, observation preprocessing, and normalization state | Missing | Table 4 does not fully determine the trained model. |
+| C3 | Full PPO policy architecture, initialization, optimizer settings, observation preprocessing, and normalization state | Missing | TFM Table 4, printed p. 16, does not fully determine the trained model; Sec. 5.3/Algorithm 1 is on printed p. 13. |
 | C4 | Greedy baseline, resource allocation, A3 handover, environment, evaluation, and plotting implementations | Missing | These are required to reproduce every reported comparison. |
-| C5 | Handover timing and counter semantics | Missing or ambiguous | The thesis does not fully specify time to trigger, reset, candidate switching, or event ordering. |
-| C6 | Clarification of timestep and physical units | Ambiguous | Table 3 gives 0.1 s while prose also refers to 1 ms. Energy, interference, and rate expressions contain unit ambiguities that must be checked against code. |
+| C5 | Handover timing and counter semantics | Missing or ambiguous | TFM Eq. (3), printed p. 9, and greedy Sec. 5.4, printed pp. 13–14, do not fully determine the original implementation's timing and event ordering. |
+| C6 | Clarification of timestep and physical units | Ambiguous | TFM Table 3, printed p. 15, gives 0.1 s; Sec. 6.1 prose, printed p. 14, gives 1 ms. Eqs. (7)–(10), printed p. 10, contain rate, interference, and energy ambiguities requiring code verification. |
 
 ### Critical experiment artifacts
 

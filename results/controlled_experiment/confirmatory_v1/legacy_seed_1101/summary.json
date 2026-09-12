@@ -1,0 +1,20 @@
+{
+  "validation": {
+    "episodes": 64,
+    "success_rate": 0.3125,
+    "feasible_success_rate": 0.3125,
+    "failure_distance_mean_m": 153.69571989774704,
+    "successful_time_s": 139.05,
+    "successful_path_m": 408.91609115600585,
+    "successful_energy_proxy_j": 14441.785302734375,
+    "successful_handovers": 8.35,
+    "successful_outage_s": 0.2,
+    "successful_dropped_bits": 0.0,
+    "successful_delay_proxy_mean_s": 0.8810705477175451,
+    "successful_interference_mean_w": 7.482647947837626e-07,
+    "successful_sinr_mean_db": -6.895937895774841,
+    "successful_sinr_p05_db": -12.937338066101074
+  },
+  "wall_seconds": 31.536105500000303,
+  "steps": 524288
+}

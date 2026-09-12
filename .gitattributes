@@ -1,4 +1,5 @@
 * text=auto
+* whitespace=cr-at-eol
 *.pdf binary
 *.png binary
 *.jpg binary
@@ -6,3 +7,27 @@
 *.npy binary
 *.npz binary
 
+# Preserve the exact bytes recorded by the experiment freezes, including
+# historical mixed line endings. These remain normal diffable source files.
+src/uav_joint_optimization/experiment_env.py -text
+src/uav_joint_optimization/experiment_ppo.py -text
+scripts/run_controlled_experiment.py -text
+configs/controlled_scenarios.json -text
+docs/18_experiment_protocol.md -text
+docs/20_pilots_and_frozen_comparison.md -text
+src/uav_joint_optimization/connectivity_env.py -text
+src/uav_joint_optimization/connectivity_ppo.py -text
+src/uav_joint_optimization/connectivity_planner.py -text
+scripts/run_connectivity_experiment.py -text
+configs/connectivity_scenarios_v2.json -text
+scripts/analyze_connectivity_experiment.py -text
+docs/28_connectivity_experiment_protocol.md -text
+# Results contain byte hashes of other records as well as source snapshots.
+results/** -text
+# These two initial diagnostic records were already normalized in the first commit.
+results/tables/reward_alignment_diagnostic.csv text=auto
+results/tables/reward_alignment_diagnostic.json text=auto
+# Preserve the source hashes in the consolidated document audit on Windows.
+paper/*.tex -text
+# Retain the historical appendix's final blank line without rewriting its source.
+paper/thesis_comparison.tex whitespace=cr-at-eol,-blank-at-eof

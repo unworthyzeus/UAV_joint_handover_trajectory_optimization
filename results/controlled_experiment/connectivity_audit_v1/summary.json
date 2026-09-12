@@ -1,0 +1,1701 @@
+{
+  "created_utc": "2026-09-12T11:53:50.958713+00:00",
+  "scope": "Post hoc descriptive audit of existing tests, not a new confirmatory experiment or policy selection",
+  "exact_episode_matches": 4400,
+  "frozen_source_hashes_verified": true,
+  "diagnostic_script_sha256": "ad488a56734428f1ea3a11c2471008df0987f37ac77fa3059b73b9982508f622",
+  "dataset_sha256_from_frozen_manifest": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "checkpoint_sha256": {
+    "results\\controlled_experiment\\confirmatory_v1\\reward_only_seed_1101\\checkpoint.pt": "07159e43f7e18bedeb2662bcdd265b32e7c5907fe180f52cf95b1a6a797ab8bd",
+    "results\\controlled_experiment\\confirmatory_v1\\reward_only_seed_1102\\checkpoint.pt": "0bc1d3995df825210f7fb524f72c9bfbdb9b74b4a2b1d4d71ca5bcaf4e5938f1",
+    "results\\controlled_experiment\\confirmatory_v1\\reward_only_seed_1103\\checkpoint.pt": "a1bb43593759ec269dea331ce21e490d68c3cd92f805c8fb380375300931e530",
+    "results\\controlled_experiment\\confirmatory_v1\\reward_only_seed_1104\\checkpoint.pt": "a9a440f668f9255650264457f9159dd351ba3a6775bea0f4a889770529d21842",
+    "results\\controlled_experiment\\confirmatory_v1\\reward_only_seed_1105\\checkpoint.pt": "07fc83769d530db50d4860bff25433793c364707ce42e8cc3a316358fba22011",
+    "results\\controlled_experiment\\confirmatory_v1\\fixed_seed_1101\\checkpoint.pt": "fa4a1bd0f8fa437fcbefc72a5b53155284917b71f90b43eb2ad7cd32dcda1d6e",
+    "results\\controlled_experiment\\confirmatory_v1\\fixed_seed_1102\\checkpoint.pt": "79fd40d4629edfbee9f12e4079dbc51b0dd3e3b5a2b46224c208d3cf3d20ac33",
+    "results\\controlled_experiment\\confirmatory_v1\\fixed_seed_1103\\checkpoint.pt": "77123705691d2a1b63de4a3998556ce0276e2035aa762d862a26de153ad3142a",
+    "results\\controlled_experiment\\confirmatory_v1\\fixed_seed_1104\\checkpoint.pt": "4a0ebc4b3bebdac26730e1db96573140844cd799253f18f62a0909364810a7ab",
+    "results\\controlled_experiment\\confirmatory_v1\\fixed_seed_1105\\checkpoint.pt": "8e0ae176ff3be1d5b7fd204e4b6bc96e8170d733988b47af4fb3c582d8e392df"
+  },
+  "config": {
+    "dt_s": 1.0,
+    "horizon": 200,
+    "max_acceleration": 5.0,
+    "max_speed": 25.0,
+    "goal_radius": 10.0,
+    "stop_speed": 2.0,
+    "network_interval": 5,
+    "a3_db": 3.0,
+    "rss_min_dbm": -96.0,
+    "max_consecutive_outage": 5,
+    "bandwidth_hz": 1440000.0,
+    "noise_dbm": -103.41,
+    "offered_bps": 200000.0,
+    "buffer_bits": 1280000.0,
+    "battery_j": 100000.0,
+    "gamma": 0.99,
+    "success_reward": 20.0,
+    "failure_penalty": 20.0,
+    "time_cost": 0.05,
+    "potential_scale_m": 100.0,
+    "radio_cost_weight": 0.05
+  },
+  "capacity_equals_offered_traffic_sinr_db": -9.954344775116278,
+  "aggregation": "Radio and path metrics condition on success; means weight each successful mission equally. Seeds reuse the same routes. No independence or significance claim.",
+  "grouped": {
+    "reward_only_test": {
+      "episodes": 1000,
+      "successful_episodes": 1000,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.987,
+      "success_without_any_rss_outage_rate": 0.922,
+      "success_with_nonempty_final_buffer_count": 202,
+      "successful_missions_with_any_service_deficit_count": 973,
+      "successful_time_s": {
+        "mean": 50.226,
+        "median": 50.0,
+        "p95": 74.04999999999995
+      },
+      "successful_handovers": {
+        "mean": 3.962,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_outage_s": {
+        "mean": 0.086,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.909715258598328,
+        "median": -8.040163040161133,
+        "p95": -4.364728331565857
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.584987091119995,
+        "median": 1.599354335204548,
+        "p95": 7.964519982556246
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0328064791823304,
+        "median": 1.0218741929747015,
+        "p95": 1.1011695265013188
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2657044354356898,
+        "median": 0.2692307692307692,
+        "p95": 0.4644047619047618
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.792,
+        "median": 4.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.20816027830936296,
+        "median": 0.1875,
+        "p95": 0.4479537794896484
+      },
+      "successful_final_buffer_bits": {
+        "mean": 56687.3077890625,
+        "median": 0.0,
+        "p95": 398663.51875
+      }
+    },
+    "reward_only_longer_test": {
+      "episodes": 1000,
+      "successful_episodes": 1000,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.96,
+      "success_without_any_rss_outage_rate": 0.773,
+      "success_with_nonempty_final_buffer_count": 159,
+      "successful_missions_with_any_service_deficit_count": 1000,
+      "successful_time_s": {
+        "mean": 92.127,
+        "median": 91.0,
+        "p95": 120.0
+      },
+      "successful_handovers": {
+        "mean": 8.012,
+        "median": 8.0,
+        "p95": 12.0
+      },
+      "successful_outage_s": {
+        "mean": 0.269,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.484612305641175,
+        "median": -8.555762767791748,
+        "p95": -5.865007162094117
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.167721291411167,
+        "median": 2.6672697684680946,
+        "p95": 7.520107871423711
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0109274440618978,
+        "median": 1.0092172426775499,
+        "p95": 1.026080220602823
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.29546440990921824,
+        "median": 0.29545454545454547,
+        "p95": 0.4375297619047619
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.975,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.23955970829253834,
+        "median": 0.22972972972972974,
+        "p95": 0.4197354113809348
+      },
+      "successful_final_buffer_bits": {
+        "mean": 35291.64353125,
+        "median": 0.0,
+        "p95": 284219.5390624999
+      }
+    },
+    "fixed_test": {
+      "episodes": 1000,
+      "successful_episodes": 997,
+      "success_rate": 0.997,
+      "recorded_feasible_success_rate": 0.978,
+      "success_without_any_rss_outage_rate": 0.916,
+      "success_with_nonempty_final_buffer_count": 197,
+      "successful_missions_with_any_service_deficit_count": 962,
+      "successful_time_s": {
+        "mean": 36.518555667001,
+        "median": 34.0,
+        "p95": 54.19999999999993
+      },
+      "successful_handovers": {
+        "mean": 2.9939819458375125,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.08726178535606821,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.125473138681027,
+        "median": -8.217529296875,
+        "p95": -4.44078063964844
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.8348239724868103,
+        "median": 1.5721923991253501,
+        "p95": 9.551755153399245
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0236991701191427,
+        "median": 1.0163541994939438,
+        "p95": 1.078409709874599
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.27751020778950536,
+        "median": 0.2777777777777778,
+        "p95": 0.50204081632653
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.42728184553661,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22014411375345191,
+        "median": 0.19230769230769232,
+        "p95": 0.5102040816326531
+      },
+      "successful_final_buffer_bits": {
+        "mean": 57114.1148445336,
+        "median": 0.0,
+        "p95": 405858.93124999973
+      }
+    },
+    "fixed_longer_test": {
+      "episodes": 1000,
+      "successful_episodes": 361,
+      "success_rate": 0.361,
+      "recorded_feasible_success_rate": 0.352,
+      "success_without_any_rss_outage_rate": 0.281,
+      "success_with_nonempty_final_buffer_count": 52,
+      "successful_missions_with_any_service_deficit_count": 361,
+      "successful_time_s": {
+        "mean": 66.8781163434903,
+        "median": 65.0,
+        "p95": 81.0
+      },
+      "successful_handovers": {
+        "mean": 6.105263157894737,
+        "median": 6.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.24930747922437674,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.726166235773187,
+        "median": -8.763505935668945,
+        "p95": -6.141181945800781
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.20134643424464,
+        "median": 2.5892905425922623,
+        "p95": 8.056585254064247
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0019257788424838,
+        "median": 1.001545920641624,
+        "p95": 1.0154355055912268
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.3080106996692105,
+        "median": 0.3064516129032258,
+        "p95": 0.44871794871794873
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.61218836565097,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.24723977805730932,
+        "median": 0.2345679012345679,
+        "p95": 0.4675324675324675
+      },
+      "successful_final_buffer_bits": {
+        "mean": 33470.44507444598,
+        "median": 0.0,
+        "p95": 249082.625
+      }
+    },
+    "pd_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.97,
+      "success_without_any_rss_outage_rate": 0.92,
+      "success_with_nonempty_final_buffer_count": 62,
+      "successful_missions_with_any_service_deficit_count": 191,
+      "successful_time_s": {
+        "mean": 28.62,
+        "median": 28.0,
+        "p95": 43.0
+      },
+      "successful_handovers": {
+        "mean": 2.385,
+        "median": 2.0,
+        "p95": 5.0
+      },
+      "successful_outage_s": {
+        "mean": 0.085,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.5120679885149,
+        "median": -8.682437419891357,
+        "p95": -4.397038578987125
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.4522623645599753,
+        "median": 1.3770937373235381,
+        "p95": 11.815014454331076
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0008231449433598,
+        "median": 1.0008110983182452,
+        "p95": 1.0025310610650233
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.29785705334375523,
+        "median": 0.2972972972972973,
+        "p95": 0.5337499999999998
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.1,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22846278727601507,
+        "median": 0.2,
+        "p95": 0.5728571428571423
+      },
+      "successful_final_buffer_bits": {
+        "mean": 111080.11484375,
+        "median": 0.0,
+        "p95": 609232.7249999997
+      }
+    },
+    "pd_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.955,
+      "success_without_any_rss_outage_rate": 0.75,
+      "success_with_nonempty_final_buffer_count": 56,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 60.415,
+        "median": 59.5,
+        "p95": 76.0
+      },
+      "successful_handovers": {
+        "mean": 5.735,
+        "median": 6.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.295,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -9.214964954853057,
+        "median": -9.288415908813477,
+        "p95": -6.270882177352905
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.9324532880415224,
+        "median": 2.9944262829351707,
+        "p95": 9.755691852118817
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.000206902673842,
+        "median": 1.0002214604514599,
+        "p95": 1.0006880313807633
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.33113724073371414,
+        "median": 0.3412653975363942,
+        "p95": 0.47920833333333335
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.475,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.27258885702781827,
+        "median": 0.2602739726027397,
+        "p95": 0.49332238642583426
+      },
+      "successful_final_buffer_bits": {
+        "mean": 61851.5844921875,
+        "median": 0.0,
+        "p95": 366653.56093749945
+      }
+    }
+  },
+  "per_run": {
+    "reward_only_1101_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.995,
+      "success_without_any_rss_outage_rate": 0.925,
+      "success_with_nonempty_final_buffer_count": 41,
+      "successful_missions_with_any_service_deficit_count": 194,
+      "successful_time_s": {
+        "mean": 54.25,
+        "median": 53.5,
+        "p95": 77.0
+      },
+      "successful_handovers": {
+        "mean": 4.02,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_outage_s": {
+        "mean": 0.085,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.837324613332749,
+        "median": -7.833430767059326,
+        "p95": -4.8014277458190975
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.298903852562059,
+        "median": 1.4556190031781049,
+        "p95": 7.598813011354415
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0232289080902641,
+        "median": 1.0148615982815623,
+        "p95": 1.0684499834682608
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2566141966095704,
+        "median": 0.2536262350220727,
+        "p95": 0.46922554347826073
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.67,
+        "median": 4.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.19356316675696406,
+        "median": 0.17274535809018568,
+        "p95": 0.40503663003662993
+      },
+      "successful_final_buffer_bits": {
+        "mean": 43732.2033203125,
+        "median": 0.0,
+        "p95": 287036.3390625
+      }
+    },
+    "reward_only_1101_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.96,
+      "success_without_any_rss_outage_rate": 0.795,
+      "success_with_nonempty_final_buffer_count": 32,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 100.105,
+        "median": 97.5,
+        "p95": 122.0
+      },
+      "successful_handovers": {
+        "mean": 7.95,
+        "median": 8.0,
+        "p95": 12.0
+      },
+      "successful_outage_s": {
+        "mean": 0.265,
+        "median": 0.0,
+        "p95": 1.049999999999983
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.361346554756164,
+        "median": -8.509981155395508,
+        "p95": -5.8167458295822145
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.8211265560770897,
+        "median": 2.2662388720763733,
+        "p95": 6.4835666527127644
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.005540843945836,
+        "median": 1.0052166738835384,
+        "p95": 1.0104999933316643
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2874595828259906,
+        "median": 0.2925320621949835,
+        "p95": 0.4273376623376623
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 5.145,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22239216742236484,
+        "median": 0.2206346078044935,
+        "p95": 0.3885484943478673
+      },
+      "successful_final_buffer_bits": {
+        "mean": 33284.41203125,
+        "median": 0.0,
+        "p95": 137404.4953124974
+      }
+    },
+    "reward_only_1102_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 1.0,
+      "success_without_any_rss_outage_rate": 0.92,
+      "success_with_nonempty_final_buffer_count": 40,
+      "successful_missions_with_any_service_deficit_count": 194,
+      "successful_time_s": {
+        "mean": 50.225,
+        "median": 49.0,
+        "p95": 72.0
+      },
+      "successful_handovers": {
+        "mean": 4.05,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_outage_s": {
+        "mean": 0.085,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.945350348353386,
+        "median": -8.276659488677979,
+        "p95": -4.333988547325135
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.6708450191967446,
+        "median": 1.7431908824679208,
+        "p95": 8.00089833751334
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0353105112241405,
+        "median": 1.0246169760044546,
+        "p95": 1.099306697450655
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.26577858577372754,
+        "median": 0.2677313883299799,
+        "p95": 0.45003521126760565
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.845,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2113270634853218,
+        "median": 0.18679549114331723,
+        "p95": 0.441943734015345
+      },
+      "successful_final_buffer_bits": {
+        "mean": 51561.213828125,
+        "median": 0.0,
+        "p95": 406828.8187499998
+      }
+    },
+    "reward_only_1102_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.955,
+      "success_without_any_rss_outage_rate": 0.765,
+      "success_with_nonempty_final_buffer_count": 42,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 89.715,
+        "median": 88.0,
+        "p95": 111.04999999999998
+      },
+      "successful_handovers": {
+        "mean": 8.1,
+        "median": 8.0,
+        "p95": 13.0
+      },
+      "successful_outage_s": {
+        "mean": 0.29,
+        "median": 0.0,
+        "p95": 1.049999999999983
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.651846013069154,
+        "median": -8.860416412353516,
+        "p95": -5.924008822441104
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.4008507615035968,
+        "median": 3.2388223980597655,
+        "p95": 8.026544889904946
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0112719244007045,
+        "median": 1.0095478982198478,
+        "p95": 1.0241122322944718
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.302179570343927,
+        "median": 0.30025195968645013,
+        "p95": 0.43823348694316433
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 5.045,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2541825282877485,
+        "median": 0.24371464487743558,
+        "p95": 0.41952380952380935
+      },
+      "successful_final_buffer_bits": {
+        "mean": 48589.38015625,
+        "median": 0.0,
+        "p95": 288351.19531249965
+      }
+    },
+    "reward_only_1103_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.975,
+      "success_without_any_rss_outage_rate": 0.92,
+      "success_with_nonempty_final_buffer_count": 38,
+      "successful_missions_with_any_service_deficit_count": 197,
+      "successful_time_s": {
+        "mean": 55.57,
+        "median": 56.0,
+        "p95": 84.0
+      },
+      "successful_handovers": {
+        "mean": 4.425,
+        "median": 4.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.085,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.871547693014145,
+        "median": -7.944039821624756,
+        "p95": -4.418807005882264
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.538059005528533,
+        "median": 1.7710411129323276,
+        "p95": 7.49672914805264
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0350232740508496,
+        "median": 1.0256690473920143,
+        "p95": 1.0957986419497758
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.26707033588947654,
+        "median": 0.281650641025641,
+        "p95": 0.45503246753246734
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.08,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2062547694620522,
+        "median": 0.1943351691581432,
+        "p95": 0.44215550156195754
+      },
+      "successful_final_buffer_bits": {
+        "mean": 55732.2316796875,
+        "median": 0.0,
+        "p95": 432818.79374999943
+      }
+    },
+    "reward_only_1103_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.945,
+      "success_without_any_rss_outage_rate": 0.775,
+      "success_with_nonempty_final_buffer_count": 24,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 101.53,
+        "median": 100.0,
+        "p95": 130.0
+      },
+      "successful_handovers": {
+        "mean": 8.83,
+        "median": 9.0,
+        "p95": 13.0
+      },
+      "successful_outage_s": {
+        "mean": 0.245,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.279915962219238,
+        "median": -8.377890586853027,
+        "p95": -5.275221228599549
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.0549306230813533,
+        "median": 2.520869587254289,
+        "p95": 7.180100218413484
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0182535390968341,
+        "median": 1.017921715001551,
+        "p95": 1.0325189510691681
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.28664137902160425,
+        "median": 0.2844332855093257,
+        "p95": 0.4345238095238094
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.96,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.23382780560351565,
+        "median": 0.21857040229885058,
+        "p95": 0.418940207662012
+      },
+      "successful_final_buffer_bits": {
+        "mean": 21306.8586328125,
+        "median": 0.0,
+        "p95": 145312.3906249992
+      }
+    },
+    "reward_only_1104_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.97,
+      "success_without_any_rss_outage_rate": 0.94,
+      "success_with_nonempty_final_buffer_count": 48,
+      "successful_missions_with_any_service_deficit_count": 192,
+      "successful_time_s": {
+        "mean": 43.135,
+        "median": 42.0,
+        "p95": 61.0
+      },
+      "successful_handovers": {
+        "mean": 3.495,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_outage_s": {
+        "mean": 0.07,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.968660433888435,
+        "median": -8.165281772613525,
+        "p95": -4.297143888473511
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.89602280543162,
+        "median": 1.6350779144792282,
+        "p95": 8.883262174386518
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0359925997575523,
+        "median": 1.024289409320259,
+        "p95": 1.1136148748104726
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.27735853222856116,
+        "median": 0.2692307692307692,
+        "p95": 0.4924603174603173
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.78,
+        "median": 4.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22156801913334395,
+        "median": 0.19074844074844077,
+        "p95": 0.4924603174603173
+      },
+      "successful_final_buffer_bits": {
+        "mean": 77278.9410546875,
+        "median": 0.0,
+        "p95": 403244.0234374999
+      }
+    },
+    "reward_only_1104_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.965,
+      "success_without_any_rss_outage_rate": 0.755,
+      "success_with_nonempty_final_buffer_count": 33,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 81.345,
+        "median": 80.0,
+        "p95": 100.09999999999997
+      },
+      "successful_handovers": {
+        "mean": 7.265,
+        "median": 7.0,
+        "p95": 11.0
+      },
+      "successful_outage_s": {
+        "mean": 0.275,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.650166981220245,
+        "median": -8.674767017364502,
+        "p95": -6.0418708562850965
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.4379338184274757,
+        "median": 2.9707484288455763,
+        "p95": 8.677318825689714
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0103423188090987,
+        "median": 1.009918976923813,
+        "p95": 1.0160847131843669
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.3066012141818916,
+        "median": 0.3071794871794872,
+        "p95": 0.4496935648621041
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.93,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.25135826164387703,
+        "median": 0.23673851921274602,
+        "p95": 0.42869458128078813
+      },
+      "successful_final_buffer_bits": {
+        "mean": 44694.2091796875,
+        "median": 0.0,
+        "p95": 374727.0843749994
+      }
+    },
+    "reward_only_1105_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.995,
+      "success_without_any_rss_outage_rate": 0.905,
+      "success_with_nonempty_final_buffer_count": 35,
+      "successful_missions_with_any_service_deficit_count": 196,
+      "successful_time_s": {
+        "mean": 47.95,
+        "median": 48.0,
+        "p95": 67.0
+      },
+      "successful_handovers": {
+        "mean": 3.82,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_outage_s": {
+        "mean": 0.105,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -7.925693204402924,
+        "median": -8.026489734649658,
+        "p95": -4.259839534759522
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.52110477288102,
+        "median": 1.594584666424406,
+        "p95": 7.879767663063595
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.034477102788845,
+        "median": 1.0175618483082787,
+        "p95": 1.1209912593924392
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.26170052667711324,
+        "median": 0.2719568567026194,
+        "p95": 0.45248917748917744
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.585,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2080883727091327,
+        "median": 0.18949468085106383,
+        "p95": 0.4399061032863845
+      },
+      "successful_final_buffer_bits": {
+        "mean": 55131.9490625,
+        "median": 0.0,
+        "p95": 399433.38125
+      }
+    },
+    "reward_only_1105_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.975,
+      "success_without_any_rss_outage_rate": 0.775,
+      "success_with_nonempty_final_buffer_count": 28,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 87.94,
+        "median": 87.0,
+        "p95": 112.0
+      },
+      "successful_handovers": {
+        "mean": 7.915,
+        "median": 8.0,
+        "p95": 12.0
+      },
+      "successful_outage_s": {
+        "mean": 0.27,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.47978601694107,
+        "median": -8.407346725463867,
+        "p95": -6.339576721191408
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.123764697966319,
+        "median": 2.4702946366893213,
+        "p95": 7.701210783169048
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0092285940570156,
+        "median": 1.0083547174232885,
+        "p95": 1.0158648922120947
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.294440303172678,
+        "median": 0.29042943333727667,
+        "p95": 0.44301158301158294
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.795,
+        "median": 5.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.23603777850518567,
+        "median": 0.22871376811594202,
+        "p95": 0.44819525193798443
+      },
+      "successful_final_buffer_bits": {
+        "mean": 28583.35765625,
+        "median": 0.0,
+        "p95": 273891.0437499997
+      }
+    },
+    "fixed_1101_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.975,
+      "success_without_any_rss_outage_rate": 0.935,
+      "success_with_nonempty_final_buffer_count": 51,
+      "successful_missions_with_any_service_deficit_count": 191,
+      "successful_time_s": {
+        "mean": 36.125,
+        "median": 34.0,
+        "p95": 54.0
+      },
+      "successful_handovers": {
+        "mean": 2.94,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.07,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.079139614105225,
+        "median": -8.293730735778809,
+        "p95": -4.55787754058838
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.657164163484444,
+        "median": 1.6425595780606521,
+        "p95": 9.849791701389888
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.020056283579535,
+        "median": 1.014462771759177,
+        "p95": 1.0555637209540134
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2802447520583702,
+        "median": 0.281650641025641,
+        "p95": 0.5145329670329669
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.47,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22447489710853155,
+        "median": 0.2,
+        "p95": 0.5321710007880219
+      },
+      "successful_final_buffer_bits": {
+        "mean": 74493.3646484375,
+        "median": 0.0,
+        "p95": 532311.634375
+      }
+    },
+    "fixed_1101_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 91,
+      "success_rate": 0.455,
+      "recorded_feasible_success_rate": 0.45,
+      "success_without_any_rss_outage_rate": 0.36,
+      "success_with_nonempty_final_buffer_count": 18,
+      "successful_missions_with_any_service_deficit_count": 91,
+      "successful_time_s": {
+        "mean": 65.74725274725274,
+        "median": 64.0,
+        "p95": 76.5
+      },
+      "successful_handovers": {
+        "mean": 6.142857142857143,
+        "median": 6.0,
+        "p95": 9.5
+      },
+      "successful_outage_s": {
+        "mean": 0.26373626373626374,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.944267755026345,
+        "median": -9.052282333374023,
+        "p95": -6.101543664932251
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.495897395634338,
+        "median": 2.5451639005259494,
+        "p95": 9.288780724058242
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.000426303055826,
+        "median": 1.000373331553265,
+        "p95": 1.0062483088082859
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.3234915699126486,
+        "median": 0.32,
+        "p95": 0.4751222318090308
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.615384615384615,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.266508546281154,
+        "median": 0.2537313432835821,
+        "p95": 0.4745818661971831
+      },
+      "successful_final_buffer_bits": {
+        "mean": 41163.38229739011,
+        "median": 0.0,
+        "p95": 200004.3984375
+      }
+    },
+    "fixed_1102_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.985,
+      "success_without_any_rss_outage_rate": 0.915,
+      "success_with_nonempty_final_buffer_count": 34,
+      "successful_missions_with_any_service_deficit_count": 192,
+      "successful_time_s": {
+        "mean": 36.295,
+        "median": 33.0,
+        "p95": 54.099999999999966
+      },
+      "successful_handovers": {
+        "mean": 3.105,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.09,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.25827788054943,
+        "median": -8.28606653213501,
+        "p95": -4.185243964195252
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.11951520468259,
+        "median": 1.7862803757328678,
+        "p95": 10.164468335224932
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0201637038437579,
+        "median": 1.0149595491222854,
+        "p95": 1.0503305071991693
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.28372005001411976,
+        "median": 0.2841614906832298,
+        "p95": 0.5009999999999997
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.415,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22627684517021926,
+        "median": 0.19460028050490885,
+        "p95": 0.5
+      },
+      "successful_final_buffer_bits": {
+        "mean": 52521.99625,
+        "median": 0.0,
+        "p95": 348227.71718749945
+      }
+    },
+    "fixed_1102_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 55,
+      "success_rate": 0.275,
+      "recorded_feasible_success_rate": 0.26,
+      "success_without_any_rss_outage_rate": 0.22,
+      "success_with_nonempty_final_buffer_count": 14,
+      "successful_missions_with_any_service_deficit_count": 55,
+      "successful_time_s": {
+        "mean": 65.92727272727272,
+        "median": 65.0,
+        "p95": 76.0
+      },
+      "successful_handovers": {
+        "mean": 6.1454545454545455,
+        "median": 6.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.2,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.46587005962025,
+        "median": -8.62291431427002,
+        "p95": -5.890422534942627
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.0187924222356255,
+        "median": 2.2850466014551265,
+        "p95": 6.4615679769971965
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 0.9993910799759794,
+        "median": 0.9982698595375535,
+        "p95": 1.0075476964761247
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.30306197778354665,
+        "median": 0.3114754098360656,
+        "p95": 0.455576923076923
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.490909090909091,
+        "median": 4.0,
+        "p95": 6.299999999999997
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2344361574122778,
+        "median": 0.21875,
+        "p95": 0.45076923076923076
+      },
+      "successful_final_buffer_bits": {
+        "mean": 42557.274857954544,
+        "median": 0.0,
+        "p95": 279104.6562499997
+      }
+    },
+    "fixed_1103_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.985,
+      "success_without_any_rss_outage_rate": 0.93,
+      "success_with_nonempty_final_buffer_count": 42,
+      "successful_missions_with_any_service_deficit_count": 195,
+      "successful_time_s": {
+        "mean": 36.63,
+        "median": 35.0,
+        "p95": 55.04999999999998
+      },
+      "successful_handovers": {
+        "mean": 3.055,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.075,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.07932918548584,
+        "median": -8.224760055541992,
+        "p95": -4.600461196899416
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.772076080340725,
+        "median": 1.523372677121363,
+        "p95": 9.196823574017918
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0172469722550843,
+        "median": 1.010335060610927,
+        "p95": 1.0673432078962897
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.27245032912725553,
+        "median": 0.2785560344827586,
+        "p95": 0.47934782608695614
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.36,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.21992402283732673,
+        "median": 0.19057226705796038,
+        "p95": 0.510334903192046
+      },
+      "successful_final_buffer_bits": {
+        "mean": 58048.1992578125,
+        "median": 0.0,
+        "p95": 395181.14687499974
+      }
+    },
+    "fixed_1103_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 38,
+      "success_rate": 0.19,
+      "recorded_feasible_success_rate": 0.185,
+      "success_without_any_rss_outage_rate": 0.175,
+      "success_with_nonempty_final_buffer_count": 2,
+      "successful_missions_with_any_service_deficit_count": 38,
+      "successful_time_s": {
+        "mean": 63.18421052631579,
+        "median": 61.5,
+        "p95": 72.3
+      },
+      "successful_handovers": {
+        "mean": 5.2631578947368425,
+        "median": 5.0,
+        "p95": 7.149999999999999
+      },
+      "successful_outage_s": {
+        "mean": 0.07894736842105263,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.643203760448255,
+        "median": -8.813270568847656,
+        "p95": -6.143074846267702
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.010077918350195,
+        "median": 2.4687069577583234,
+        "p95": 6.867401784375128
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 0.9955214647513992,
+        "median": 0.9936700699601324,
+        "p95": 1.0037774584126893
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.33002527098242557,
+        "median": 0.3145833333333333,
+        "p95": 0.4527234267583289
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.657894736842105,
+        "median": 4.0,
+        "p95": 8.299999999999997
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.26859072988526794,
+        "median": 0.2601797990481227,
+        "p95": 0.49279661016949156
+      },
+      "successful_final_buffer_bits": {
+        "mean": 7682.9547697368425,
+        "median": 0.0,
+        "p95": 21319.387499999797
+      }
+    },
+    "fixed_1104_test": {
+      "episodes": 200,
+      "successful_episodes": 197,
+      "success_rate": 0.985,
+      "recorded_feasible_success_rate": 0.965,
+      "success_without_any_rss_outage_rate": 0.89,
+      "success_with_nonempty_final_buffer_count": 37,
+      "successful_missions_with_any_service_deficit_count": 190,
+      "successful_time_s": {
+        "mean": 35.421319796954315,
+        "median": 34.0,
+        "p95": 51.19999999999999
+      },
+      "successful_handovers": {
+        "mean": 2.8477157360406093,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.1065989847715736,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.147517661152758,
+        "median": -8.144915580749512,
+        "p95": -4.33552923202515
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.8742371882379922,
+        "median": 1.5490408120055994,
+        "p95": 9.216927248933363
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0345125358689258,
+        "median": 1.0266556292515967,
+        "p95": 1.0906343759843407
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.28114081745933955,
+        "median": 0.2727272727272727,
+        "p95": 0.5180952380952378
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.4923857868020303,
+        "median": 3.0,
+        "p95": 7.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2245930151693892,
+        "median": 0.1875,
+        "p95": 0.531156462585034
+      },
+      "successful_final_buffer_bits": {
+        "mean": 60426.27062182741,
+        "median": 0.0,
+        "p95": 383084.9124999997
+      }
+    },
+    "fixed_1104_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 79,
+      "success_rate": 0.395,
+      "recorded_feasible_success_rate": 0.385,
+      "success_without_any_rss_outage_rate": 0.285,
+      "success_with_nonempty_final_buffer_count": 9,
+      "successful_missions_with_any_service_deficit_count": 79,
+      "successful_time_s": {
+        "mean": 66.74683544303798,
+        "median": 65.0,
+        "p95": 82.1
+      },
+      "successful_handovers": {
+        "mean": 6.341772151898734,
+        "median": 6.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.31645569620253167,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.800773717180084,
+        "median": -8.756003379821777,
+        "p95": -7.004399919509888
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.1739443845757145,
+        "median": 3.1854433381074183,
+        "p95": 7.01011525119381
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0103188716308364,
+        "median": 1.0097912774969504,
+        "p95": 1.0190266094345486
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.3015486342076032,
+        "median": 0.3048780487804878,
+        "p95": 0.42820512820512807
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.7594936708860756,
+        "median": 4.0,
+        "p95": 9.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.243066278478496,
+        "median": 0.22857142857142856,
+        "p95": 0.45090590298071287
+      },
+      "successful_final_buffer_bits": {
+        "mean": 39609.65763449367,
+        "median": 0.0,
+        "p95": 355247.37499999936
+      }
+    },
+    "fixed_1105_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.98,
+      "success_without_any_rss_outage_rate": 0.91,
+      "success_with_nonempty_final_buffer_count": 33,
+      "successful_missions_with_any_service_deficit_count": 194,
+      "successful_time_s": {
+        "mean": 38.105,
+        "median": 36.0,
+        "p95": 56.04999999999998
+      },
+      "successful_handovers": {
+        "mean": 3.02,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_outage_s": {
+        "mean": 0.095,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.063432019948959,
+        "median": -8.090644836425781,
+        "p95": -4.354881215095521
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 2.7517184239245696,
+        "median": 1.565567103283549,
+        "p95": 9.390132258430183
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.026678555534657,
+        "median": 1.0143171096454044,
+        "p95": 1.096545644963057
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2700495494334891,
+        "median": 0.27097902097902093,
+        "p95": 0.46878188775510204
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.4,
+        "median": 3.0,
+        "p95": 6.049999999999983
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.20551852200303208,
+        "median": 0.19230769230769232,
+        "p95": 0.43803879310344807
+      },
+      "successful_final_buffer_bits": {
+        "mean": 40130.42578125,
+        "median": 0.0,
+        "p95": 262336.5812499998
+      }
+    },
+    "fixed_1105_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 98,
+      "success_rate": 0.49,
+      "recorded_feasible_success_rate": 0.48,
+      "success_without_any_rss_outage_rate": 0.365,
+      "success_with_nonempty_final_buffer_count": 9,
+      "successful_missions_with_any_service_deficit_count": 98,
+      "successful_time_s": {
+        "mean": 70.0,
+        "median": 69.0,
+        "p95": 83.0
+      },
+      "successful_handovers": {
+        "mean": 6.183673469387755,
+        "median": 6.0,
+        "p95": 10.0
+      },
+      "successful_outage_s": {
+        "mean": 0.2755102040816326,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.641754342585195,
+        "median": -8.53992748260498,
+        "p95": -6.392648196220399
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.126543359773899,
+        "median": 2.635853916023284,
+        "p95": 7.173300057908844
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0004581292447792,
+        "median": 1.0001514876065634,
+        "p95": 1.0077885599798122
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.2930859034765925,
+        "median": 0.2967967967967968,
+        "p95": 0.4310202550637659
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.540816326530612,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.2316184670814999,
+        "median": 0.22474747474747475,
+        "p95": 0.43308897876643054
+      },
+      "successful_final_buffer_bits": {
+        "mean": 26277.52582908163,
+        "median": 0.0,
+        "p95": 276950.6578124998
+      }
+    },
+    "pd_None_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.97,
+      "success_without_any_rss_outage_rate": 0.92,
+      "success_with_nonempty_final_buffer_count": 62,
+      "successful_missions_with_any_service_deficit_count": 191,
+      "successful_time_s": {
+        "mean": 28.62,
+        "median": 28.0,
+        "p95": 43.0
+      },
+      "successful_handovers": {
+        "mean": 2.385,
+        "median": 2.0,
+        "p95": 5.0
+      },
+      "successful_outage_s": {
+        "mean": 0.085,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -8.5120679885149,
+        "median": -8.682437419891357,
+        "p95": -4.397038578987125
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.4522623645599753,
+        "median": 1.3770937373235381,
+        "p95": 11.815014454331076
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.0008231449433598,
+        "median": 1.0008110983182452,
+        "p95": 1.0025310610650233
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.29785705334375523,
+        "median": 0.2972972972972973,
+        "p95": 0.5337499999999998
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 3.1,
+        "median": 3.0,
+        "p95": 6.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.22846278727601507,
+        "median": 0.2,
+        "p95": 0.5728571428571423
+      },
+      "successful_final_buffer_bits": {
+        "mean": 111080.11484375,
+        "median": 0.0,
+        "p95": 609232.7249999997
+      }
+    },
+    "pd_None_longer_test": {
+      "episodes": 200,
+      "successful_episodes": 200,
+      "success_rate": 1.0,
+      "recorded_feasible_success_rate": 0.955,
+      "success_without_any_rss_outage_rate": 0.75,
+      "success_with_nonempty_final_buffer_count": 56,
+      "successful_missions_with_any_service_deficit_count": 200,
+      "successful_time_s": {
+        "mean": 60.415,
+        "median": 59.5,
+        "p95": 76.0
+      },
+      "successful_handovers": {
+        "mean": 5.735,
+        "median": 6.0,
+        "p95": 9.0
+      },
+      "successful_outage_s": {
+        "mean": 0.295,
+        "median": 0.0,
+        "p95": 1.0
+      },
+      "successful_sinr_mean_db": {
+        "mean": -9.214964954853057,
+        "median": -9.288415908813477,
+        "p95": -6.270882177352905
+      },
+      "successful_delay_proxy_mean_s": {
+        "mean": 3.9324532880415224,
+        "median": 2.9944262829351707,
+        "p95": 9.755691852118817
+      },
+      "successful_path_to_endpoint_distance_ratio": {
+        "mean": 1.000206902673842,
+        "median": 1.0002214604514599,
+        "p95": 1.0006880313807633
+      },
+      "successful_service_deficit_fraction": {
+        "mean": 0.33113724073371414,
+        "median": 0.3412653975363942,
+        "p95": 0.47920833333333335
+      },
+      "successful_longest_service_deficit_s": {
+        "mean": 4.475,
+        "median": 4.0,
+        "p95": 8.0
+      },
+      "successful_delay_above_one_s_fraction": {
+        "mean": 0.27258885702781827,
+        "median": 0.2602739726027397,
+        "p95": 0.49332238642583426
+      },
+      "successful_final_buffer_bits": {
+        "mean": 61851.5844921875,
+        "median": 0.0,
+        "p95": 366653.56093749945
+      }
+    }
+  }
+}

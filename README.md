@@ -1,89 +1,142 @@
 # Joint Handover and Trajectory Optimization in 5G Connected UAVs
 
-Research workspace for the I2R proposal on joint UAV flight, handover, and radio resource optimization in a deterministic 3D ray traced urban environment.
+Research workspace for the non THz n3cat UAV proposal. Updated 12 September 2026.
 
-## Current Finding
+## Consolidated IEEE Paper
 
-Marina Bermúdez Granados built the valuable part that should be preserved: a realistic Barcelona channel environment, 3GPP A3 handover logic, resource allocation, and a PPO baseline. The main failure was objective misalignment. The learned controller accumulated connectivity rewards but did not reliably finish the flight. The thesis itself concludes that the policy favored persistent connectivity over task completion.
+Read [the single paper covering both studies](paper/UAV_joint_reward_connectivity_IEEE.pdf),
+authored by Guillem Moreno Garcia and Evgenii Vinogradov. Its 15 pages include
+the reward experiment, connectivity audit and correction, all principal results,
+trajectory figures, splits, failed development designs, and detailed thesis
+comparisons with 104 printed page citations. The
+[paper guide](paper/README.md) explains the build; [note 33](docs/33_unified_paper_and_github_release.md)
+records the consolidation and GitHub release scope. Earlier PDFs remain historical records.
 
-This was not simply a weak PPO configuration. The listed state omitted velocity and goal relative information, the natural motion variables were discretized and combined with base station and resource choices, arrival did not terminate the episode, and the evaluation omitted trajectory success rate. Under that formulation, wandering can score well.
+## Latest Result: Connectivity Constraints
 
-## What This Project Optimizes
+The v2 study corrects the connectivity omission. A successful mission now has
+to satisfy the thesis's RSS and buffer constraints at every simulated sample,
+as well as arrive and stop. The full reward restores delay, interference and
+handover costs, with available resource choices and a shared safety filter.
+No new packet deadline or empty queue arrival requirement was added.
 
-The optimization hierarchy is:
+| Controller | Standard joint success | Longer joint success |
+| --- | ---: | ---: |
+| PPO with arrival cost and strict constraints | 96.9% | 86.3% |
+| PPO with full radio cost and strict constraints | 96.6% | 89.7% |
+| Goal directed controller with radio selection | 98.0% | 92.5% |
 
-1. Reach the destination within the deadline and terminal speed tolerance.
-2. Respect map, speed, energy, buffer, and minimum connectivity constraints.
-3. Among feasible successful missions, minimize flight time, propulsion energy, transmission delay, uplink interference, outage, and redundant handovers while maximizing SINR.
+Full PPO reduces weighted radio cost on paired successful routes by 24.5% and
+14.7%, but increases delay and does not establish a completion advantage.
+The radio selection reference improves longer completion over strongest RSS
+selection by 5.5 points, 95% interval [1.5, 9.5]. All four deterministic
+references and every learned seed are retained in the complete results.
 
-The first proposed architecture is a constrained mixed action controller:
+Read [the results and commands](docs/30_connectivity_results_and_reproduction.md),
+[every connectivity change with thesis pages](docs/31_exact_connectivity_changes.md),
+or [the consolidated IEEE paper](paper/UAV_joint_reward_connectivity_IEEE.pdf).
+There are 51 passing tests and 5,600 exact replayed final evaluations. The
+dataset and both experiment freezes are unchanged. The one second surrogate
+sampling does not establish physical continuity between samples.
 
-1. A graph or A* reference planner provides a mission completing route and a deterministic benchmark.
-2. A continuous flight policy controls acceleration and heading.
-3. A masked discrete policy selects valid handover and resource actions at a slower decision rate.
-4. A constrained or lexicographic objective prevents secondary radio metrics from replacing the mission.
+## Earlier Arrival Reward Study
 
-## Current Status
+Reward replacement restored mission completion in a documented reimplementation
+on the received Barcelona radio map. Twenty PPO policies were trained using
+four treatments and five seeds, with 524,288 interactions per policy. Each
+policy evaluated the same 200 standard and 200 longer test routes.
 
-Completed now:
+| Training treatment | Standard mission success | Longer mission success |
+| --- | ---: | ---: |
+| Legacy reward | 21.4% | 0.0% |
+| Termination change only | 0.0% | 0.0% |
+| Reward replacement only | 100.0% | 100.0% |
+| Reward and termination changes | 99.7% | 36.1% |
+| Deterministic reference | 100.0% | 100.0% |
 
-1. Proposal extraction and task map.
-2. Visual and textual audit of Marina's 2026 thesis.
-3. Formal diagnosis of the reward, state, action, termination, and evaluation design.
-4. Initial literature map for constrained control, continuous control, and mixed action reinforcement learning.
-5. Executable reward alignment diagnostic and mission first metric utilities.
+Standard routes span 200–1000 m; longer routes span 1000–1800 m. Safe arrival
+requires distance at most 10 m and speed at most 2 m/s within 200 s. Every
+evaluation stops at safe arrival, including policies trained with continuing
+episodes. The primary combined versus legacy gain is 78.3 percentage points,
+with a paired crossed bootstrap 95% interval of [66.2, 89.5]. The prespecified
+positive result gate passed.
 
-The current action class is deliberately an unmasked audit interface for the
-legacy 87 base station by 12 resource group choice. The masked candidate action
-described above remains blocked on the missing channel and resource adapter.
+Reward replacement is the essential tested intervention. Adding termination
+was less reliable on longer routes. The deterministic reference completed all
+routes and was faster; these results do not establish a learning advantage
+over classical control.
 
-Blocked external inputs:
+## Scope
 
-1. The GitHub repository printed in the thesis currently returns 404.
-2. The deterministic channel database, processed station snapshot, exact
-   geometry transform, routes, seeds, checkpoints, and logs are unavailable.
+This is a validated reimplementation of the written reward structure, not a
+reproduction of Marina Bermúdez Granados's original simulator or policy. All
+treatments share repaired observations, continuous flight actions, masked
+handover choices, and explicit radio and energy proxies. The experiment does
+not isolate observation repair or prove the exact cause of the original
+policy's behavior. Original code, checkpoints, collision scene, and exact
+dataset version confirmation remain unavailable.
 
-An exhaustive local and public search found the upstream 3D GloBFP geometry and
-a promising Barcelona geometry substitute, but not Marina's exact
-reproducibility bundle. See
-[`docs/16_missing_asset_search.md`](docs/16_missing_asset_search.md) for the
-complete asset list, every location searched, sources found, and limitations.
-Exact baseline replication and model training cannot be claimed until the
-critical assets are obtained or a clearly labeled replacement environment is
-built.
+The received 2.33 GB map is preserved at
+`dataset/Barcelona_dataset_January.h5` and excluded from Git. It has not been
+published. Study I's historical recorded feasible success checks buffer overflow and outage:
+reward replacement alone achieved 98.7% standard and 96.0% longer feasible
+success. Mission success alone is not a complete safety claim.
+
+The [connectivity audit](docs/27_connectivity_objective_audit.md) showed why
+Study I did not establish the full joint objective. In 1,000 standard
+reward replacement flights, arrival is 100%, but only 92.2% have no sampled RSS
+outage; capacity falls below offered traffic for a mean 26.6% of flight time,
+and 20.2% arrive with data still queued. Short capacity deficits can be buffered
+and are not themselves disconnections. Study II repairs the sampled RSS and
+buffer endpoint; it still does not establish service between samples or a
+packet latency guarantee. The audit exactly replayed 4,400 frozen episodes
+without changing training or original results.
+
+## Read and Reproduce
+
+- [Confirmed results and every seed](docs/21_confirmed_results.md)
+- [Everything changed from the original TFM, with precise source pages](docs/25_exact_changes_from_tfm.md)
+- [Reproduction commands and artifact map](docs/22_reproduction_guide.md)
+- [IEEE manuscript and build instructions](paper/README.md)
+- [Documentation index](docs/README.md)
+- [Current task status](docs/12_task_status.md)
+
+The complete experiment has 34 passing tests, saved checkpoints and raw records,
+and an exact replay of all 200 standard episodes for the first reward replacement
+seed. Start with:
+
+```powershell
+python -m pytest tests -q
+python scripts/analyze_controlled_experiment.py
+python scripts/evaluate_checkpoint.py --checkpoint results/controlled_experiment/confirmatory_v1/reward_only_seed_1101/checkpoint.pt --split test
+```
+
+Use the recorded dependencies in `requirements-experiments.txt` and obtain the
+private map separately from its owner. The analysis verifies frozen source
+hashes; use a new experiment label for new training, preserving the completed
+comparison.
 
 ## Structure
 
 | Path | Purpose |
 | --- | --- |
-| `docs/` | Proposal map, baseline diagnosis, formulation, method, protocol, risks, and logbook |
-| `src/uav_joint_optimization/` | Reusable reward, action, and evaluation logic |
-| `scripts/` | Reproducible diagnostics and later training entrypoints |
-| `configs/` | Versioned objective and experiment settings |
-| `data/` | Raw and derived channel data, ignored except placeholders |
-| `results/` | Diagnostic and future benchmark tables and figures |
-| `references/` | Proposal and source page shortcuts |
-| `sources/` | Local research PDFs, including Marina's thesis |
-| `experiments/` | Versioned experiment definitions and notes |
-| `paper/` | Reserved for the final report or paper |
+| `docs/` | Dataset audit, design, validation, pilots, results, risks, and logbook |
+| `src/uav_joint_optimization/` | Environment, hybrid PPO, and earlier audit utilities |
+| `scripts/` | Training, analysis, checkpoint replay, diagnostics, and paper tables |
+| `configs/` | Frozen source hashes, settings, route coordinates, and seeds |
+| `results/controlled_experiment/` | Pilots, twenty final policies, episodes, statistics, and figures |
+| `paper/` | IEEE source, generated tables, compiled PDF, and build guide |
+| `sources/` | Research PDFs, including the original thesis |
 
-## Run the Initial Audit
+Earlier notes numbered 01–16 document the predata investigation and proposals.
+Their historical blocked status and hypotheses are superseded by notes 17–23.
+The old hand written reward diagnostic is not trained evidence and its distance
+trace does not satisfy the current meaning of a failed mission; see its revised
+limitations in `docs/11_initial_reward_diagnostic.md`.
 
-```powershell
-python scripts/run_reward_diagnostic.py
-python -m pytest tests
-```
+The next research decision is to repeat the reward ablation in the recovered
+original simulator, then test independent traffic and geographic conditions.
 
-The reward diagnostic uses hand written traces to expose an incentive bug. It is not a trained performance comparison and must not be cited as evidence that the proposed learning algorithm outperforms the legacy policy.
-
-The validated audit gives the never arrive trace a discounted return of 79.65
-and direct arrival 69.95 under the legacy equations. The mission first audit
-reverses that order to -18.17 and 21.05 respectively. See
-`results/figures/reward_alignment_diagnostic.png` and
-`docs/11_initial_reward_diagnostic.md` for the protocol and limitations.
-
-## Primary Sources
-
-The canonical proposal is at `references/proposals/I2R_proposal_UAV.pdf`.
-
-The baseline thesis is at `sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf`, with the official [UPCommons record](https://upcommons.upc.edu/entities/publication/a8ce08c2-c238-4145-a5ab-5d39b12c6553).
+The baseline thesis is preserved at
+`sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf`, with the official
+[UPCommons record](https://upcommons.upc.edu/entities/publication/a8ce08c2-c238-4145-a5ab-5d39b12c6553).

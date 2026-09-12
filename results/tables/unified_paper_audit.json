@@ -1,0 +1,739 @@
+{
+  "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
+  "pdf_sha256": "86e560082aa414edaf00b706cdbf72220c161962e3de45227c40a1287518e56e",
+  "pages": 15,
+  "fonts": {
+    "4": {
+      "name": "IHAIZV+NimbusRomNo9L-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "5": {
+      "name": "BZIVMZ+NimbusRomNo9L-MediItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "6": {
+      "name": "IXFAWU+NimbusRomNo9L-Medi",
+      "type": "Type1",
+      "embedded": true
+    },
+    "20": {
+      "name": "TQTHRL+NimbusRomNo9L-ReguItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "21": {
+      "name": "YEUUOC+NimbusMonL-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "22": {
+      "name": "AKHCZK+CMR10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "23": {
+      "name": "VDVGTR+CMSY10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "30": {
+      "name": "CAFSZL+CMBX10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "31": {
+      "name": "DDIEWW+CMMI7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "32": {
+      "name": "FKPJSN+CMR7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "33": {
+      "name": "PVTTLK+CMSY7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "34": {
+      "name": "JAGKKY+CMBX7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "35": {
+      "name": "NOMARO+CMR5",
+      "type": "Type1",
+      "embedded": true
+    },
+    "36": {
+      "name": "KPXLOM+CMMI10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "53": {
+      "name": "UTACNV+CMMI5",
+      "type": "Type1",
+      "embedded": true
+    },
+    "54": {
+      "name": "FZDNHS+CMEX10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "68": {
+      "name": "DZGKAF+MSBM10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "70": {
+      "name": "GJMHKB+CMMI8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "71": {
+      "name": "NITCSQ+CMMI6",
+      "type": "Type1",
+      "embedded": true
+    },
+    "73": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "106": {
+      "name": "UBBQTN+CMSY8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "107": {
+      "name": "LPOGEQ+CMR8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "109": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "130": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "169": {
+      "name": "GQYLQL+CMEX8",
+      "type": "Type1",
+      "embedded": true
+    },
+    "177": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "194": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "224": {
+      "name": "WXMALW+CMR6",
+      "type": "Type1",
+      "embedded": true
+    },
+    "245": {
+      "name": "XKCNTN+CMSY6",
+      "type": "Type1",
+      "embedded": true
+    }
+  },
+  "all_fonts_embedded_and_no_type3": true,
+  "no_unresolved_references_or_overfull_boxes": true,
+  "text_outside_page": [],
+  "tfm_citation_count": 104,
+  "tfm_citations": [
+    {
+      "file": "paper/unified.tex",
+      "line": 50,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 51,
+      "locator": "p.~10, Eq.~(11)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 52,
+      "locator": "p.~11, Eq.~(12), C2 and C4"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 54,
+      "locator": "p.~12, Eqs.~(13)--(14); p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 55,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 57,
+      "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 58,
+      "locator": "p.~12, Sec.~5.2; p.~9, Eq.~(2)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 100,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 101,
+      "locator": "p.~6, Sec.~3.1.1;\np.~7, Table~2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 121,
+      "locator": "p.~9, Sec.~3.2, Eq.~(2)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 133,
+      "locator": "p.~12, Sec.~5.2; p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 134,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 136,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 137,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 144,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 146,
+      "locator": "p.~9, Sec.~3.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 149,
+      "locator": "p.~12, Sec.~5.2, Eq.~(14)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 151,
+      "locator": "p.~6, Sec.~3.1.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 161,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 173,
+      "locator": "p.~9, Eq.~(3)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 174,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 176,
+      "locator": "pp.~13--14, Sec.~5.4"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 182,
+      "locator": "p.~9, Sec.~3.3.1;\np.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 184,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 185,
+      "locator": "p.~7, Eq.~(1)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 196,
+      "locator": "p.~10, Eqs.~(7)--(9)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 202,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 204,
+      "locator": "pp.~9--10, Eqs.~(5)--(6)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 205,
+      "locator": "pp.~14--15, Sec.~6.1, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 206,
+      "locator": "p.~9"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 211,
+      "locator": "p.~10, Eq.~(10)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 212,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 238,
+      "locator": "p.~12"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 239,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 320,
+      "locator": "p.~13, Sec.~5.3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 322,
+      "locator": "p.~16, Table~4"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 346,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 458,
+      "locator": "pp.~16--20, Sec.~7, Figs.~5--8"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 467,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 469,
+      "locator": "p.~11, Eq.~(12)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 470,
+      "locator": "p.~9, Eq.~(4)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 476,
+      "locator": "p.~12, Eq.~(14)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 478,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 515,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 517,
+      "locator": "p.~9, Sec.~3.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 527,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 532,
+      "locator": "p.~9, Eq.~(3); p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 536,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 545,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 555,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 563,
+      "locator": "p.~12, Eq.~(13)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 593,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 21,
+      "locator": "pp.~6--7, Sec.~3.1, Table~2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 25,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 29,
+      "locator": "p.~9, Eq.~(2); pp.~12, 15"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 33,
+      "locator": "pp.~14--16, Tables~3--4"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 36,
+      "locator": "p.~9, Sec.~3.2; p.~12, Sec.~5.2; p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 40,
+      "locator": "p.~12, Sec.~5.2, Eq.~(14)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 44,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 48,
+      "locator": "p.~9, Eq.~(3); p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 52,
+      "locator": "pp.~9, 12, 14--15"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 56,
+      "locator": "p.~10, Eqs.~(7)--(9)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 60,
+      "locator": "pp.~9--10, Eqs.~(4)--(6); pp.~14--15"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 64,
+      "locator": "p.~10, Eq.~(10); p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 68,
+      "locator": "p.~12, Eqs.~(13)--(14); p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 73,
+      "locator": "pp.~13--14, Sec.~5.4"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 77,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 81,
+      "locator": "pp.~16--20, Sec.~7"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 93,
+      "locator": "pp.~9--12, Secs.~3.2--5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 95,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 102,
+      "locator": "p.~16"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 103,
+      "locator": "p.~13; pp.~15--16"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 160,
+      "locator": "p. 11, Eq. (12)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 160,
+      "locator": "p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 161,
+      "locator": "p. 11"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 162,
+      "locator": "p. 11"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 162,
+      "locator": "p. 12, Eq. (14)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 163,
+      "locator": "p. 11, Eq. (12)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 164,
+      "locator": "p. 11"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 165,
+      "locator": "p. 12, Sec. 5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 166,
+      "locator": "pp. 9--12, Secs. 3.2--5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 167,
+      "locator": "p. 12, Eq. (13)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 167,
+      "locator": "p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 168,
+      "locator": "pp. 12, 15"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 169,
+      "locator": "p. 12, Eq. (13); p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 170,
+      "locator": "p. 12, Eqs. (13)--(14)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 172,
+      "locator": "pp. 9, 12, Secs. 3.3.1, 5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 173,
+      "locator": "p. 12, Sec. 5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 174,
+      "locator": "p. 12"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 175,
+      "locator": "p. 9, Eq. (3); p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 176,
+      "locator": "p. 9, Sec. 3.3.1"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 179,
+      "locator": "p. 9, Sec. 3.3.1; p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 180,
+      "locator": "p. 12, Sec. 5.2; p. 15, Table 3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 181,
+      "locator": "p. 12, Eq. (14)"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 183,
+      "locator": "p. 12, Sec. 5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 184,
+      "locator": "p. 13, Sec. 5.3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 185,
+      "locator": "pp. 15--16, Secs. 6.2--6.3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 187,
+      "locator": "pp. 15--16"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 188,
+      "locator": "p. 16, Table 4"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 189,
+      "locator": "pp. 13--14, Sec. 5.4"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 190,
+      "locator": "pp. 16--20, Sec. 7"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 197,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 260,
+      "locator": "p.~14, Sec.~6.1; p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified_appendices.tex",
+      "line": 269,
+      "locator": "pp.~9--10, Eqs.~(4)--(9)"
+    }
+  ],
+  "source_hashes": {
+    "paper/unified.tex": "0f9ed2ff290c972114145422b5394627e9cee375706fdcd1dd0d3df83269559b",
+    "paper/results_macros.tex": "01bd847a017dc030f4959e021db56060f09b3346d424e0acda0b4cedc41d3603",
+    "paper/connectivity_macros.tex": "b7b517ebbabc1e12b849cc53a9826008c333bb06a1319f7187e04aea32a7d9b3",
+    "paper/results_table.tex": "1850ccf7a46c67a17f9b21d52cd2b4b9bafb5bd235340e1f93c428920a829097",
+    "paper/metrics_table.tex": "45722507ddbd02f612fcf23a2d439d27ae2e873d0c945a2f22a55aabbc2627ee",
+    "paper/connectivity_results_table.tex": "c0036086eda35d5943064aaf01f6de7b86e873dad6e837670b72f3e228db07fe",
+    "paper/connectivity_paired_table.tex": "c12691f680f45264ad650c35d1bdd96d50d9efd18d5808d26e54ea4e756287ad",
+    "paper/unified_appendices.tex": "40ff5be02a01cf1ddd34aeebd2a06ff3f55a5abae39165e2063c2351cff869e6"
+  },
+  "frozen_sources_match": {
+    "frozen_comparison_v1.json": {
+      "src/uav_joint_optimization/experiment_env.py": true,
+      "src/uav_joint_optimization/experiment_ppo.py": true,
+      "scripts/run_controlled_experiment.py": true,
+      "configs/controlled_scenarios.json": true,
+      "docs/18_experiment_protocol.md": true,
+      "docs/20_pilots_and_frozen_comparison.md": true
+    },
+    "frozen_connectivity_v2.json": {
+      "src/uav_joint_optimization/connectivity_env.py": true,
+      "src/uav_joint_optimization/connectivity_ppo.py": true,
+      "src/uav_joint_optimization/connectivity_planner.py": true,
+      "scripts/run_connectivity_experiment.py": true,
+      "configs/connectivity_scenarios_v2.json": true,
+      "scripts/analyze_connectivity_experiment.py": true,
+      "docs/28_connectivity_experiment_protocol.md": true
+    }
+  },
+  "statistic_hashes": {
+    "results/controlled_experiment/analysis_v1/statistics.json": "a2602620315d78c1c3dbab33d8c7e256acb7a28aa51c5286bd6f60418177c13f",
+    "results/connectivity_experiment/analysis_v2/statistics.json": "954ea7d263caaeee7df2824b15e3d62761b9fba3a66f1b3f8a8caaf85681bee2",
+    "results/connectivity_experiment/analysis_v2/report_statistics.json": "a9ddc07f20516c2943acf68e47d612bc15b100ac799e202d5a7ff58b6b1b8a56"
+  },
+  "visual_review": {
+    "status": "passed",
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "detail": "All page layouts inspected; enlarged review of title, figures, equations, balanced final columns and detailed tables. No clipping or overlap observed."
+  },
+  "scope": "Consolidation only; no new training, policy selection or statistical estimation.",
+  "unit_test_verification": {
+    "command": "python -m pytest -q",
+    "passed": 51,
+    "date": "2026-09-12"
+  }
+}

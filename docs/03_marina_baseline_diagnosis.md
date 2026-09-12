@@ -1,70 +1,99 @@
 # Marina Baseline Diagnosis
 
-## Sources Reviewed
+Updated 12 September 2026 with pinpoint source references and the completed
+experiment's limits. TFM means the [original thesis](../sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf).
+Pages are printed pages; add two for the PDF viewer counter. The complete
+definition index and executed comparison are in [note 25](25_exact_changes_from_tfm.md).
 
-1. [Official UPCommons record](https://upcommons.upc.edu/entities/publication/a8ce08c2-c238-4145-a5ab-5d39b12c6553).
-2. [Full thesis PDF](https://upcommons.upc.edu/server/api/core/bitstreams/f92e8ad3-4ad0-4410-971c-e842a2f55477/content).
-3. Local thesis copy under `sources/`.
-4. The code URL printed in the thesis, which currently returns 404.
+## What the Original Work Established
 
-## What the Baseline Did Well
+The thesis describes a Barcelona radio environment with deterministic ray
+tracing and real station locations [TFM, pp. 6–7, Sec. 3.1, Table 2], A3 and
+resource allocation [TFM, p. 9, Sec. 3.3.1, Eq. (3)], queue and energy models
+[TFM, pp. 9–10, Eqs. (4)–(10)], and PPO plus a greedy reference [TFM,
+pp. 13–14, Secs. 5.3–5.4]. The source simulator and checkpoints remain
+unavailable, so written definitions must not be mistaken for verified code.
 
-The thesis created a 5,000 by 3,500 meter Barcelona environment with deterministic ray tracing, real base station locations, 3GPP A3 handover logic, resource block allocation, packet buffering, energy accounting, a greedy reference, and PPO. This is substantially more realistic than an abstract grid world.
+## Confirmed Written Formulation
 
-## Confirmed Formulation
+The state is `[x, y, serving BS, allocated RBG, energy, buffer]` and the action
+is `[acceleration, direction, requested BS, requested RBG]` [TFM, p. 12,
+Sec. 5.2]. There are five acceleration bins, eight headings, 87 selected
+operator stations, and twelve resource groups [TFM, pp. 14–15, Sec. 6.1,
+Table 3]. Their nominal product is 41,760 combinations. This is our count;
+a factorized action policy need not explicitly enumerate the product.
 
-The listed state on thesis page 12 is:
+The reward transforms delay, interference, and handover costs into positive
+reciprocals and applies penalties [TFM, p. 12, Eqs. (13)–(14)]. The approach
+bonus is 12 [TFM, p. 15, Table 3]. Energy exhaustion ends the episode and
+overrides reward, while arrival explicitly does not terminate it [TFM, p. 12,
+Sec. 5.2, final paragraphs].
 
-```text
-[x, y, serving base station, allocated RBG, energy, buffer]
-```
+The reported evaluation measures SNR, outage, interference, remaining energy,
+and handover count, without a reported mission success rate, arrival time,
+or terminal distance [TFM, pp. 16–20, Sec. 7, Figs. 5–8].
 
-The listed action is:
+## Reward Interpretation and Its Evidence Limit
 
-```text
-[acceleration, direction, requested base station, requested RBG]
-```
+Our interpretation is that the positive ongoing terms and fixed approach bonus
+can reward slow or repeated approach without making mission completion decisive
+[source incentive: TFM, p. 12, Eqs. (13)–(14); p. 15, Table 3]. This is a
+mathematical diagnosis, not an observed exploit in the unavailable source code.
+The original navigation discussion shows overshoot and correction [TFM, p. 19,
+Sec. 7.2, Fig. 7], and its conclusion reports priority for persistent
+connectivity [TFM, p. 21, Sec. 8].
 
-Acceleration used 5 bins, direction used 8 bins, the tested operator had 87 base stations, and each base station had 12 resource groups. The nominal joint product is 41,760 combinations. A factorized `MultiDiscrete` policy need not enumerate all combinations, but it must still learn strongly coupled decisions across four branches.
+The old abstract reward diagnostic gives its nominal oscillating trace 79.65
+versus 69.95 for direct arrival. Its 4–5 m distance is inside the source's
+10 m position tolerance [TFM, p. 15, Table 3], and its velocity is not
+physically validated. Those labels therefore do not prove a failed physical
+mission outranks a successful one. Notes 19–21 separately document the later
+physical witness and actual trained comparison.
 
-The reward on thesis pages 12 and 13 transformed delay, interference, and handover costs into positive rewards, applied several penalties, and added 12 points whenever distance decreased. The thesis explicitly states that arrival did not terminate the episode.
+## Observation and Action Interpretation
 
-The evaluation on thesis pages 16 through 20 reported SNR, outage, interference, remaining energy, and handover count, but not mission success rate, arrival time, or terminal distance.
+1. Velocity is absent from the listed state [TFM, p. 12, Sec. 5.2], although
+   motion depends on speed [TFM, p. 9, Eq. (2)]. That observation alone does
+   not specify the full motion state.
+2. The destination is also absent from the vector [TFM, p. 12, Sec. 5.2]. A
+   policy for variable goals would need additional information or assumptions.
+3. Candidate measurements, group availability, and time are not listed despite
+   station and resource actions [TFM, p. 12, Sec. 5.2]. Unreported wrappers
+   cannot be inferred from this omission.
+4. Motion is discretized [TFM, pp. 12, 15, Sec. 5.2, Table 3]. Our continuous
+   interface and expanded observation are shared changes, not separately
+   tested interventions in the completed reward experiment.
 
-## The Big Problem
+## Printed Formula and Parameter Ambiguities
 
-The objective did not make task completion decisive.
+1. Rate adds bandwidth to a logarithm of SNR [TFM, p. 10, Eq. (7)].
+2. Interference sums RSS values and labels the result uplink, although the
+   stored RSS is defined by a downlink budget [TFM, p. 10, Eq. (9); p. 7,
+   Eq. (1)]. Our replacement changes link interpretation as well as units.
+3. SNR excludes interference [TFM, p. 10, Eq. (8)]; ours uses SINR.
+4. The energy equation has unclear integration/units [TFM, p. 10, Eq. (10)]
+   and capacity is labeled 1000 kW [TFM, p. 15, Table 3]. Our 100 kJ budget
+   and energy model are new choices, not a verified conversion.
+5. Time step is 1 ms in prose [TFM, p. 14, Sec. 6.1] and 0.1 s in Table 3
+   [TFM, p. 15]. Data packet size similarly differs between prose and table.
+6. Specialized weights total 1.2 [TFM, p. 15, Table 3], despite a sum of one
+   requirement [TFM, p. 10, Eq. (11) discussion]. We use only the equal-policy
+   weights in the legacy reward arms.
+7. Arrival is stated in prose [TFM, p. 10, Sec. 4] but is absent from the
+   displayed constraints [TFM, p. 11, Eq. (12), C1–C6].
 
-The controller could collect positive radio reward for remaining active. It received a large one sided bonus for every approach step, no equal cost for moving away, no terminal success reward, and no success termination. Repeated approach and retreat can therefore generate more reward than arriving and stopping. The thesis figures show long detours, overshoot, correction, and wandering. Its conclusion states that persistent connectivity was prioritized over task completion.
+These discrepancies may be notation problems or implementation problems. The
+thesis alone cannot distinguish them.
 
-This is reward and MDP misalignment, not proof that PPO is intrinsically unsuitable.
+## Result, Remaining Work, and Next Decision
 
-The executable counterexample in `docs/11_initial_reward_diagnostic.md` holds
-radio inputs constant. Its handcrafted never arrive trace obtains a discounted
-return of 79.65, compared with 69.95 for direct arrival under the legacy reward.
-This proves that the stated incentive can rank noncompletion above completion,
-but it is not a trained policy comparison.
+The completed four treatment experiment supports replacing the reward within
+our explicitly reconstructed environment. It does not establish a one line
+fix to the original simulator. In particular, adding training arrival
+termination did not improve longer route performance. Both the unchanged
+reference values and every shared replacement are listed in note 25.
 
-## Additional State and Action Problems
-
-1. Velocity is absent even though acceleration and braking depend on it. The listed state is therefore not Markov for the movement dynamics.
-2. Goal relative position is absent, which prevents a clean goal conditioned policy across route pairs.
-3. Candidate base station measurements and RBG availability are absent even though the action chooses them.
-4. Continuous motion was coarsened into bins and coupled to telecom decisions at every step.
-5. The state does not expose remaining time, terminal speed error, or recent handover history.
-
-## High Risk Formula Checks
-
-These may be notation errors, code errors, or both. They must be resolved against the original implementation before reproducing metrics.
-
-1. The written rate equation adds bandwidth to `log2(SNR)` instead of using bandwidth times `log2(1 + SNR_linear)`.
-2. The written interference equation sums RSS values directly even though powers in dBm must be converted to linear units first.
-3. The reported SNR excludes interference although the proposal now targets SINR.
-4. Energy capacity and remaining energy are labeled in kW, which is a power unit.
-5. The prose gives a 1 ms step while the parameter table gives 0.1 s.
-6. The specialized reward weight rows sum to 1.2 although the formulation requires a sum of 1.
-7. The formal constraints do not include terminal arrival despite stating that the goal must be reached.
-
-## Audit Conclusion
-
-The simulator is the main inherited contribution. The learning objective, observability, mixed action representation, termination, and evaluation hierarchy require redesign before longer training is meaningful.
+Recover the source to verify the written definitions and repeat the ablation
+there, or design a new independently frozen study. The current comparison,
+its negative arms, and the distinction between diagnosis and reproduction
+must remain visible when reporting the result.

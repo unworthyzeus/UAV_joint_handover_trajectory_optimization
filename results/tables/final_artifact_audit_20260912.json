@@ -1,0 +1,204 @@
+{
+  "date": "2026-09-12",
+  "frozen_source_hashes_match": {
+    "src/uav_joint_optimization/experiment_env.py": true,
+    "src/uav_joint_optimization/experiment_ppo.py": true,
+    "scripts/run_controlled_experiment.py": true,
+    "configs/controlled_scenarios.json": true,
+    "docs/18_experiment_protocol.md": true,
+    "docs/20_pilots_and_frozen_comparison.md": true
+  },
+  "final_checkpoint_count": 20,
+  "dataset_sha256_final": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "exact_replayed_episode_count": 200,
+  "paper_sha256": "2e8e988683f6eb2bb6a7010e309653d6070aa111b5a5bfd79d7b948155d2d220",
+  "paper_bytes": 146343,
+  "compile_exit_code": 0,
+  "resolved_references_final_pass": true,
+  "pdf_checks": {
+    "pages": [
+      {
+        "page": 1,
+        "characters": 5207,
+        "unresolved_marker": false
+      },
+      {
+        "page": 2,
+        "characters": 5936,
+        "unresolved_marker": false
+      },
+      {
+        "page": 3,
+        "characters": 4122,
+        "unresolved_marker": false
+      },
+      {
+        "page": 4,
+        "characters": 6014,
+        "unresolved_marker": false
+      },
+      {
+        "page": 5,
+        "characters": 1982,
+        "unresolved_marker": false
+      },
+      {
+        "page": 6,
+        "characters": 4694,
+        "unresolved_marker": false
+      },
+      {
+        "page": 7,
+        "characters": 5539,
+        "unresolved_marker": false
+      },
+      {
+        "page": 8,
+        "characters": 3292,
+        "unresolved_marker": false
+      }
+    ],
+    "fonts": [
+      {
+        "name": "IHAIZV+NimbusRomNo9L-Regu",
+        "type": "Type1",
+        "embedded_bytes": 10258
+      },
+      {
+        "name": "BZIVMZ+NimbusRomNo9L-MediItal",
+        "type": "Type1",
+        "embedded_bytes": 2505
+      },
+      {
+        "name": "IXFAWU+NimbusRomNo9L-Medi",
+        "type": "Type1",
+        "embedded_bytes": 6198
+      },
+      {
+        "name": "TQTHRL+NimbusRomNo9L-ReguItal",
+        "type": "Type1",
+        "embedded_bytes": 6769
+      },
+      {
+        "name": "YEUUOC+NimbusMonL-Regu",
+        "type": "Type1",
+        "embedded_bytes": 3277
+      },
+      {
+        "name": "AKHCZK+CMR10",
+        "type": "Type1",
+        "embedded_bytes": 3912
+      },
+      {
+        "name": "VDVGTR+CMSY10",
+        "type": "Type1",
+        "embedded_bytes": 1222
+      },
+      {
+        "name": "CAFSZL+CMBX10",
+        "type": "Type1",
+        "embedded_bytes": 896
+      },
+      {
+        "name": "DDIEWW+CMMI7",
+        "type": "Type1",
+        "embedded_bytes": 1585
+      },
+      {
+        "name": "FKPJSN+CMR7",
+        "type": "Type1",
+        "embedded_bytes": 2355
+      },
+      {
+        "name": "PVTTLK+CMSY7",
+        "type": "Type1",
+        "embedded_bytes": 619
+      },
+      {
+        "name": "JAGKKY+CMBX7",
+        "type": "Type1",
+        "embedded_bytes": 376
+      },
+      {
+        "name": "NOMARO+CMR5",
+        "type": "Type1",
+        "embedded_bytes": 789
+      },
+      {
+        "name": "KPXLOM+CMMI10",
+        "type": "Type1",
+        "embedded_bytes": 3453
+      },
+      {
+        "name": "UTACNV+CMMI5",
+        "type": "Type1",
+        "embedded_bytes": 521
+      },
+      {
+        "name": "FZDNHS+CMEX10",
+        "type": "Type1",
+        "embedded_bytes": 551
+      },
+      {
+        "name": "DZGKAF+MSBM10",
+        "type": "Type1",
+        "embedded_bytes": 449
+      },
+      {
+        "name": "GJMHKB+CMMI8",
+        "type": "Type1",
+        "embedded_bytes": 1314
+      },
+      {
+        "name": "NITCSQ+CMMI6",
+        "type": "Type1",
+        "embedded_bytes": 697
+      },
+      {
+        "name": "BMQQDV+DejaVuSans",
+        "type": "Type0",
+        "embedded_bytes": 11524
+      },
+      {
+        "name": "UBBQTN+CMSY8",
+        "type": "Type1",
+        "embedded_bytes": 590
+      },
+      {
+        "name": "LPOGEQ+CMR8",
+        "type": "Type1",
+        "embedded_bytes": 2859
+      },
+      {
+        "name": "BMQQDV+DejaVuSans",
+        "type": "Type0",
+        "embedded_bytes": 11300
+      },
+      {
+        "name": "BMQQDV+DejaVuSans",
+        "type": "Type0",
+        "embedded_bytes": 12428
+      },
+      {
+        "name": "GQYLQL+CMR6",
+        "type": "Type1",
+        "embedded_bytes": 658
+      },
+      {
+        "name": "WXMALW+CMSY6",
+        "type": "Type1",
+        "embedded_bytes": 325
+      }
+    ],
+    "all_fonts_embedded": true,
+    "no_type3_fonts": true,
+    "no_unresolved_markers": true
+  },
+  "authors": [
+    "Guillem Moreno Garcia",
+    "Evgenii Vinogradov"
+  ],
+  "authorship_updated": "2026-09-12",
+  "traceability_revision": "2026-09-12",
+  "tfm_pinpoint_citations": 56
+}

@@ -1,0 +1,6 @@
+# Versions used for the controlled experiment on Python 3.12 / Windows.
+numpy==2.3.5
+h5py==3.16.0
+torch==2.4.1
+matplotlib==3.9.0
+pytest==9.0.3

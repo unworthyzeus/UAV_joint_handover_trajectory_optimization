@@ -1,0 +1,297 @@
+{
+  "printed_to_pdf_page_offset": 2,
+  "citation_count": 56,
+  "all_tfm_citations_have_page_locators": true,
+  "citations": [
+    {
+      "file": "paper/main.tex",
+      "line": 51,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 54,
+      "locator": "p.~12, Eqs.~(13)--(14); p.~15, Table~3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 55,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 57,
+      "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 59,
+      "locator": "p.~12, Sec.~5.2; p.~9, Eq.~(2)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 98,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 99,
+      "locator": "p.~6, Sec.~3.1.1; p.~7, Table~2"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 119,
+      "locator": "p.~9, Sec.~3.2, Eq.~(2)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 131,
+      "locator": "p.~12, Sec.~5.2; p.~15, Table~3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 132,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 134,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 135,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 142,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 144,
+      "locator": "p.~9, Sec.~3.2"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 147,
+      "locator": "p.~12, Sec.~5.2, Eq.~(14)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 149,
+      "locator": "p.~6, Sec.~3.1.1"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 159,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 171,
+      "locator": "p.~9, Eq.~(3)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 172,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 174,
+      "locator": "pp.~13--14, Sec.~5.4"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 180,
+      "locator": "p.~9, Sec.~3.3.1; p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 182,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 183,
+      "locator": "p.~7, Eq.~(1)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 194,
+      "locator": "p.~10, Eqs.~(7)--(9)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 200,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 202,
+      "locator": "pp.~9--10, Eqs.~(5)--(6)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 203,
+      "locator": "pp.~14--15, Sec.~6.1, Table~3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 204,
+      "locator": "p.~9"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 209,
+      "locator": "p.~10, Eq.~(10)"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 210,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 235,
+      "locator": "p.~12"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 236,
+      "locator": "p.~15"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 317,
+      "locator": "p.~13, Sec.~5.3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 319,
+      "locator": "p.~16, Table~4"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 344,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 464,
+      "locator": "pp.~16--20, Sec.~7, Figs.~5--8"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 21,
+      "locator": "pp.~6--7, Sec.~3.1, Table~2"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 25,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 29,
+      "locator": "p.~9, Eq.~(2); pp.~12, 15"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 33,
+      "locator": "pp.~14--16, Tables~3--4"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 36,
+      "locator": "p.~9, Sec.~3.2; p.~12, Sec.~5.2; p.~15, Table~3"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 40,
+      "locator": "p.~12, Sec.~5.2, Eq.~(14)"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 44,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 48,
+      "locator": "p.~9, Eq.~(3); p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 52,
+      "locator": "pp.~9, 12, 14--15"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 56,
+      "locator": "p.~10, Eqs.~(7)--(9)"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 60,
+      "locator": "pp.~9--10, Eqs.~(4)--(6); pp.~14--15"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 64,
+      "locator": "p.~10, Eq.~(10); p.~15, Table~3"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 68,
+      "locator": "p.~12, Eqs.~(13)--(14); p.~15, Table~3"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 73,
+      "locator": "pp.~13--14, Sec.~5.4"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 77,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 81,
+      "locator": "pp.~16--20, Sec.~7"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 93,
+      "locator": "pp.~9--12, Secs.~3.2--5.2"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 95,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 101,
+      "locator": "p.~16"
+    },
+    {
+      "file": "paper/thesis_comparison.tex",
+      "line": 102,
+      "locator": "p.~13; pp.~15--16"
+    }
+  ],
+  "frozen_hashes_match": {
+    "src/uav_joint_optimization/experiment_env.py": true,
+    "src/uav_joint_optimization/experiment_ppo.py": true,
+    "scripts/run_controlled_experiment.py": true,
+    "configs/controlled_scenarios.json": true,
+    "docs/18_experiment_protocol.md": true,
+    "docs/20_pilots_and_frozen_comparison.md": true
+  },
+  "semantic_review_record": "docs/25_exact_changes_from_tfm.md",
+  "scope": "Structural citation and frozen source checks; content support requires source review"
+}

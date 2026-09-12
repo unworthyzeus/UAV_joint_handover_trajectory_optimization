@@ -53,3 +53,128 @@ and reproduce the legacy baseline before any training claim.
 
 The full missing asset register, search coverage, evidence, and limitations are
 in `docs/16_missing_asset_search.md`.
+
+## 2026-09-12: Received Data, Controlled Training, and IEEE Draft
+
+### What Was Done and Why
+
+1. Inspected the complete received HDF5 radio map, recorded its SHA256 and
+   schema, and scanned its values and selected operator coverage.
+2. Revisited the thesis reward diagnosis and corrected the interpretation of
+   the old hand written distance trace, which entered the current goal radius.
+3. Built an explicit shared environment and native hybrid PPO with continuous
+   acceleration, observed goal and velocity, and masked categorical handovers.
+4. Corrected a common network timing issue during validation. Retired the
+   exploratory route sets before training and preserved their records.
+5. Ran six pilots, froze sources, routes, five final seeds, four treatments,
+   the equal interaction budget, and a practical positive result gate.
+6. Trained twenty final policies and evaluated 8000 learned episodes plus
+   400 deterministic reference episodes on shared standard and longer routes.
+7. Computed paired uncertainty, retained every seed and negative arm, verified
+   the complete frozen comparison, and replayed one checkpoint exactly.
+8. Created the IEEE manuscript only after the positive gate passed, generated
+   its tables from statistics, and visually reviewed the compiled six page PDF.
+
+The purpose was to test the reward hypothesis with the newly available data,
+while explicitly separating this reimplementation from unavailable source code.
+
+### Result
+
+Legacy standard/longer mission success is 21.4%/0.0%; termination only is
+0.0%/0.0%; reward replacement alone is 100.0%/100.0%; the combined treatment is
+99.7%/36.1%. The primary combined minus legacy gain is 78.3 percentage points,
+with a 95% crossed bootstrap interval [66.2, 89.5]. The deterministic reference
+completes 100% in both splits and is faster. Reward replacement alone has
+98.7% standard and 96.0% longer recorded feasible success.
+
+The reward hypothesis has positive evidence under the shared model. The earlier
+assumption that success termination must also improve learning was too strong.
+All evaluation still ends at first safe arrival, regardless of training rule.
+The suite has 34 passing tests; checkpoint replay matches all 200 raw standard
+episode records. Sources, logs, checkpoints, results, notes, and paper are local.
+
+### Remaining Work, Risks, and Next Decision
+
+The requested implementation, tests, documentation, and conditional paper are
+complete. Original simulator replication remains dependent on external source
+and experiment artifacts. The current map uses one city, frequency, altitude,
+and static background resource pattern, with uncalibrated energy and downlink
+communication proxies. It does not model obstacle safety.
+
+Do not infer a validated fix to Marina's exact saved policy or superiority to
+classical control. Recover the source for direct ablation, or design a new
+independent traffic and geography experiment. Preserve the completed freeze;
+do not tune against its test results or silently replace its policies.
+
+## 2026-09-12: Exact TFM Comparison and Pinpoint Citations
+
+At the user's request, compared the full executed environment, reward,
+observation/action interface, radio and energy proxies, PPO parameters,
+reference controller, split protocol, and evaluation with the written TFM.
+Note 25 records all choices and original printed pages, equations, tables,
+and sections. Unknown source implementation details remain explicitly unknown.
+
+Added 56 manuscript citations with printed page locators and expanded the
+IEEE draft to eight pages with comparison tables. Note 26 records the source
+review and verification. The six frozen experiment files, policies, scenarios,
+and results remain unchanged. Original simulator recovery remains the next
+research decision; the requested comparison and citation revision are complete.
+
+## 2026-09-12: Connectivity Objective Audit
+
+The user questioned whether nearly straight routes indicate loss of the
+connectivity objective. Inspected the frozen implementation and original TFM
+definitions, then exactly replayed 4,400 existing flights with service and
+final queue diagnostics. All six frozen source hashes matched.
+
+Note 27 records the result: connectivity is represented but its criteria are
+permissive. Reward replacement alone yields 100% standard arrival, 92.2%
+arrival without any sampled RSS outage, mean capacity below offered traffic
+for 26.6% of flight time, and 20.2% arrivals with remaining queued data. Brief
+capacity deficits can be buffered; these fractions are not disconnection rates.
+The existing positive completion study does not solve the full joint objective.
+
+Added a reproducible audit script, raw and aggregate diagnostic outputs, and
+README scope annotations. No original result, checkpoint, scenario, frozen
+protocol, or IEEE PDF was changed. The paper README links the addendum.
+Remaining work is a new study with declared service requirements, explicit
+joint feasibility, and controls that isolate routing and network contributions.
+
+## 2026-09-12: Strict Connectivity Repair Completed
+
+The user requested the fix and selected the same requirements as the thesis,
+declining new packet deadline and empty queue arrival conditions. Implemented
+strict sampled RSS and buffer failure, all three source radio costs, available
+RBG actions, a shared prospective filter, and residual flight control. Notes
+28–32 record the protocol, all six development policies, exact changes, final
+results, and delivery audit.
+
+Ten final policies were trained after a new freeze and evaluated with four
+deterministic references on fresh route pairs. Full PPO reaches 96.6% standard
+and 89.7% longer joint success. Its weighted radio cost improves while delay
+worsens; completion differences are uncertain, so the strong learned claim
+gate is not met. Goal radio reaches 98.0% and 92.5%, and improves longer
+completion over Goal RSS by 5.5 points [1.5, 9.5].
+
+All 51 tests pass and all 5,600 final evaluations replay exactly. Both source
+freezes and the received dataset are unchanged. Delivered a new four page IEEE
+report with 24 pinpoint source citations and retained the earlier v1 PDF.
+The reporting copy removes an inappropriate unused percentage field for
+logarithmic SINR; absolute results and the frozen estimator remain unchanged.
+The work corrects the modeled joint objective, not the unavailable original
+simulator or continuity between the one second samples.
+
+## 2026-09-12: Consolidated Paper and Requested GitHub Release
+
+The user asked to push the work, then requested that both studies be combined
+into one paper. Created the single 15 page IEEE draft with 104 pinpoint TFM
+citations, all principal methods and results, five figures, and detailed
+appendices. The requested authors remain Guillem Moreno Garcia and Evgenii
+Vinogradov. The two previous PDFs remain historical versions; repository links
+now lead to the consolidated manuscript.
+
+All 51 tests passed again and both freezes still match. The final PDF has
+embedded fonts, no unresolved references or overfull boxes, and was visually
+reviewed. No new policy, simulation result or estimator was introduced.
+Note 33 records the consolidation, exact source byte preservation for Git,
+private dataset/checkpoint exclusions, and release scope on origin/main.

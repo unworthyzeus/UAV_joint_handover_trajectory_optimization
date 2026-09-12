@@ -1,0 +1,1223 @@
+{
+  "scope": "Frozen v2 results; communication metrics condition on successful paired missions",
+  "groups": {
+    "arrival_test": {
+      "failure_counts": {
+        "connectivity": 31,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 1000,
+      "success_rate": 0.969,
+      "feasible_success_rate": 0.969,
+      "failure_distance_mean_m": 375.1280221746814,
+      "successful_time_s": 27.927760577915375,
+      "successful_path_m": 541.6126642217331,
+      "successful_energy_proxy_j": 7647.960071040135,
+      "successful_handovers": 8.574819401444788,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.4533242099678592,
+      "successful_interference_mean_w": 7.213053549541002e-07,
+      "successful_sinr_mean_db": -7.830057006871368,
+      "successful_sinr_p05_db": -15.214002951256877,
+      "successful_radio_cost_sum": 6.5690335414283565,
+      "successful_radio_cost_mean": 0.23219413521562113,
+      "successful_resource_changes": 15.920536635706915,
+      "successful_final_buffer_bits": 35807.879724587205,
+      "successful_path_ratio_mean": 1.0016225591287597,
+      "successful_network_interventions": 0.04953560371517028,
+      "successful_motion_interventions": 0.008255933952528379,
+      "per_seed_success_rates": [
+        0.96,
+        0.97,
+        0.975,
+        0.965,
+        0.975
+      ]
+    },
+    "full_test": {
+      "failure_counts": {
+        "connectivity": 32,
+        "buffer": 2,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 1000,
+      "success_rate": 0.966,
+      "feasible_success_rate": 0.966,
+      "failure_distance_mean_m": 476.6920435007881,
+      "successful_time_s": 27.540372670807454,
+      "successful_path_m": 536.9144355505397,
+      "successful_energy_proxy_j": 7589.6821483667345,
+      "successful_handovers": 0.39026915113871635,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 4.185756647270673,
+      "successful_interference_mean_w": 7.328254920269412e-07,
+      "successful_sinr_mean_db": -8.95290082717781,
+      "successful_sinr_p05_db": -16.97870391200048,
+      "successful_radio_cost_sum": 4.972727614207576,
+      "successful_radio_cost_mean": 0.17355496749776492,
+      "successful_resource_changes": 6.386128364389234,
+      "successful_final_buffer_bits": 304445.50597664336,
+      "successful_path_ratio_mean": 1.0019349103166504,
+      "successful_network_interventions": 0.432712215320911,
+      "successful_motion_interventions": 0.013457556935817806,
+      "per_seed_success_rates": [
+        0.96,
+        0.97,
+        0.965,
+        0.97,
+        0.965
+      ]
+    },
+    "straight_rss_test": {
+      "failure_counts": {
+        "connectivity": 6,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.97,
+      "feasible_success_rate": 0.97,
+      "failure_distance_mean_m": 420.44381793340045,
+      "successful_time_s": 27.664948453608247,
+      "successful_path_m": 541.6550825453296,
+      "successful_energy_proxy_j": 7658.477731606395,
+      "successful_handovers": 9.149484536082474,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.0799828982545019,
+      "successful_interference_mean_w": 7.058938460617558e-07,
+      "successful_sinr_mean_db": -7.398506049642858,
+      "successful_sinr_p05_db": -15.235263266514258,
+      "successful_radio_cost_sum": 6.223215870928543,
+      "successful_radio_cost_mean": 0.22060516658638943,
+      "successful_resource_changes": 9.175257731958762,
+      "successful_final_buffer_bits": 9942.97877738402,
+      "successful_path_ratio_mean": 1.0008135854129485,
+      "successful_network_interventions": 0.030927835051546393,
+      "successful_motion_interventions": 0.015463917525773196,
+      "per_seed_success_rates": [
+        0.97
+      ]
+    },
+    "straight_radio_test": {
+      "failure_counts": {
+        "connectivity": 4,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.98,
+      "feasible_success_rate": 0.98,
+      "failure_distance_mean_m": 725.3024291992188,
+      "successful_time_s": 27.591836734693878,
+      "successful_path_m": 539.7214863835549,
+      "successful_energy_proxy_j": 7631.460589973294,
+      "successful_handovers": 0.8112244897959183,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.8852144970671773,
+      "successful_interference_mean_w": 5.589900518461253e-07,
+      "successful_sinr_mean_db": -6.99519144576423,
+      "successful_sinr_p05_db": -13.88099408879572,
+      "successful_radio_cost_sum": 3.2336873483795783,
+      "successful_radio_cost_mean": 0.11207507378890813,
+      "successful_resource_changes": 11.38265306122449,
+      "successful_final_buffer_bits": 97823.81552933673,
+      "successful_path_ratio_mean": 1.000817474704797,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.01020408163265306,
+      "per_seed_success_rates": [
+        0.98
+      ]
+    },
+    "joint_mpc_test": {
+      "failure_counts": {
+        "connectivity": 7,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.965,
+      "feasible_success_rate": 0.965,
+      "failure_distance_mean_m": 459.8343152999878,
+      "successful_time_s": 28.89637305699482,
+      "successful_path_m": 550.0322158101927,
+      "successful_energy_proxy_j": 7769.090838022183,
+      "successful_handovers": 0.7564766839378239,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.6206783554519092,
+      "successful_interference_mean_w": 5.57842624623954e-07,
+      "successful_sinr_mean_db": -6.764036291003845,
+      "successful_sinr_p05_db": -12.14191445909016,
+      "successful_radio_cost_sum": 2.6248799530224622,
+      "successful_radio_cost_mean": 0.0850316231330817,
+      "successful_resource_changes": 11.854922279792746,
+      "successful_final_buffer_bits": 79702.55355408031,
+      "successful_path_ratio_mean": 1.0339064942435423,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.0,
+      "per_seed_success_rates": [
+        0.965
+      ]
+    },
+    "joint_lookahead_test": {
+      "failure_counts": {
+        "connectivity": 2,
+        "buffer": 0,
+        "timeout": 8,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.95,
+      "feasible_success_rate": 0.95,
+      "failure_distance_mean_m": 135.9703911781311,
+      "successful_time_s": 32.73684210526316,
+      "successful_path_m": 575.7516448974609,
+      "successful_energy_proxy_j": 8271.982710988897,
+      "successful_handovers": 0.7947368421052632,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.25017333773628136,
+      "successful_interference_mean_w": 5.504044254400832e-07,
+      "successful_sinr_mean_db": -6.133207673775522,
+      "successful_sinr_p05_db": -10.482812344400505,
+      "successful_radio_cost_sum": 1.9209474593060505,
+      "successful_radio_cost_mean": 0.05599935985747814,
+      "successful_resource_changes": 12.357894736842105,
+      "successful_final_buffer_bits": 60572.640625,
+      "successful_path_ratio_mean": 1.0572167176145653,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.0,
+      "per_seed_success_rates": [
+        0.95
+      ]
+    },
+    "arrival_longer_test": {
+      "failure_counts": {
+        "connectivity": 136,
+        "buffer": 1,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 1000,
+      "success_rate": 0.863,
+      "feasible_success_rate": 0.863,
+      "failure_distance_mean_m": 699.8191684945656,
+      "successful_time_s": 61.449594438006955,
+      "successful_path_m": 1374.5355723216387,
+      "successful_energy_proxy_j": 19275.258528796712,
+      "successful_handovers": 21.025492468134416,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.8312935254023404,
+      "successful_interference_mean_w": 7.846979617166969e-07,
+      "successful_sinr_mean_db": -8.299392151528687,
+      "successful_sinr_p05_db": -16.7687776649537,
+      "successful_radio_cost_sum": 16.26717404135308,
+      "successful_radio_cost_mean": 0.2658527391585037,
+      "successful_resource_changes": 37.37891077636153,
+      "successful_final_buffer_bits": 28095.736140280995,
+      "successful_path_ratio_mean": 1.0006006511861292,
+      "successful_network_interventions": 0.15179606025492468,
+      "successful_motion_interventions": 0.019698725376593278,
+      "per_seed_success_rates": [
+        0.845,
+        0.885,
+        0.875,
+        0.875,
+        0.835
+      ]
+    },
+    "full_longer_test": {
+      "failure_counts": {
+        "connectivity": 77,
+        "buffer": 26,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 1000,
+      "success_rate": 0.897,
+      "feasible_success_rate": 0.897,
+      "failure_distance_mean_m": 667.7167911344361,
+      "successful_time_s": 61.24860646599777,
+      "successful_path_m": 1378.33269651279,
+      "successful_energy_proxy_j": 19356.989854419244,
+      "successful_handovers": 1.5128205128205128,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 6.5301187755686305,
+      "successful_interference_mean_w": 7.753254763380034e-07,
+      "successful_sinr_mean_db": -9.860842835544343,
+      "successful_sinr_p05_db": -19.125005945314133,
+      "successful_radio_cost_sum": 13.852680849207525,
+      "successful_radio_cost_mean": 0.22599688433118184,
+      "successful_resource_changes": 14.289855072463768,
+      "successful_final_buffer_bits": 355153.9889126951,
+      "successful_path_ratio_mean": 1.0006876276289653,
+      "successful_network_interventions": 1.814938684503902,
+      "successful_motion_interventions": 0.022296544035674472,
+      "per_seed_success_rates": [
+        0.89,
+        0.91,
+        0.885,
+        0.89,
+        0.91
+      ]
+    },
+    "straight_rss_longer_test": {
+      "failure_counts": {
+        "connectivity": 26,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.87,
+      "feasible_success_rate": 0.87,
+      "failure_distance_mean_m": 790.1616546924298,
+      "successful_time_s": 61.37356321839081,
+      "successful_path_m": 1385.5616269166442,
+      "successful_energy_proxy_j": 19468.200369297774,
+      "successful_handovers": 22.25862068965517,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.6212610079542134,
+      "successful_interference_mean_w": 7.691541088599514e-07,
+      "successful_sinr_mean_db": -7.9353330683434145,
+      "successful_sinr_p05_db": -17.042349946909937,
+      "successful_radio_cost_sum": 15.56554315694248,
+      "successful_radio_cost_mean": 0.2555904392335009,
+      "successful_resource_changes": 22.316091954022987,
+      "successful_final_buffer_bits": 10115.896461925287,
+      "successful_path_ratio_mean": 1.0002150203836742,
+      "successful_network_interventions": 0.06896551724137931,
+      "successful_motion_interventions": 0.017241379310344827,
+      "per_seed_success_rates": [
+        0.87
+      ]
+    },
+    "straight_radio_longer_test": {
+      "failure_counts": {
+        "connectivity": 15,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.925,
+      "feasible_success_rate": 0.925,
+      "failure_distance_mean_m": 822.1340169270833,
+      "successful_time_s": 61.12972972972973,
+      "successful_path_m": 1379.6004833324535,
+      "successful_energy_proxy_j": 19384.873843961148,
+      "successful_handovers": 2.518918918918919,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.7988600631379048,
+      "successful_interference_mean_w": 6.004459347837175e-07,
+      "successful_sinr_mean_db": -7.897572022515374,
+      "successful_sinr_p05_db": -15.539413359358504,
+      "successful_radio_cost_sum": 9.164080296672642,
+      "successful_radio_cost_mean": 0.15007450311274884,
+      "successful_resource_changes": 26.82702702702703,
+      "successful_final_buffer_bits": 140299.2225929054,
+      "successful_path_ratio_mean": 1.0002133306134953,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.016216216216216217,
+      "per_seed_success_rates": [
+        0.925
+      ]
+    },
+    "joint_mpc_longer_test": {
+      "failure_counts": {
+        "connectivity": 20,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.9,
+      "feasible_success_rate": 0.9,
+      "failure_distance_mean_m": 724.8704480171203,
+      "successful_time_s": 63.772222222222226,
+      "successful_path_m": 1406.5496948242187,
+      "successful_energy_proxy_j": 19721.50921766493,
+      "successful_handovers": 2.077777777777778,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.980220683536731,
+      "successful_interference_mean_w": 5.95722941768145e-07,
+      "successful_sinr_mean_db": -7.52950217988756,
+      "successful_sinr_p05_db": -13.744499323103163,
+      "successful_radio_cost_sum": 7.277404177144983,
+      "successful_radio_cost_mean": 0.11404846675931096,
+      "successful_resource_changes": 27.288888888888888,
+      "successful_final_buffer_bits": 120921.41922743055,
+      "successful_path_ratio_mean": 1.0182229841096937,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.0,
+      "per_seed_success_rates": [
+        0.9
+      ]
+    },
+    "joint_lookahead_longer_test": {
+      "failure_counts": {
+        "connectivity": 7,
+        "buffer": 0,
+        "timeout": 12,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 200,
+      "success_rate": 0.905,
+      "feasible_success_rate": 0.905,
+      "failure_distance_mean_m": 274.00599037973507,
+      "successful_time_s": 70.04972375690608,
+      "successful_path_m": 1439.3586789968922,
+      "successful_energy_proxy_j": 20400.897930334944,
+      "successful_handovers": 2.0828729281767955,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.4725959965091049,
+      "successful_interference_mean_w": 5.847784948760958e-07,
+      "successful_sinr_mean_db": -6.700325792994947,
+      "successful_sinr_p05_db": -11.702955409308165,
+      "successful_radio_cost_sum": 5.225926393941794,
+      "successful_radio_cost_mean": 0.07596019595481451,
+      "successful_resource_changes": 28.22099447513812,
+      "successful_final_buffer_bits": 84928.12310082873,
+      "successful_path_ratio_mean": 1.043153374944556,
+      "successful_network_interventions": 0.0,
+      "successful_motion_interventions": 0.0,
+      "per_seed_success_rates": [
+        0.905
+      ]
+    }
+  },
+  "contrasts": {
+    "full_minus_arrival_test": {
+      "success_difference_pp": -0.3,
+      "success_difference_ci95_pp": [
+        -2.6,
+        2.0
+      ],
+      "paired_success_count": 945,
+      "paired_evaluations": 1000,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 4.951383596400433,
+        "right_mean_on_common_success": 6.5612518475785935,
+        "paired_mean_difference": -1.6098682511781608,
+        "difference_ci95": [
+          -2.0164365436900242,
+          -1.229934553149442
+        ],
+        "relative_difference_pct": -24.535992346830525
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.17359592310511882,
+        "right_mean_on_common_success": 0.23375515006906875,
+        "paired_mean_difference": -0.06015922696394998,
+        "difference_ci95": [
+          -0.07457654957286322,
+          -0.04621532119709516
+        ],
+        "relative_difference_pct": -25.736000659739222
+      },
+      "time_s": {
+        "left_mean_on_common_success": 27.40740740740741,
+        "right_mean_on_common_success": 27.6021164021164,
+        "paired_mean_difference": -0.19470899470899472,
+        "difference_ci95": [
+          -0.2668105198027905,
+          -0.12406882447831484
+        ],
+        "relative_difference_pct": -0.7054132801717516
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 4.205262066965948,
+        "right_mean_on_common_success": 1.4668355300435187,
+        "paired_mean_difference": 2.738426536922429,
+        "difference_ci95": [
+          2.0302367175513267,
+          3.473810403725305
+        ],
+        "relative_difference_pct": 186.68940592413819
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.339501556828395e-07,
+        "right_mean_on_common_success": 7.272214165901601e-07,
+        "paired_mean_difference": 6.728739092679419e-09,
+        "difference_ci95": [
+          -4.9523003231364684e-09,
+          1.8378294179149833e-08
+        ],
+        "relative_difference_pct": 0.9252669048485096
+      },
+      "handovers": {
+        "left_mean_on_common_success": 0.382010582010582,
+        "right_mean_on_common_success": 8.547089947089948,
+        "paired_mean_difference": -8.165079365079364,
+        "difference_ci95": [
+          -9.225991479300498,
+          -7.154523393749288
+        ],
+        "relative_difference_pct": -95.53051875696423
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7543.454801948991,
+        "right_mean_on_common_success": 7534.295681681961,
+        "paired_mean_difference": 9.159120267030424,
+        "difference_ci95": [
+          -4.525774461252069,
+          23.82175328589774
+        ],
+        "relative_difference_pct": 0.12156571302741614
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -8.95480665214478,
+        "right_mean_on_common_success": -7.860029792281055,
+        "paired_mean_difference": -1.0947768598637253,
+        "difference_ci95": [
+          -1.3742718442591,
+          -0.8005901455423337
+        ],
+        "relative_difference_pct": 13.928405983128101
+      },
+      "path_m": {
+        "left_mean_on_common_success": 533.6148421353133,
+        "right_mean_on_common_success": 533.4793383885943,
+        "paired_mean_difference": 0.13550374671895668,
+        "difference_ci95": [
+          -0.34110948119472945,
+          0.7109283979744468
+        ],
+        "relative_difference_pct": 0.025399999019315445
+      }
+    },
+    "joint_mpc_minus_straight_radio_test": {
+      "success_difference_pp": -1.5,
+      "success_difference_ci95_pp": [
+        -4.0,
+        1.0
+      ],
+      "paired_success_count": 191,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 2.6294316130116595,
+        "right_mean_on_common_success": 3.203891207859421,
+        "paired_mean_difference": -0.5744595948477611,
+        "difference_ci95": [
+          -0.798605934940132,
+          -0.3471612934540613
+        ],
+        "relative_difference_pct": -17.930059342794237
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.08540122577891417,
+        "right_mean_on_common_success": 0.11212007476017247,
+        "paired_mean_difference": -0.026718848981258276,
+        "difference_ci95": [
+          -0.03385845808246814,
+          -0.01983570127986382
+        ],
+        "relative_difference_pct": -23.830566505071072
+      },
+      "time_s": {
+        "left_mean_on_common_success": 28.7434554973822,
+        "right_mean_on_common_success": 27.329842931937172,
+        "paired_mean_difference": 1.4136125654450262,
+        "difference_ci95": [
+          1.1025537634408602,
+          1.7748824089369206
+        ],
+        "relative_difference_pct": 5.1724137931034475
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 0.6261203889483253,
+        "right_mean_on_common_success": 0.8462517424717594,
+        "paired_mean_difference": -0.22013135352343424,
+        "difference_ci95": [
+          -0.4656735475986884,
+          0.016265688547160404
+        ],
+        "relative_difference_pct": -26.012514063541815
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 5.592812898317516e-07,
+        "right_mean_on_common_success": 5.624188048499925e-07,
+        "paired_mean_difference": -3.137515018240959e-09,
+        "difference_ci95": [
+          -7.075247882384098e-09,
+          8.950636497605144e-10
+        ],
+        "relative_difference_pct": -0.557860973208002
+      },
+      "handovers": {
+        "left_mean_on_common_success": 0.743455497382199,
+        "right_mean_on_common_success": 0.8010471204188482,
+        "paired_mean_difference": -0.05759162303664921,
+        "difference_ci95": [
+          -0.1684433305485937,
+          0.05851063829787234
+        ],
+        "relative_difference_pct": -7.189542483660127
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7713.682512373201,
+        "right_mean_on_common_success": 7539.364936549002,
+        "paired_mean_difference": 174.3175758241983,
+        "difference_ci95": [
+          120.40760575444926,
+          238.09327378517668
+        ],
+        "relative_difference_pct": 2.3120989273134773
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -6.777458252082945,
+        "right_mean_on_common_success": -6.979970690467595,
+        "paired_mean_difference": 0.20251243838465027,
+        "difference_ci95": [
+          0.05276390258136396,
+          0.3540119603027739
+        ],
+        "relative_difference_pct": -2.9013365150833303
+      },
+      "path_m": {
+        "left_mean_on_common_success": 546.0811540693513,
+        "right_mean_on_common_success": 533.136073806523,
+        "paired_mean_difference": 12.945080262828247,
+        "difference_ci95": [
+          9.173049014486537,
+          17.482979573648443
+        ],
+        "relative_difference_pct": 2.42810061048806
+      }
+    },
+    "joint_lookahead_minus_straight_radio_test": {
+      "success_difference_pp": -3.0,
+      "success_difference_ci95_pp": [
+        -6.0,
+        0.0
+      ],
+      "paired_success_count": 188,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 1.9111511808751547,
+        "right_mean_on_common_success": 3.246550440287183,
+        "paired_mean_difference": -1.3353992594120279,
+        "difference_ci95": [
+          -1.585184547902031,
+          -1.0987459967106465
+        ],
+        "relative_difference_pct": -41.13286652937085
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.0559935948816704,
+        "right_mean_on_common_success": 0.11159024969637088,
+        "paired_mean_difference": -0.05559665481470049,
+        "difference_ci95": [
+          -0.06291115106781281,
+          -0.04867166787692814
+        ],
+        "relative_difference_pct": -49.82214392921874
+      },
+      "time_s": {
+        "left_mean_on_common_success": 32.5531914893617,
+        "right_mean_on_common_success": 27.70744680851064,
+        "paired_mean_difference": 4.845744680851064,
+        "difference_ci95": [
+          3.3593191964285714,
+          6.972980199450787
+        ],
+        "relative_difference_pct": 17.48896141293914
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 0.2510713649340363,
+        "right_mean_on_common_success": 0.9008404519369662,
+        "paired_mean_difference": -0.64976908700293,
+        "difference_ci95": [
+          -0.8741372862724962,
+          -0.46925700588819297
+        ],
+        "relative_difference_pct": -72.12920840819388
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 5.520072037100881e-07,
+        "right_mean_on_common_success": 5.571825939610749e-07,
+        "paired_mean_difference": -5.175390250986824e-09,
+        "difference_ci95": [
+          -9.974383493790003e-09,
+          -1.3443375263614924e-10
+        ],
+        "relative_difference_pct": -0.9288499509997883
+      },
+      "handovers": {
+        "left_mean_on_common_success": 0.7659574468085106,
+        "right_mean_on_common_success": 0.776595744680851,
+        "paired_mean_difference": -0.010638297872340425,
+        "difference_ci95": [
+          -0.14137985670983744,
+          0.1111111111111111
+        ],
+        "relative_difference_pct": -1.3698630136986356
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 8211.918827138048,
+        "right_mean_on_common_success": 7670.126968708444,
+        "paired_mean_difference": 541.7918584296044,
+        "difference_ci95": [
+          363.9345985776412,
+          782.1133812889057
+        ],
+        "relative_difference_pct": 7.063662187600461
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -6.135813853842147,
+        "right_mean_on_common_success": -7.0023449335960635,
+        "paired_mean_difference": 0.8665310797539163,
+        "difference_ci95": [
+          0.7146715801629702,
+          1.0226253293900995
+        ],
+        "relative_difference_pct": -12.374869961010448
+      },
+      "path_m": {
+        "left_mean_on_common_success": 571.4673716768306,
+        "right_mean_on_common_success": 542.4206200457634,
+        "paired_mean_difference": 29.046751631067153,
+        "difference_ci95": [
+          20.92451486136564,
+          38.510877931166995
+        ],
+        "relative_difference_pct": 5.355023492399047
+      }
+    },
+    "straight_radio_minus_straight_rss_test": {
+      "success_difference_pp": 1.0,
+      "success_difference_ci95_pp": [
+        -1.5,
+        3.5000000000000004
+      ],
+      "paired_success_count": 192,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 3.254342085779601,
+        "right_mean_on_common_success": 6.2083452955716085,
+        "paired_mean_difference": -2.9540032097920084,
+        "difference_ci95": [
+          -3.304402447858241,
+          -2.616986708592895
+        ],
+        "relative_difference_pct": -47.5811680754788
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.11288333772763588,
+        "right_mean_on_common_success": 0.22104873397898664,
+        "paired_mean_difference": -0.10816539625135076,
+        "difference_ci95": [
+          -0.11991253082225715,
+          -0.09624243960299034
+        ],
+        "relative_difference_pct": -48.93282775445943
+      },
+      "time_s": {
+        "left_mean_on_common_success": 27.515625,
+        "right_mean_on_common_success": 27.510416666666668,
+        "paired_mean_difference": 0.005208333333333333,
+        "difference_ci95": [
+          0.0,
+          0.015957446808510637
+        ],
+        "relative_difference_pct": 0.01893222264293115
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 0.8976780853277121,
+        "right_mean_on_common_success": 1.087563586568806,
+        "paired_mean_difference": -0.1898855012410939,
+        "difference_ci95": [
+          -0.42179685545533185,
+          0.057685047468628174
+        ],
+        "relative_difference_pct": -17.459714869653787
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 5.63086012920396e-07,
+        "right_mean_on_common_success": 7.071105585453396e-07,
+        "paired_mean_difference": -1.440245456249434e-07,
+        "difference_ci95": [
+          -1.5561609112401726e-07,
+          -1.3276363713429222e-07
+        ],
+        "relative_difference_pct": -20.368037767846282
+      },
+      "handovers": {
+        "left_mean_on_common_success": 0.8177083333333334,
+        "right_mean_on_common_success": 9.109375,
+        "paired_mean_difference": -8.291666666666666,
+        "difference_ci95": [
+          -8.905771433246073,
+          -7.722513089005235
+        ],
+        "relative_difference_pct": -91.02344196683819
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7603.681789398193,
+        "right_mean_on_common_success": 7603.529404958089,
+        "paired_mean_difference": 0.15238444010416666,
+        "difference_ci95": [
+          -0.6227043111910995,
+          1.1845197134067358
+        ],
+        "relative_difference_pct": 0.002004127714760884
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.02436806820333,
+        "right_mean_on_common_success": -7.409348235155146,
+        "paired_mean_difference": 0.3849801669518153,
+        "difference_ci95": [
+          0.17070568269308734,
+          0.5974924216651871
+        ],
+        "relative_difference_pct": -5.195870874649932
+      },
+      "path_m": {
+        "left_mean_on_common_success": 537.7106007734934,
+        "right_mean_on_common_success": 537.7096704641978,
+        "paired_mean_difference": 0.0009303092956542969,
+        "difference_ci95": [
+          -0.021583771219058908,
+          0.022613502521904135
+        ],
+        "relative_difference_pct": 0.00017301330936803083
+      }
+    },
+    "full_minus_arrival_longer_test": {
+      "success_difference_pp": 3.4000000000000004,
+      "success_difference_ci95_pp": [
+        -1.0024999999999993,
+        8.1
+      ],
+      "paired_success_count": 802,
+      "paired_evaluations": 1000,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 13.915508032890092,
+        "right_mean_on_common_success": 16.308771832783325,
+        "paired_mean_difference": -2.393263799893234,
+        "difference_ci95": [
+          -3.316697295435752,
+          -1.487533966576304
+        ],
+        "relative_difference_pct": -14.674702819021467
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.22775979804327354,
+        "right_mean_on_common_success": 0.26682174476082643,
+        "paired_mean_difference": -0.03906194671755285,
+        "difference_ci95": [
+          -0.054190639538870676,
+          -0.024216891751110768
+        ],
+        "relative_difference_pct": -14.639716396640468
+      },
+      "time_s": {
+        "left_mean_on_common_success": 61.05112219451372,
+        "right_mean_on_common_success": 61.403990024937656,
+        "paired_mean_difference": -0.35286783042394015,
+        "difference_ci95": [
+          -0.552279610296103,
+          -0.1676991682799506
+        ],
+        "relative_difference_pct": -0.5746659627177797
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 6.623300598361667,
+        "right_mean_on_common_success": 1.83403219891991,
+        "paired_mean_difference": 4.789268399441758,
+        "difference_ci95": [
+          4.179534722986489,
+          5.396607673219369
+        ],
+        "relative_difference_pct": 261.13327793602707
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.853297698927947e-07,
+        "right_mean_on_common_success": 7.877343020930759e-07,
+        "paired_mean_difference": -2.40453220028115e-09,
+        "difference_ci95": [
+          -1.1910927535619428e-08,
+          7.639818464740374e-09
+        ],
+        "relative_difference_pct": -0.3052466033143575
+      },
+      "handovers": {
+        "left_mean_on_common_success": 1.5124688279301746,
+        "right_mean_on_common_success": 21.074812967581046,
+        "paired_mean_difference": -19.56234413965087,
+        "difference_ci95": [
+          -21.71855041416738,
+          -17.262515540188687
+        ],
+        "relative_difference_pct": -92.82333451662525
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19287.9933540173,
+        "right_mean_on_common_success": 19255.98673238778,
+        "paired_mean_difference": 32.00662162951995,
+        "difference_ci95": [
+          7.056300088498719,
+          59.137702744545145
+        ],
+        "relative_difference_pct": 0.16621647113874705
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -9.890406081801341,
+        "right_mean_on_common_success": -8.309053190331209,
+        "paired_mean_difference": -1.5813528914701314,
+        "difference_ci95": [
+          -1.7800138760902038,
+          -1.3927718771217799
+        ],
+        "relative_difference_pct": 19.03168574381333
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1373.357222102824,
+        "right_mean_on_common_success": 1373.2148470224586,
+        "paired_mean_difference": 0.1423750803654925,
+        "difference_ci95": [
+          -0.37041037017541134,
+          0.7451950330907218
+        ],
+        "relative_difference_pct": 0.010368012017503148
+      }
+    },
+    "joint_mpc_minus_straight_radio_longer_test": {
+      "success_difference_pp": -2.5,
+      "success_difference_ci95_pp": [
+        -7.000000000000001,
+        1.5
+      ],
+      "paired_success_count": 173,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 7.353883177973795,
+        "right_mean_on_common_success": 9.223951637486563,
+        "paired_mean_difference": -1.8700684595127657,
+        "difference_ci95": [
+          -2.3353153291833806,
+          -1.4103138511914628
+        ],
+        "relative_difference_pct": -20.274048835129655
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.11519580281272324,
+        "right_mean_on_common_success": 0.1506036675220576,
+        "paired_mean_difference": -0.03540786470933434,
+        "difference_ci95": [
+          -0.042786999873411315,
+          -0.028082152936535706
+        ],
+        "relative_difference_pct": -23.51062579810579
+      },
+      "time_s": {
+        "left_mean_on_common_success": 63.861271676300575,
+        "right_mean_on_common_success": 61.26011560693642,
+        "paired_mean_difference": 2.601156069364162,
+        "difference_ci95": [
+          2.1520334928229663,
+          3.1250359195402293
+        ],
+        "relative_difference_pct": 4.246084166823927
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.0004064214890656,
+        "right_mean_on_common_success": 1.8673771751538388,
+        "paired_mean_difference": -0.866970753664773,
+        "difference_ci95": [
+          -1.2226782271391021,
+          -0.544572425974254
+        ],
+        "relative_difference_pct": -46.42719024309324
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 5.960483029105729e-07,
+        "right_mean_on_common_success": 6.004611745500323e-07,
+        "paired_mean_difference": -4.412871639459386e-09,
+        "difference_ci95": [
+          -8.557129710766952e-09,
+          -2.841728142556699e-10
+        ],
+        "relative_difference_pct": -0.734913734058873
+      },
+      "handovers": {
+        "left_mean_on_common_success": 2.052023121387283,
+        "right_mean_on_common_success": 2.4739884393063583,
+        "paired_mean_difference": -0.42196531791907516,
+        "difference_ci95": [
+          -0.6666666666666666,
+          -0.19539889818404413
+        ],
+        "relative_difference_pct": -17.056074766355145
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19739.43277524386,
+        "right_mean_on_common_success": 19432.279471865968,
+        "paired_mean_difference": 307.15330337789015,
+        "difference_ci95": [
+          217.55471774136836,
+          424.9483003387918
+        ],
+        "relative_difference_pct": 1.5806344480717494
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.5506209913705815,
+        "right_mean_on_common_success": -7.907329275428904,
+        "paired_mean_difference": 0.3567082840583228,
+        "difference_ci95": [
+          0.1876090715203421,
+          0.5220423280634982
+        ],
+        "relative_difference_pct": -4.511109524258106
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1407.910600783508,
+        "right_mean_on_common_success": 1383.0345907045926,
+        "paired_mean_difference": 24.876010078915282,
+        "difference_ci95": [
+          18.381313566914184,
+          33.6199233928862
+        ],
+        "relative_difference_pct": 1.7986542235535863
+      }
+    },
+    "joint_lookahead_minus_straight_radio_longer_test": {
+      "success_difference_pp": -2.0,
+      "success_difference_ci95_pp": [
+        -6.5,
+        2.5
+      ],
+      "paired_success_count": 173,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 5.226275099286018,
+        "right_mean_on_common_success": 9.146465095318817,
+        "paired_mean_difference": -3.9201899960328004,
+        "difference_ci95": [
+          -4.361807653393587,
+          -3.4914854684251386
+        ],
+        "relative_difference_pct": -42.86016461200034
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.0760189673661187,
+        "right_mean_on_common_success": 0.1496497322437338,
+        "paired_mean_difference": -0.07363076487761512,
+        "difference_ci95": [
+          -0.08109565761192705,
+          -0.06624414844569983
+        ],
+        "relative_difference_pct": -49.20206924105486
+      },
+      "time_s": {
+        "left_mean_on_common_success": 70.3121387283237,
+        "right_mean_on_common_success": 61.17341040462428,
+        "paired_mean_difference": 9.138728323699421,
+        "difference_ci95": [
+          6.853645164741121,
+          11.854788728047161
+        ],
+        "relative_difference_pct": 14.939053198525931
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 0.47823829675405555,
+        "right_mean_on_common_success": 1.8307958894166172,
+        "paired_mean_difference": -1.3525575926625617,
+        "difference_ci95": [
+          -1.709465202359926,
+          -1.044138603266505
+        ],
+        "relative_difference_pct": -73.87812046560546
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 5.860736519340564e-07,
+        "right_mean_on_common_success": 5.954242195383073e-07,
+        "paired_mean_difference": -9.350567604250846e-09,
+        "difference_ci95": [
+          -1.439000164879559e-08,
+          -4.378940715110941e-09
+        ],
+        "relative_difference_pct": -1.570404309636797
+      },
+      "handovers": {
+        "left_mean_on_common_success": 2.069364161849711,
+        "right_mean_on_common_success": 2.485549132947977,
+        "paired_mean_difference": -0.4161849710982659,
+        "difference_ci95": [
+          -0.6352941176470588,
+          -0.20118343195266272
+        ],
+        "relative_difference_pct": -16.744186046511633
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 20438.982873464596,
+        "right_mean_on_common_success": 19400.41318754516,
+        "paired_mean_difference": 1038.5696859194363,
+        "difference_ci95": [
+          785.725012045724,
+          1326.6559514778223
+        ],
+        "relative_difference_pct": 5.353337972132399
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -6.700262164449416,
+        "right_mean_on_common_success": -7.876445582836349,
+        "paired_mean_difference": 1.1761834183869335,
+        "difference_ci95": [
+          1.0088220201815878,
+          1.3426780533987086
+        ],
+        "relative_difference_pct": -14.932921277967914
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1441.3612639146045,
+        "right_mean_on_common_success": 1380.7157303473853,
+        "paired_mean_difference": 60.64553356721911,
+        "difference_ci95": [
+          49.752270962452016,
+          72.31541081135424
+        ],
+        "relative_difference_pct": 4.392325823068655
+      }
+    },
+    "straight_radio_minus_straight_rss_longer_test": {
+      "success_difference_pp": 5.5,
+      "success_difference_ci95_pp": [
+        1.5,
+        9.5
+      ],
+      "paired_success_count": 171,
+      "paired_evaluations": 200,
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 9.199962854637853,
+        "right_mean_on_common_success": 15.581096107769746,
+        "paired_mean_difference": -6.381133253131892,
+        "difference_ci95": [
+          -6.972219308954071,
+          -5.805862790296876
+        ],
+        "relative_difference_pct": -40.954328302678555
+      },
+      "radio_cost_mean": {
+        "left_mean_on_common_success": 0.15021982867827366,
+        "right_mean_on_common_success": 0.2557969954102505,
+        "paired_mean_difference": -0.10557716673197687,
+        "difference_ci95": [
+          -0.11551918434124726,
+          -0.09573404559838632
+        ],
+        "relative_difference_pct": -41.27381033645483
+      },
+      "time_s": {
+        "left_mean_on_common_success": 61.40350877192982,
+        "right_mean_on_common_success": 61.409356725146196,
+        "paired_mean_difference": -0.005847953216374269,
+        "difference_ci95": [
+          -0.01818181818181818,
+          0.0
+        ],
+        "relative_difference_pct": -0.009522902580705317
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.850171799849906,
+        "right_mean_on_common_success": 1.6276077391899761,
+        "paired_mean_difference": 0.22256406065992984,
+        "difference_ci95": [
+          -0.1443332263062646,
+          0.6159060882434295
+        ],
+        "relative_difference_pct": 13.674305872414628
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 6.03623395534559e-07,
+        "right_mean_on_common_success": 7.681452757922225e-07,
+        "paired_mean_difference": -1.645218802576634e-07,
+        "difference_ci95": [
+          -1.7391360460275362e-07,
+          -1.5572014475086018e-07
+        ],
+        "relative_difference_pct": -21.418068357965847
+      },
+      "handovers": {
+        "left_mean_on_common_success": 2.538011695906433,
+        "right_mean_on_common_success": 22.251461988304094,
+        "paired_mean_difference": -19.71345029239766,
+        "difference_ci95": [
+          -20.551145833333333,
+          -18.8963013478819
+        ],
+        "relative_difference_pct": -88.5939553219448
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19481.268000730994,
+        "right_mean_on_common_success": 19481.21355308845,
+        "paired_mean_difference": 0.05444764254385965,
+        "difference_ci95": [
+          -0.23875843394886365,
+          0.4245721726190476
+        ],
+        "relative_difference_pct": 0.0002794879405021433
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.884728994982981,
+        "right_mean_on_common_success": -7.939945418932284,
+        "paired_mean_difference": 0.055216423949302984,
+        "difference_ci95": [
+          -0.12932062715256737,
+          0.23667618245215372
+        ],
+        "relative_difference_pct": -0.6954257370289096
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1386.4997990479944,
+        "right_mean_on_common_success": 1386.502584535476,
+        "paired_mean_difference": -0.002785487481725146,
+        "difference_ci95": [
+          -0.01369456360979778,
+          0.003997273527817919
+        ],
+        "relative_difference_pct": -0.00020090027330610383
+      }
+    }
+  },
+  "bootstrap_draws": 5000,
+  "bootstrap_seed": 62000,
+  "frozen_v1_and_v2_hashes_verified": true,
+  "seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105
+  ],
+  "total_evaluated_episodes": 5600,
+  "all_reported_successes_meet_sampled_constraints": true
+}

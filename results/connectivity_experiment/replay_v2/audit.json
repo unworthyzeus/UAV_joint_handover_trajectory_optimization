@@ -1,0 +1,118 @@
+{
+  "exact_episode_matches": 5600,
+  "runs": {
+    "arrival_seed_2101_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "537b1d5b7249d9e6a59584efbdb690ce6d91b107020acf86f54fabd059ffbd5f"
+    },
+    "arrival_seed_2101_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "537b1d5b7249d9e6a59584efbdb690ce6d91b107020acf86f54fabd059ffbd5f"
+    },
+    "arrival_seed_2102_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "c3f3dcd0f5c98d4af821a63b24d3958124f8236263009b7d36d97a3318edea89"
+    },
+    "arrival_seed_2102_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "c3f3dcd0f5c98d4af821a63b24d3958124f8236263009b7d36d97a3318edea89"
+    },
+    "arrival_seed_2103_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "99225e0231be61c9e98e657813890c769375cdab9978f9a94f731bd84be0c4cb"
+    },
+    "arrival_seed_2103_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "99225e0231be61c9e98e657813890c769375cdab9978f9a94f731bd84be0c4cb"
+    },
+    "arrival_seed_2104_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "6bdeb2c702e72243e413cb529be62e7336122ae400b6c3547f5e7511e1584415"
+    },
+    "arrival_seed_2104_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "6bdeb2c702e72243e413cb529be62e7336122ae400b6c3547f5e7511e1584415"
+    },
+    "arrival_seed_2105_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "cb89688d4a1437ae47438e3e2c9134ae68131240956cb4d0c9104dd0b2408b7f"
+    },
+    "arrival_seed_2105_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "cb89688d4a1437ae47438e3e2c9134ae68131240956cb4d0c9104dd0b2408b7f"
+    },
+    "full_seed_2101_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "fc2566064cfd9911dd850c8c07e2c1abc8bbe65e75e8892e08a47f52ddde598b"
+    },
+    "full_seed_2101_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "fc2566064cfd9911dd850c8c07e2c1abc8bbe65e75e8892e08a47f52ddde598b"
+    },
+    "full_seed_2102_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "e67e72220be579a30c5e957ba845a47cb45c4f74205591def759d54916dfc0a1"
+    },
+    "full_seed_2102_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "e67e72220be579a30c5e957ba845a47cb45c4f74205591def759d54916dfc0a1"
+    },
+    "full_seed_2103_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "d69ff23301aac166073dcb91bfdfa80510bd978ce9e9388364bdf23b12c00b88"
+    },
+    "full_seed_2103_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "d69ff23301aac166073dcb91bfdfa80510bd978ce9e9388364bdf23b12c00b88"
+    },
+    "full_seed_2104_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "4a072dbb175955290c69ebe55210be31cecc1eaef694f61e8710fc762d77f28e"
+    },
+    "full_seed_2104_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "4a072dbb175955290c69ebe55210be31cecc1eaef694f61e8710fc762d77f28e"
+    },
+    "full_seed_2105_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "45252100f99c1104b7901e54f8195feb6108d9f604c5e43acda7d0779905ab16"
+    },
+    "full_seed_2105_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": "45252100f99c1104b7901e54f8195feb6108d9f604c5e43acda7d0779905ab16"
+    },
+    "straight_rss_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "straight_rss_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "straight_radio_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "straight_radio_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "joint_mpc_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "joint_mpc_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "joint_lookahead_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    },
+    "joint_lookahead_longer_test": {
+      "exact_episode_matches": 200,
+      "checkpoint_sha256": null
+    }
+  },
+  "script_sha256": "738bba85c510b469b4017cb611cd850cfb48ed151b9bf77dc8c49a87bdc60663"
+}

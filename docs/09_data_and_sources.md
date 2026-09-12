@@ -10,6 +10,13 @@
 
 ## Missing Research Assets
 
+Update, 12 September 2026: `dataset/Barcelona_dataset_January.h5` has been
+received and inspected. It contains the radio map, grid coordinates, and station
+metadata. See `17_received_dataset_assessment.md` for the checksum, complete
+scan results, and remaining provenance questions. The historical missing asset
+list below predates receipt; the original code and experiment artifacts remain
+unavailable in this project.
+
 The exhaustive public and local search is documented in
 [`16_missing_asset_search.md`](16_missing_asset_search.md). The project still
 needs:

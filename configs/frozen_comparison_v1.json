@@ -1,0 +1,69 @@
+{
+  "frozen_at_utc": "2026-09-12T10:52:49.170549+00:00",
+  "seeds": [
+    1101,
+    1102,
+    1103,
+    1104,
+    1105
+  ],
+  "arms": [
+    "legacy",
+    "terminal_only",
+    "reward_only",
+    "fixed"
+  ],
+  "ppo": {
+    "environments": 64,
+    "rollout": 128,
+    "minibatch": 512,
+    "epochs": 4,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "entropy": 0.005,
+    "value_weight": 0.5,
+    "grad_norm": 0.5,
+    "hidden": 64,
+    "steps": 524288,
+    "threads": 2
+  },
+  "environment": {
+    "dt_s": 1.0,
+    "horizon": 200,
+    "max_acceleration": 5.0,
+    "max_speed": 25.0,
+    "goal_radius": 10.0,
+    "stop_speed": 2.0,
+    "network_interval": 5,
+    "a3_db": 3.0,
+    "rss_min_dbm": -96.0,
+    "max_consecutive_outage": 5,
+    "bandwidth_hz": 1440000.0,
+    "noise_dbm": -103.41,
+    "offered_bps": 200000.0,
+    "buffer_bits": 1280000.0,
+    "battery_j": 100000.0,
+    "gamma": 0.99,
+    "success_reward": 20.0,
+    "failure_penalty": 20.0,
+    "time_cost": 0.05,
+    "potential_scale_m": 100.0,
+    "radio_cost_weight": 0.05
+  },
+  "source_hashes": {
+    "src/uav_joint_optimization/experiment_env.py": "1be9124decee7001ab9ab76d04b5588aa126cae78a73bee70af539332a9ea55e",
+    "src/uav_joint_optimization/experiment_ppo.py": "2054561b8c0ddff7af5e07c51c72a23f74ffb666ec1823687ca0d05b0c65e04f",
+    "scripts/run_controlled_experiment.py": "695313deaa041e30927bc45224d8ea9b0727aeb68e9aaf4b2bb9c259175f1ba1",
+    "configs/controlled_scenarios.json": "72141d58661c06497d895f74d92c4a1dfa4602e1409e41ff56853425925fcead",
+    "docs/18_experiment_protocol.md": "181f75b3bab190ad94a379cc2b7e9e2146756da56111abaababa1ebb73e3653f",
+    "docs/20_pilots_and_frozen_comparison.md": "279fb16ccd54b90c27b009a57c51016dfbf4784b72f39b7b42154a88e5d78811"
+  },
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "positive_gate": {
+    "standard_success_min": 0.9,
+    "standard_feasible_success_min": 0.9,
+    "paired_bootstrap_lower_bound_positive": true
+  }
+}

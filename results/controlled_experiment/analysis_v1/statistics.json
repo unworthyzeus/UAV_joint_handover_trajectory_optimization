@@ -1,0 +1,508 @@
+{
+  "scope": "Validated reimplementation, not original thesis replication",
+  "arms": {
+    "legacy_test": {
+      "episodes": 1000,
+      "success_rate": 0.214,
+      "feasible_success_rate": 0.208,
+      "failure_distance_mean_m": 134.01722018113574,
+      "successful_time_s": 141.24766355140187,
+      "successful_path_m": 456.0591565426265,
+      "successful_energy_proxy_j": 14795.654086959696,
+      "successful_handovers": 8.83177570093458,
+      "successful_outage_s": 0.06542056074766354,
+      "successful_dropped_bits": 7821.460161726051,
+      "successful_delay_proxy_mean_s": 0.8788509137235571,
+      "successful_interference_mean_w": 7.016388524278855e-07,
+      "successful_sinr_mean_db": -6.335845831955705,
+      "successful_sinr_p05_db": -13.39044982696248,
+      "seed_success_rates": [
+        0.27,
+        0.18,
+        0.18,
+        0.025,
+        0.415
+      ],
+      "seed_success_std": 0.14280231090567128,
+      "seed_feasible_rates": [
+        0.26,
+        0.18,
+        0.17,
+        0.025,
+        0.405
+      ],
+      "seed_feasible_std": 0.13895143036327479,
+      "successful_episodes": 214,
+      "outcomes": {
+        "timeout": 785,
+        "success": 214,
+        "boundary": 1
+      },
+      "all_route_final_distance_median_m": 24.753146171569824
+    },
+    "terminal_only_test": {
+      "episodes": 1000,
+      "success_rate": 0.0,
+      "feasible_success_rate": 0.0,
+      "failure_distance_mean_m": 86.18267262983322,
+      "successful_time_s": null,
+      "successful_path_m": null,
+      "successful_energy_proxy_j": null,
+      "successful_handovers": null,
+      "successful_outage_s": null,
+      "successful_dropped_bits": null,
+      "successful_delay_proxy_mean_s": null,
+      "successful_interference_mean_w": null,
+      "successful_sinr_mean_db": null,
+      "successful_sinr_p05_db": null,
+      "seed_success_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_success_std": 0.0,
+      "seed_feasible_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_feasible_std": 0.0,
+      "successful_episodes": 0,
+      "outcomes": {
+        "timeout": 995,
+        "boundary": 5
+      },
+      "all_route_final_distance_median_m": 13.227174758911133
+    },
+    "reward_only_test": {
+      "episodes": 1000,
+      "success_rate": 1.0,
+      "feasible_success_rate": 0.987,
+      "failure_distance_mean_m": null,
+      "successful_time_s": 50.226,
+      "successful_path_m": 579.7760068511963,
+      "successful_energy_proxy_j": 8293.091381347656,
+      "successful_handovers": 3.962,
+      "successful_outage_s": 0.086,
+      "successful_dropped_bits": 3738.1470180664064,
+      "successful_delay_proxy_mean_s": 2.584987091119995,
+      "successful_interference_mean_w": 7.372078806056068e-07,
+      "successful_sinr_mean_db": -7.909715258598328,
+      "successful_sinr_p05_db": -16.699414729595183,
+      "seed_success_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "seed_success_std": 0.0,
+      "seed_feasible_rates": [
+        0.995,
+        1.0,
+        0.975,
+        0.97,
+        0.995
+      ],
+      "seed_feasible_std": 0.013509256086106309,
+      "successful_episodes": 1000,
+      "outcomes": {
+        "success": 1000
+      },
+      "all_route_final_distance_median_m": 5.532302141189575
+    },
+    "fixed_test": {
+      "episodes": 1000,
+      "success_rate": 0.997,
+      "feasible_success_rate": 0.978,
+      "failure_distance_mean_m": 161.91547139485678,
+      "successful_time_s": 36.518555667001,
+      "successful_path_m": 573.6503082550876,
+      "successful_energy_proxy_j": 8167.518694021518,
+      "successful_handovers": 2.9939819458375125,
+      "successful_outage_s": 0.08726178535606821,
+      "successful_dropped_bits": 4024.261068973522,
+      "successful_delay_proxy_mean_s": 2.8348239724868103,
+      "successful_interference_mean_w": 7.380288751622404e-07,
+      "successful_sinr_mean_db": -8.125473138681027,
+      "successful_sinr_p05_db": -16.861812007104383,
+      "seed_success_rates": [
+        1.0,
+        1.0,
+        1.0,
+        0.985,
+        1.0
+      ],
+      "seed_success_std": 0.006708203932499375,
+      "seed_feasible_rates": [
+        0.975,
+        0.985,
+        0.985,
+        0.965,
+        0.98
+      ],
+      "seed_feasible_std": 0.008366600265340763,
+      "successful_episodes": 997,
+      "outcomes": {
+        "success": 997,
+        "timeout": 3
+      },
+      "all_route_final_distance_median_m": 4.3396852016448975
+    },
+    "pd_test": {
+      "episodes": 200,
+      "success_rate": 1.0,
+      "feasible_success_rate": 0.97,
+      "failure_distance_mean_m": null,
+      "successful_time_s": 28.62,
+      "successful_path_m": 565.1420991516113,
+      "successful_energy_proxy_j": 7988.54845703125,
+      "successful_handovers": 2.385,
+      "successful_outage_s": 0.085,
+      "successful_dropped_bits": 2448.0942529296876,
+      "successful_delay_proxy_mean_s": 3.4522623645599753,
+      "successful_interference_mean_w": 7.44232303174171e-07,
+      "successful_sinr_mean_db": -8.5120679885149,
+      "successful_sinr_p05_db": -17.85812087535858
+    },
+    "legacy_longer_test": {
+      "episodes": 1000,
+      "success_rate": 0.0,
+      "feasible_success_rate": 0.0,
+      "failure_distance_mean_m": 722.828741027832,
+      "successful_time_s": null,
+      "successful_path_m": null,
+      "successful_energy_proxy_j": null,
+      "successful_handovers": null,
+      "successful_outage_s": null,
+      "successful_dropped_bits": null,
+      "successful_delay_proxy_mean_s": null,
+      "successful_interference_mean_w": null,
+      "successful_sinr_mean_db": null,
+      "successful_sinr_p05_db": null,
+      "seed_success_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_success_std": 0.0,
+      "seed_feasible_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_feasible_std": 0.0,
+      "successful_episodes": 0,
+      "outcomes": {
+        "timeout": 986,
+        "boundary": 14
+      },
+      "all_route_final_distance_median_m": 696.0274963378906
+    },
+    "terminal_only_longer_test": {
+      "episodes": 1000,
+      "success_rate": 0.0,
+      "feasible_success_rate": 0.0,
+      "failure_distance_mean_m": 785.7981071166993,
+      "successful_time_s": null,
+      "successful_path_m": null,
+      "successful_energy_proxy_j": null,
+      "successful_handovers": null,
+      "successful_outage_s": null,
+      "successful_dropped_bits": null,
+      "successful_delay_proxy_mean_s": null,
+      "successful_interference_mean_w": null,
+      "successful_sinr_mean_db": null,
+      "successful_sinr_p05_db": null,
+      "seed_success_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_success_std": 0.0,
+      "seed_feasible_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_feasible_std": 0.0,
+      "successful_episodes": 0,
+      "outcomes": {
+        "timeout": 989,
+        "boundary": 11
+      },
+      "all_route_final_distance_median_m": 752.625
+    },
+    "reward_only_longer_test": {
+      "episodes": 1000,
+      "success_rate": 1.0,
+      "feasible_success_rate": 0.96,
+      "failure_distance_mean_m": null,
+      "successful_time_s": 92.127,
+      "successful_path_m": 1375.911467163086,
+      "successful_energy_proxy_j": 19648.33732421875,
+      "successful_handovers": 8.012,
+      "successful_outage_s": 0.269,
+      "successful_dropped_bits": 11626.5895703125,
+      "successful_delay_proxy_mean_s": 3.167721291411167,
+      "successful_interference_mean_w": 7.524005372515189e-07,
+      "successful_sinr_mean_db": -8.484612305641175,
+      "successful_sinr_p05_db": -18.037982715606688,
+      "seed_success_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "seed_success_std": 0.0,
+      "seed_feasible_rates": [
+        0.96,
+        0.955,
+        0.945,
+        0.965,
+        0.975
+      ],
+      "seed_feasible_std": 0.011180339887498959,
+      "successful_episodes": 1000,
+      "outcomes": {
+        "success": 1000
+      },
+      "all_route_final_distance_median_m": 3.899639129638672
+    },
+    "fixed_longer_test": {
+      "episodes": 1000,
+      "success_rate": 0.361,
+      "feasible_success_rate": 0.352,
+      "failure_distance_mean_m": 175.39440900059373,
+      "successful_time_s": 66.8781163434903,
+      "successful_path_m": 1161.2028925253744,
+      "successful_energy_proxy_j": 16888.42296247403,
+      "successful_handovers": 6.105263157894737,
+      "successful_outage_s": 0.24930747922437674,
+      "successful_dropped_bits": 1666.222491235284,
+      "successful_delay_proxy_mean_s": 3.20134643424464,
+      "successful_interference_mean_w": 7.603043299947545e-07,
+      "successful_sinr_mean_db": -8.726166235773187,
+      "successful_sinr_p05_db": -17.929070097587775,
+      "seed_success_rates": [
+        0.455,
+        0.275,
+        0.19,
+        0.395,
+        0.49
+      ],
+      "seed_success_std": 0.1257676428975275,
+      "seed_feasible_rates": [
+        0.45,
+        0.26,
+        0.185,
+        0.385,
+        0.48
+      ],
+      "seed_feasible_std": 0.1259265659025132,
+      "successful_episodes": 361,
+      "outcomes": {
+        "timeout": 639,
+        "success": 361
+      },
+      "all_route_final_distance_median_m": 157.72918701171875
+    },
+    "pd_longer_test": {
+      "episodes": 200,
+      "success_rate": 1.0,
+      "feasible_success_rate": 0.955,
+      "failure_distance_mean_m": null,
+      "successful_time_s": 60.415,
+      "successful_path_m": 1361.6350286865234,
+      "successful_energy_proxy_j": 19133.84732421875,
+      "successful_handovers": 5.735,
+      "successful_outage_s": 0.295,
+      "successful_dropped_bits": 4583.411689453125,
+      "successful_delay_proxy_mean_s": 3.9324532880415224,
+      "successful_interference_mean_w": 7.657537240235634e-07,
+      "successful_sinr_mean_db": -9.214964954853057,
+      "successful_sinr_p05_db": -19.090006284713745
+    }
+  },
+  "contrasts": {
+    "fixed_minus_legacy_test": {
+      "mean": 0.783,
+      "lower": 0.662,
+      "upper": 0.895,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.73,
+        0.82,
+        0.82,
+        0.96,
+        0.585
+      ]
+    },
+    "reward_only_minus_legacy_test": {
+      "mean": 0.786,
+      "lower": 0.663,
+      "upper": 0.902,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.73,
+        0.82,
+        0.82,
+        0.975,
+        0.585
+      ]
+    },
+    "terminal_only_minus_legacy_test": {
+      "mean": -0.214,
+      "lower": -0.337,
+      "upper": -0.098,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        -0.27,
+        -0.18,
+        -0.18,
+        -0.025,
+        -0.415
+      ]
+    },
+    "fixed_minus_reward_only_test": {
+      "mean": -0.003,
+      "lower": -0.012,
+      "upper": 0.0,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.0,
+        0.0,
+        0.0,
+        -0.015,
+        0.0
+      ]
+    },
+    "factorial_interaction_test": {
+      "mean": 0.211,
+      "lower": 0.089,
+      "upper": 0.337,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.27,
+        0.18,
+        0.18,
+        0.01,
+        0.415
+      ]
+    },
+    "fixed_minus_legacy_longer_test": {
+      "mean": 0.361,
+      "lower": 0.246,
+      "upper": 0.472,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.455,
+        0.275,
+        0.19,
+        0.395,
+        0.49
+      ]
+    },
+    "reward_only_minus_legacy_longer_test": {
+      "mean": 1.0,
+      "lower": 1.0,
+      "upper": 1.0,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "terminal_only_minus_legacy_longer_test": {
+      "mean": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "fixed_minus_reward_only_longer_test": {
+      "mean": -0.639,
+      "lower": -0.754,
+      "upper": -0.528,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        -0.545,
+        -0.725,
+        -0.81,
+        -0.605,
+        -0.51
+      ]
+    },
+    "factorial_interaction_longer_test": {
+      "mean": -0.639,
+      "lower": -0.754,
+      "upper": -0.528,
+      "draws": 10000,
+      "bootstrap_seed": 73021,
+      "seed_means": [
+        -0.545,
+        -0.725,
+        -0.81,
+        -0.605,
+        -0.51
+      ]
+    }
+  },
+  "seeds": [
+    1101,
+    1102,
+    1103,
+    1104,
+    1105
+  ],
+  "routes_per_split": 200,
+  "frozen_source_hashes_verified": true,
+  "total_training_interactions": 10485760,
+  "fixed_minus_pd_matched_success_test": {
+    "paired_episodes": 997,
+    "time_s": 7.939819458375125,
+    "energy_proxy_j": 193.18362044140233,
+    "handovers": 0.6158475426278837,
+    "sinr_mean_db": 0.3878341497126649
+  },
+  "fixed_minus_pd_matched_success_longer_test": {
+    "paired_episodes": 361,
+    "time_s": 14.57617728531856,
+    "energy_proxy_j": 589.5296106734764,
+    "handovers": 1.2382271468144044,
+    "sinr_mean_db": 0.5052847512210835
+  },
+  "positive_gate_passed": true,
+  "training_wall_seconds": 563.3628321000001
+}

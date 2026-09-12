@@ -1,0 +1,140 @@
+\onecolumn
+\appendices
+\section{Explicit Comparison with the Original TFM}
+\label{app:comparison}
+The tables compare the written TFM with the executed implementation. ``Not
+specified'' is an evidence boundary, not an assertion about missing source code.
+All shared changes apply even to our legacy arm. Only reward replacement and
+training arrival termination are treatment factors. The complete implementation
+inventory, including all 42 observation indices and event ordering, accompanies
+the reproducibility package in \texttt{docs/25\_exact\_changes\_from\_tfm.md}.
+
+{\centering\footnotesize
+\captionof{table}{Environment, objective, and evaluation comparison. Source locators
+refer to printed TFM pages. Rows describe shared changes unless marked as factors.}
+\label{tab:modelcomparison}
+\begin{tabular}{@{}p{.16\textwidth}p{.37\textwidth}p{.42\textwidth}@{}}
+\toprule
+Item & Original TFM definition & Executed experiment \\
+\midrule
+Radio environment & Barcelona, 2.1 GHz, 100 m, 133 sites, nominal 1 m grid;
+strongest sector RSS~\cite[pp.~6--7, Sec.~3.1, Table~2]{thesis}
+& Received map retained; 87 station operator retained. No ray tracing regeneration;
+exact source version and sentinel remain unverified. \\
+Lookup and geometry & 3D building propagation geometry; lookup and integer
+encoding not specified~\cite[pp.~6--7, Sec.~3.1]{thesis}
+& Native coordinate spacing, nearest lookup, float radio arithmetic; $-128$
+treated as absent path. No collision model. \\
+Motion & Scalar speed/selected heading update; five acceleration and eight
+heading bins~\cite[p.~9, Eq.~(2); pp.~12, 15]{thesis}
+& Inertial velocity, continuous radial/lateral acceleration, norm bound 5 m/s$^2$,
+trapezoidal position update, hard speed cap 25 m/s. \\
+Time and speed & 1 ms in prose, 0.1 s in table; 2000 timesteps; 100 m/s
+penalty threshold~\cite[pp.~14--16, Tables~3--4]{thesis}
+& 1 s steps, 200 s deadline. New time discretization and speed constraint. \\
+Arrival (factor) & 10 m tolerance, stopping intention, no arrival termination
+\cite[p.~9, Sec.~3.2; p.~12, Sec.~5.2; p.~15, Table~3]{thesis}
+& Distance $\leq10$ m and speed $\leq2$ m/s. Training termination varied;
+every evaluation ends at first safe arrival. \\
+Failure handling & Energy termination; boundary/RSS/speed penalties
+\cite[p.~12, Sec.~5.2, Eq.~(14)]{thesis}
+& Energy exhaustion, boundary crossing, five consecutive RSS outages terminate.
+Physical failure precedes arrival; a valid deadline arrival succeeds. \\
+Observations & Position, serving BS, RBG, remaining energy, buffer
+\cite[p.~12, Sec.~5.2]{thesis}
+& 42 scaled features including goal bearing/distance, velocity, time,
+consumed energy, prior arrival, phases, serving SINR, candidates, and masks. \\
+Network actions & Station and RBG requests, A3 inequality
+\cite[p.~9, Eq.~(3); p.~12, Sec.~5.2]{thesis}
+& Stay plus top four RSS stations; $>3$ dB advantage and $>-96$ dBm;
+five second decisions plus observed outage requests; no time to trigger counters. \\
+Resource allocation & Policy requests RBG; availability fallback; random
+occupancy of at least half the groups~\cite[pp.~9, 12, 14--15]{thesis}
+& RBG is not learned. First free group, exactly six occupied groups per station
+in a deterministic pattern; global label phase is not independent load variation. \\
+Rate and interference & Bandwidth plus log of SNR; neighboring RSS sum labeled
+uplink~\cite[p.~10, Eqs.~(7)--(9)]{thesis}
+& Linear downlink cochannel interference, SINR, $B\log_2(1+\mathrm{SINR})$.
+Retain 1.44 MHz and $-103.41$ dBm combined noise; change link interpretation. \\
+Queue and traffic & Poisson formulation, ratio delay, 160 KB, 4800 bit handover
+overhead; conflicting data packet sizes~\cite[pp.~9--10, Eqs.~(4)--(6); pp.~14--15]{thesis}
+& Deterministic 200 kbit/s, decimal 1.28 Mbit cap, same handover overhead.
+Postservice backlog/rate censored at 200 s; record overflow without terminating. \\
+Energy & Mass/efficiency/lift-to-drag expression; capacity labeled 1000 kW
+\cite[p.~10, Eq.~(10); p.~15, Table~3]{thesis}
+& Consumed energy integral of $100+0.4v^2$ W; 100 kJ budget. New uncalibrated
+proxy, not a conversion of original capacity. \\
+Reward (factor) & Positive reciprocals, binary $+12$ progress, penalties
+\cite[p.~12, Eqs.~(13)--(14); p.~15, Table~3]{thesis}
+& Legacy structure uses new common physical inputs and no soft speed penalty.
+Replacement adds first arrival/terminal failure payments, time cost, bounded
+radio costs, and terminal corrected potential shaping. \\
+Deterministic reference & Constant speed, closest discrete heading, viability
+counters~\cite[pp.~13--14, Sec.~5.4]{thesis}
+& Continuous desired velocity tracking with braking; strongest admissible
+station and shared masks. A new reference, not a reproduction of that greedy policy. \\
+Splits and comparison & PPO/greedy and weight comparisons; separate validation
+and test sets not specified~\cite[pp.~15--16, Secs.~6.2--6.3]{thesis}
+& 4096 training, 64 validation, 200 standard test, 200 longer test routes;
+five seeds per treatment, frozen budget. Same map, not a geographic holdout. \\
+Reported outcomes & SNR, outage, interference, remaining energy, handovers,
+example paths~\cite[pp.~16--20, Sec.~7]{thesis}
+& Mission and recorded feasible success first; secondary metrics conditional
+on success; every seed, paired bootstrap and failure counts retained. \\
+\bottomrule
+\end{tabular}
+}
+
+For completeness, our reset sets velocity, queue, consumed energy, counters,
+and prior arrival to zero, associates with the strongest station, and allocates
+its first free group. Each step applies the requested admissible handover before
+motion, evaluates radio after motion, updates queue and energy, checks failure
+and arrival, and then computes reward. The TFM does not fully specify this
+event ordering~\cite[pp.~9--12, Secs.~3.2--5.2]{thesis}.
+The direct energy and packet overflow reward terms removed during the original
+development~\cite[pp.~20--21, Sec.~7.3]{thesis} are not treated as part of its
+final reward. We also do not claim to have reproduced its mass or efficiency
+model, random traffic, counter based handovers, or learned resource allocation.
+
+\twocolumn[{\centering\footnotesize
+\captionof{table}{PPO comparison. The first eleven rows cover every parameter in the
+original Table 4~\cite[p.~16]{thesis}. Further implementation details are not
+fully specified in its Secs. 5.3 and 6.2~\cite[p.~13; pp.~15--16]{thesis}.}
+\label{tab:ppocomparison}
+\begin{tabular}{@{}p{.25\textwidth}p{.20\textwidth}p{.50\textwidth}@{}}
+\toprule
+Parameter & Original TFM & Executed experiment \\
+\midrule
+Episodes & 300 & Fixed interactions, variable number of episodes \\
+Episode timesteps & 2000 & 200, with explicit early terminals \\
+Rollout steps per environment & 8 & 128 \\
+Learning rate & $3\cdot10^{-5}$ & $3\cdot10^{-4}$, constant \\
+Batch size & 32 & 512 \\
+Discount & 0.99 & 0.99, retained \\
+GAE lambda & 0.95 & 0.95, retained \\
+Policy clip & 0.2 & 0.2, retained \\
+Value coefficient & 0.5 & 0.5 applied to half MSE; total coefficient 0.25 MSE \\
+Entropy coefficient & 0.01 & 0.005 \\
+Target KL & 0.03 & No threshold; log diagnostic KL only \\
+\midrule
+Implementation & Stable Baselines & Native PyTorch hybrid PPO \\
+Parallel lanes and update epochs & Not specified & 64 lanes; 8192 samples per rollout; four epochs \\
+Interaction budget & Episodes/timesteps listed & 524,288 per policy, 64 rollout updates \\
+Networks & Not specified & Separate actor/critic, each two 64 unit tanh layers \\
+Policy heads & Discrete action vector listed & 2D Gaussian plus masked five choice categorical \\
+Initialization and variance & Not specified & Orthogonal weights; log standard deviation initialized $-0.5$,
+clamped to $[-2.3,0.5]$ \\
+Optimizer and gradient cap & Adam in pseudocode & Adam, epsilon $10^{-5}$, gradient norm cap 0.5 \\
+Likelihood and entropy details & Not specified & Latent Gaussian likelihood after stored action sampling;
+sum latent Gaussian and categorical entropy \\
+Reward and advantage scaling & Not specified & Running discounted return variance; no reward centering;
+reward clip $[-10,10]$; minibatch advantage normalization \\
+Critic and bootstrap details & Not fully specified & Unclipped half MSE; bootstrap only across nonterminal
+rollout ends, not across mission/deadline terminals \\
+Evaluation and checkpoint rule & Not specified & Gaussian mean and categorical mode; final checkpoint only;
+common raw evaluation reward for every treatment \\
+\bottomrule
+\end{tabular}
+\vspace{1.5em}
+}]
+

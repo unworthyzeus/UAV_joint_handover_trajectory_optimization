@@ -1,0 +1,106 @@
+"""Check and render the consolidated paper without changing either study."""
+import hashlib
+import json
+import re
+from pathlib import Path
+
+import pymupdf
+from PIL import Image, ImageDraw
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main():
+    inputs = []
+
+    def visit(path):
+        if path in inputs:
+            return
+        inputs.append(path)
+        for name in re.findall(r"\\input\{([^}]+)\}", path.read_text(encoding="utf-8")):
+            visit(path.parent / name)
+
+    visit(ROOT / "paper/unified.tex")
+    citations = []
+    for path in inputs:
+        source = path.read_text(encoding="utf-8")
+        for match in re.finditer(r"\\cite(?:\[([^\]]*)\])?\{([^}]*)\}", source):
+            if "thesis" in match[2].split(","):
+                assert match[1] and re.search(r"pp?\.\s*~?\s*\d", match[1])
+                citations.append({"file": path.relative_to(ROOT).as_posix(),
+                                  "line": source.count("\n", 0, match.start()) + 1,
+                                  "locator": match[1]})
+    freezes = {}
+    for name in ("frozen_comparison_v1.json", "frozen_connectivity_v2.json"):
+        manifest = json.loads((ROOT / "configs" / name).read_text())
+        freezes[name] = {p: digest(ROOT / p) == value
+                         for p, value in manifest["source_hashes"].items()}
+        assert all(freezes[name].values())
+
+    pdf_path = ROOT / "paper/UAV_joint_reward_connectivity_IEEE.pdf"
+    pdf = pymupdf.open(pdf_path)
+    review = ROOT / "outputs/unified_paper_review"
+    review.mkdir(parents=True, exist_ok=True)
+    fonts = {}
+    page_texts = []
+    bounds = []
+    for i, page in enumerate(pdf):
+        page_texts.append(page.get_text())
+        page.get_pixmap(matrix=pymupdf.Matrix(1.3, 1.3)).save(review / f"page_{i + 1}.png")
+        for block in page.get_text("dict")["blocks"]:
+            for line in block.get("lines", []):
+                for span in line.get("spans", []):
+                    x0, y0, x1, y1 = span["bbox"]
+                    if x0 < 0 or y0 < 0 or x1 > page.rect.width or y1 > page.rect.height:
+                        bounds.append({"page": i + 1, "text": span["text"]})
+        for item in page.get_fonts(full=True):
+            if item[0] not in fonts:
+                fonts[item[0]] = {"name": item[3], "type": item[2],
+                                  "embedded": bool(pdf.extract_font(item[0])[3])}
+    text = "\n".join(page_texts)
+    assert "??" not in text and "NaN" not in text and "\ufffd" not in text
+    assert not bounds, bounds
+    assert all(x["embedded"] and x["type"] != "Type3" for x in fonts.values())
+    assert "Guillem Moreno Garcia" in text and "Evgenii Vinogradov" in text
+    for start in range(0, len(pdf), 6):
+        sheet = Image.new("RGB", (1224, 3 * 558), "#cccccc")
+        draw = ImageDraw.Draw(sheet)
+        for offset, i in enumerate(range(start, min(start + 6, len(pdf)))):
+            thumb = Image.open(review / f"page_{i + 1}.png").convert("RGB")
+            thumb.thumbnail((596, 530))
+            x, y = (offset % 2) * 612, (offset // 2) * 558
+            sheet.paste(thumb, (x, y + 22))
+            draw.text((x + 8, y + 5), f"Page {i + 1}", fill="black")
+        sheet.save(review / f"contact_{start // 6 + 1}.png")
+    build = json.loads((ROOT / "paper/build_unified/compile_report.json").read_text(encoding="utf-8-sig"))
+    log = build["attempts"][-1]["log"]
+    assert build["attempts"][-1]["exitCode"] == 0
+    assert not re.search(r"Overfull|undefined|Missing character", log)
+    report_path = ROOT / "results/tables/unified_paper_audit.json"
+    previous = json.loads(report_path.read_text()) if report_path.exists() else {}
+    report = {"pdf": pdf_path.relative_to(ROOT).as_posix(), "pdf_sha256": digest(pdf_path),
+              "pages": len(pdf), "fonts": fonts, "all_fonts_embedded_and_no_type3": True,
+              "no_unresolved_references_or_overfull_boxes": True, "text_outside_page": bounds,
+              "tfm_citation_count": len(citations), "tfm_citations": citations,
+              "source_hashes": {p.relative_to(ROOT).as_posix(): digest(p) for p in inputs},
+              "frozen_sources_match": freezes,
+              "statistic_hashes": {p: digest(ROOT / p) for p in (
+                  "results/controlled_experiment/analysis_v1/statistics.json",
+                  "results/connectivity_experiment/analysis_v2/statistics.json",
+                  "results/connectivity_experiment/analysis_v2/report_statistics.json")},
+              "visual_review": "Required separately after rendering",
+              "scope": "Consolidation only; no new training, policy selection or statistical estimation."}
+    if previous.get("pdf_sha256") == report["pdf_sha256"]:
+        report["visual_review"] = previous.get("visual_review", report["visual_review"])
+    report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"pages": len(pdf), "tfm_citations": len(citations),
+                      "fonts": len(fonts), "both_freezes_match": True,
+                      "visual_review": report["visual_review"]}))
+
+
+if __name__ == "__main__":
+    main()

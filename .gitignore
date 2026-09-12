@@ -28,6 +28,10 @@ wandb/
 
 paper/build/*
 !paper/build/.gitkeep
+paper/build_connectivity/*
+!paper/build_connectivity/compile_report.json
+paper/build_unified/*
+!paper/build_unified/compile_report.json
 *.aux
 *.bbl
 *.bcf
@@ -38,4 +42,3 @@ paper/build/*
 *.out
 *.run.xml
 *.synctex.gz
-

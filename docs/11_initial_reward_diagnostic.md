@@ -6,7 +6,9 @@ The first executable experiment tests whether the legacy reward structure can pr
 
 ## Design
 
-The diagnostic uses hand written distance traces, identical nonnegative telecom costs, and the reward structure described in thesis Equations 13 and 14.
+The diagnostic uses hand written distance traces, identical nonnegative telecom
+costs, and the reward structure in the TFM [printed p. 12, Eqs. (13)–(14)],
+with parameters from [printed p. 15, Table 3]. Add two for PDF page numbers.
 
 The traces include:
 
@@ -15,6 +17,15 @@ The traces include:
 3. A corrected mission first evaluation that terminates on safe arrival, gives explicit success and failure outcomes, charges time, and uses actual distance progress.
 
 ## Interpretation Rule
+
+Clarification, 12 September 2026: the supplied mission labels are handcrafted.
+The oscillating trace is 4 to 5 metres from the goal, inside the thesis's listed
+10 metre position tolerance [TFM, printed p. 15, Table 3], and its dynamics and terminal velocity were not
+validated. Its name `never_arrive_oscillation` means that it never reaches the
+exact target coordinate in this toy construction. It is not a demonstrated
+failure under the original simulator's success criterion. See
+`17_received_dataset_assessment.md` for the updated evidence and required
+physical replay.
 
 This is an incentive audit, not policy training and not scientific evidence of improved flight performance. Its only claim is structural: if an unsuccessful trace can receive more reward than a successful trace under identical radio metrics, the scalar reward is not aligned with the stated mission.
 
