@@ -26,6 +26,7 @@ status or preliminary hypotheses from being mistaken for current findings.
 | [32: Connectivity delivery audit](32_connectivity_delivery_audit.md) | Final paper, integrity checks, reporting correction, and retained limitations |
 | [33: Unified paper and GitHub release](33_unified_paper_and_github_release.md) | Single consolidated paper, complete appendices, PDF review, byte preservation, and release scope |
 | [34: Complete thesis inventory in the README](34_readme_thesis_inventory.md) | Exhaustive twelve category inventory, both study versions, all numerical settings, source pages, and documentation checks |
+| [35: Dataset and model setup](35_dataset_and_model_setup.md) | Exact artifact paths, installation, checkpoint compatibility, execution examples, outputs, and troubleshooting |
 | [Current status](12_task_status.md) | Completed work versus original replication dependency |
 | [Logbook](13_logbook.md) | Chronological decisions and corrected interpretations |
 | [IEEE paper](../paper/README.md) | Manuscript, PDF, build instructions, and claim boundaries |

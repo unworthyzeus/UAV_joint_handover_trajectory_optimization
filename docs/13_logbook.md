@@ -194,3 +194,25 @@ links it, and the README quick guide now distinguishes the complete 51 test
 suite from the original 34 tests. This revision changes no scientific artifact
 or experiment and performs no new training or simulation. The existing GitHub
 publication authorization applies to this repository documentation update.
+
+## 2026-09-13: Dataset Placement and Model Setup Guide
+
+The user asked for explicit instructions on where to place the dataset and
+other required artifacts. Added a prominent README quick start and note 35
+with the exact HDF5 path, size and SHA256, Python environment commands,
+checkpoint layout and version compatibility, saved split sizes, custom route
+examples, output prefixes, retraining into a separate label and troubleshooting.
+The documentation index and both reproduction guides now link to that guide.
+
+Verified 67 local documentation links and anchors, table structure and code
+fences, CLI help for both evaluators and the training runner, the four v2 split
+sizes, the dataset checksum and the ten locally retained v2 checkpoints. All
+thirteen frozen source/protocol hashes match. These checks use the existing
+Python environment; no fresh dependency installation, simulation or training
+was run. This revision publishes documentation only.
+
+A fresh clone still requires the private dataset and, for PPO evaluation
+without retraining, separately restored weights. The next user step is to
+place those artifacts and run a custom route. The guide explains the sampled
+connectivity limitation and does not imply that every custom mission succeeds.
+Existing publication authorization covers this documentation update to GitHub.

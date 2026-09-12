@@ -1,5 +1,10 @@
 # Reproduction Guide
 
+For exact dataset placement, checkpoint restoration, environment installation
+and runnable examples, start with [the dataset and model setup guide](35_dataset_and_model_setup.md).
+This page preserves the historical v1 reproduction workflow; the setup guide
+also covers the final v2 connectivity evaluator.
+
 ## What Was Built and Why
 
 The experiment provides a runnable native resolution radio adapter, a vectorized

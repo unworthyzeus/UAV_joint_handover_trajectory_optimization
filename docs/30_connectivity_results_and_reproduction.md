@@ -162,6 +162,11 @@ not a route selected for attractive bends.
 
 ## Reproduce or Inspect
 
+Start with [the dataset and model setup guide](35_dataset_and_model_setup.md)
+for exact file locations, dependency installation, checkpoint compatibility,
+output filenames and troubleshooting. A clone currently includes neither the
+private HDF5 nor the trained `.pt` files.
+
 Use system Python with the versions in `requirements-experiments.txt`. The
 private map must already be present. Existing trained policies are sufficient
 for evaluation:

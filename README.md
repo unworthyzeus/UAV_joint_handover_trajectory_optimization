@@ -2,7 +2,76 @@
 
 Research workspace for the non THz n3cat UAV proposal. Updated 13 September 2026.
 
+**Run the project:** [dataset, checkpoints and quick start](#setup-dataset-and-model-checkpoints), with the [complete setup guide](docs/35_dataset_and_model_setup.md).
+
 **Full thesis comparison:** [all twelve implementation and methodology categories](#complete-inventory-of-differences-from-the-original-thesis), including every PPO setting, both observation layouts, original page citations and the final v2 changes.
+
+## Setup: Dataset and Model Checkpoints
+
+**A Git clone includes code, configurations and recorded results. It does not
+currently include the private radio map or trained checkpoint binaries.** Every
+simulated flight needs the dataset; PPO evaluation also needs a checkpoint.
+Saved results and the paper can be inspected without either binary artifact.
+
+Place the original HDF5 at this exact path relative to the repository root:
+
+```text
+UAV_joint_handover_trajectory_optimization/
+  README.md
+  requirements-experiments.txt
+  dataset/
+    Barcelona_dataset_January.h5
+  results/
+    connectivity_experiment/
+      confirmatory_v2/
+        full_seed_2101/
+          checkpoint.pt
+```
+
+Use `dataset/Barcelona_dataset_January.h5`, with `dataset` singular. The current
+evaluators do not read from `data/raw/`, `data/processed/` or the parent research
+folder, and have no `--dataset` argument. Obtain the unchanged file separately
+from its owner; there is no public download in the repository. Expected size:
+**2,327,593,160 bytes**. Expected SHA256:
+
+```text
+d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d
+```
+
+Restore the checkpoint separately from the locally retained study, or retrain
+with a fresh output label using the full guide. The example uses the first
+declared v2 full reward seed, not a model selected for its test result. Other
+weight locations are accepted through `--checkpoint`. V1 weights need the v1
+evaluator; the versions are not interchangeable.
+
+The recorded setup is Python 3.12 on Windows with CPU PyTorch. From the
+repository root in PowerShell:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-experiments.txt
+Test-Path -LiteralPath dataset/Barcelona_dataset_January.h5
+```
+
+Run a custom flight with the deterministic radio controller, which needs the
+dataset but no weights:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/evaluate_connectivity_controller.py --controller straight_radio --start 1000 1000 --goal 1800 1300 --output outputs/quickstart_radio
+```
+
+With a restored v2 checkpoint, evaluate the 200 standard test routes:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/evaluate_connectivity_controller.py --checkpoint results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt --split test --output outputs/quickstart_full_test
+```
+
+Coordinates are local map meters, not latitude/longitude. `--output` is a file
+prefix: the first example writes `outputs/quickstart_radio.json` and
+`outputs/quickstart_radio.csv`, and prints a summary. Reusing a prefix overwrites
+its output files. The [complete guide](docs/35_dataset_and_model_setup.md)
+includes cloning, the local absolute dataset path, checksum verification,
+both model versions, all splits, custom PPO routes, retraining and troubleshooting.
 
 ## Consolidated IEEE Paper
 
