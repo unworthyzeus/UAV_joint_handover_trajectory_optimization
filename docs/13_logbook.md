@@ -178,3 +178,19 @@ embedded fonts, no unresolved references or overfull boxes, and was visually
 reviewed. No new policy, simulation result or estimator was introduced.
 Note 33 records the consolidation, exact source byte preservation for Git,
 private dataset/checkpoint exclusions, and release scope on origin/main.
+
+## 2026-09-13: Complete Thesis Difference Inventory in the README
+
+The user asked to preserve the exhaustive conversational comparison in Markdown,
+including directly in the root README. Added twelve navigable categories with
+the original TFM definitions, v1 foundation and final v2 changes. Included both
+complete feature layouts, every PPO setting, exact splits and budgets, reward
+formulas, all 31 v2 difference rows, deterministic search settings, statistics,
+verification, retained values and unresolved assumptions. Original printed page
+locators and the PDF viewer offset remain explicit.
+
+Note 34 records the scope and documentation validation. The documentation index
+links it, and the README quick guide now distinguishes the complete 51 test
+suite from the original 34 tests. This revision changes no scientific artifact
+or experiment and performs no new training or simulation. The existing GitHub
+publication authorization applies to this repository documentation update.

@@ -1,6 +1,6 @@
 # Research Documentation Index
 
-Updated 12 September 2026. This index separates the completed received data
+Updated 13 September 2026. This index separates the completed received data
 study from historical proposals and asset searches, preventing obsolete blocked
 status or preliminary hypotheses from being mistaken for current findings.
 
@@ -25,6 +25,7 @@ status or preliminary hypotheses from being mistaken for current findings.
 | [31: Exact connectivity changes](31_exact_connectivity_changes.md) | Complete v1 to v2 differences and original TFM page references |
 | [32: Connectivity delivery audit](32_connectivity_delivery_audit.md) | Final paper, integrity checks, reporting correction, and retained limitations |
 | [33: Unified paper and GitHub release](33_unified_paper_and_github_release.md) | Single consolidated paper, complete appendices, PDF review, byte preservation, and release scope |
+| [34: Complete thesis inventory in the README](34_readme_thesis_inventory.md) | Exhaustive twelve category inventory, both study versions, all numerical settings, source pages, and documentation checks |
 | [Current status](12_task_status.md) | Completed work versus original replication dependency |
 | [Logbook](13_logbook.md) | Chronological decisions and corrected interpretations |
 | [IEEE paper](../paper/README.md) | Manuscript, PDF, build instructions, and claim boundaries |
