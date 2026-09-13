@@ -241,3 +241,21 @@ the private map and other checkpoints remain excluded. Note 38 records paper
 and delivery checks. All 73 tests and three freezes pass; physical assumptions
 remain unverified. Next research requires independent tests and separately
 frozen component ablations, not a favorable reinterpretation of this result.
+
+## 2026-09-13: README Conclusions after the Controlled Reward Comparison
+
+The user requested an explicit account of the differences from the thesis,
+general results and conclusions after the similar V1.5 and V2 completion
+rates. Added a prominent summary of shared system changes, a reward contrast
+table, matched secondary results for both splits, first failure counts and
+the revised diagnosis. The detailed implementation and setup inventory remains.
+
+The README now states that the early attribution of the original wandering
+primarily to reward was too strong. V1.5 uses the original formula inside the
+V2 system; it does not reproduce the original agent. Similar completion does
+not mean equivalent communication behavior: full reduces handovers and flight
+time but increases delay and proxy energy on matched successful flights.
+The contribution is a controlled comparison with explicit limitations, not a
+demonstrated repair of the unavailable original simulator. Note 42 records
+the documentation update and verification. No code, paper, weights, raw
+records, statistics, frozen protocols or experiment outcomes changed.

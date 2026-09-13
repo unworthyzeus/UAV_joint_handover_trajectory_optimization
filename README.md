@@ -9,27 +9,97 @@ Guillem Moreno Garcia and Evgenii Vinogradov. Start with the
 [frozen protocol](docs/36_v15_reward_comparison_protocol.md), or
 [dataset and model setup guide](docs/35_dataset_and_model_setup.md).
 
-## What the New Comparison Establishes
+## Current Conclusion
 
-V1.5 uses the original written reward; V2 full uses the replacement. Both share
-strict sampled connectivity, arrival termination, dynamics, observations,
-actions, navigation prior, safety filter, PPO settings, training routes, seeds
-and interaction budget. The intervention changes the reward package only.
+**Replacing the original reward has not demonstrated better mission completion
+under our shared V2 system.** Original reward V1.5 and full reward V2 both
+achieve 95.7% standard joint success. V2 does change communication behavior:
+it substantially reduces handovers and shortens flights, while increasing
+delay and estimated energy consumption on matched successful flights.
 
-**The new comparison does not establish improved mission completion.**
-Both rewards achieve 95.7% standard joint success. Full minus original is
-0.0 percentage points, 95% interval [-2.8, 2.7]. On longer routes full achieves
-87.3% versus 85.8%, a difference of +1.5 points [-2.9, 6.1]. An interval
-containing zero is not proof of equivalence.
+The original thesis simulator and trained policies are unavailable. We built
+a new implementation around the received Barcelona radio map, changing much
+more than the reward relative to the thesis. **V1.5 is the original written
+reward inside our V2 system; it is not the original thesis agent.** Our
+experiment therefore does not establish what caused the original wandering
+or demonstrate a successful repair of that original implementation.
 
-On 925 common successful standard seed/route pairs, full reduces accumulated
-radio cost by 25.2%, handovers from 6.84 to 0.44, and flight time by 3.14 s.
-Delay rises from 1.94 to 5.83 s, proxy energy rises 1.8%, and mean SINR falls
-0.98 dB. Longer results show the same broad tradeoff. A lower weighted cost
-is not a uniformly better connection.
+Read the [main differences](#main-differences-from-the-thesis),
+[general results](#general-results) and
+[conclusions](#conclusions-and-revised-diagnosis) first. The detailed inventory
+below retains every observation, action, physical assumption, reward term,
+PPO setting, split and reproduction command.
 
-Every current result below uses **fresh test seeds 53012 and 53013**, separate
-from the prior V2 evaluation on seeds 52012 and 52013.
+## Main Differences from the Thesis
+
+Except for the reward, the changes below apply to both V1.5 and V2 full.
+The shared changes' individual benefits have **not** been isolated experimentally. A modeling replacement
+is not automatically a correction of an original implementation bug.
+TFM references use printed pages; PDF viewer page = printed page + 2.
+See the [original TFM](sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf).
+
+| Area | Original written thesis | What our current study does differently |
+| --- | --- | --- |
+| Executable and channel data | Custom environment with Stable Baselines PPO; MATLAB ray tracing produces the radio map [pp. 6-7, Sec. 3.1; p. 13, Sec. 5.3]. | New Python environment and PPO implementation consuming the received HDF5. We retain Operator 1's 87 station maps and coordinates, but have not reproduced the original simulator or verified exact dataset version identity. |
+| Motion and braking | Discrete acceleration and heading, with five acceleration bins and eight directions [p. 12, Sec. 5.2; p. 15, Table 3]. | Continuous radial/lateral residual actions around a hand designed command that already points toward the goal and brakes. This is a substantial control aid shared by both rewards. |
+| Observations | The listed state contains position, serving station, resource group, energy and queue [p. 12, Sec. 5.2]. | 156 explicit features, including goal direction/distance, velocity, time, candidate station positions/RSS, capacity and valid actions. We do not know whether the original code added unlisted features. |
+| Connectivity enforcement | Written minimum RSS and bounded queue constraints, with an RSS reward penalty [p. 11, Eq. (12), C2/C4; p. 12, Eq. (14)]. | Any sampled RSS violation or queue overflow ends failure. A prospective filter also repairs network or local motion choices when possible. This implements explicit constraints; it does not establish how the unavailable original code enforced them. |
+| Arrival and termination | Stopping is intended, but arrival does not end the episode [p. 9, Sec. 3.2; p. 12, Sec. 5.2]. | Success requires distance at most 10 m, speed at most 2 m/s and no constraint violation. Arrival ends training and evaluation episodes. Constraint violations take precedence over simultaneous arrival. |
+| Station and resource decisions | Station and RBG requests with A3 logic; all 87 selected stations and 12 RBGs are listed [p. 9, Sec. 3.3.1; p. 12, Sec. 5.2; p. 15, Table 3]. | Serving station plus four strongest candidates, with 61 masked stay/station/group choices. Handover requests must satisfy A3 and resource availability. The filter can inspect the known map at predicted positions. |
+| Time and dynamics | Scalar speed/direction motion; 0.1 s table step, conflicting 1 ms prose, and 100 m/s speed threshold [p. 9, Eq. (2); pp. 14-15, Sec. 6.1/Table 3]. | Vector velocity and trapezoidal position updates, 1 s steps, a hard 25 m/s cap, 5 m/s² acceleration norm limit and 200 s deadline. These are explicit surrogate choices. |
+| Radio service, traffic and energy | Printed queue, arrival, rate, interference and energy models; random resource occupancy [pp. 9-10, Eqs. (4)-(10); pp. 14-15, Sec. 6.1/Table 3]. | Linear cochannel downlink interference, SINR based capacity, constant 200 kbit/s offered traffic, static half occupied resource patterns and an uncalibrated energy proxy. These replacements affect the task, not just its reward. |
+| Reward | Positive reciprocal radio utilities, +12 when closer, penalties and an energy override [p. 12, Eqs. (13)-(14); p. 15, Table 3]. | V1.5 reconstructs the equal weight original formula on V2 quantities. Full V2 replaces it with potential differences, time cost, negative radio cost and terminal payments. This reward package is the primary controlled intervention. |
+| PPO and training | Stable Baselines PPO; 300 episodes, up to 2,000 steps, learning rate 0.00003 and batch size 32 [p. 13, Sec. 5.3; p. 16, Table 4]. | Different implementation and hyperparameters, 524,288 interactions per policy and five declared seeds. Both reward arms use the same settings, training routes, initialization seeds and budget. |
+| Splits and uncertainty | Equivalent independent train/validation/test pools and repeated seed uncertainty are not documented [pp. 15-16, Secs. 6.2-6.3]. | 4,096 training routes, 64 standard and 32 longer validation routes, and 400 fresh shared test routes; report five seeds and paired bootstrap intervals. This is route separation on one city, not geographic generalization. |
+| Baselines and evaluation | Constant velocity greedy navigation plus radio/energy metrics and trajectory examples [pp. 13-14, Sec. 5.4; pp. 16-20, Sec. 7]. | Four deterministic references with shared constraints and control aids. Joint success is primary; failures remain visible and secondary contrasts use only common successful seed/route pairs. No original thesis success percentage is inferred from its plots. |
+
+We retain the thesis's RSS and buffer requirements rather than add a new
+application contract: **there is no two second packet deadline, imposed
+minimum throughput or requirement to empty the queue at arrival**. The source
+defines delay as queue divided by service rate [p. 9, Eq. (4)] and imposes
+RSS and queue bounds [p. 11, Eq. (12)]. The simulation checks those bounds at
+one second samples; it does not establish continuous physical connectivity.
+
+The [mission definition](#exact-mission-definition-and-source-pages),
+[physical model](#exact-data-and-physical-model-differences),
+[actions and filter](#exact-actions-navigation-prior-and-filter),
+[observations](#every-observation-feature), [reward](#exact-reward-difference),
+[PPO settings](#every-ppo-setting) and [splits](#splits-budgets-and-independence)
+below provide the exhaustive specification behind this summary.
+
+## What V1.5 Versus V2 Actually Tests
+
+| Component | V1.5 original reward | V2 full reward |
+| --- | --- | --- |
+| Map, motion, traffic, energy and service model | Shared V2 system | Identical |
+| Observation, action mask, navigation aid and prospective filter | Shared V2 system | Identical |
+| Success, failure and arrival termination | Shared V2 rules | Identical |
+| PPO settings, training routes, seeds and interaction budget | Shared V2 settings | Identical |
+| Reward | Reconstructed original equal weight formula on V2 inputs | Replacement reward package |
+| Final checkpoint | Every declared seed, at the fixed budget | Every declared seed, at the fixed budget |
+
+Five V1.5 policies were trained from scratch. All five full and five arrival
+V2 checkpoints were reused, fixed by hash before the fresh comparison.
+Training and validation pools are shared; test routes and load phases are
+identical across controllers. Equal seeds and budgets do not imply identical
+realized trajectories during learning. Shared reward normalization and
+clipping respond to the changed rewards, so this tests the package rather
+than any one reward term in isolation.
+
+V2 `arrival` is an additional control that omits the direct radio cost while
+retaining the same constraints. Its presence does not make the primary
+V1.5 versus full V2 contrast a reproduction of the thesis simulator.
+
+## General Results
+
+All current results use **fresh test seeds 53012 and 53013**, separate from
+the earlier V2 evaluation. Standard routes span 200-1000 m; longer routes
+span 1000-1800 m. Both ranges occur in training. There are 200 shared routes
+per split, five learned training seeds per arm, and **7,600 final episodes**
+across all controllers. Five seeds on shared routes are not 1,000 independent
+training replications.
+
+### Mission Completion
 
 | Controller | Standard joint success | Longer joint success | Episodes per split |
 | --- | ---: | ---: | ---: |
@@ -41,10 +111,110 @@ from the prior V2 evaluation on seeds 52012 and 52013.
 | Joint one step | 96.0% | 90.5% | 200 |
 | Joint three steps | 92.0% | 90.5% | 200 |
 
-All successful missions meet sampled RSS and buffer constraints. Failures stay
-in the denominators and are broken down in the result note. The shared motion
-prior and filter can help both rewards; their separate effects are not isolated.
-No overall PPO superiority claim is supported.
+The primary comparison is full V2 minus original V1.5 on standard routes.
+Intervals use 5,000 crossed seed/route bootstrap draws, seed 63000.
+
+| Contrast | Observed success difference | 95% interval |
+| --- | ---: | --- |
+| Standard, primary | 0.0 percentage points | [-2.8, 2.7] |
+| Longer, secondary | +1.5 percentage points | [-2.9, 6.1] |
+
+**Neither interval establishes improved completion.** This is not evidence
+of equivalence: meaningful differences remain compatible with the intervals,
+especially on longer routes. All successful missions satisfy the sampled
+constraints; every failure remains in the denominator.
+
+### Communication and Flight Tradeoffs
+
+The values below are means on **925 standard** and **781 longer** matched
+seed/route pairs where both original and full succeed. They are not means
+over all flights, and each controller's unmatched successful subset is not
+substituted for the common subset. A lower value is not universally better:
+higher SINR is preferable, while lower delay and fewer handovers are distinct
+objectives.
+
+| Metric | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 |
+| --- | ---: | ---: | ---: | ---: |
+| Flight time (s) | 31.252 | 28.112 | 65.394 | 60.145 |
+| Handovers | 6.843 | 0.443 | 15.826 | 1.528 |
+| Delay proxy (s) | 1.942 | 5.827 | 2.857 | 6.818 |
+| Energy proxy (kJ) | 7.651 | 7.788 | 18.523 | 18.957 |
+| SINR (dB) | -8.322 | -9.305 | -8.773 | -9.957 |
+| Interference (µW) | 0.753 | 0.748 | 0.794 | 0.791 |
+| Accumulated radio cost | 7.094 | 5.309 | 16.800 | 13.803 |
+
+Full V2 reduces handovers by 93.5% on standard pairs and 90.3% on longer
+pairs, with flights shorter by 3.14 s and 5.25 s. Its delay proxy increases
+by 200.1% and 138.7%, and energy proxy increases by 1.8% and 2.3%.
+SINR decreases; interference differences remain inconclusive. These are
+substantial service tradeoffs despite similar completion rates.
+
+The lower accumulated radio cost combines several weighted components and
+depends on flight duration. It does not establish uniformly better service.
+The [complete result note](docs/37_v15_reward_results.md) retains every paired
+interval; secondary intervals are descriptive and are not adjusted for
+multiple comparisons.
+
+### Failures Remain Part of the Result
+
+Counts below use all 1,000 episodes per arm and split, not only common
+successes. Each episode contributes its first failure reason.
+
+| First failure | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 |
+| --- | ---: | ---: | ---: | ---: |
+| Serving RSS below minimum | 40 | 34 | 136 | 112 |
+| Buffer overflow | 3 | 9 | 6 | 15 |
+| Total failed missions | 43 | 43 | 142 | 127 |
+
+Neither of these two arms has an energy, boundary or timeout failure in these
+tests. Full has fewer observed RSS failures but more buffer failures. These
+counts do not establish a general reliability advantage; the completion
+intervals above remain the relevant comparison.
+
+## Conclusions and Revised Diagnosis
+
+1. **We have not demonstrated that reward replacement improves mission
+   completion.** V1.5 performs similarly on the observed completion rates
+   when given the same system as V2. An interval containing zero does not
+   prove the controllers equivalent.
+2. **The rewards are not interchangeable in their service behavior.** Full
+   favors fewer handovers and faster flights, at the cost of higher delay,
+   slightly higher proxy energy and lower SINR on common successful flights.
+   It is not an overall better controller according to all measured goals.
+3. **The earlier diagnosis attributing the thesis's wandering primarily to
+   reward design was too strong.** The source itself considers reward,
+   movement implementation and training difficulty as possible explanations
+   [TFM, p. 19, Sec. 7.2]. Our new comparison does not identify which caused
+   its difficulties. Source Fig. 7 is not a quantitative matched baseline.
+4. **The shared changes could compensate for reward weaknesses.** Explicit
+   velocity/goal observations, braking guidance, termination, action masks
+   and the prospective filter are plausible contributors, but their
+   individual causal effects have not been measured. V1.5's success neither
+   validates the original reward in the original system nor proves it caused
+   the original failure.
+5. **No overall PPO superiority is established.** Goal radio has the highest
+   observed standard completion and the joint search references have the
+   highest observed longer completion in this comparison. Those rankings
+   alone are not significance tests or general guarantees.
+6. **The defensible contribution is a reproducible controlled comparison
+   with explicit mission criteria and visible tradeoffs.** We provide the
+   received map interface, source, 15 final models, shared tests, failures,
+   uncertainty, exact replays and traceable thesis comparisons. We do not
+   claim a reproduced fix to the unavailable thesis code or validated real
+   world performance.
+
+The study's implementation passed 73 tests and all 7,600 final evaluations
+replayed exactly. The long route illustration additionally repeated 600
+existing records exactly; these are not new independent samples. Such checks
+verify computational consistency, not the accuracy of the physical proxies.
+
+To explain the original failure, the next research needs the original code
+or a separately declared reconstruction, followed by controlled ablations of
+navigation guidance, observations, termination and filtering. Generalization
+also requires independent maps and traffic conditions. Those experiments
+have not been run, and the present test routes must not be used to tune them.
+
+### Long Route Illustration
 
 The [paper's long route illustration](results/reward_comparison/analysis_v15/reward_comparison_example.png)
 shows the longest declared longer test route (1,784.7 m), all 87 base stations
@@ -53,6 +223,12 @@ show RSS, SINR, queue, capacity, handovers, delay, energy and interference.
 Route selection uses distance, not outcomes; this example does not replace
 the aggregate comparison. The [revision record](docs/41_long_route_figure_revision.md)
 documents selection, reproduction and exact replay checks.
+
+This 1,784.7 m example has 18, 1 and 2 handovers for original reward, full
+reward and Goal radio, respectively. All three succeed, but full's queue
+reaches 99.19% of capacity. Nearly straight, overlapping paths therefore do
+not imply equivalent service. This example illustrates mechanisms rather
+than replacing the aggregate comparison above.
 
 ## Setup: Dataset and Model Checkpoints
 
@@ -131,7 +307,7 @@ checksum verification, splits, environment installation and troubleshooting.
 | RSS feasibility | At least -96 dBm at every modeled sample, including initial RSS | C2, p. 11; value p. 15 |
 | Queue feasibility | No overflow beyond 1,280,000 bits | C4, p. 11; decimal interpretation of 160 KB, p. 15 |
 | Termination | Arrival, first violation or timeout, in training and evaluation | V2 enforcement; source continues after arrival, p. 12, Sec. 5.2 |
-| Event priority | Failure overrides simultaneous arrival; boundary, energy, RSS, buffer, success, timeout reason priority | New explicit ordering; original code unknown |
+| Event priority | Constraint violations override simultaneous arrival; boundary, energy, RSS, buffer, success, timeout reason priority | New explicit ordering; original code unknown |
 | Outstanding queue | Allowed at arrival and reported | No added empty queue condition inferred from pp. 9-12 |
 | Packet deadline / minimum rate | Not imposed | No new application contract added |
 | Failure reporting | First RSS, buffer, boundary, energy or timeout failure | Added joint evaluation semantics |
