@@ -38,6 +38,12 @@ When adding research work, create or update a Markdown note that records:
     result and explicitly document what changed. V2 enforces the thesis RSS
     and buffer requirements; the user declined adding a new packet deadline
     or empty queue arrival condition.
+11. Preserve every file hashed in `configs/frozen_reward_comparison_v15.json`
+    and every reused checkpoint hash in that manifest. The V1.5 comparison is
+    the original written reward on the identical V2 system, not historical V1.
+    The current paper and README center on V2 and the fresh 53012/53013 tests.
+    Historical V1 has no role in the final paper and only a brief README note.
+    Preserve its records for provenance without promoting them as current evidence.
 
 ## Implementation Rules
 

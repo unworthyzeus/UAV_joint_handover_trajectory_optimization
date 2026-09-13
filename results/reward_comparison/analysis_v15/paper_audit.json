@@ -1,0 +1,332 @@
+{
+  "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
+  "pdf_sha256": "0540b8d19bf93150ced9ef42ef2ca5ea8f4ece4022166925555d8e48bcc9a837",
+  "pages": 6,
+  "fonts": {
+    "4": {
+      "name": "IHAIZV+NimbusRomNo9L-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "5": {
+      "name": "BZIVMZ+NimbusRomNo9L-MediItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "6": {
+      "name": "IXFAWU+NimbusRomNo9L-Medi",
+      "type": "Type1",
+      "embedded": true
+    },
+    "7": {
+      "name": "TQTHRL+CMR9",
+      "type": "Type1",
+      "embedded": true
+    },
+    "8": {
+      "name": "YEUUOC+CMSY9",
+      "type": "Type1",
+      "embedded": true
+    },
+    "9": {
+      "name": "AKHCZK+CMMI9",
+      "type": "Type1",
+      "embedded": true
+    },
+    "18": {
+      "name": "VDVGTR+NimbusRomNo9L-ReguItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "19": {
+      "name": "CAFSZL+CMSY10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "20": {
+      "name": "DDIEWW+CMR10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "27": {
+      "name": "FKPJSN+CMR7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "28": {
+      "name": "PVTTLK+CMMI10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "39": {
+      "name": "JAGKKY+CMMI7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "40": {
+      "name": "NOMARO+CMMI5",
+      "type": "Type1",
+      "embedded": true
+    },
+    "49": {
+      "name": "KPXLOM+MSBM10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "56": {
+      "name": "UTACNV+CMSY7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "65": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "91": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "108": {
+      "name": "FZDNHS+NimbusMonL-Regu",
+      "type": "Type1",
+      "embedded": true
+    }
+  },
+  "all_fonts_embedded_and_no_type3": true,
+  "no_unresolved_references_or_overfull_boxes": true,
+  "text_outside_page": [],
+  "tfm_citation_count": 35,
+  "tfm_citations": [
+    {
+      "file": "paper/unified.tex",
+      "line": 20,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 22,
+      "locator": "p.~11, Eq.~(12)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 23,
+      "locator": "p.~9, Eq.~(4)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 29,
+      "locator": "p.~12, Eq.~(14)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 31,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 39,
+      "locator": "p.~7, Table~2; p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 46,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 47,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 53,
+      "locator": "p.~10, Eqs.~(7)--(8)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 54,
+      "locator": "p.~14, Sec.~6.1"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 58,
+      "locator": "p.~10, Eq.~(9)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 63,
+      "locator": "p.~9, Eq.~(2)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 67,
+      "locator": "pp.~9--10, Eqs.~(4)--(6)"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 83,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 85,
+      "locator": "p.~9, Sec.~3.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 95,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 100,
+      "locator": "p.~9, Eq.~(3); p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 103,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 112,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 122,
+      "locator": "p.~15, Table~3"
+    },
+    {
+      "file": "paper/unified.tex",
+      "line": 130,
+      "locator": "p.~12, Eq.~(13)"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 25,
+      "locator": "pp.~6--7, Sec.~3.1"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 26,
+      "locator": "p.~10, Eq.~(11)"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 27,
+      "locator": "p.~11, Eq.~(12),\nC2 and C4"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 29,
+      "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 31,
+      "locator": "p.~12, Eqs.~(13)--(14)"
+    },
+    {
+      "file": "paper/v15_front.tex",
+      "line": 39,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 10,
+      "locator": "p.~12, Eqs.~(13)--(14); p.~15, Table~3"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 13,
+      "locator": "p.~12, Sec.~5.2"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 15,
+      "locator": "pp.~20--21, Sec.~7.3"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 34,
+      "locator": "p.~13, Sec.~5.3"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 35,
+      "locator": "pp.~15--16, Sec.~6.2 and Table~4"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 58,
+      "locator": "pp.~15--16, Secs.~6.2--6.3"
+    },
+    {
+      "file": "paper/v15_protocol.tex",
+      "line": 81,
+      "locator": "pp.~13--14, Sec.~5.4"
+    },
+    {
+      "file": "paper/v15_findings.tex",
+      "line": 57,
+      "locator": "p.~21, Sec.~8"
+    }
+  ],
+  "source_hashes": {
+    "paper/unified.tex": "e12d9f208f5a1eb9ce0eb00e3a16b295fff4b271a2b0971ee423522cb6c3d69b",
+    "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
+    "paper/v15_front.tex": "d5dd6f8b098c840618fa4e9228fafab7ae7a0d36a5350cb87ea1ac30bafa3356",
+    "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
+    "paper/v15_findings.tex": "d672d509a04a5b08af9dd7978e29c58c2d96457aca82aff70554b60ce3f9d479",
+    "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
+    "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
+    "paper/v15_paired_table.tex": "2cc319d174ff0f40e0a4f12658efc6fe5a7774b6d1f71c92a26c2a23a86c1252",
+    "paper/v15_seed_table.tex": "eb5fca872fd5b38435bae8276bac0232881a953e83a188ed7b5eb880918037e6"
+  },
+  "frozen_sources_match": {
+    "frozen_comparison_v1.json": {
+      "src/uav_joint_optimization/experiment_env.py": true,
+      "src/uav_joint_optimization/experiment_ppo.py": true,
+      "scripts/run_controlled_experiment.py": true,
+      "configs/controlled_scenarios.json": true,
+      "docs/18_experiment_protocol.md": true,
+      "docs/20_pilots_and_frozen_comparison.md": true
+    },
+    "frozen_connectivity_v2.json": {
+      "src/uav_joint_optimization/connectivity_env.py": true,
+      "src/uav_joint_optimization/connectivity_ppo.py": true,
+      "src/uav_joint_optimization/connectivity_planner.py": true,
+      "scripts/run_connectivity_experiment.py": true,
+      "configs/connectivity_scenarios_v2.json": true,
+      "scripts/analyze_connectivity_experiment.py": true,
+      "docs/28_connectivity_experiment_protocol.md": true
+    },
+    "frozen_reward_comparison_v15.json": {
+      "src/uav_joint_optimization/original_reward_env.py": true,
+      "src/uav_joint_optimization/reward_comparison_ppo.py": true,
+      "scripts/run_reward_comparison.py": true,
+      "scripts/analyze_reward_comparison.py": true,
+      "configs/reward_comparison_scenarios_v15.json": true,
+      "docs/36_v15_reward_comparison_protocol.md": true,
+      "tests/test_reward_comparison.py": true
+    }
+  },
+  "statistic_hashes": {
+    "results/reward_comparison/analysis_v15/statistics.json": "efc7532c62c3cb0bc6583f12812c3f213d4fbd378fe91a0a5298efe85db8e888",
+    "models/checkpoint_manifest.json": "e5f7bfe8553f21e794801f27c8944e940bfb0effa27ebbb24ff36491cd82f2a4",
+    "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c"
+  },
+  "visual_review": "All six final rendered pages reviewed; figures, paired table, every seed, observation layout and references readable with no overlap or clipping.",
+  "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained.",
+  "validation": {
+    "tests": 73,
+    "exact_new_episode_replays": 7600,
+    "included_checkpoints": 15,
+    "custom_cli_checks": 2,
+    "historical_v1_absent": true,
+    "generated_primary_values_checked": true
+  }
+}

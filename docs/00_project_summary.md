@@ -1,12 +1,19 @@
 # Project Summary
 
-The latest completed work is the strict connectivity study in notes 28–32.
-It restores the sampled RSS and buffer constraints and all three thesis radio
-costs. Full PPO reaches 96.6% / 89.7% standard/longer joint success, while the
-goal directed radio controller reaches 98.0% / 92.5%. Weighted cost improves
-but PPO delay worsens; learned completion differences are uncertain. The
-four page `paper/UAV_connectivity_repair_IEEE.pdf` reports the results. Earlier
-arrival reward findings remain a separate, preserved study.
+Current as of 13 September 2026: V2 with V1.5 as the original reward control
+on the same system. The [current paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf)
+excludes the historical arrival study. The [result note](37_v15_reward_results.md)
+reports 95.7% standard success for both full and original rewards, and 87.3%
+versus 85.8% longer success. Neither completion difference establishes improvement.
+Faster flights and fewer handovers accompany higher communication delay.
+
+The repository includes all 15 final checkpoints. The private dataset is still
+required at the path in [the setup guide](35_dataset_and_model_setup.md).
+There are 73 passing tests and 7,600 exactly replayed new evaluations. The
+[current status](12_task_status.md) and [delivery record](38_v2_paper_and_model_release.md)
+identify completed work and remaining physical model limitations.
+
+The sections below retain the original project scope and source context.
 
 ## Research Question
 

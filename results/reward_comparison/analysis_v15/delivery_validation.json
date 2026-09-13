@@ -1,0 +1,15 @@
+{
+  "frozen_source_protocol_blobs_verified": 20,
+  "checkpoint_blobs_verified": 15,
+  "checkpoint_bytes": 2054910,
+  "private_hdf5_tracked": false,
+  "historical_paper_archives_match_previous_commit": true,
+  "current_pdf_and_tex_blobs_match_paper_audit": true,
+  "tests_passed": 73,
+  "exact_final_episode_replays": 7600,
+  "custom_cli_smoke_checks": 2,
+  "current_pdf_pages": 6,
+  "pinpoint_tfm_citations": 35,
+  "all_six_pages_visually_reviewed": true,
+  "scope": "Validated exact Git index bytes before publication; raw private data remains excluded."
+}

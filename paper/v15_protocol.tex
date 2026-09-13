@@ -1,0 +1,91 @@
+\section{Original Reward Intervention and Experimental Protocol}
+\subsection{V1.5: Original Written Reward on V2}
+For executed postfilter delay $D$, interference $I$ and handover $h$, use
+\begin{align}
+r_{\rm orig}={}&\frac{0.35}{1+10D}+\frac{0.30}{1+10^5I}
+ +\frac{0.35}{1+100h}\nonumber\\
+ &+12\mathbb{1}[d_{t+1}<d_t]-10b-10o-10s.
+\end{align}
+The source supplies the algebra, equal weights and coefficients
+\cite[p.~12, Eqs.~(13)--(14); p.~15, Table~3]{thesis}. Here $b$ is a boundary
+violation, $o$ is RSS $\leq-96$ dBm, and $s$ is speed $\geq100$ m/s.
+Energy exhaustion replaces the whole reward with $-10$
+\cite[p.~12, Sec.~5.2]{thesis}. No new arrival, timeout or overflow payment
+is added. The source's removed energy utility and data dump penalty remain
+absent\cite[pp.~20--21, Sec.~7.3]{thesis}.
+
+The reward retains its RSS equality penalty although the joint constraint
+permits equality. Its speed threshold remains 100 m/s, unreachable under the
+V2 25 m/s cap. Substituting 25 m/s would invent a penalty on routine cruising.
+The same V2 transition supplies radio inputs, physics, filter interventions
+and terminal outcomes to all arms. The wrapper changes only returned reward
+and accumulated raw return. Full reward replacement changes the entire package;
+the effects of shaping, terminal payments and removing positive per step
+utilities are not separately identified.
+
+\subsection{Shared Training and Fixed Checkpoints}
+PPO uses separate two layer 64 unit tanh actor and critic networks, 64 lanes,
+128 step rollouts, four epochs, minibatches of 512, learning rate
+$3\times10^{-4}$, Adam epsilon $10^{-5}$, discount 0.99, GAE 0.95, clip 0.2,
+entropy weight 0.005, value weight 0.5 and gradient norm limit 0.5.
+Two CPU threads are used. Running discounted return variance normalizes rewards,
+clipped to $[-10,10]$. This shared processing responds to changed raw rewards;
+potential algebra alone does not establish invariance after these transforms.
+The source uses Stable Baselines PPO\cite[p.~13, Sec.~5.3]{thesis} and different
+training settings\cite[pp.~15--16, Sec.~6.2 and Table~4]{thesis}.
+
+All arms use the exact 4,096 V2 training routes spanning 200--1800 m, 64 standard
+validation routes and 32 longer validation routes. Five initialization seeds,
+2101--2105, and 524,288 interactions per policy are shared. Five original reward
+policies are newly trained from scratch: 2,621,440 new interactions. All ten
+completed full and arrival V2 policies are reused; they used identical training
+data, seeds and budget. Their hashes were fixed before new training and test
+evaluation. No seed is selected for its performance. Different policies can
+reset at different times, so equal seeds and budgets do not imply identical
+realized transitions. Every run uses its final budget checkpoint.
+
+Earlier V2 test outcomes were known. This protocol was frozen before the new
+training and fresh test evaluation; it is not independently registered or
+claimed to predate the earlier V2 study. No new hyperparameter tuning or policy
+selection uses the fresh tests.
+
+\subsection{Fresh Tests and Prespecified Analysis}
+Generate 200 standard routes of 200--1000 m using seed 53012 and 200 longer
+routes of 1000--1800 m using seed 53013. Exact route pairs are disjoint from
+all prior saved routes; every controller shares initial conditions and load
+phases. Both lengths occur in training. This is route holdout on one map,
+not geographic generalization or length extrapolation. The source does not
+document equivalent independent splits\cite[pp.~15--16, Secs.~6.2--6.3]{thesis}.
+
+The primary contrast is full minus original standard joint success. Use 5,000
+crossed seed and route bootstrap draws, seed 63000, to estimate a 95\% interval.
+An interval entirely above zero supports improved primary completion under
+this design. Longer completion is prespecified secondary. Five seeds on 200
+shared routes are not 1,000 independent training replications. Secondary
+intervals are descriptive and unadjusted for multiple comparisons.
+
+Secondary metrics use the common successful seed/route pairs, with their count
+visible. Unconditional success and failure rates remain separate. No percentage
+is computed for logarithmic SINR. Three learned arms supply 6,000 episodes;
+four deterministic references supply 1,600, totaling 7,600 new final evaluations.
+These records are separate from the previously evaluated V2 routes.
+
+\subsection{Deterministic References and Verification}
+Goal RSS uses nominal braking motion and strongest admissible association.
+Goal radio uses the same motion and prospective normalized radio cost selection.
+One step and three step joint search examine nine initial motion primitives,
+varying direction and speed. The three step version follows each initial
+choice with two predicted reference steps. All share the same safety filter,
+which can alter nominally straight paths. These local methods can fail and
+are not a reproduction of the source greedy controller
+\cite[pp.~13--14, Sec.~5.4]{thesis}.
+
+All \TestCount\ tests pass, including unchanged states, observations, masks
+and terminal records under identical actions across reward arms. Failure checks
+cover RSS, overflow, boundary, energy and timeout as well as arrival. A syntax
+comparison verifies that copied PPO differs only in its environment import
+and module description. Small full reward training reproduces frozen V2
+parameters exactly; original reward training repeats exactly in its deterministic
+check. All \ReplayCount\ new final episode records replayed exactly. Source,
+dataset and checkpoint hashes remain unchanged. These checks verify software
+reproduction, not physical model validity.

@@ -19,6 +19,10 @@ wandb/
 *.ckpt
 *.pt
 *.pth
+# Final policies used in the current controlled reward comparison.
+!/results/connectivity_experiment/confirmatory_v2/full_seed_210[1-5]/checkpoint.pt
+!/results/connectivity_experiment/confirmatory_v2/arrival_seed_210[1-5]/checkpoint.pt
+!/results/reward_comparison/confirmatory_v15/original_seed_210[1-5]/checkpoint.pt
 *.h5
 *.hdf5
 *.npy

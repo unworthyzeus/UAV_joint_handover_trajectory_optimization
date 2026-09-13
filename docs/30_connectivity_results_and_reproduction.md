@@ -2,6 +2,11 @@
 
 Date: 12 September 2026. Study: `connectivity_v2`.
 
+This note preserves the prior V2 evaluation on route seeds 52012 and 52013.
+The [current reward comparison](37_v15_reward_results.md) evaluates all these
+controllers plus V1.5 on fresh routes 53012 and 53013. The ten final V2 weights
+are now included in Git; their prior results below remain unchanged.
+
 ## Outcome
 
 The implementation now enforces the thesis's sampled RSS and buffer constraints
@@ -164,8 +169,8 @@ not a route selected for attractive bends.
 
 Start with [the dataset and model setup guide](35_dataset_and_model_setup.md)
 for exact file locations, dependency installation, checkpoint compatibility,
-output filenames and troubleshooting. A clone currently includes neither the
-private HDF5 nor the trained `.pt` files.
+output filenames and troubleshooting. A current clone includes the final V2
+and V1.5 weights; the private HDF5 must still be supplied separately.
 
 Use system Python with the versions in `requirements-experiments.txt`. The
 private map must already be present. Existing trained policies are sufficient

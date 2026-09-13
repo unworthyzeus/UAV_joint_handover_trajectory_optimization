@@ -60,6 +60,10 @@ all surrogate choices from original thesis definitions.
 
 ## GitHub Release Scope and Exact Bytes
 
+Historical release record: the later [V2 paper and model release](38_v2_paper_and_model_release.md)
+supersedes the current paper and checkpoint availability described here.
+The original consolidated PDF and source are retained with a `20260912` suffix.
+
 The requested destination is the existing `origin`, branch `main`, at
 <https://github.com/unworthyzeus/UAV_joint_handover_trajectory_optimization>.
 The release includes project code, tests, configuration, research notes, raw

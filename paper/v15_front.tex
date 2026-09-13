@@ -1,0 +1,48 @@
+\begin{abstract}
+Reward comparisons for cellular UAV control must preserve the communication
+requirements that make a mission successful. We compare a master's thesis
+reward with a replacement within the same strict sampled connectivity system,
+V2. The original reward arm, V1.5, retains reciprocal radio utilities, a binary
+approach bonus and source penalties; it shares V2's dynamics, observations,
+actions, residual navigation prior, safety filter, PPO settings and termination.
+Five training seeds per learned arm and 400 fresh shared routes support the
+comparison. Full V2 achieves \FullStd\% standard and \FullLong\% longer joint
+success, versus \OriginalStd\% and \OriginalLong\% for V1.5. The primary
+standard difference is \PrimaryDiff\ percentage points, with a 95\% crossed
+seed and route bootstrap interval \PrimaryCI. \PrimaryAbstract{}
+An arrival reward control and four deterministic references expose communication
+tradeoffs and the shared controller's role. Every successful mission meets the
+sampled RSS and buffer constraints. These results concern a declared surrogate,
+not the unavailable original simulator or physical connectivity between samples.
+\end{abstract}
+\begin{IEEEkeywords}
+Cellular UAV, connectivity constraints, reward design, handover, trajectory
+control, resource allocation, reinforcement learning, reproducibility.
+\end{IEEEkeywords}
+
+\section{Introduction}
+A master's thesis studies joint trajectory, cell association and resource
+control using Barcelona ray tracing data\cite[pp.~6--7, Sec.~3.1]{thesis}.
+Its objective weights delay, interference and handovers\cite[p.~10, Eq.~(11)]{thesis},
+with minimum serving RSS and bounded queue constraints\cite[p.~11, Eq.~(12),
+C2 and C4]{thesis}. The thesis reports wandering and prioritization of
+connectivity over destination completion\cite[p.~19, Sec.~7.2; p.~21, Sec.~8]{thesis}.
+Positive reciprocal radio utilities and a fixed approach bonus
+\cite[p.~12, Eqs.~(13)--(14)]{thesis} motivate an empirical reward audit,
+but do not establish the cause of behavior in unavailable original code.
+
+The central question is whether replacing that reward improves joint mission
+success when every other component is the same V2 system. V1.5 denotes the
+written original reward on V2, created as a new controlled intervention.
+Both arms retain V2's strict sampled connectivity rules, arrival termination,
+navigation prior and prospective safety filter. We do not restore the original
+continued training after arrival\cite[p.~12, Sec.~5.2]{thesis}. The experiment
+therefore measures the reward package conditional on V2, not the complete
+original agent or individual reward terms in isolation.
+
+We contribute a transparent reward comparison, fresh matched tests, all training
+seeds, explicit failures and reproducible artifacts. PPO\cite{ppo} is an
+established algorithm; we claim no new learning method. Thesis citations give
+printed pages; add two for the PDF viewer page. The original simulator and
+trained policy remain unavailable, and exact source dataset version identity
+is unverified.

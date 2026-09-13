@@ -78,7 +78,7 @@ the first declared seed, not a model selected for the best test result.
 | `docs/25_exact_changes_from_tfm.md` | Complete source comparison with printed page, equation, and table references |
 | `scripts/check_thesis_citations.py` | Verify that all manuscript TFM citations have page locators and frozen sources match |
 
-Checkpoints and `outputs/` are ignored by Git but retained locally. A Git clone
+Historical V1 checkpoints and `outputs/` are ignored by Git but retained locally. A Git clone
 alone does not include these saved policies, the raw map, or replay outputs.
 Archive those authorized local artifacts separately if transferring the study.
 

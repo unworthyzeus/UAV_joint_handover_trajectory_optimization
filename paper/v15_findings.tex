@@ -1,0 +1,102 @@
+\section{Results on Fresh Shared Routes}
+\input{v15_results_table.tex}
+\begin{figure*}[t]
+\centering\includegraphics[width=.97\textwidth]{reward_comparison_success.pdf}
+\caption{Joint success on fresh shared routes. Bars aggregate episodes; dots
+show individual learned training seeds, not confidence intervals. Deterministic
+controllers have one evaluation per route.}
+\label{fig:success}
+\end{figure*}
+
+\subsection{Primary Reward Contrast}
+Full achieves \FullStd\% standard success versus \OriginalStd\% for V1.5.
+The paired difference is \PrimaryDiff\ percentage points, 95\% interval
+\PrimaryCI. \PrimaryInterpretation{} On longer routes the difference is
+\LongDiff\ points, interval \LongCI. \LongInterpretation{}
+Every training seed appears in Table~\ref{tab:seeds}.
+
+\input{v15_failure_table.tex}
+\subsection{Failures and Communication Tradeoffs}
+Table~\ref{tab:failures} reports first failure reasons. Episodes stop on the
+first violation; hypothetical later failures are unknown. Every successful
+flight has zero sampled RSS outage and zero dropped bits.
+
+\input{v15_paired_table.tex}
+Full versus original secondary comparisons contain \PairStd\ common successful
+standard seed/route pairs and \PairLong\ longer pairs.
+Table~\ref{tab:paired} reports conditional paired values and intervals.
+\RadioInterpretation{} A favorable aggregate cost is not interchangeable with
+delay, interference, handovers or completion. Different successful subsets
+must not be treated as matched counterfactual outcomes.
+
+\subsection{Other Controls}
+Full versus arrival completion differences are \ArrivalDiffStd\ points
+\ArrivalCIStd\ on standard routes and \ArrivalDiffLong\ points
+\ArrivalCILong\ on longer routes. Both arms enforce strict constraints.
+Goal radio attains \RadioStd\% and \RadioLong\% joint success.
+\ReferenceInterpretation{} These references expose performance available from
+the shared model rather than demonstrating learned superiority.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.97\textwidth]{reward_comparison_example.pdf}
+\caption{First declared standard test route, seed 2101 for learned policies.
+Original reward, full reward and Goal radio share initial conditions. Selection
+is by index; aggregate results determine the conclusions.}
+\label{fig:example}
+\end{figure*}
+
+\section{Interpretation and Limitations}
+The contrast isolates the reward package conditional on V2. It does not identify
+individual terms or behavior without the navigation prior and prospective
+filter. These components may compensate for reward deficiencies. Removing them
+would require a separate experiment and fresh evaluation.
+
+Original speed limits, motion, discrete action parameterization, continued
+training after arrival and unknown implementation details differ. Reconstructing
+the reward on V2 cannot identify the cause of the thesis's wandering
+\cite[p.~21, Sec.~8]{thesis}. Exact dataset version and sentinel meaning remain
+unverified. One map, static load, ideal service and uncalibrated energy limit
+inference. No physical continuity, packet latency, collision safety or deployment
+claim follows. A successful arrival can still retain queued data. Every table
+here uses the newly declared route seeds; earlier V2 results remain separate.
+
+\section{Conclusion}
+\ConclusionResult{} The experiment compares the written original reward and a
+replacement under identical sampled constraints and control machinery, retaining
+failed missions and communication tradeoffs. Further claims require independent
+maps, traffic and controller ablations rather than tuning on these test routes.
+
+\clearpage
+\appendices
+\section{Artifacts and Reproduction}
+The repository includes all 15 final checkpoints, source, configuration, raw
+records, analysis, source snapshots and this paper:
+\url{https://github.com/unworthyzeus/UAV_joint_handover_trajectory_optimization}.
+Ten are unchanged V2 policies and five are new V1.5 policies. The private
+dataset belongs at \texttt{dataset/Barcelona\_dataset\_January.h5}; the setup
+guide records its checksum, dependency versions, exact commands and outputs.
+Note 36 is the frozen protocol, note 37 records results, and note 38 records
+delivery validation. The README documents the exact V2 differences from the
+TFM with page locators. This is a research draft, not an accepted publication.
+
+\section{Every Seed and Observation Layout}
+\input{v15_seed_table.tex}
+\par\noindent\begin{minipage}{\columnwidth}
+\captionof{table}{Identical V2 observation layout in all three learned arms.}
+\centering\small
+\begin{tabular}{ll}\toprule
+Indices & Meaning\\\midrule
+0--1 & Position / map extent\\
+2--3 & Unit goal direction\\
+4 & Goal distance / 1,000 m\\
+5--6 & Radial/lateral velocity / 25 m/s\\
+7--8 & Speed / 25; elapsed steps / 200\\
+9--10 & Queue and consumed energy fractions\\
+11--13 & Load phase, RBG and serving SINR\\
+14--18 & Candidate RSS values\\
+19--28 & Candidate relative coordinates\\
+29--33 & Candidate station indices\\
+34--94 & Log capacity for 61 options\\
+95--155 & Network mask\\\bottomrule
+\end{tabular}
+\end{minipage}\par

@@ -1,0 +1,30 @@
+{
+  "exact_episode_matches": 7600,
+  "checked_utc": "2026-09-12T23:50:54.128063+00:00",
+  "source_hashes": {
+    "src/uav_joint_optimization/original_reward_env.py": "a668247c3b275b7f79c181dc39b0cc584ab8bdc43bfaf46e2845fdd413977b57",
+    "src/uav_joint_optimization/reward_comparison_ppo.py": "6526d6ee1f5a5565e754c399186cf42d21fce081e67b01213e35f40f3e208de1",
+    "scripts/run_reward_comparison.py": "2e14a5c5008b3464a2c880d48695b3b8c8ef637b49847491f48db69d177e04ed",
+    "scripts/analyze_reward_comparison.py": "86f7ff4cadb56b8181c0ac5e3262452c239f4fe7619b2a4a4953a1d7ba908414",
+    "configs/reward_comparison_scenarios_v15.json": "46f0672892c82554368e9fb6e1079739129d320608cf9c4950783f577a1136d5",
+    "docs/36_v15_reward_comparison_protocol.md": "15d7550526dc3cd594052dd545669136c6cd1b710de9e6fdc18199644437f57a",
+    "tests/test_reward_comparison.py": "525017317c464ab4596f695b6e4ad587b6112d84094096222e207de0769d7371"
+  },
+  "checkpoint_hashes": {
+    "results/reward_comparison/confirmatory_v15/original_seed_2101/checkpoint.pt": "4e13779ca5a64b9e7a18dddf9d317469bcca0ddd8bd82c51afc6ae64162e9996",
+    "results/reward_comparison/confirmatory_v15/original_seed_2102/checkpoint.pt": "c27ae3dca6bc9ef1aeeca31ebfa2a380b0f4fff8d828853dfb36aea6ad5b9dd0",
+    "results/reward_comparison/confirmatory_v15/original_seed_2103/checkpoint.pt": "f3d19544884730136be86319589c666e9f0b3f4de600388aedded5f546953b9e",
+    "results/reward_comparison/confirmatory_v15/original_seed_2104/checkpoint.pt": "fe557234c714f29bf7d95434b81dfcb3aa7061f987be988246a07e4e64045dd3",
+    "results/reward_comparison/confirmatory_v15/original_seed_2105/checkpoint.pt": "5ee19cb7025ddd124bf3ac594468bc876f09a6d1ee768bcd71a41d9198a278b4",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt": "fc2566064cfd9911dd850c8c07e2c1abc8bbe65e75e8892e08a47f52ddde598b",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2102/checkpoint.pt": "e67e72220be579a30c5e957ba845a47cb45c4f74205591def759d54916dfc0a1",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2103/checkpoint.pt": "d69ff23301aac166073dcb91bfdfa80510bd978ce9e9388364bdf23b12c00b88",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2104/checkpoint.pt": "4a072dbb175955290c69ebe55210be31cecc1eaef694f61e8710fc762d77f28e",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2105/checkpoint.pt": "45252100f99c1104b7901e54f8195feb6108d9f604c5e43acda7d0779905ab16",
+    "results/connectivity_experiment/confirmatory_v2/arrival_seed_2101/checkpoint.pt": "537b1d5b7249d9e6a59584efbdb690ce6d91b107020acf86f54fabd059ffbd5f",
+    "results/connectivity_experiment/confirmatory_v2/arrival_seed_2102/checkpoint.pt": "c3f3dcd0f5c98d4af821a63b24d3958124f8236263009b7d36d97a3318edea89",
+    "results/connectivity_experiment/confirmatory_v2/arrival_seed_2103/checkpoint.pt": "99225e0231be61c9e98e657813890c769375cdab9978f9a94f731bd84be0c4cb",
+    "results/connectivity_experiment/confirmatory_v2/arrival_seed_2104/checkpoint.pt": "6bdeb2c702e72243e413cb529be62e7336122ae400b6c3547f5e7511e1584415",
+    "results/connectivity_experiment/confirmatory_v2/arrival_seed_2105/checkpoint.pt": "cb89688d4a1437ae47438e3e2c9134ae68131240956cb4d0c9104dd0b2408b7f"
+  }
+}

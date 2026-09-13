@@ -4,7 +4,7 @@ Date: 13 September 2026.
 
 ## What Was Done
 
-Expanded the root [README](../README.md#complete-inventory-of-differences-from-the-original-thesis)
+Expanded the then current README, whose [inventory is now archived](39_historical_implementation_inventory.md#complete-inventory-of-differences-from-the-original-thesis),
 with the complete documented comparison requested in the conversation. The
 inventory is directly readable in the README, with twelve linked categories:
 

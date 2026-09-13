@@ -6,6 +6,16 @@
 *.jpeg binary
 *.npy binary
 *.npz binary
+*.pt binary
+
+# Preserve the new reward comparison's frozen bytes as well.
+src/uav_joint_optimization/original_reward_env.py -text
+src/uav_joint_optimization/reward_comparison_ppo.py -text
+scripts/run_reward_comparison.py -text
+scripts/analyze_reward_comparison.py -text
+configs/reward_comparison_scenarios_v15.json -text
+docs/36_v15_reward_comparison_protocol.md -text
+tests/test_reward_comparison.py -text
 
 # Preserve the exact bytes recorded by the experiment freezes, including
 # historical mixed line endings. These remain normal diffable source files.

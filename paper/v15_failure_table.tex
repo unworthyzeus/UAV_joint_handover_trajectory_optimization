@@ -1,0 +1,14 @@
+\begin{table}[t]
+\caption{First failures: RSS / buffer / timeout counts. No energy or boundary failures occurred.}
+\label{tab:failures}\centering\small
+\begin{tabular}{lrr}\toprule
+Controller & Standard & Longer\\\midrule
+PPO original (V1.5) & 40 / 3 / 0 & 136 / 6 / 0\\
+PPO full (V2) & 34 / 9 / 0 & 112 / 15 / 0\\
+PPO arrival (V2) & 51 / 0 / 0 & 147 / 0 / 2\\
+Goal RSS & 12 / 0 / 0 & 31 / 0 / 0\\
+Goal radio & 7 / 0 / 0 & 21 / 2 / 0\\
+Joint one step & 8 / 0 / 0 & 18 / 0 / 1\\
+Joint three steps & 4 / 0 / 12 & 11 / 0 / 8\\
+\bottomrule\end{tabular}
+\end{table}

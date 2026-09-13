@@ -1,56 +1,35 @@
 # Research Task Status
 
-Updated 12 September 2026 after paper consolidation for the requested GitHub release.
+Updated 13 September 2026 after the V2 focused reward comparison.
 
-The current deliverable is the single 15 page
-[consolidated IEEE paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf),
-covering both studies with 104 pinpoint TFM citations and detailed appendices.
-Note 33 records consolidation, validation, and release scope. Earlier PDFs are
-historical versions; no experiment was rerun or revised for consolidation.
+The current [paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf) contains
+V2 and its V1.5 original reward control. Historical V1 is excluded from the
+final paper and reduced to one brief note in the root README.
 
-The v2 objective and endpoint repair is complete. The full learned controller
-achieves 96.6% standard and 89.7% longer joint success; the simpler radio
-controller achieves 98.0% and 92.5%. Every reported success satisfies sampled
-RSS and buffer constraints. Delay tradeoffs and remaining failures are retained.
-There are 51 passing tests, 5,600 exact v2 evaluation replays, the consolidated
-IEEE paper, and complete change notes. See notes 28–33 for current results and
-limits. This does not establish an overall PPO advantage or real continuity
-between the one second samples.
+| Task | Status | Evidence |
+| --- | --- | --- |
+| Original reward on identical V2 system | Complete | Reward adapter, transition identity tests and frozen protocol, note 36 |
+| New training | Complete | Five seeds, 524,288 interactions each; 2,621,440 new interactions |
+| Reused V2 weights | Verified | All ten policies fixed by hash before new training and tests |
+| Fresh paired evaluation | Complete | 400 new routes, 7,600 final episodes, note 37 |
+| Primary completion result | No improvement established | Both 95.7% standard; full minus original 0.0 points [-2.8, 2.7] |
+| Longer completion | Uncertain difference | Full 87.3%, original 85.8%; +1.5 points [-2.9, 6.1] |
+| Communication interpretation | Tradeoff retained | Full reduces handovers and flight time but increases delay and energy; no overall superiority |
+| Verification | Complete | 73 tests and 7,600 exact replays; all three source freezes match |
+| Model release | 15 final policies | Five V1.5 plus ten V2, 2,054,910 bytes; manifest under models |
+| Current documentation and paper | Updated | Notes 35-38, V2 README, generated paper tables and figures |
+| Private dataset | Required separately | Exact path and SHA256 in setup guide |
 
-The table below preserves the completed earlier v1 study's status and counts.
+The [result note](37_v15_reward_results.md) contains all seeds, failures and
+paired secondary metrics. The [delivery note](38_v2_paper_and_model_release.md)
+records the manuscript and model publication. The [setup guide](35_dataset_and_model_setup.md)
+explains installation, checkpoints, dataset placement and exact commands.
 
-| Task | Status | Evidence | Remaining scope |
-| --- | --- | --- | --- |
-| Inspect ray tracing data | Complete for received file | Full scan, checksum, schema, and coverage in note 17 | Confirm exact thesis version and sentinel convention |
-| Replicate original baseline | Externally blocked | Headline map specifications agree with thesis | Original code, scene, routes, seeds, and checkpoints absent |
-| Explicitly reimplement reward comparison | Complete | Shared environment and hybrid PPO, notes 18–19 | Does not establish source equivalence |
-| Diagnose reward formulation | Positive controlled evidence | Four treatments, five seeds each, note 21 | Confirm diagnosis in original code |
-| Train and document learning | Complete | Six pilots and twenty final policies; note 20 | New studies need fresh protocols and test routes |
-| Controlled benchmark | Complete | 8000 learned test episodes and 400 reference episodes | Same city and static background load |
-| Validate implementation | Complete | 34 passing tests and exact 200 episode checkpoint replay | Physical model requires independent validation |
-| Analyze uncertainty | Complete | Paired crossed seed and route bootstrap, all seeds retained | Five seeds limit tail inference |
-| Visualize and report | Complete | Generated figures, Markdown record, IEEE manuscript and PDF with requested authors | Draft requires venue review before submission |
+## Remaining Research Scope
 
-## Earlier v1 Claim
-
-In this declared reimplementation, legacy reward success is 21.4% on standard
-routes and 0% on longer routes. Reward replacement alone reaches 100% on both,
-while the combined reward and training termination change reaches 99.7% and
-36.1%. Termination alone reaches 0%. All evaluation ends at first safe arrival.
-The positive gate passed. This updates the earlier assumption that success
-termination would necessarily improve learning.
-
-The deterministic reference also completes all routes and is faster. The result
-supports objective repair under the shared assumptions; it does not demonstrate
-superiority over classical control or Marina's actual saved policy.
-
-## Why and What Remains
-
-The completed experiment makes the reward hypothesis testable with available
-assets. The requested implementation, controlled test, Markdown record,
-and conditional IEEE paper are complete. Future research should recover the
-original simulator and validate the stated radio, traffic, energy, and obstacle
-assumptions. That separate replication remains dependent on external assets.
-
-See notes 21–23 for results, reproduction, and final audit. Preserve frozen
-source hashes and test results when starting any follow up study.
+The result is conditional on the V2 navigation prior and filter. It neither
+reproduces the original simulator nor isolates the cause of its behavior.
+Single map, static load, ideal service, uncalibrated energy, no obstacle model
+and one second sampling limit inference. No new application deadline or empty
+queue condition is imposed. Next work requires independent tests and separately
+frozen component ablations, not retuning on the current routes.

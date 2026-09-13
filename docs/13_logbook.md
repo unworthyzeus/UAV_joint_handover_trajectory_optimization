@@ -216,3 +216,28 @@ without retraining, separately restored weights. The next user step is to
 place those artifacts and run a custom route. The guide explains the sampled
 connectivity limitation and does not imply that every custom mission succeeds.
 Existing publication authorization covers this documentation update to GitHub.
+
+## 2026-09-13: V2 Focus and the V1.5 Original Reward Control
+
+The user requested a comparison of the original written reward against full
+V2 with every other system component unchanged. A later clarification removes
+historical V1 from the final paper and reduces it to a brief README note.
+Added an original reward wrapper, an otherwise identical PPO implementation,
+22 behavioral checks, a frozen protocol and 400 fresh test routes. Five new
+original reward policies used the same training routes, seeds and budget as
+all ten reused V2 policies, whose hashes were fixed before the new run.
+
+The 7,600 new evaluations replayed exactly. Both rewards achieve 95.7% standard
+joint success; full minus original is 0.0 points [-2.8, 2.7]. Longer full
+success is 87.3% versus 85.8%, difference +1.5 points [-2.9, 6.1]. The null
+primary finding remains explicit. Full reduces flight time, handovers and
+weighted cost on common successes but increases delay and proxy energy and
+reduces SINR. No tuning followed the test results.
+
+Rewrote the current README, setup, status, index and IEEE manuscript around
+V2 and V1.5. Archived the former consolidated PDF/source and mixed inventory.
+Published scope is 15 final checkpoints, 2,054,910 bytes, with a manifest;
+the private map and other checkpoints remain excluded. Note 38 records paper
+and delivery checks. All 73 tests and three freezes pass; physical assumptions
+remain unverified. Next research requires independent tests and separately
+frozen component ablations, not a favorable reinterpretation of this result.

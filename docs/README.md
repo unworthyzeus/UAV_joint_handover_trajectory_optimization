@@ -4,7 +4,25 @@ Updated 13 September 2026. This index separates the completed received data
 study from historical proposals and asset searches, preventing obsolete blocked
 status or preliminary hypotheses from being mistaken for current findings.
 
-## Completed Experiment
+## Current V2 Study and Original Reward Control
+
+The current paper contains V2 and V1.5 only. V1.5 is the original written reward
+on the complete V2 system. Its new comparison does not establish improved
+completion from reward replacement: both reach 95.7% on standard routes;
+full reaches 87.3% versus 85.8% on longer routes, with both difference intervals
+including zero. Lower aggregate radio cost coexists with substantially higher
+delay. All current results use new test seeds 53012 and 53013.
+
+| Document | Purpose |
+| --- | --- |
+| [35: Dataset and model setup](35_dataset_and_model_setup.md) | Dataset path, 15 included weights, installation, evaluation and retraining |
+| [36: Frozen V1.5 comparison protocol](36_v15_reward_comparison_protocol.md) | Original reward definition, identical V2 controls, reused weights and fresh tests |
+| [37: New results and every seed](37_v15_reward_results.md) | Null primary finding, failures, paired metrics and interpretation |
+| [38: Paper and model release](38_v2_paper_and_model_release.md) | Current paper, model manifest, replay and delivery checks |
+| [Current status](12_task_status.md) | Completed current work and remaining research questions |
+| [Paper](../paper/README.md) | Current manuscript and build commands |
+
+## Earlier Study Records
 
 | Note | Purpose |
 | --- | --- |
@@ -42,26 +60,12 @@ be counted as a failed physical mission under the final 10 m arrival tolerance.
 
 ## Result and Next Decision
 
-The latest v2 study repairs the sampled connectivity endpoint and restores the
-full communication cost. Full PPO achieves 96.6% standard and 89.7% longer
-joint success; Goal radio achieves 98.0% and 92.5%. Weighted cost improves while
-PPO delay worsens. The learned completion difference is uncertain. Notes 28–32
-are the current record; notes 17–27 preserve the earlier study and diagnosis.
+The current comparison is complete: five new original reward policies, ten
+reused V2 policies, 400 fresh routes, 73 tests and 7,600 exact replays.
+The primary completion contrast is null. Full reward reduces handovers and
+flight time but increases delay and proxy energy; no overall superiority is
+established. Notes 36-38 are the current protocol, result and delivery record.
 
-The following paragraph describes the earlier v1 arrival study:
-
-Reward replacement alone achieved 100% mission success on both route splits;
-the deterministic reference did too. Success termination during training was
-not sufficient and reduced longer route performance when combined with the
-replacement reward. This supports the reward hypothesis in the reimplementation.
-
-The requested study and paper are complete. Direct replication of the original
-policy remains dependent on its simulator and artifacts. Future experiments
-should preserve this freeze and independently test traffic, geography, and
-physical assumptions before claiming broader controller usefulness.
-
-The connectivity audit in note 27 limited that v1 completion statement: arrival
-and its permissive feasibility label did not establish the joint objective.
-The separate v2 study in notes 28–32 now corrects the sampled communication
-endpoint using the thesis requirements. Remaining failures and the distinction
-between sampled feasibility and real continuous service remain explicit.
+Earlier numbered notes preserve their contemporaneous findings and limitations.
+They are not current release status. Future work needs independent tests and
+separate component ablations, with all existing freezes preserved.

@@ -1,8 +1,8 @@
 # Dataset Placement and Model Setup
 
 Updated 13 September 2026. The examples use PowerShell and Python 3.12 on
-Windows, matching the recorded CPU environment. Use the final v2 evaluator
-for the strict sampled connectivity study.
+Windows, matching the recorded CPU environment. Use `evaluate_reward_controller.py`
+for the current V1.5/V2 comparison on the fresh test routes.
 
 ## What GitHub Includes
 
@@ -11,13 +11,14 @@ for the strict sampled connectivity study.
 | Source, scripts, saved routes and frozen configurations | Yes | Running the implementation |
 | Episode records, statistics, figures and paper | Yes | Inspecting the completed results |
 | `Barcelona_dataset_January.h5` | No, private file | Every simulated flight and training run |
-| Trained `checkpoint.pt` binaries | No, currently retained locally | PPO evaluation without retraining |
+| Final V1.5 and V2 checkpoints | Yes, all 15 declared policies | PPO evaluation without retraining |
 | Deterministic controller weights | Not applicable | These controllers need the map and code, without a checkpoint |
 | Virtual environments and `outputs/` | No, generated locally | Dependencies and new evaluation outputs |
 
 The model class defines the architecture; it does not contain trained weights.
-Cloning does not recover ignored `.pt` files. Neither map nor weights are
-downloaded automatically. Saved JSON/CSV results do not substitute for either.
+The final 15 checkpoints are included in a normal clone. Other training and
+development weights remain ignored. The private map is never downloaded
+automatically. Saved JSON/CSV records do not replace the map.
 
 ## 1. Work from the Repository Root
 
@@ -108,44 +109,26 @@ The CLI adds `src/` to its import path; an editable package install is not
 required. LaTeX and PDF rendering packages belong to paper tooling and are not
 needed to evaluate a controller.
 
-## 4. Restore Checkpoints for the Correct Study
+## 4. Included Checkpoints and Compatibility
 
-The ten final v2 models are `arrival` and `full`, each with seeds 2101–2105.
-Each saved file is approximately 137 kB. Their original local layout is:
+A normal clone contains every declared final seed 2101-2105 for three arms:
 
-```text
-<repository root>/
-  dataset/
-    Barcelona_dataset_January.h5
-  results/
-    connectivity_experiment/
-      confirmatory_v2/
-        arrival_seed_2101/
-          checkpoint.pt
-        full_seed_2101/
-          checkpoint.pt
-        ... other seeds 2102 through 2105 ...
-    controlled_experiment/
-      confirmatory_v1/
-        reward_only_seed_1101/
-          checkpoint.pt
-        ... other v1 arms and seeds ...
-```
-
-Restore weights separately from the locally retained study artifacts, or
-retrain into a fresh output directory as described below. The example
-`full_seed_2101` is the first declared seed, not a model selected for the best
-test score. You can store a checkpoint elsewhere and pass its absolute path to
-`--checkpoint`. Use the complete project generated file, including its metadata.
-
-| Study | Evaluator | Compatibility |
+| Arm | Checkpoint directory | Meaning |
 | --- | --- | --- |
-| Final v2 | `scripts/evaluate_connectivity_controller.py` | 156 input features, 61 network options, final seeds 2101–2105 |
-| Historical v1 | `scripts/evaluate_checkpoint.py` | 42 input features, five network options, final seeds 1101–1105 |
+| Original (V1.5) | `results/reward_comparison/confirmatory_v15/original_seed_2101/` | Original written reward on the complete V2 system |
+| Full (V2) | `results/connectivity_experiment/confirmatory_v2/full_seed_2101/` | V2 arrival and full communication cost |
+| Arrival (V2) | `results/connectivity_experiment/confirmatory_v2/arrival_seed_2101/` | V2 arrival reward, with the same strict connectivity constraints |
 
-V2 checks checkpoint environment metadata against its frozen configuration.
-Do not interchange versions or bypass dimension/metadata mismatches. The
-architecture file alone is not a pretrained model.
+Each directory contains `checkpoint.pt`. Change the seed suffix for the other
+four runs. The first seed is an example, not a selected best policy. All 15
+files together occupy about 2.05 MB. The [manifest](../models/checkpoint_manifest.json)
+lists exact sizes and SHA256 values. No extra download or retraining is needed
+for these weights. They contain policy tensors and metadata, not the dataset.
+
+All use 156 features, 61 network options and the same frozen V2 configuration.
+The current evaluator checks dimensions, configuration, training budget and
+metadata. Do not bypass a mismatch or interchange historical architectures.
+You can pass an absolute checkpoint path if you store a file elsewhere.
 
 ## 5. Execute a Controller
 
@@ -153,11 +136,11 @@ All commands below run from the repository root. First try one custom flight
 with the deterministic radio controller, which requires the dataset but no weights:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/evaluate_connectivity_controller.py --controller straight_radio --start 1000 1000 --goal 1800 1300 --output outputs/quickstart_radio
+.\.venv\Scripts\python.exe scripts/evaluate_reward_controller.py --controller straight_radio --start 1000 1000 --goal 1800 1300 --output outputs/quickstart_radio
 ```
 
 Other choices are `straight_rss`, `joint_mpc` and `joint_lookahead`. To use the
-example trained v2 policy, first verify that it was restored:
+included full V2 policy, first verify its path:
 
 ```powershell
 Test-Path -LiteralPath results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt
@@ -166,13 +149,13 @@ Test-Path -LiteralPath results/connectivity_experiment/confirmatory_v2/full_seed
 Evaluate its 200 standard test routes:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/evaluate_connectivity_controller.py --checkpoint results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt --split test --output outputs/quickstart_full_test
+.\.venv\Scripts\python.exe scripts/evaluate_reward_controller.py --checkpoint results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt --split test --output outputs/quickstart_full_test
 ```
 
 Or evaluate the same custom route with PPO:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/evaluate_connectivity_controller.py --checkpoint results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt --start 1000 1000 --goal 1800 1300 --output outputs/quickstart_full_custom
+.\.venv\Scripts\python.exe scripts/evaluate_reward_controller.py --checkpoint results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt --start 1000 1000 --goal 1800 1300 --output outputs/quickstart_full_custom
 ```
 
 | V2 `--split` value | Route count | Role |
@@ -188,15 +171,15 @@ Coordinates are local meters: `0 ≤ x ≤ 5000` and `0 ≤ y ≤ 3500`. They ar
 latitude/longitude. Altitude is fixed by the map. Custom routes use background
 phase zero; the CLI has no altitude or load phase argument.
 
-For a historical v1 checkpoint:
+The current evaluator uses new test seeds 53012 and 53013, from
+`configs/reward_comparison_scenarios_v15.json`. The older
+`evaluate_connectivity_controller.py` uses the prior V2 test seeds 52012 and
+52013. Both use the same environment, but their test sets and aggregate numbers
+are different. For the original reward control, use:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/evaluate_checkpoint.py --checkpoint results/controlled_experiment/confirmatory_v1/reward_only_seed_1101/checkpoint.pt --split test --output outputs/quickstart_v1_test
+.\.venv\Scripts\python.exe scripts/evaluate_reward_controller.py --checkpoint results/reward_comparison/confirmatory_v15/original_seed_2101/checkpoint.pt --split test --output outputs/quickstart_original_test
 ```
-
-V1 supports `validation`, `test` and `longer_test`. It has a different policy
-interface and a more permissive communication endpoint; its arrival rate must
-not be labeled as strict v2 joint success.
 
 ## 6. Locate and Understand the Output
 
@@ -213,8 +196,7 @@ route; the JSON contains the records, summary and position/speed/serving station
 traces for the first four routes, or fewer when fewer routes are supplied.
 These are not complete packet or radio time series for every route.
 
-Default prefixes are `outputs/connectivity_evaluation` for v2 and
-`outputs/checkpoint_evaluation` for v1. Reusing a prefix overwrites the matching
+The current default prefix is `outputs/reward_controller_evaluation`. Reusing a prefix overwrites the matching
 JSON and CSV. Use different names to preserve previous outputs, and keep new
 checks outside the frozen result directories.
 
@@ -225,26 +207,33 @@ the 200 s deadline and no sampled RSS, buffer, boundary or energy failure.
 Outstanding queued data at arrival is allowed. The model checks connectivity
 at one second samples and does not certify physical continuity between them.
 
-## 7. Retrain When Weights Are Unavailable
+## 7. Reproduce Training and the Complete Comparison
 
-With the dataset and dependencies, reproduce the frozen design into a fresh label:
+The released checkpoints already support evaluation. To repeat the five new
+original reward training runs and all 7,600 evaluations, use a fresh label:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/run_connectivity_experiment.py --phase confirmatory --label local_reproduction_01 --seeds 2101 2102 2103 2104 2105 --steps 524288
+.\.venv\Scripts\python.exe scripts/run_reward_comparison.py --phase train --label local_reproduction_01
+.\.venv\Scripts\python.exe scripts/run_reward_comparison.py --phase evaluate --label local_reproduction_01
+.\.venv\Scripts\python.exe scripts/run_reward_comparison.py --phase replay --label local_reproduction_01
+.\.venv\Scripts\python.exe scripts/analyze_reward_comparison.py --label local_reproduction_01
 ```
 
-This runs four reference controllers, trains both PPO arms for five seeds,
-and evaluates the final checkpoints. Outputs go under
-`results/connectivity_experiment/confirmatory_local_reproduction_01/`, including
-`full_seed_2101/checkpoint.pt`. Pass that new checkpoint path for later evaluation.
-Choose another label if this directory already has outputs; the runner refuses
-to overwrite existing reference results or checkpoints.
+This trains V1.5 for all five frozen seeds with 524,288 interactions each and
+reuses all ten hash fixed V2 checkpoints. New output goes under
+`results/reward_comparison/confirmatory_local_reproduction_01/`, including
+`original_seed_2101/checkpoint.pt`. Replay and analysis use corresponding
+`replay_local_reproduction_01` and `analysis_local_reproduction_01` directories.
+The training command only skips a verified complete run; an incomplete run
+requires a fresh label. Evaluation refuses existing output files.
 
-Do not rerun `--phase freeze`, replace hashes or alter frozen source to bypass
-checks. Preserve the delivered `confirmatory_v2` results. The standard analysis
-scripts read that delivered directory, not a new label automatically. Reusing
-the existing test routes is a reproduction, not independent evidence for a
-controller tuned on them. See [the v2 reproduction record](30_connectivity_results_and_reproduction.md).
+Do not rerun the freeze or alter hashes. The paper builder reads the delivered
+`analysis_v15` results, not a new label automatically. Reusing these tests is
+reproduction, not independent evidence for a controller tuned on them.
+Independent retraining of the two V2 arms is documented in
+[note 30](30_connectivity_results_and_reproduction.md); it needs no change to
+the existing freezes. The comparison freeze expects the exact released V2
+weights, not arbitrary newly trained replacements.
 
 ## Troubleshooting
 
@@ -253,7 +242,7 @@ controller tuned on them. See [the v2 reproduction record](30_connectivity_resul
 | Script path not found | Work from the root containing `README.md` and `scripts/`. |
 | HDF5 file not found | Use singular `dataset` and the exact filename inside this clone. |
 | Different dataset hash | Obtain the exact reference file; a matching filename is insufficient. |
-| Missing checkpoint after cloning | Weights are currently outside Git; restore, retrain or use a deterministic controller with the map. |
+| Missing checkpoint after cloning | Update the clone and check the exact published path and manifest; only the 15 declared final weights are included. |
 | Missing Python launcher | Use an installed Python 3.12 executable to create `.venv`. |
 | Missing `torch`, `numpy` or `h5py` | Install requirements with the same environment executable used for evaluation. |
 | Memory allocation failure | Allow for approximately 1.52 GB of selected RSS plus runtime and evaluation memory. |
@@ -263,25 +252,14 @@ controller tuned on them. See [the v2 reproduction record](30_connectivity_resul
 
 ## Documentation Change Record
 
-This guide and the prominent README setup section address the user's request
-to document exactly where the dataset and other model artifacts belong. Both
-earlier reproduction guides and the documentation index link here. The paths,
-arguments, split counts and output behavior were checked against the existing
-loaders, CLI parsers, frozen scenarios and writer implementation.
+The guide now covers the user authorized release of all 15 final V1.5/V2
+checkpoints and the current evaluator on the fresh test routes. The dataset
+path, size, checksum and environment requirements remain unchanged. The former
+separate weight restoration step is unnecessary for a current clone.
 
-Validation checked 67 local documentation links and anchors, Markdown table
-structure and code fences, all four saved v2 evaluation split sizes, and the
-help output of both evaluators and the training runner. The dataset size and
-SHA256 match the reference; all ten v2 checkpoints exist locally. Git tracks
-neither the dataset nor checkpoint binaries. All six v1 and seven v2 frozen
-source/protocol hashes still match. These are documentation and artifact
-checks using the existing Python 3.12.10 environment; no clean environment
-installation, new training or simulation was performed for this revision.
-
-No dataset or model weights are newly published by this documentation change.
-The external inputs for a fresh clone remain the private map and, unless
-retraining, the chosen checkpoint. Frozen code, policies, results and paper
-are preserved. The next user step is to place the artifacts, install the
-recorded environment and run a custom route; new research needs a separate
-protocol. This guide documents execution and does not independently validate
-the physical assumptions or claim a successful mission on every input route.
+The result and delivery notes record training, all 7,600 exact evaluation
+replays, source integrity, checkpoint publication and paper checks. No clean
+virtual environment installation is claimed; CLI and model validation used
+the existing recorded Python environment. The next user step is to supply the
+private map, install dependencies and run a custom flight. Physical model and
+sampled connectivity limitations remain unchanged.
