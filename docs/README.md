@@ -19,6 +19,8 @@ delay. All current results use new test seeds 53012 and 53013.
 | [36: Frozen V1.5 comparison protocol](36_v15_reward_comparison_protocol.md) | Original reward definition, identical V2 controls, reused weights and fresh tests |
 | [37: New results and every seed](37_v15_reward_results.md) | Null primary finding, failures, paired metrics and interpretation |
 | [38: Paper and model release](38_v2_paper_and_model_release.md) | Current paper, model manifest, replay and delivery checks |
+| [40: Trajectory figure context audit](40_trajectory_figure_context_audit.md) | Missing station markers, a 222 m example without handovers, and the limits of visual comparison |
+| [41: Long route figure revision](41_long_route_figure_revision.md) | A 1,784.7 m illustration with station context, handovers, eight diagnostics and 600 exact replay matches |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 

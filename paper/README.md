@@ -25,7 +25,14 @@ separately. See the [setup guide](../docs/35_dataset_and_model_setup.md) and
 - `v15_protocol.tex`: original reward and controlled experimental design.
 - `v15_findings.tex`: results, limits, conclusion and appendices.
 - `v15_macros.tex` and `v15_*_table.tex`: generated from verified fresh results.
-- `../results/reward_comparison/analysis_v15/`: statistics, two figures and paper audit.
+- `../results/reward_comparison/analysis_v15/`: statistics, three figures and paper audit.
+
+The trajectory illustration now uses the longest of the 200 declared longer
+test routes: 1,784.7 m, selected by geometry without filtering on outcomes.
+It includes all 87 station markers, a route zoom, handover locations, and
+eight time series for RSS, SINR, queue, capacity, handovers, delay, energy and
+interference. See the [reporting revision](../docs/41_long_route_figure_revision.md)
+for selection, exact replay checks and retained limitations.
 
 The source retains printed page locators for each original thesis citation.
 The [protocol](../docs/36_v15_reward_comparison_protocol.md),
@@ -41,8 +48,18 @@ python scripts/analyze_reward_comparison.py
 python scripts/build_reward_comparison_report.py
 ```
 
-The report builder reads the private map for the first declared route's RSS
-figure. Compilation alone uses the committed figures and requires no dataset.
+The report builder uses committed verified dense traces for the long route
+figures and does not require the private map. To recover those traces from
+the unchanged simulator and checkpoints, with the private dataset available:
+
+```powershell
+python scripts/replay_long_route_illustration.py
+python scripts/build_long_route_figures.py
+```
+
+The replay verifies all 600 original longer batch episode records for the
+three illustrated controllers. It does not add new independent evaluation
+episodes. Compilation alone uses the committed figures and requires no dataset.
 With Tectonic installed, compile from `paper/`:
 
 ```powershell

@@ -1,0 +1,8 @@
+{
+  "reason": "Preserve the previous first standard route illustration before the requested longer route reporting revision.",
+  "report_builder_git_commit": "644daba7f596330764580a42209113ffbf95a336",
+  "files": {
+    "reward_comparison_example.pdf": "af41ad68fb1c252d3cfd383fccd629d1a8ff2f80998dcbb3bbb5cbdffec778b1",
+    "reward_comparison_example.png": "6d27563f4a2ed958248e63584c9cd99f02a62556d452afad51b4ab8f062124b9"
+  }
+}

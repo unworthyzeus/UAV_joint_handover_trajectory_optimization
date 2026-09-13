@@ -8,6 +8,11 @@
 *.npz binary
 *.pt binary
 
+# Reporting traces retain these source and selection hashes across platforms.
+configs/long_route_illustration_v15.json -text
+scripts/replay_long_route_illustration.py -text
+scripts/build_long_route_figures.py -text
+
 # Preserve the new reward comparison's frozen bytes as well.
 src/uav_joint_optimization/original_reward_env.py -text
 src/uav_joint_optimization/reward_comparison_ppo.py -text

@@ -81,6 +81,29 @@ def main():
             assert f"\\newcommand{{\\{prefix}{suffix}}}{{{value}}}" in macro_source
             assert value in text
     assert statistics["primary_positive_completion_evidence"] is False
+    illustration_path = ROOT / "results/reward_comparison/analysis_v15/long_route_illustration.json"
+    illustration = json.loads(illustration_path.read_text())
+    selection_path = ROOT / "configs/long_route_illustration_v15.json"
+    assert illustration["selection"] == json.loads(selection_path.read_text())
+    assert illustration["selection_sha256"] == digest(selection_path)
+    assert illustration["source_sha256"] == digest(ROOT / "scripts/replay_long_route_illustration.py")
+    assert illustration["statistics_sha256"] == digest(ROOT / "results/reward_comparison/analysis_v15/statistics.json")
+    assert illustration["exact_episode_matches"] == 600
+    assert len(illustration["station_ids"]) == len(illustration["station_positions_m"]) == 87
+    scenarios = json.loads((ROOT / "configs/reward_comparison_scenarios_v15.json").read_text())["longer_test"]
+    longest = min(scenarios, key=lambda r: (-sum((g-s)**2 for s, g in zip(r["start"], r["goal"])), r["id"]))
+    assert longest == illustration["scenario"]
+    assert longest["id"] in text and "1,784.7" in text
+    for arm, row in illustration["arms"].items():
+        assert row["record_sha256"] == digest(ROOT / row["record_path"])
+        if row["checkpoint_path"]:
+            assert row["checkpoint_sha256"] == digest(ROOT / row["checkpoint_path"])
+        original = json.loads((ROOT / row["record_path"]).read_text())["episodes"]
+        assert row["episode"] == original[illustration["selection"]["scenario_index"]]
+        assert row["exact_episode_matches"] == len(original)
+    archive = ROOT / "results/reward_comparison/analysis_v15/previous_222m_illustration"
+    for name, expected in json.loads((archive / "provenance.json").read_text())["files"].items():
+        assert digest(archive / name) == expected
     normalized_text = re.sub(r"\s+", " ", re.sub(r"-\s*\n\s*", "", text))
     assert "does not establish improved completion" in normalized_text
     for start in range(0, len(pdf), 6):
@@ -111,6 +134,13 @@ def main():
                   "models/checkpoint_manifest.json",
                   "results/reward_comparison/replay_v15/audit.json")},
               "visual_review": "Required separately after rendering",
+              "long_route_illustration": {"scenario_id": longest["id"], "distance_m": illustration["selection"]["distance_m"],
+                  "exact_existing_episode_matches": 600, "statistics_unchanged": True,
+                  "artifact_hashes": {p: digest(ROOT / p) for p in (
+                      "configs/long_route_illustration_v15.json", "scripts/replay_long_route_illustration.py",
+                      "scripts/build_long_route_figures.py", "results/reward_comparison/analysis_v15/long_route_illustration.json",
+                      "results/reward_comparison/analysis_v15/reward_comparison_example.pdf",
+                      "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf")}},
               "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained."}
     if previous.get("pdf_sha256") == report["pdf_sha256"]:
         report["visual_review"] = previous.get("visual_review", report["visual_review"])

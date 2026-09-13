@@ -46,6 +46,14 @@ in the denominators and are broken down in the result note. The shared motion
 prior and filter can help both rewards; their separate effects are not isolated.
 No overall PPO superiority claim is supported.
 
+The [paper's long route illustration](results/reward_comparison/analysis_v15/reward_comparison_example.png)
+shows the longest declared longer test route (1,784.7 m), all 87 base stations
+and executed handovers. Its [eight diagnostic plots](results/reward_comparison/analysis_v15/reward_comparison_diagnostics.png)
+show RSS, SINR, queue, capacity, handovers, delay, energy and interference.
+Route selection uses distance, not outcomes; this example does not replace
+the aggregate comparison. The [revision record](docs/41_long_route_figure_revision.md)
+documents selection, reproduction and exact replay checks.
+
 ## Setup: Dataset and Model Checkpoints
 
 A clone includes source, configuration, results and **all 15 final checkpoints**:

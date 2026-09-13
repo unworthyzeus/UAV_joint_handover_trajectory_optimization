@@ -1,0 +1,11 @@
+{
+  "purpose": "Reporting illustration from existing frozen results, not a new experiment",
+  "split": "longer_test",
+  "selection_rule": "Maximum Euclidean start to goal distance among all declared longer_test routes; ties use ascending scenario ID. Do not filter on outcomes or controller differences.",
+  "scenario_id": "53013_0023",
+  "scenario_index": 23,
+  "distance_m": 1784.7184933324127,
+  "model_seed": 2101,
+  "arms": ["original", "full", "straight_radio"],
+  "scope": "Seed 2101 is retained from the previous illustration. Retain every selected outcome, including failures. Aggregate inference remains on all 7600 original episodes."
+}

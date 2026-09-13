@@ -1,7 +1,7 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "0540b8d19bf93150ced9ef42ef2ca5ea8f4ece4022166925555d8e48bcc9a837",
-  "pages": 6,
+  "pdf_sha256": "c196212bcecf2b56e67a2debb9a29e9cdf04de1ffc20cbe61ed1859a2db61588",
+  "pages": 7,
   "fonts": {
     "4": {
       "name": "IHAIZV+NimbusRomNo9L-Regu",
@@ -78,19 +78,29 @@
       "type": "Type1",
       "embedded": true
     },
+    "88": {
+      "name": "FZDNHS+NimbusMonL-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
     "65": {
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
     },
-    "91": {
+    "93": {
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
     },
-    "108": {
-      "name": "FZDNHS+NimbusMonL-Regu",
-      "type": "Type1",
+    "116": {
+      "name": "GCWXDV+DejaVuSans-Oblique",
+      "type": "Type0",
+      "embedded": true
+    },
+    "123": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
       "embedded": true
     }
   },
@@ -271,7 +281,7 @@
     },
     {
       "file": "paper/v15_findings.tex",
-      "line": 57,
+      "line": 89,
       "locator": "p.~21, Sec.~8"
     }
   ],
@@ -280,10 +290,10 @@
     "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
     "paper/v15_front.tex": "d5dd6f8b098c840618fa4e9228fafab7ae7a0d36a5350cb87ea1ac30bafa3356",
     "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
-    "paper/v15_findings.tex": "d672d509a04a5b08af9dd7978e29c58c2d96457aca82aff70554b60ce3f9d479",
+    "paper/v15_findings.tex": "d18bfaf41c6beb455f45e15c2aa0438e84854650126e3350fc44b97573db61ea",
     "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
-    "paper/v15_paired_table.tex": "2cc319d174ff0f40e0a4f12658efc6fe5a7774b6d1f71c92a26c2a23a86c1252",
+    "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
     "paper/v15_seed_table.tex": "eb5fca872fd5b38435bae8276bac0232881a953e83a188ed7b5eb880918037e6"
   },
   "frozen_sources_match": {
@@ -319,14 +329,20 @@
     "models/checkpoint_manifest.json": "e5f7bfe8553f21e794801f27c8944e940bfb0effa27ebbb24ff36491cd82f2a4",
     "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c"
   },
-  "visual_review": "All six final rendered pages reviewed; figures, paired table, every seed, observation layout and references readable with no overlap or clipping.",
-  "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained.",
-  "validation": {
-    "tests": 73,
-    "exact_new_episode_replays": 7600,
-    "included_checkpoints": 15,
-    "custom_cli_checks": 2,
-    "historical_v1_absent": true,
-    "generated_primary_values_checked": true
-  }
+  "visual_review": "Passed: all seven final pages inspected; station markers, handover circles, eight time series, limits, captions, tables and text are legible without clipping or overlap.",
+  "long_route_illustration": {
+    "scenario_id": "53013_0023",
+    "distance_m": 1784.7184933324127,
+    "exact_existing_episode_matches": 600,
+    "statistics_unchanged": true,
+    "artifact_hashes": {
+      "configs/long_route_illustration_v15.json": "d6662b3844eabeb12900bbb7d843a241628c24786fb3e2c7d77f6f4a33f08ec3",
+      "scripts/replay_long_route_illustration.py": "df0e2ba92945ff5bdebfb9d6fdb2b794f0c6fa9ca57eaccaf7e6403e1cae9109",
+      "scripts/build_long_route_figures.py": "e91a080c08a2dd14e7cd3002886c8ad21e1933c98a7b853692813e298645549d",
+      "results/reward_comparison/analysis_v15/long_route_illustration.json": "1e9378e06818db0377a9edac5c98063eaa857b4c529d32ddcb7daadb90ca93eb",
+      "results/reward_comparison/analysis_v15/reward_comparison_example.pdf": "70fe3920bc20d91854c570a58b47eb1580f177dbb169ad38225b40e4899ac287",
+      "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf": "c82761b67e332fcf74b7ab4dc8ed0066e2d4b684170891eafdfc1b6ce96a91c2"
+    }
+  },
+  "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained."
 }

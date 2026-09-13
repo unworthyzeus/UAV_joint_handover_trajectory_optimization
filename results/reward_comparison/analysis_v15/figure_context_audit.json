@@ -1,0 +1,59 @@
+{
+  "scope": "Saved first example only; no new policy evaluation",
+  "arms": {
+    "original": {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2101/test.json",
+      "global_station_ids": [
+        29
+      ],
+      "rss_min_including_initial_dbm": -47.0,
+      "rss_max_dbm": -36.0,
+      "handovers": 0,
+      "time_s": 17.0,
+      "outcome": "success",
+      "final_buffer_bits": 0.0
+    },
+    "full": {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2101/test.json",
+      "global_station_ids": [
+        29
+      ],
+      "rss_min_including_initial_dbm": -47.0,
+      "rss_max_dbm": -36.0,
+      "handovers": 0,
+      "time_s": 15.0,
+      "outcome": "success",
+      "final_buffer_bits": 0.0
+    },
+    "straight_radio": {
+      "source": "results/reward_comparison/confirmatory_v15/straight_radio_test.json",
+      "global_station_ids": [
+        29
+      ],
+      "rss_min_including_initial_dbm": -47.0,
+      "rss_max_dbm": -36.0,
+      "handovers": 0,
+      "time_s": 15.0,
+      "outcome": "success",
+      "final_buffer_bits": 0.0
+    }
+  },
+  "operator_1_station_count": 87,
+  "map_extent_m": [
+    5000,
+    3500
+  ],
+  "scenario": {
+    "id": "53012_0000",
+    "start": [
+      4675.112754492731,
+      2085.719315463786
+    ],
+    "goal": [
+      4785.471083485088,
+      1893.080738531181
+    ],
+    "load_phase": 2
+  },
+  "straight_distance_m": 222.01031980654506
+}

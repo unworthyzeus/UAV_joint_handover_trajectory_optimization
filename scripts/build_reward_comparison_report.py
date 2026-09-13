@@ -2,13 +2,13 @@
 import json
 from pathlib import Path
 
-import h5py
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
 from run_reward_comparison import ROOT, SEEDS, ARMS, CONTROLLERS, digest
+from build_long_route_figures import build_long_route_figures
 
 OUT = ROOT / "results/reward_comparison/analysis_v15"
 BASE = ROOT / "results/reward_comparison/confirmatory_v15"
@@ -24,7 +24,8 @@ def ci(values, decimals=1):
 
 def table(filename, caption, label, columns, header, rows, wide=False):
     kind = "table*" if wide else "table"
-    text = [f"\\begin{{{kind}}}[t]", f"\\caption{{{caption}}}", f"\\label{{{label}}}\\centering\\small",
+    placement = "!t" if wide else "t"
+    text = [f"\\begin{{{kind}}}[{placement}]", f"\\caption{{{caption}}}", f"\\label{{{label}}}\\centering\\small",
             f"\\begin{{tabular}}{{{columns}}}\\toprule", " & ".join(header) + r"\\\midrule"]
     text += [" & ".join(map(str, row)) + r"\\" for row in rows]
     text += [r"\bottomrule\end{tabular}", f"\\end{{{kind}}}"]
@@ -105,21 +106,7 @@ def main():
         ax.set_xticks(range(7),labels); ax.set_ylim(0,102); ax.set_title(title); ax.grid(axis='y',alpha=.18); ax.set_axisbelow(True)
     axs[0].set_ylabel('Strict joint success (%)')
     fig.tight_layout(); fig.savefig(OUT/'reward_comparison_success.pdf'); fig.savefig(OUT/'reward_comparison_success.png',dpi=180); plt.close(fig)
-    fig,axs=plt.subplots(1,2,figsize=(11,3.7))
-    with h5py.File(ROOT/'dataset/Barcelona_dataset_January.h5','r') as f:
-        station_ids=np.flatnonzero(f['BS/operator_map'][0]==1)
-        dx=float(f['grid/x'][...].ravel()[1]);dy=float(f['grid/y'][...].ravel()[1])
-        for arm,color in zip(['original','full','straight_radio'],[colors[0],colors[1],colors[4]]):
-            rel=f'{arm}_seed_2101/test.json' if arm in ARMS else f'{arm}_test.json'
-            saved=json.loads((BASE/rel).read_text());trace=np.array(saved['traces'][0]);route=saved['scenarios'][0]
-            label=NAMES[arm]+' ('+saved['episodes'][0]['outcome']+')'
-            axs[0].plot(trace[:,0],trace[:,1],label=label,color=color,linewidth=1.8)
-            rss=[float(f['measurements/rss_dBm'][int(station_ids[int(row[3])]),int(np.clip(np.rint(row[0]/dx),0,4999)),int(np.clip(np.rint(row[1]/dy),0,3499))]) for row in trace]
-            axs[1].plot(np.arange(len(trace)),rss,color=color,label=NAMES[arm])
-    axs[0].scatter(*route['start'],color='black',marker='o',s=25,label='Start');axs[0].scatter(*route['goal'],color='black',marker='*',s=75,label='Goal')
-    axs[0].set(xlabel='Local x (m)',ylabel='Local y (m)',title='First declared route');axs[0].set_aspect('equal',adjustable='datalim');axs[0].legend(fontsize=8)
-    axs[1].axhline(-96,color='black',linestyle=':',label='Minimum RSS');axs[1].set(xlabel='Time (s)',ylabel='Serving RSS (dBm)',title='Initial and executed samples');axs[1].legend(fontsize=8)
-    fig.tight_layout();fig.savefig(OUT/'reward_comparison_example.pdf');fig.savefig(OUT/'reward_comparison_example.png',dpi=180);plt.close(fig)
+    build_long_route_figures()
     lines=['# V1.5 Original Reward on V2: Results','', 'Date: 13 September 2026. All results below use the new route seeds 53012 and 53013.', '',
            '## Outcome','',conclusion,'',
            f"Standard full minus original completion: **{primary['success_difference_pp']:+.1f} percentage points**, 95% interval **{ci(primary['success_difference_ci95_pp'])}**. "
@@ -152,7 +139,7 @@ def main():
               'The result closes the requested comparison, including its null primary finding. The next research decision is independent evaluation and separately frozen component ablations, not rewriting the reward until the present test looks favorable. '
               'See the [setup guide](35_dataset_and_model_setup.md) for released checkpoints and commands.']
     (ROOT/'docs/37_v15_reward_results.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    print(json.dumps({'statistics_sha256':digest(OUT/'statistics.json'),'primary_positive':positive,'figures':2,'tables':4}))
+    print(json.dumps({'statistics_sha256':digest(OUT/'statistics.json'),'primary_positive':positive,'figures':3,'tables':4}))
 
 
 if __name__ == '__main__':

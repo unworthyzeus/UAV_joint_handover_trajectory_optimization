@@ -1,15 +1,21 @@
 {
+  "scope": "Long route reporting revision; verified exact Git index bytes before publication. The prior delivery validation is archived with the 222 m figure.",
   "frozen_source_protocol_blobs_verified": 20,
   "checkpoint_blobs_verified": 15,
   "checkpoint_bytes": 2054910,
   "private_hdf5_tracked": false,
-  "historical_paper_archives_match_previous_commit": true,
+  "raw_evaluation_records_unchanged": true,
+  "aggregate_statistics_unchanged": true,
+  "all_table_values_unchanged": true,
   "current_pdf_and_tex_blobs_match_paper_audit": true,
-  "tests_passed": 73,
+  "prior_experiment_tests_passed": 73,
+  "experiment_tests_rerun_for_reporting_change": false,
   "exact_final_episode_replays": 7600,
-  "custom_cli_smoke_checks": 2,
-  "current_pdf_pages": 6,
+  "repeated_existing_episode_matches_for_illustration": 600,
+  "current_pdf_pages": 7,
   "pinpoint_tfm_citations": 35,
-  "all_six_pages_visually_reviewed": true,
-  "scope": "Validated exact Git index bytes before publication; raw private data remains excluded."
+  "embedded_fonts": 20,
+  "all_seven_pages_visually_reviewed": true,
+  "pdf_sha256": "c196212bcecf2b56e67a2debb9a29e9cdf04de1ffc20cbe61ed1859a2db61588",
+  "illustration_scenario_id": "53013_0023"
 }
