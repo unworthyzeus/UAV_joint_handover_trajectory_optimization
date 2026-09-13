@@ -1,12 +1,11 @@
 {
-  "scope": "Long route reporting revision; verified exact Git index bytes before publication. The prior delivery validation is archived with the 222 m figure.",
+  "scope": "Dataset identity correction in the current paper and exhaustive original thesis comparisons in all 15 README tables. Existing experiment results, figures and weights unchanged.",
   "frozen_source_protocol_blobs_verified": 20,
   "checkpoint_blobs_verified": 15,
   "checkpoint_bytes": 2054910,
   "private_hdf5_tracked": false,
   "raw_evaluation_records_unchanged": true,
   "aggregate_statistics_unchanged": true,
-  "all_table_values_unchanged": true,
   "current_pdf_and_tex_blobs_match_paper_audit": true,
   "prior_experiment_tests_passed": 73,
   "experiment_tests_rerun_for_reporting_change": false,
@@ -16,6 +15,19 @@
   "pinpoint_tfm_citations": 35,
   "embedded_fonts": 20,
   "all_seven_pages_visually_reviewed": true,
-  "pdf_sha256": "c196212bcecf2b56e67a2debb9a29e9cdf04de1ffc20cbe61ed1859a2db61588",
-  "illustration_scenario_id": "53013_0023"
+  "pdf_sha256": "8935ae05ccef8d4ac99b643aa6b06668f1b1782bfbba012dfe9b16817858b7eb",
+  "illustration_scenario_id": "53013_0023",
+  "dataset_identity": "Same dataset as the original thesis; confirmed by the researcher who supplied it (note 43).",
+  "dataset_sha256_rechecked": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "existing_experiment_table_values_unchanged": true,
+  "readme_comparison_checks": {
+    "readme_tables_with_original_comparisons": 15,
+    "preserved_existing_table_cells": 253,
+    "success_rates_checked": 14,
+    "paired_means_checked": 28,
+    "failure_counts_checked": 12,
+    "success_intervals_checked": 2,
+    "local_links_checked": 77,
+    "original_figure_readings": "Visually reviewed; approximate CDF medians and bar heights, not exact source data."
+  }
 }

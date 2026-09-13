@@ -106,6 +106,12 @@ def main():
         assert digest(archive / name) == expected
     normalized_text = re.sub(r"\s+", " ", re.sub(r"-\s*\n\s*", "", text))
     assert "does not establish improved completion" in normalized_text
+    assert "same Barcelona ray tracing dataset as the original thesis" in normalized_text
+    current_sources = " ".join(p.read_text(encoding="utf-8") for p in inputs)
+    current_sources = re.sub(r"\s+", " ", current_sources)
+    for stale in ("exact source dataset version identity", "Exact dataset version and sentinel",
+                  "does not prove an identical original dataset version"):
+        assert stale not in current_sources, stale
     for start in range(0, len(pdf), 6):
         sheet = Image.new("RGB", (1224, 3 * 558), "#cccccc")
         draw = ImageDraw.Draw(sheet)
@@ -134,6 +140,7 @@ def main():
                   "models/checkpoint_manifest.json",
                   "results/reward_comparison/replay_v15/audit.json")},
               "visual_review": "Required separately after rendering",
+              "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
               "long_route_illustration": {"scenario_id": longest["id"], "distance_m": illustration["selection"]["distance_m"],
                   "exact_existing_episode_matches": 600, "statistics_unchanged": True,
                   "artifact_hashes": {p: digest(ROOT / p) for p in (

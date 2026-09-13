@@ -2,7 +2,8 @@
 Reward comparisons for cellular UAV control must preserve the communication
 requirements that make a mission successful. We compare a master's thesis
 reward with a replacement within the same strict sampled connectivity system,
-V2. The original reward arm, V1.5, retains reciprocal radio utilities, a binary
+V2, using the same Barcelona ray tracing dataset as the original thesis.
+The original reward arm, V1.5, retains reciprocal radio utilities, a binary
 approach bonus and source penalties; it shares V2's dynamics, observations,
 actions, residual navigation prior, safety filter, PPO settings and termination.
 Five training seeds per learned arm and 400 fresh shared routes support the
@@ -43,6 +44,5 @@ original agent or individual reward terms in isolation.
 We contribute a transparent reward comparison, fresh matched tests, all training
 seeds, explicit failures and reproducible artifacts. PPO\cite{ppo} is an
 established algorithm; we claim no new learning method. Thesis citations give
-printed pages; add two for the PDF viewer page. The original simulator and
-trained policy remain unavailable, and exact source dataset version identity
-is unverified.
+printed pages; add two for the PDF viewer page. We use the same thesis dataset;
+the original simulator and trained policy remain unavailable.

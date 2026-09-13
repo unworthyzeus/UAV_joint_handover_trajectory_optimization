@@ -6,6 +6,12 @@ for Cellular UAV Control**, by Guillem Moreno Garcia and Evgenii Vinogradov.
 It centers on V2 and V1.5, the original written reward on the identical V2
 system. It is an IEEE format research draft, not an accepted publication.
 
+The study uses **the same Barcelona ray tracing dataset as the original
+thesis**, confirmed by the researcher who supplied it. The private HDF5 is
+preserved unchanged. The environment, controllers and experimental protocol
+are our implementation; the original simulator and trained policies remain
+unavailable. See the [dataset provenance update](../docs/43_confirmed_thesis_dataset_identity.md).
+
 The primary standard comparison is null: original and full both achieve 95.7%
 joint success, difference 0.0 percentage points [-2.8, 2.7]. Longer completion
 is 85.8% versus 87.3%, difference +1.5 points [-2.9, 6.1]. Full trades fewer

@@ -13,6 +13,10 @@ full reaches 87.3% versus 85.8% on longer routes, with both difference intervals
 including zero. Lower aggregate radio cost coexists with substantially higher
 delay. All current results use new test seeds 53012 and 53013.
 
+The supplied Barcelona HDF5 is **the same dataset used in the original
+thesis**. [Note 43](43_confirmed_thesis_dataset_identity.md) records the
+confirmation and supersedes earlier uncertainty about dataset identity.
+
 | Document | Purpose |
 | --- | --- |
 | [35: Dataset and model setup](35_dataset_and_model_setup.md) | Dataset path, 15 included weights, installation, evaluation and retraining |
@@ -22,6 +26,8 @@ delay. All current results use new test seeds 53012 and 53013.
 | [40: Trajectory figure context audit](40_trajectory_figure_context_audit.md) | Missing station markers, a 222 m example without handovers, and the limits of visual comparison |
 | [41: Long route figure revision](41_long_route_figure_revision.md) | A 1,784.7 m illustration with station context, handovers, eight diagnostics and 600 exact replay matches |
 | [42: Current findings and thesis differences in the README](42_readme_current_findings_and_thesis_differences.md) | Shared changes, the reward contrast, general results, visible failures and revised causal conclusions |
+| [43: Confirmed thesis dataset identity](43_confirmed_thesis_dataset_identity.md) | Confirmation that the supplied HDF5 is the same dataset as the original thesis; current paper and README corrected |
+| [44: Original thesis comparisons throughout the README](44_readme_original_thesis_comparisons.md) | Original parameters and results beside current values, approximate figure readings, unavailable metrics and comparability limits |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 

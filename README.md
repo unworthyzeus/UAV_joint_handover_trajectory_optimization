@@ -3,6 +3,10 @@
 Updated 13 September 2026. Non THz n3cat research project.
 
 **Current study: V2, with V1.5 as the original reward control on the same system.**
+**All experiments use the same Barcelona ray tracing dataset as the original
+thesis.** The supplied HDF5 is preserved unchanged; the simulation and control
+implementation are our own.
+
 The [current IEEE paper](paper/UAV_joint_reward_connectivity_IEEE.pdf) is by
 Guillem Moreno Garcia and Evgenii Vinogradov. Start with the
 [results and every seed](docs/37_v15_reward_results.md),
@@ -18,7 +22,7 @@ it substantially reduces handovers and shortens flights, while increasing
 delay and estimated energy consumption on matched successful flights.
 
 The original thesis simulator and trained policies are unavailable. We built
-a new implementation around the received Barcelona radio map, changing much
+a new implementation around the same Barcelona radio map, changing much
 more than the reward relative to the thesis. **V1.5 is the original written
 reward inside our V2 system; it is not the original thesis agent.** Our
 experiment therefore does not establish what caused the original wandering
@@ -36,11 +40,15 @@ Except for the reward, the changes below apply to both V1.5 and V2 full.
 The shared changes' individual benefits have **not** been isolated experimentally. A modeling replacement
 is not automatically a correction of an original implementation bug.
 TFM references use printed pages; PDF viewer page = printed page + 2.
+Across the tables, **NR** means not reported at the specified source location
+or in its results section; **NC** means not directly comparable. Neither means
+zero, and an undocumented implementation detail is unknown. Original numerical
+plot readings are marked approximate; they are not reconstructed raw results.
 See the [original TFM](sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf).
 
 | Area | Original written thesis | What our current study does differently |
 | --- | --- | --- |
-| Executable and channel data | Custom environment with Stable Baselines PPO; MATLAB ray tracing produces the radio map [pp. 6-7, Sec. 3.1; p. 13, Sec. 5.3]. | New Python environment and PPO implementation consuming the received HDF5. We retain Operator 1's 87 station maps and coordinates, but have not reproduced the original simulator or verified exact dataset version identity. |
+| Executable and channel data | Custom environment with Stable Baselines PPO; MATLAB ray tracing produces the radio map [pp. 6-7, Sec. 3.1; p. 13, Sec. 5.3]. | New Python environment and PPO implementation using the same dataset as the thesis, including Operator 1's 87 station maps and coordinates. Dataset identity is confirmed; the original simulator has not been reproduced. |
 | Motion and braking | Discrete acceleration and heading, with five acceleration bins and eight directions [p. 12, Sec. 5.2; p. 15, Table 3]. | Continuous radial/lateral residual actions around a hand designed command that already points toward the goal and brakes. This is a substantial control aid shared by both rewards. |
 | Observations | The listed state contains position, serving station, resource group, energy and queue [p. 12, Sec. 5.2]. | 156 explicit features, including goal direction/distance, velocity, time, candidate station positions/RSS, capacity and valid actions. We do not know whether the original code added unlisted features. |
 | Connectivity enforcement | Written minimum RSS and bounded queue constraints, with an RSS reward penalty [p. 11, Eq. (12), C2/C4; p. 12, Eq. (14)]. | Any sampled RSS violation or queue overflow ends failure. A prospective filter also repairs network or local motion choices when possible. This implements explicit constraints; it does not establish how the unavailable original code enforced them. |
@@ -69,14 +77,14 @@ below provide the exhaustive specification behind this summary.
 
 ## What V1.5 Versus V2 Actually Tests
 
-| Component | V1.5 original reward | V2 full reward |
-| --- | --- | --- |
-| Map, motion, traffic, energy and service model | Shared V2 system | Identical |
-| Observation, action mask, navigation aid and prospective filter | Shared V2 system | Identical |
-| Success, failure and arrival termination | Shared V2 rules | Identical |
-| PPO settings, training routes, seeds and interaction budget | Shared V2 settings | Identical |
-| Reward | Reconstructed original equal weight formula on V2 inputs | Replacement reward package |
-| Final checkpoint | Every declared seed, at the fixed budget | Every declared seed, at the fixed budget |
+| Component | V1.5 original reward | V2 full reward | Original thesis |
+| --- | --- | --- | --- |
+| Map, motion, traffic, energy and service model | Shared V2 system | Identical | Same radio dataset; different motion, traffic, service and energy models [pp. 6-10, Secs. 3.1-3.3]. |
+| Observation, action mask, navigation aid and prospective filter | Shared V2 system | Identical | Discrete acceleration/heading and BS/RBG requests; six listed state components. Our braking aid, candidate mask and prospective filter are not specified [p. 12, Sec. 5.2; p. 15, Table 3]. |
+| Success, failure and arrival termination | Shared V2 rules | Identical | Stopping intended, but arrival does not terminate; equivalent strict failure ordering is unspecified [p. 9, Sec. 3.2; p. 12, Sec. 5.2]. |
+| PPO settings, training routes, seeds and interaction budget | Shared V2 settings | Identical | Stable Baselines PPO with different Table 4 settings; equivalent route pools and seed schedule NR [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2]. |
+| Reward | Reconstructed original equal weight formula on V2 inputs | Replacement reward package | Equal policy uses reciprocal utilities, approach bonus and penalties; also studies three alternative weightings [p. 12, Eqs. (13)-(14); p. 15, Table 3; p. 16, Sec. 6.3]. |
+| Final checkpoint | Every declared seed, at the fixed budget | Every declared seed, at the fixed budget | Checkpoint selection and seed specific weights NR in the evaluation description [pp. 15-16, Secs. 6.2-6.3]; original weights unavailable to this study. |
 
 Five V1.5 policies were trained from scratch. All five full and five arrival
 V2 checkpoints were reused, fixed by hash before the fresh comparison.
@@ -101,23 +109,23 @@ training replications.
 
 ### Mission Completion
 
-| Controller | Standard joint success | Longer joint success | Episodes per split |
-| --- | ---: | ---: | ---: |
-| PPO original reward (V1.5) | 95.7% | 85.8% | 1,000 |
-| PPO full reward (V2) | 95.7% | 87.3% | 1,000 |
-| PPO arrival reward (V2) | 94.9% | 85.1% | 1,000 |
-| Goal RSS | 94.0% | 84.5% | 200 |
-| Goal radio | 96.5% | 88.5% | 200 |
-| Joint one step | 96.0% | 90.5% | 200 |
-| Joint three steps | 92.0% | 90.5% | 200 |
+| Controller | Standard joint success | Longer joint success | Episodes per split | Original thesis counterpart and reported joint success |
+| --- | ---: | ---: | ---: | --- |
+| PPO original reward (V1.5) | 95.7% | 85.8% | 1,000 | Written equal policy reward is the source; original PPO joint success NR. These percentages belong to our V1.5 agent [p. 15, Table 3; pp. 17-18, Sec. 7.1/Figs. 5-6]. |
+| PPO full reward (V2) | 95.7% | 87.3% | 1,000 | No corresponding replacement reward arm; original PPO joint success NR [pp. 16-20, Secs. 6.3-7.2]. |
+| PPO arrival reward (V2) | 94.9% | 85.1% | 1,000 | No corresponding arrival reward arm; joint success NR [pp. 16-20, Secs. 6.3-7.2]. |
+| Goal RSS | 94.0% | 84.5% | 200 | Closest reference is source greedy, with different motion and handover counters; source greedy joint success NR [pp. 13-14, Sec. 5.4; pp. 17-18, Figs. 5-6]. |
+| Goal radio | 96.5% | 88.5% | 200 | Source greedy is not this capacity aware controller; source greedy joint success NR [pp. 13-14, Sec. 5.4; pp. 17-18, Figs. 5-6]. |
+| Joint one step | 96.0% | 90.5% | 200 | No corresponding joint one step search reported [pp. 13-14, Sec. 5.4; p. 16, Sec. 6.3]. |
+| Joint three steps | 92.0% | 90.5% | 200 | No corresponding joint three step search reported [pp. 13-14, Sec. 5.4; p. 16, Sec. 6.3]. |
 
 The primary comparison is full V2 minus original V1.5 on standard routes.
 Intervals use 5,000 crossed seed/route bootstrap draws, seed 63000.
 
-| Contrast | Observed success difference | 95% interval |
-| --- | ---: | --- |
-| Standard, primary | 0.0 percentage points | [-2.8, 2.7] |
-| Longer, secondary | +1.5 percentage points | [-2.9, 6.1] |
+| Contrast | Observed success difference | 95% interval | Original thesis comparison |
+| --- | ---: | --- | --- |
+| Standard, primary | 0.0 percentage points | [-2.8, 2.7] | NR: source compares PPO with greedy and changes policy weights; no matched replacement reward success contrast or confidence interval [p. 16, Sec. 6.3; pp. 17-20, Secs. 7.1-7.2]. |
+| Longer, secondary | +1.5 percentage points | [-2.9, 6.1] | NR: no separately declared longer route success contrast or confidence interval [p. 16, Sec. 6.3; pp. 17-20, Secs. 7.1-7.2]. |
 
 **Neither interval establishes improved completion.** This is not evidence
 of equivalence: meaningful differences remain compatible with the intervals,
@@ -133,15 +141,15 @@ substituted for the common subset. A lower value is not universally better:
 higher SINR is preferable, while lower delay and fewer handovers are distinct
 objectives.
 
-| Metric | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 |
-| --- | ---: | ---: | ---: | ---: |
-| Flight time (s) | 31.252 | 28.112 | 65.394 | 60.145 |
-| Handovers | 6.843 | 0.443 | 15.826 | 1.528 |
-| Delay proxy (s) | 1.942 | 5.827 | 2.857 | 6.818 |
-| Energy proxy (kJ) | 7.651 | 7.788 | 18.523 | 18.957 |
-| SINR (dB) | -8.322 | -9.305 | -8.773 | -9.957 |
-| Interference (µW) | 0.753 | 0.748 | 0.794 | 0.791 |
-| Accumulated radio cost | 7.094 | 5.309 | 16.800 | 13.803 |
+| Metric | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 | Original thesis result and comparability |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Flight time (s) | 31.252 | 28.112 | 65.394 | 60.145 | NR as a mean arrival time on common successful flights; source continues after arrival [p. 12, Sec. 5.2; pp. 17-20, Figs. 5-8]. |
+| Handovers | 6.843 | 0.443 | 15.826 | 1.528 | CDFs on an unexplained 1e-2 axis scale; source PPO is lower than greedy. NC with our mean executed counts per successful flight [p. 18, Fig. 6; p. 20, Fig. 8; readings below]. |
+| Delay proxy (s) | 1.942 | 5.827 | 2.857 | 6.818 | D = q/r is defined, but no numerical delay result is reported in the five metric panels, including the delay priority experiment [p. 9, Eq. (4); pp. 18, 20, Figs. 6, 8]. |
+| Energy proxy (kJ) | 7.651 | 7.788 | 18.523 | 18.957 | Remaining energy bars, labeled kW, approximately 370 for PPO and 440 for greedy. NC with consumed kJ under our different proxy [p. 18, Fig. 6; p. 10, Eq. (10)]. |
+| SINR (dB) | -8.322 | -9.305 | -8.773 | -9.957 | SNR CDF medians approximately 124 dB for PPO and 127 dB for greedy. NC: source SNR and our SINR use different arithmetic, and medians are not means [p. 10, Eq. (8); p. 18, Fig. 6]. |
+| Interference (µW) | 0.753 | 0.748 | 0.794 | 0.791 | Uplink interference CDF medians approximately -35 dBm for PPO and -28 dBm for greedy. NC with mean linear cochannel downlink power [p. 10, Eq. (9); p. 18, Fig. 6]. |
+| Accumulated radio cost | 7.094 | 5.309 | 16.800 | 13.803 | NR for our transformed cost accumulated until joint arrival; source objective and positive reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
 
 Full V2 reduces handovers by 93.5% on standard pairs and 90.3% on longer
 pairs, with flights shorter by 3.14 s and 5.25 s. Its delay proxy increases
@@ -160,16 +168,53 @@ multiple comparisons.
 Counts below use all 1,000 episodes per arm and split, not only common
 successes. Each episode contributes its first failure reason.
 
-| First failure | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 |
-| --- | ---: | ---: | ---: | ---: |
-| Serving RSS below minimum | 40 | 34 | 136 | 112 |
-| Buffer overflow | 3 | 9 | 6 | 15 |
-| Total failed missions | 43 | 43 | 142 | 127 |
+| First failure | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 | Original thesis result |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Serving RSS below minimum | 40 | 34 | 136 | 112 | Failed mission count NR; outage bars show approximately 0 s for PPO and 2 s for greedy, without our first violation termination semantics [p. 18, Fig. 6]. |
+| Buffer overflow | 3 | 9 | 6 | 15 | Overflow failure count NR. The source discusses removing a buffer dump reward penalty, not a measured zero overflow rate [pp. 20-21, Sec. 7.3]. |
+| Total failed missions | 43 | 43 | 142 | 127 | Joint failed mission total NR; neither trajectory plots nor outage bars establish this count [pp. 17-20, Figs. 5-8]. |
 
 Neither of these two arms has an energy, boundary or timeout failure in these
 tests. Full has fewer observed RSS failures but more buffer failures. These
 counts do not establish a general reliability advantage; the completion
 intervals above remain the relevant comparison.
+
+### Original Thesis Results: What the Figures Actually Report
+
+This table includes all five outcomes plotted in the original thesis, plus
+mission completion, flight time, delay and aggregate cost. The values marked
+**≈ are visual readings**, rounded to the precision supported by the plots.
+For a CDF, the reading is the approximate median at cumulative probability
+0.5; for a bar, it is its height. These are not tabulated source means,
+verified physical values, or measurements recomputed from the dataset.
+
+The first two columns of results come from **printed p. 18, Fig. 6**.
+The three priority policies come from **printed p. 20, Fig. 8**, in the order
+delay / interference / handover. We preserve the source labels and scaling
+even where their physical interpretation is unresolved. The original raw
+evaluation records and plotting code are unavailable to this study.
+
+| Outcome or plotted quantity | Original equal policy PPO, Fig. 6 | Original greedy, Fig. 6 | Original priority PPO policies, Fig. 8: D / I / H | Current study comparison |
+| --- | --- | --- | --- | --- |
+| Joint mission success rate | NR | NR | NR / NR / NR | V1.5 / full V2: 95.7% / 95.7% standard and 85.8% / 87.3% longer; no original percentage is available for a numerical improvement claim. |
+| Arrival flight time on common successes | NR | NR | NR / NR / NR | Mean 31.252 / 28.112 s standard and 65.394 / 60.145 s longer; source arrival does not terminate [p. 12, Sec. 5.2]. |
+| SNR CDF median (dB) | ≈124 | ≈127 | ≈122-123 for all three | NC with our mean SINR: source Eq. (8) uses RSS minus noise; our SINR also includes interference [p. 10]. No subtraction or percentage improvement across these scales. |
+| Outage bar height (s) | ≈0 | ≈2 | ≈0 / ≈1 / ≈1 | Successful V1.5 and V2 missions have zero sampled outage by definition; failed episodes remain in the preceding table. Source bars do not establish strict joint success. |
+| Uplink interference CDF median (dBm) | ≈-35 | ≈-28 | ≈-40 / ≈-40 / ≈-38 | NC with our downlink cochannel means in µW; interference definition, statistic and aggregation differ [p. 10, Eq. (9)]. |
+| Remaining energy bar height, axis labeled kW | ≈370 | ≈440 | ≈310 / ≈260 / ≈770 | NC with our consumed energy in kJ. kW is a power unit; the source label and model do not justify converting these bars into joules [p. 10, Eq. (10); p. 15, Table 3]. |
+| Handover CDF median, raw plotted x value | ≈0.0046 | ≈0.0129 | ≈0.0025 / ≈0.0041 / ≈0.0033 | NC with our counts per flight. Both source x axes say "over 200 episodes" and display a 1e-2 multiplier; the normalization is unspecified. No multiplication or division by 200 is assumed. |
+| Transmission delay result (s) | NR | NR | NR / NR / NR | We report q/r means for both splits. A policy named transmission delay does not supply a numerical delay result [p. 9, Eq. (4); p. 16, Sec. 7]. |
+| Accumulated radio cost until arrival | NR | NR | NR / NR / NR | Our transformed cost is a new reporting quantity; it cannot be compared numerically with unspecified original returns [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
+| Trajectory behavior | Source PPO prioritizes radio metrics over the destination | Source greedy prioritizes reaching the destination | Wandering and overshoot are discussed | Our goal and braking aid is shared across rewards. Straight paths do not isolate a reward effect [p. 17, Sec. 7.1/Fig. 5; p. 19, Sec. 7.2/Fig. 7]. |
+
+The source's qualitative finding is lower interference and fewer handovers
+for PPO than greedy [printed p. 17, Sec. 7.1]. In the priority comparison,
+the author describes broadly similar SNR and outage, and discusses wandering
+and overshoot [printed p. 19, Sec. 7.2]. The plot readings above preserve
+what is shown, including the visible differences between energy bars; they
+do not turn those descriptions into a matched statistical comparison with V2.
+The [comparison provenance note](docs/44_readme_original_thesis_comparisons.md)
+records the reading convention and all limits.
 
 ## Conclusions and Revised Diagnosis
 
@@ -203,6 +248,11 @@ intervals above remain the relevant comparison.
    claim a reproduced fix to the unavailable thesis code or validated real
    world performance.
 
+Dataset identity is confirmed by the researcher who supplied the file; it is
+not an unresolved difference from the thesis. The [provenance update](docs/43_confirmed_thesis_dataset_identity.md)
+records that confirmation. Using the same dataset does not imply the same
+simulator, controller, training procedure or evaluation routes.
+
 The study's implementation passed 73 tests and all 7,600 final evaluations
 replayed exactly. The long route illustration additionally repeated 600
 existing records exactly; these are not new independent samples. Such checks
@@ -235,6 +285,9 @@ than replacing the aggregate comparison above.
 A clone includes source, configuration, results and **all 15 final checkpoints**:
 five original reward V1.5, five full V2 and five arrival V2. Total size is about
 2.05 MB. The private map must be supplied separately by its owner.
+
+`Barcelona_dataset_January.h5` is the same dataset used in the original
+thesis. Its required location and checksum are given below.
 
 Use these paths relative to the repository root:
 
@@ -300,18 +353,18 @@ checksum verification, splits, environment installation and troubleshooting.
 
 | Component | Current behavior | Original TFM locator or difference |
 | --- | --- | --- |
-| Joint objective | Complete the mission under sampled RSS and queue constraints; report all three radio costs | p. 10, Eq. (11); p. 11, Eq. (12) |
-| Goal position | Within 10 m | Retains p. 15, Table 3 |
-| Goal speed | At most 2 m/s | New numerical tolerance; stopping intent, p. 9, Sec. 3.2 |
-| Deadline | 200 s, 200 decisions | Shared surrogate; source 2,000 steps and 0.1 s table step, pp. 15-16 |
-| RSS feasibility | At least -96 dBm at every modeled sample, including initial RSS | C2, p. 11; value p. 15 |
-| Queue feasibility | No overflow beyond 1,280,000 bits | C4, p. 11; decimal interpretation of 160 KB, p. 15 |
-| Termination | Arrival, first violation or timeout, in training and evaluation | V2 enforcement; source continues after arrival, p. 12, Sec. 5.2 |
-| Event priority | Constraint violations override simultaneous arrival; boundary, energy, RSS, buffer, success, timeout reason priority | New explicit ordering; original code unknown |
-| Outstanding queue | Allowed at arrival and reported | No added empty queue condition inferred from pp. 9-12 |
-| Packet deadline / minimum rate | Not imposed | No new application contract added |
-| Failure reporting | First RSS, buffer, boundary, energy or timeout failure | Added joint evaluation semantics |
-| Sampling | One second checks only | No physical continuity guarantee between samples |
+| Joint objective | Complete the mission under sampled RSS and queue constraints; report all three radio costs | Weighted delay, interference and handover objective, with mission and feasibility constraints [p. 10, Eq. (11); p. 11, Eq. (12)] |
+| Goal position | Within 10 m | 10 m tolerance, retained [p. 15, Table 3] |
+| Goal speed | At most 2 m/s | Arrival at a halt is intended; numerical terminal speed tolerance NR [p. 9, Sec. 3.2]. Our 2 m/s tolerance is new |
+| Deadline | 200 s, 200 decisions | 2,000 steps and 0.1 s imply 200 s using the tables [pp. 15-16, Tables 3-4]; prose says 1 ms [p. 14, Sec. 6.1] |
+| RSS feasibility | At least -96 dBm at every modeled sample, including initial RSS | RSS bound C2 and -96 dBm minimum [p. 11, Eq. (12); p. 15, Table 3]; identical initial and terminal enforcement is not documented |
+| Queue feasibility | No overflow beyond 1,280,000 bits | Bounded queue C4, 160 KB [p. 11, Eq. (12); p. 15, Table 3]; ours explicitly uses decimal KB |
+| Termination | Arrival, first violation or timeout, in training and evaluation | Arrival explicitly continues; energy exhaustion terminates. Equivalent immediate RSS/overflow termination is unknown [p. 12, Sec. 5.2] |
+| Event priority | Constraint violations override simultaneous arrival; boundary, energy, RSS, buffer, success, timeout reason priority | Equivalent simultaneous event priority NR in the reward/termination description [p. 12, Sec. 5.2]; original code unknown |
+| Outstanding queue | Allowed at arrival and reported | Queue and delay are defined, with bounded queue C4; no empty queue arrival condition stated [p. 9, Eqs. (4)-(5); p. 11, Eq. (12)] |
+| Packet deadline / minimum rate | Not imposed | No numeric packet deadline or minimum throughput requirement stated in the delay model/constraint set [p. 9, Eq. (4); p. 11, Eq. (12)] |
+| Failure reporting | First RSS, buffer, boundary, energy or timeout failure | Reports radio metrics and trajectories, without our first reason joint failure counts [pp. 16-20, Sec. 7/Figs. 5-8] |
+| Sampling | One second checks only | Discrete timesteps, with conflicting 0.1 s / 1 ms declarations [pp. 14-15, Sec. 6.1/Table 3]. Our one second checks do not establish physical continuity |
 
 All TFM citations use **printed pages**. PDF viewer page = printed page + 2.
 The [original PDF](sources/UAV_Bermudez_Granados_2026_MSc_thesis.pdf) is retained.
@@ -322,26 +375,26 @@ Missing original details mean unknown, not proven absent.
 | Component | V2 implementation | Original definition or limitation |
 | --- | --- | --- |
 | Executable | New Python implementation; original simulator and policies unavailable | Stable Baselines/custom environment described on p. 13, Sec. 5.3 |
-| Propagation | Consume native received RSS; do not rerun ray tracing | MATLAB, 3D scene and station collection, pp. 6-7, Sec. 3.1 |
-| RF metadata | 2.1 GHz, 100 m altitude; 87 of 133 sites | Matching pp. 6-7, Table 2; exact source version unverified |
+| Propagation | Use the same thesis RSS dataset at native resolution; do not rerun ray tracing | MATLAB, 3D scene and station collection, pp. 6-7, Sec. 3.1 |
+| RF metadata | 2.1 GHz, 100 m altitude; 87 of 133 sites | Same thesis dataset; parameters on pp. 6-7, Table 2; Operator 1 selection on p. 14, Sec. 6.1 |
 | Region | 5000 by 3500 m, fixed altitude; no collision model | Scene used for propagation, p. 6; original collision logic unspecified |
 | Grid | Nearest lookup; actual spacings 1.00020004 and 1.00028580 m | Nominal one meter resolution, p. 7; indexing unspecified |
-| Quantization | Preserve int8; promote before arithmetic; provisional -128 sentinel means zero watts | Generator convention unconfirmed |
-| Power | Use stored RSS directly, without adding 46 dBm again | Downlink budget/strongest sector, p. 7, Eq. (1) |
+| Quantization | Preserve int8; promote before arithmetic; provisional -128 sentinel means zero watts | Storage dtype, indexing and missing value convention NR in the dataset description [pp. 6-7, Sec. 3.1]; sentinel interpretation remains unconfirmed |
+| Power | Use stored RSS directly, without adding 46 dBm again | 46 dBm transmission power, sector maximum and downlink budget [p. 7, Eq. (1)/Table 2]; stored received powers already include the source budget |
 | Motion | Inertial vector velocity and trapezoidal position update | Source scalar speed and chosen direction, p. 9, Eq. (2) |
-| Bounds | Acceleration norm 5 m/s², hard speed cap 25 m/s | Source discretizes acceleration/heading and lists 100 m/s threshold, p. 15 |
+| Bounds | Acceleration norm 5 m/s², hard speed cap 25 m/s | Acceleration -5 to 5 m/s² in five bins; eight directions; speed threshold 100 m/s [p. 15, Table 3] |
 | Step | 1 s | Source table 0.1 s, p. 15; prose 1 ms, p. 14 |
-| Interference | Sum linear cochannel downlink power, excluding serving station | Source calls it uplink, p. 10, Eq. (9); not calibrated source reproduction |
-| Noise | -112.41 dBm plus 9 dB = -103.41 dBm, converted to watts | Retains table values, p. 15 |
-| Rate | 1.44e6 × log2(1 + linear SINR) bit/s | Replaces printed rate/SNR expressions, p. 10, Eqs. (7)-(8) |
-| Bandwidth | Eight 180 kHz blocks per group; 12 groups | Retains p. 15, Table 3 |
-| Traffic | Constant 200,000 bit/s | Replaces packet/Poisson model, pp. 9-10, Eqs. (5)-(6); not an asserted unit conversion |
+| Interference | Sum linear cochannel downlink power, excluding serving station | Sum of neighboring RSS values, labeled uplink [p. 10, Eq. (9)]; cochannel occupancy and linear unit handling are not explicit in that equation |
+| Noise | -112.41 dBm plus 9 dB = -103.41 dBm, converted to watts | Thermal noise -112.41 dBm and noise figure 9 dB, retained [p. 15, Table 3] |
+| Rate | 1.44e6 × log2(1 + linear SINR) bit/s | Printed r = bandwidth + log2(SNR), with SNR = RSS minus thermal noise minus noise figure [p. 10, Eqs. (7)-(8)]; our dimensional service formula is different |
+| Bandwidth | Eight 180 kHz blocks per group; 12 groups | 12 groups, eight blocks per group, 180 kHz per block, retained [p. 15, Table 3] |
+| Traffic | Constant 200,000 bit/s | Poisson packet model, lambda 100; 2,000 bits per data packet in Table 3 versus 1,000 bits in prose [pp. 9-10, Eqs. (5)-(6); pp. 14-15]. Constant 200 kbit/s is our replacement, not an established source arrival rate |
 | Queue order | Add traffic/overhead, subtract service, count overflow, clip | Source p. 9, Eq. (5); exact source event order unknown |
-| Delay | Postservice backlog / max(rate,1), censored at 200 s | Queue/rate concept, p. 9, Eq. (4); not actual packet delay |
-| Handover overhead | 4,800 bits per executed handover | Four 1,200 bit packets, pp. 14-15 |
-| Occupancy | Static deterministic half occupied pattern with saved phase | Source describes random occupancy, pp. 14-15 |
-| Interruption | No switching delay or separate same station resource change cost | No calibrated duration supplied by source |
-| Energy | (100 + 0.4 × speed²) × dt J; 100 kJ budget | New uncalibrated proxy, not a conversion of p. 10, Eq. (10), or p. 15 capacity |
+| Delay | Postservice backlog / max(rate,1), censored at 200 s | D = q/r [p. 9, Eq. (4)]; our rate floor, postservice sampling and 200 s censoring are not specified there. Neither expression directly tracks packet latency |
+| Handover overhead | 4,800 bits per executed handover | Four control packets of 1,200 bits per handover, retained [pp. 14-15, Sec. 6.1/Table 3] |
+| Occupancy | Static deterministic half occupied pattern with saved phase | 50% in Table 3; prose says at least 50% randomly occupied. No equivalent fixed load phase specified [pp. 14-15, Sec. 6.1/Table 3] |
+| Interruption | No switching delay or separate same station resource change cost | A3/resource handling and control packets are described; calibrated switching interruption duration NR [p. 9, Sec. 3.3.1; pp. 14-15, Sec. 6.1/Table 3] |
+| Energy | (100 + 0.4 × speed²) × dt J; 100 kJ budget | Eq. (10) uses velocity, 3 kg mass, lift/drag 5, efficiency 55%, electronics 0.1 kW; capacity is printed as 1000 kW [p. 10; p. 15, Table 3]. Our proxy replaces that model and is not a unit conversion |
 
 ## Exact Actions, Navigation Prior and Filter
 
@@ -352,21 +405,21 @@ braking command. Physical projection follows. Desired speed is
 navigation competence. Source discrete acceleration/heading actions differ
 [TFM, p. 12, Sec. 5.2; p. 15, Table 3].
 
-| Detail | Exact behavior |
-| --- | --- |
-| Candidates | Serving station plus four strongest signals, stable RSS ordering |
-| Duplicate serving slots | Masked except the designated serving slot |
-| Options | Stay plus five slots × 12 groups = 61 |
-| A3 | Target RSS strictly greater than serving RSS + 3 dB and at least -96 dBm [TFM, p. 9, Eq. (3); p. 15] |
-| Resources | Only free target groups; explicit stay always available |
-| Decision interval | Every modeled second |
-| Same station group changes | Permitted; resource changes are distinct from handovers |
-| Initialization | Strongest RSS and first free deterministic group |
-| Filter | Predict next position/RSS/queue; repair network first, then local joint motion if needed |
-| Information | Known map and dynamics at prospective positions, shared by all arms |
-| Unresolved violation | Still terminates failure; mask cannot be bypassed |
-| Diagnostics | Network and motion interventions counted separately |
-| PPO likelihoods | Proposed actions; projection and filtering are environment transformations |
+| Detail | Exact behavior | Original thesis definition or status |
+| --- | --- | --- |
+| Candidates | Serving station plus four strongest signals, stable RSS ordering | 87 Operator 1 stations; the written action requests a station, without our top four restriction [p. 12, Sec. 5.2; pp. 14-15, Sec. 6.1/Table 3]. |
+| Duplicate serving slots | Masked except the designated serving slot | Candidate slots and duplicate masks NR in the listed action [p. 12, Sec. 5.2]. |
+| Options | Stay plus five slots × 12 groups = 61 | Separate requested BS and requested RBG; 87 stations and 12 groups. A 61 option joint encoding is not specified [p. 12, Sec. 5.2; p. 15, Table 3]. |
+| A3 | Target RSS strictly greater than serving RSS + 3 dB and at least -96 dBm [TFM, p. 9, Eq. (3); p. 15] | Eq. (3) requires target RSS > serving RSS + offset. Offset is printed as 3 dBm; we interpret the difference as 3 dB. RSS minimum is -96 dBm [p. 9, Eq. (3); p. 15, Table 3]. |
+| Resources | Only free target groups; explicit stay always available | Unavailable group: keep current RBG; after a simultaneous handover, allocate the first available group. Our mask excludes unavailable requests beforehand [p. 9, Sec. 3.3.1]. |
+| Decision interval | Every modeled second | Table step 0.1 s; prose says 1 ms. Greedy additionally uses consecutive viability counters; its threshold is unspecified [pp. 13-15, Secs. 5.4/6.1, Table 3]. |
+| Same station group changes | Permitted; resource changes are distinct from handovers | RBG requests can be made besides BS requests; independent changes are described, but their separate cost is not specified [p. 9, Sec. 3.3.1]. |
+| Initialization | Strongest RSS and first free deterministic group | Initial station selection NR; first available group is specified for greedy and as a handover fallback [p. 9, Sec. 3.3.1; pp. 13-14, Sec. 5.4]. |
+| Filter | Predict next position/RSS/queue; repair network first, then local joint motion if needed | No equivalent prospective network/motion repair procedure is specified in the environment or action description [pp. 9-12, Secs. 3.2-5.2]. |
+| Information | Known map and dynamics at prospective positions, shared by all arms | Offline radio map is available; lookahead map queries inside a repair controller are not specified [pp. 6-8, Sec. 3.1; p. 12, Sec. 5.2]. |
+| Unresolved violation | Still terminates failure; mask cannot be bypassed | RSS penalty and energy termination are stated; equivalent strict queue/RSS termination and mask enforcement are unknown [p. 11, Eq. (12); p. 12, Sec. 5.2]. |
+| Diagnostics | Network and motion interventions counted separately | Intervention counts NR in the five reported metrics [p. 16, Sec. 7; pp. 18, 20, Figs. 6, 8]. |
+| PPO likelihoods | Proposed actions; projection and filtering are environment transformations | PPO probability ratio is described; likelihood handling of projected or repaired actions is unspecified [p. 13, Algorithm 1]. |
 
 The source lists BS and RBG requests [TFM, p. 12, Sec. 5.2]. Candidate
 restriction, masks, residual motion and the filter are our implementation.
@@ -375,28 +428,42 @@ restriction, masks, residual motion and the filter are our implementation.
 
 All three learned arms have the same 156 inputs; indices are zero based.
 
-| Indices | Definition |
-| --- | --- |
-| 0-1 | Position / map dimensions |
-| 2-3 | Unit goal direction |
-| 4 | Goal distance / 1,000 m |
-| 5-6 | Radial and lateral velocity / 25 m/s |
-| 7 | Speed / 25 m/s |
-| 8 | Elapsed decision count / 200 |
-| 9 | Queue / 1,280,000 bits |
-| 10 | Consumed energy / 100,000 J |
-| 11-12 | Background phase / 11 and serving RBG / 11 |
-| 13 | Serving SINR in dB / 30 |
-| 14-18 | Five candidate RSS values, (RSS + 70) / 60 |
-| 19-28 | Candidate x/y offsets / 5,000 m |
-| 29-33 | Candidate station indices / 86 |
-| 34-94 | log(1 + option capacity / 200000), for 61 choices |
-| 95-155 | Network mask |
+| Indices | Definition | Original thesis listed state |
+| --- | --- | --- |
+| 0-1 | Position / map dimensions | x and y are listed; coordinate normalization is unspecified [p. 12, Sec. 5.2]. |
+| 2-3 | Unit goal direction | Goal direction is not in the listed state [p. 12, Sec. 5.2]. |
+| 4 | Goal distance / 1,000 m | Goal distance is not in the listed state [p. 12, Sec. 5.2]. |
+| 5-6 | Radial and lateral velocity / 25 m/s | Velocity components are not in the listed state [p. 12, Sec. 5.2]. |
+| 7 | Speed / 25 m/s | Speed is not in the listed state [p. 12, Sec. 5.2]. |
+| 8 | Elapsed decision count / 200 | Elapsed or remaining time is not in the listed state [p. 12, Sec. 5.2]. |
+| 9 | Queue / 1,280,000 bits | Queue q(t) is listed; normalization is unspecified [p. 12, Sec. 5.2]. |
+| 10 | Consumed energy / 100,000 J | Energy E(t) is listed, defined as remaining energy on p. 10, Eq. (10); our input is consumed fraction [p. 12, Sec. 5.2]. |
+| 11-12 | Background phase / 11 and serving RBG / 11 | Serving group G_ks(t) is listed; background phase is not. Normalization is unspecified [p. 12, Sec. 5.2]. |
+| 13 | Serving SINR in dB / 30 | Serving SINR is not in the listed state; source instead defines SNR on p. 10, Eq. (8) [p. 12, Sec. 5.2]. |
+| 14-18 | Five candidate RSS values, (RSS + 70) / 60 | Candidate RSS values are not in the listed state [p. 12, Sec. 5.2]. |
+| 19-28 | Candidate x/y offsets / 5,000 m | Candidate coordinates or relative offsets are not in the listed state [p. 12, Sec. 5.2]. |
+| 29-33 | Candidate station indices / 86 | Serving station k_s(t) is listed; four additional candidate indices and their encoding are not specified [p. 12, Sec. 5.2]. |
+| 34-94 | log(1 + option capacity / 200000), for 61 choices | Action specific capacities are not in the listed state [p. 12, Sec. 5.2]. |
+| 95-155 | Network mask | An observation mask is not in the listed state [p. 12, Sec. 5.2]. |
 
 The source lists six state components [TFM, p. 12, Sec. 5.2]; this layout is
 an explicit replacement, not a reconstruction of undocumented original tensors.
 
 ## Exact Reward Difference
+
+| Reward component | Original thesis | V1.5 on the shared V2 system | Full V2 |
+| --- | --- | --- | --- |
+| Radio transform and scale | Positive 1/(1 + beta × metric); beta values 10, 100000, 100 [p. 12, Eq. (13); p. 15, Table 3] | Same written transform and scales, evaluated on V2 delay, interference and executed handovers | Negative beta × metric/(1 + beta × metric), with the same three scales |
+| Equal policy weights, D / I / H | 0.35 / 0.30 / 0.35 [p. 15, Table 3] | Retained | Retained in transformed radio cost |
+| Priority policy weights | Prioritized metric 0.8, each other metric 0.2 as printed; these sum to 1.2 despite the unit sum statement [p. 10, Sec. 4; p. 15, Table 3] | Not trained in this comparison | Not trained in this comparison; arrival is a separate radio cost omission control |
+| Progress toward goal | +12 for a closer step [p. 12, Eq. (14); p. 15, Table 3] | Retained | Discounted potential difference including distance and stopping distance |
+| Time payment | No explicit fixed time cost in Eq. (14) [p. 12] | None added | -0.05 per step |
+| Boundary / RSS / speed penalties | -10 each; RSS <= -96 dBm and speed >= 100 m/s [p. 12, Eq. (14); p. 15, Table 3] | Retained; 100 m/s cannot occur under the shared cap | -20 at any terminal failure; no separate original threshold payments |
+| Energy exhaustion | Overrides the whole reward with -10 and ends the episode [p. 12, Sec. 5.2; p. 15, Table 3] | Reward override retained under V2 energy accounting | Terminal failure payment -20 |
+| Arrival reward and episode end | No arrival payment in Eq. (14); arrival explicitly does not terminate [p. 12, Sec. 5.2] | No new arrival payment, but shared V2 arrival termination stays | +20 for joint success, followed by termination |
+| Buffer overflow / timeout | No extra explicit payment in the final Eq. (14); previous dump penalty removed [p. 12; pp. 20-21, Sec. 7.3] | No new payments; shared V2 failure termination stays | -20 terminal failure payment |
+| Terminal potential | No potential shaping specified in Eq. (14) [p. 12] | None | Next potential zero at every terminal, including timeout |
+| Reward normalization and clipping | Exact wrappers and settings NR [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4] | Shared discounted return variance normalization and clipping | Identical mechanism, whose statistics respond to the different reward |
 
 V1.5 reconstructs the source equal policy [TFM, p. 12, Eqs. (13)-(14);
 p. 15, Table 3], using the same executed V2 quantities:
@@ -431,47 +498,50 @@ package, not the benefit of one component or the cause of original wandering.
 
 The new PPO source differs only in its environment import and description;
 a structural test checks this. Original PPO definitions are on TFM p. 13,
-Sec. 5.3 and pp. 15-16, Sec. 6.2/Table 4. Current controlled settings are:
+Sec. 5.3 and pp. 15-16, Sec. 6.2/Table 4. Current controlled settings are
+compared below. Unreported details remain unknown; library defaults are not
+assumed to establish the original configuration.
 
-| Setting | Value |
-| --- | --- |
-| Parallel environments / rollout | 64 / 128 |
-| Minibatch / epochs | 512 / 4 |
-| Actor and critic | Separate networks, two 64 unit tanh layers each |
-| Learning rate / Adam epsilon | 0.0003 / 1e-5 |
-| Discount / GAE | 0.99 / 0.95 |
-| PPO clip / entropy weight | 0.2 / 0.005 |
-| Value weight / gradient norm | 0.5 / 0.5 |
-| Interactions per policy / CPU threads | 524,288 / 2 |
-| Hidden initialization | Orthogonal gain sqrt(2), zero biases |
-| Action / value head gain | 0.01 / 1 |
-| Initial motion log standard deviation | -0.5 |
-| Log standard deviation clamp | [-2.3, 0.5] |
-| Invalid logits | -1e9 |
-| Reward normalization | Running variance of discounted returns; not mean centered |
-| Reward clipping | [-10, 10] after normalization |
-| Advantage normalization | Per minibatch, epsilon 1e-8 |
-| Value loss | 0.5 × squared error, then configured value weight 0.5 |
-| Terminal GAE | No bootstrap or carry across any terminal, including timeout |
-| Evaluation | Gaussian mean and categorical argmax |
-| Checkpoint contents | Policy tensors, dimensions, config metadata and final step count |
-| Model selection | Final budget checkpoint for every declared seed |
+| Setting | Value | Original thesis setting |
+| --- | --- | --- |
+| Parallel environments / rollout | 64 / 128 | Environment count NR; 8 steps per environment before an update [p. 16, Table 4]. |
+| Minibatch / epochs | 512 / 4 | Batch size 32; optimization epochs per update NR [p. 16, Table 4]. |
+| Actor and critic | Separate networks, two 64 unit tanh layers each | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Learning rate / Adam epsilon | 0.0003 / 1e-5 | Learning rate 0.00003; Adam epsilon NR [p. 16, Table 4]. |
+| Discount / GAE | 0.99 / 0.95 | 0.99 / 0.95, retained [p. 16, Table 4]. |
+| PPO clip / entropy weight | 0.2 / 0.005 | Clip 0.2, retained; entropy coefficient 0.01, reduced here to 0.005 [p. 16, Table 4]. |
+| Target KL | No early stopping threshold; approximate KL is logged diagnostically | 0.03 [p. 16, Table 4]. |
+| Value weight / gradient norm | 0.5 / 0.5 | Value coefficient 0.5, retained; gradient norm limit NR [p. 16, Table 4]. |
+| Interactions per policy / CPU threads | 524,288 / 2 | 300 episodes, up to 2,000 steps each: nominal ceiling 600,000, not an actual interaction log. CPU threads NR [p. 16, Table 4]. |
+| Hidden initialization | Orthogonal gain sqrt(2), zero biases | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Action / value head gain | 0.01 / 1 | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Initial motion log standard deviation | -0.5 | Actions are discrete; no Gaussian motion log standard deviation is specified [p. 12, Sec. 5.2; p. 15, Table 3]. |
+| Log standard deviation clamp | [-2.3, 0.5] | No Gaussian motion clamp is specified [p. 12, Sec. 5.2; p. 15, Table 3]. |
+| Invalid logits | -1e9 | No equivalent invalid action logits are specified [p. 12, Sec. 5.2; p. 13, Sec. 5.3]. |
+| Reward normalization | Running variance of discounted returns; not mean centered | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Reward clipping | [-10, 10] after normalization | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Advantage normalization | Per minibatch, epsilon 1e-8 | NR in the PPO description and parameter table [p. 13, Sec. 5.3; pp. 15-16, Sec. 6.2/Table 4]. |
+| Value loss | 0.5 × squared error, then configured value weight 0.5 | Mean squared value regression in Algorithm 1; value coefficient 0.5. Exact implementation prefactor unspecified [p. 13, Algorithm 1; p. 16, Table 4]. |
+| Terminal GAE | No bootstrap or carry across any terminal, including timeout | Terminal and timeout bootstrap handling NR; arrival explicitly does not end an episode [p. 12, Sec. 5.2; p. 13, Algorithm 1]. |
+| Evaluation | Gaussian mean and categorical argmax | Deterministic versus sampled evaluation action selection NR [pp. 16-20, Secs. 6.3-7.2]. |
+| Checkpoint contents | Policy tensors, dimensions, config metadata and final step count | Checkpoint contents NR; original weights unavailable to this study [pp. 15-16, Secs. 6.2-6.3]. |
+| Model selection | Final budget checkpoint for every declared seed | Training settings and tuning observations are described, but equivalent final checkpoint selection across declared seeds is NR [pp. 15-16, Sec. 6.2]. |
 
 ## Splits, Budgets and Independence
 
-| Pool or budget | Size | Definition |
-| --- | ---: | --- |
-| Training | 4,096 routes | Exact V2 seed 52010, lengths 200-1800 m |
-| Validation | 64 routes | Exact V2 seed 52001, lengths 200-1000 m |
-| Longer validation | 32 routes | Exact V2 seed 52002, lengths 1000-1800 m |
-| New standard test | 200 routes | Seed 53012, lengths 200-1000 m |
-| New longer test | 200 routes | Seed 53013, lengths 1000-1800 m |
-| Policy seeds | Five per arm | 2101, 2102, 2103, 2104, 2105 |
-| Per policy budget | 524,288 interactions | Identical settings and budget |
-| New training | 2,621,440 interactions | Five V1.5 policies from scratch |
-| Reused V2 weights | Ten policies | All full and arrival seeds, fixed by hash before new training/test |
-| Final evaluations | 7,600 episodes | 6,000 learned + 1,600 deterministic |
-| Exact replay | 7,600 episodes | Every new record compared exactly |
+| Pool or budget | Size | Definition | Original thesis protocol |
+| --- | ---: | --- | --- |
+| Training | 4,096 routes | Exact V2 seed 52010, lengths 200-1800 m | 300 training episodes are listed, not a 4,096 route pool; route generator seed and length distribution NR [pp. 15-16, Secs. 6.2-6.3]. |
+| Validation | 64 routes | Exact V2 seed 52001, lengths 200-1000 m | Equivalent independent validation pool, count and seed NR [pp. 15-16, Secs. 6.2-6.3]. |
+| Longer validation | 32 routes | Exact V2 seed 52002, lengths 1000-1800 m | Equivalent longer validation pool, count and seed NR [pp. 15-16, Secs. 6.2-6.3]. |
+| New standard test | 200 routes | Seed 53012, lengths 200-1000 m | Equivalent independent standard test routes and seed NR. The handover plot says 200 episodes, which does not specify route separation [p. 18, Fig. 6]. |
+| New longer test | 200 routes | Seed 53013, lengths 1000-1800 m | Equivalent longer test pool and seed NR [p. 16, Sec. 6.3; pp. 18, 20, Figs. 6, 8]. |
+| Policy seeds | Five per arm | 2101, 2102, 2103, 2104, 2105 | Repeated training seed count and identifiers NR [pp. 15-16, Secs. 6.2-6.3]. |
+| Per policy budget | 524,288 interactions | Identical settings and budget | 300 episodes × 2,000 maximum steps = nominal ceiling 600,000; actual interactions and early terminations are not logged in the document [p. 16, Table 4]. |
+| New training | 2,621,440 interactions | Five V1.5 policies from scratch | Equivalent five seed original reward retraining study NR; source trains policies under its own system [p. 16, Sec. 6.3]. |
+| Reused V2 weights | Ten policies | All full and arrival seeds, fixed by hash before new training/test | This reuse is our experimental design; no corresponding source comparison [p. 16, Sec. 6.3]. |
+| Final evaluations | 7,600 episodes | 6,000 learned + 1,600 deterministic | Total final evaluation count and comparable route/seed accounting NR; handover axes refer to 200 episodes [pp. 18, 20, Figs. 6, 8]. |
+| Exact replay | 7,600 episodes | Every new record compared exactly | Exact replay count and record hashes NR [pp. 16-20, Secs. 6.3-7.2]. |
 
 New test pairs are disjoint from prior saved routes. V2's earlier outcomes
 were known; the new protocol was fixed before new training and fresh tests.
@@ -532,8 +602,8 @@ V2 retraining is documented in [note 30](docs/30_connectivity_results_and_reprod
 
 ## Scope and Next Research Decision
 
-This is a controlled reimplementation. Exact source dataset version, sentinel,
-original simulator behavior, dynamic traffic, uplink calibration, packet delay,
+This is a controlled reimplementation using the same dataset as the thesis.
+Sentinel interpretation, original simulator behavior, dynamic traffic, uplink calibration, packet delay,
 switching interruption, obstacle safety, energy calibration and continuity
 between samples remain unverified. No application deadline or PPO superiority
 claim is inferred. Further work needs independent evaluation and separately
@@ -548,15 +618,15 @@ provenance; its weights are not needed for the current study.
 
 ## Repository Layout
 
-| Path | Contents |
-| --- | --- |
-| `dataset/` | Required private HDF5, excluded from Git |
-| `models/checkpoint_manifest.json` | All 15 published paths, sizes and SHA256 values |
-| `src/uav_joint_optimization/` | Frozen V2 system, original reward adapter and PPO |
-| `configs/` | Frozen settings, source hashes and route pools |
-| `results/connectivity_experiment/confirmatory_v2/` | Ten reused final V2 models and prior V2 records |
-| `results/reward_comparison/` | V1.5 models, fresh evaluations, analysis, figures and replay |
-| `docs/` | Protocol, results, setup and source traceability |
-| `paper/` | Current IEEE draft, source, generated tables and build instructions |
-| `sources/` | Original TFM and research references |
-| `outputs/` | Custom evaluations and scratch checks, excluded from Git |
+| Path | Contents | Original thesis counterpart |
+| --- | --- | --- |
+| `dataset/` | Required private HDF5, excluded from Git | Same Barcelona ray tracing dataset described on pp. 6-7, Sec. 3.1; this relative path and checksum manifest are our packaging. |
+| `models/checkpoint_manifest.json` | All 15 published paths, sizes and SHA256 values | No original checkpoint bundle is available to us; these are our 15 policies, not original thesis weights [source PPO: p. 13, Sec. 5.3]. |
+| `src/uav_joint_optimization/` | Frozen V2 system, original reward adapter and PPO | Our implementation of a related problem; original executable unavailable [source environment/PPO: pp. 12-13, Secs. 5.2-5.3]. |
+| `configs/` | Frozen settings, source hashes and route pools | Source parameters are in Tables 3-4, pp. 15-16; machine readable freezes and route pools are provided here. |
+| `results/connectivity_experiment/confirmatory_v2/` | Ten reused final V2 models and prior V2 records | Our prior V2 artifacts, not original thesis evaluations or weights [source experiment design: p. 16, Sec. 6.3]. |
+| `results/reward_comparison/` | V1.5 models, fresh evaluations, analysis, figures and replay | Our reward replacement comparison; source instead compares PPO/greedy and priority weights [p. 16, Sec. 6.3]. |
+| `docs/` | Protocol, results, setup and source traceability | Our methods, provenance and limitations notes; source definitions and results remain in the original PDF, pp. 5-21. |
+| `paper/` | Current IEEE draft, source, generated tables and build instructions | Our IEEE study; the original MSc thesis is a separate source, not this paper. |
+| `sources/` | Original TFM and research references | Contains the original thesis PDF, including Tables 3-4 and Figs. 5-8 on printed pp. 15-20. |
+| `outputs/` | Custom evaluations and scratch checks, excluded from Git | Local outputs generated by our tools; no original raw episode or plotting files are available to this study. |

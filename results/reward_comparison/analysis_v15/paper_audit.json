@@ -1,6 +1,6 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "c196212bcecf2b56e67a2debb9a29e9cdf04de1ffc20cbe61ed1859a2db61588",
+  "pdf_sha256": "8935ae05ccef8d4ac99b643aa6b06668f1b1782bfbba012dfe9b16817858b7eb",
   "pages": 7,
   "fonts": {
     "4": {
@@ -136,112 +136,112 @@
     },
     {
       "file": "paper/unified.tex",
-      "line": 39,
+      "line": 40,
       "locator": "p.~7, Table~2; p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 46,
+      "line": 48,
       "locator": "p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 47,
+      "line": 49,
       "locator": "p.~14, Sec.~6.1"
     },
     {
       "file": "paper/unified.tex",
-      "line": 53,
+      "line": 55,
       "locator": "p.~10, Eqs.~(7)--(8)"
     },
     {
       "file": "paper/unified.tex",
-      "line": 54,
+      "line": 56,
       "locator": "p.~14, Sec.~6.1"
     },
     {
       "file": "paper/unified.tex",
-      "line": 58,
+      "line": 60,
       "locator": "p.~10, Eq.~(9)"
     },
     {
       "file": "paper/unified.tex",
-      "line": 63,
+      "line": 65,
       "locator": "p.~9, Eq.~(2)"
     },
     {
       "file": "paper/unified.tex",
-      "line": 67,
+      "line": 69,
       "locator": "pp.~9--10, Eqs.~(4)--(6)"
     },
     {
       "file": "paper/unified.tex",
-      "line": 83,
+      "line": 85,
       "locator": "p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 85,
+      "line": 87,
       "locator": "p.~9, Sec.~3.2"
     },
     {
       "file": "paper/unified.tex",
-      "line": 95,
+      "line": 97,
       "locator": "p.~12, Sec.~5.2"
     },
     {
       "file": "paper/unified.tex",
-      "line": 100,
+      "line": 102,
       "locator": "p.~9, Eq.~(3); p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 103,
+      "line": 105,
       "locator": "p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 112,
+      "line": 114,
       "locator": "p.~12, Sec.~5.2"
     },
     {
       "file": "paper/unified.tex",
-      "line": 122,
+      "line": 124,
       "locator": "p.~15, Table~3"
     },
     {
       "file": "paper/unified.tex",
-      "line": 130,
+      "line": 132,
       "locator": "p.~12, Eq.~(13)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 25,
+      "line": 26,
       "locator": "pp.~6--7, Sec.~3.1"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 26,
+      "line": 27,
       "locator": "p.~10, Eq.~(11)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 27,
+      "line": 28,
       "locator": "p.~11, Eq.~(12),\nC2 and C4"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 29,
+      "line": 30,
       "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 31,
+      "line": 32,
       "locator": "p.~12, Eqs.~(13)--(14)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 39,
+      "line": 40,
       "locator": "p.~12, Sec.~5.2"
     },
     {
@@ -286,11 +286,11 @@
     }
   ],
   "source_hashes": {
-    "paper/unified.tex": "e12d9f208f5a1eb9ce0eb00e3a16b295fff4b271a2b0971ee423522cb6c3d69b",
+    "paper/unified.tex": "88fafc6157d3cd3659e1b23fa61b3fa2cba58ab688a5608c0cf021c69f86d6bb",
     "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
-    "paper/v15_front.tex": "d5dd6f8b098c840618fa4e9228fafab7ae7a0d36a5350cb87ea1ac30bafa3356",
+    "paper/v15_front.tex": "b9e9716de2054341f448bc4e36978d5f51ca31bfef453389b64120cf56109e7a",
     "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
-    "paper/v15_findings.tex": "d18bfaf41c6beb455f45e15c2aa0438e84854650126e3350fc44b97573db61ea",
+    "paper/v15_findings.tex": "d92fc99e53029bc99fd4714c2c41306214ae404be2da5a18d839bff4bdf14a11",
     "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
     "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
@@ -329,7 +329,8 @@
     "models/checkpoint_manifest.json": "e5f7bfe8553f21e794801f27c8944e940bfb0effa27ebbb24ff36491cd82f2a4",
     "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c"
   },
-  "visual_review": "Passed: all seven final pages inspected; station markers, handover circles, eight time series, limits, captions, tables and text are legible without clipping or overlap.",
+  "visual_review": "Passed: all seven final pages inspected after dataset provenance correction; no clipping, overlap or figure changes.",
+  "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
   "long_route_illustration": {
     "scenario_id": "53013_0023",
     "distance_m": 1784.7184933324127,

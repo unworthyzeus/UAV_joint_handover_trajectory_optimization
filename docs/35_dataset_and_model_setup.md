@@ -4,6 +4,10 @@ Updated 13 September 2026. The examples use PowerShell and Python 3.12 on
 Windows, matching the recorded CPU environment. Use `evaluate_reward_controller.py`
 for the current V1.5/V2 comparison on the fresh test routes.
 
+**`Barcelona_dataset_January.h5` is the same dataset used in the original
+thesis**, as confirmed by the researcher who supplied it. It is preserved
+unchanged and remains private. See [the provenance update](43_confirmed_thesis_dataset_identity.md).
+
 ## What GitHub Includes
 
 | Artifact | Included in the repository? | Needed for |

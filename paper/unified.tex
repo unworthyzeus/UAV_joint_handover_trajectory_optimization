@@ -34,11 +34,13 @@ of missing original code.
 
 \section{Shared V2 System}
 \subsection{Shared Physical Assumptions}
-We preserve the received native resolution RSS map, selecting the first
-operator's 87 stations. Matching source metadata includes 2.1 GHz and 100 m
-altitude~\cite[p.~7, Table~2; p.~15, Table~3]{thesis}; this does not prove an
-identical original dataset version. The raw private HDF5 is not modified or
-published. The provisional $-128$ sentinel interpretation remains unverified.
+We use the same Barcelona ray tracing dataset as the original thesis,
+preserving its native resolution RSS map and selecting the first operator's
+87 stations. The dataset represents 2.1 GHz and 100 m
+altitude~\cite[p.~7, Table~2; p.~15, Table~3]{thesis}.
+Its identity was confirmed by the researcher who supplied it. The raw private
+HDF5 is not modified or published. The provisional $-128$ sentinel
+interpretation remains unverified.
 
 The shared model retains a one second decision step, acceleration norm limit
 5 m/s$^2$, speed limit 25 m/s, 200 s deadline, and a 100 kJ budget under the

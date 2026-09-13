@@ -259,3 +259,31 @@ The contribution is a controlled comparison with explicit limitations, not a
 demonstrated repair of the unavailable original simulator. Note 42 records
 the documentation update and verification. No code, paper, weights, raw
 records, statistics, frozen protocols or experiment outcomes changed.
+
+## 2026-09-13: Thesis Dataset Identity Confirmed
+
+The user confirmed that the supplied HDF5 is the same dataset used in the
+original thesis. Updated the current paper, README and setup documentation
+to state this explicitly and removed the current dataset identity caveat.
+Note 43 records the confirmation and the existing file size and checksum.
+Historical notes and frozen protocols retain their original text; this new
+provenance confirmation supersedes their earlier uncertainty. The same data
+were already used in all runs, so results and models do not change. The
+original simulator and trained policies remain unavailable.
+
+## 2026-09-13: Original Thesis Comparisons in Every README Table
+
+Added an explicit original thesis comparison to every root README table,
+including mission success, paired metrics, intervals and failure counts.
+Added a reward component table and approximate readings of all five original
+metric panels in printed p. 18, Fig. 6 and p. 20, Fig. 8. Source CDF medians
+and bar heights retain their printed units and scaling; unavailable original
+joint success, flight time and delay results are labeled as unreported.
+
+Note 44 records the reading method and limits. Expanded the parameter
+comparisons, including original target KL, rollout length, timestep and
+packet size discrepancies, and the distinction between nominal training
+ceilings and actual interactions. No library defaults or original output
+normalizations were assumed. Existing result cells, statistics, models and
+all experiment freezes are preserved. This documentation revision does not
+change the null primary result or demonstrate a repair of the original agent.
