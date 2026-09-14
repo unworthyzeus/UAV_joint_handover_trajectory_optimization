@@ -1,5 +1,11 @@
 # Dataset Placement and Model Setup
 
+The V2.2 supervisor reuses the five existing full V2 weights. It needs no
+additional checkpoint download or training. See
+[note 54](54_thesis_metrics_reproduction.md) for its evaluator, custom route
+examples and added metric arrays; [note 53](53_v22_guard_results.md) reports
+its separate fresh tests. The dataset path and checksum below still apply.
+
 The subsequent V2.1 research candidate has five additional final weights and
 a dedicated evaluator. See [note 49](49_service_reward_models_and_reproduction.md)
 for those paths and [note 48](48_service_reward_results.md) for its fresh results.

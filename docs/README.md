@@ -6,8 +6,10 @@ status or preliminary hypotheses from being mistaken for current findings.
 
 ## Current V2 Study and Original Reward Control
 
-The current paper contains the V2/V1.5 comparison and a separately declared
-V2.1 service reward followup. V1.5 is the original written reward
+The current paper contains the V2/V1.5 comparison, the separately declared
+V2.1 service reward followup, and the V2.2 supervisor and metric study.
+The [root README](../README.md) is the main entry point for current results.
+V1.5 is the original written reward
 on the complete V2 system. The initial comparison does not establish improved
 completion from reward replacement: both reach 95.7% on standard routes;
 full reaches 87.3% versus 85.8% on longer routes, with both difference intervals
@@ -20,6 +22,13 @@ success and 88.60% versus 91.84% longer success for V2.1 versus full V2.
 Its complete uncertainty and service results are in note 48. The failed
 improvement attempt remains part of the record; V2.1 is not promoted as the
 main model.
+
+The V2.2 study recovers SNR, all neighbor RSS power, remaining energy and
+explicit handover frequency. It tests a five step lookahead supervisor on
+fresh 55012/55013 routes using the unchanged full V2 weights. It is a
+controller intervention, not new training or a reward comparison. Notes
+51-54 retain the source consistency audit, all candidates, final results,
+failure counts, five policy seeds and reproduction instructions.
 
 The supplied Barcelona HDF5 is **the same dataset used in the original
 thesis**. [Note 43](43_confirmed_thesis_dataset_identity.md) records the
@@ -42,6 +51,11 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [48: V2.1 fresh evaluation](48_service_reward_results.md) | New 54012/54013 results, completion first verdict, all seeds, failures and matched service metrics |
 | [49: V2.1 models and reproduction](49_service_reward_models_and_reproduction.md) | Five additional final weights, dataset location, standalone evaluation and separate reproduction labels |
 | [50: Clear metric descriptions and consistent units](50_clear_metric_descriptions_and_units.md) | Physical meaning, common interference units and separate rows for incompatible source quantities |
+| [51: Thesis metrics and supervisor protocol](51_thesis_metrics_and_guard_protocol.md) | Frozen metric definitions, three controller candidates, validation gate and fresh tests |
+| [52: Recovered thesis metrics](52_recovered_thesis_metrics.md) | Added measurements on unchanged initial flights, the source SNR bound and unresolved source arithmetic |
+| [53: V2.2 supervisor results](53_v22_guard_results.md) | Completion, service, uncertainty, every failure and every fixed policy seed |
+| [54: V2.2 usage and reproduction](54_thesis_metrics_reproduction.md) | Reused weights, dataset path, saved/custom routes, sample arrays and reproduction |
+| [55: V2.2 delivery verification](55_thesis_metrics_delivery.md) | Source and weight preservation, exact replay, metric audit and final paper review |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 
@@ -83,11 +97,13 @@ be counted as a failed physical mission under the final 10 m arrival tolerance.
 
 ## Result and Next Decision
 
-The current comparison is complete: five new original reward policies, ten
+The initial comparison is complete: five new original reward policies, ten
 reused V2 policies, 400 fresh routes, 73 tests and 7,600 exact replays.
 The primary completion contrast is null. Full reward reduces handovers and
 flight time but increases delay and proxy energy; no overall superiority is
-established. Notes 36-38 are the current protocol, result and delivery record.
+established in that initial experiment. Notes 36-38 record that comparison;
+notes 46-49 record the V2.1 reward followup and notes 51-55 the V2.2 controller
+and metric study. Their evaluation sets and conclusions are kept separate.
 
 Earlier numbered notes preserve their contemporaneous findings and limitations.
 They are not current release status. Future work needs independent tests and

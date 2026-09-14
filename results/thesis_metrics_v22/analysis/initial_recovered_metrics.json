@@ -1,0 +1,80 @@
+{
+  "test": {
+    "common_success_pairs": 925,
+    "metrics": {
+      "snr_mean_db": {
+        "original_mean": 63.4445066001582,
+        "full_mean": 62.42926800840097
+      },
+      "neighbor_rss_power_mean_uw": {
+        "original_mean": 1.4524057965928743,
+        "full_mean": 1.462089656727991
+      },
+      "remaining_energy_kj": {
+        "original_mean": 92.34869289088894,
+        "full_mean": 92.21192929654508
+      },
+      "literal_energy_score": {
+        "original_mean": 1001.507524056832,
+        "full_mean": 1001.184741234033
+      },
+      "literal_rss_sum_mean": {
+        "original_mean": -6156.013028136291,
+        "full_mean": -6155.377185851155
+      },
+      "handovers_per_second": {
+        "original_mean": 0.21353005468500133,
+        "full_mean": 0.014243707453833297
+      }
+    },
+    "step_cdf_medians": {
+      "original": {
+        "snr_db": 63.41,
+        "neighbor_rss_power_uw": 1.469727084725998
+      },
+      "full": {
+        "snr_db": 63.41,
+        "neighbor_rss_power_uw": 1.4796936786148378
+      }
+    }
+  },
+  "longer_test": {
+    "common_success_pairs": 781,
+    "metrics": {
+      "snr_mean_db": {
+        "original_mean": 63.23660878139403,
+        "full_mean": 62.04627350903072
+      },
+      "neighbor_rss_power_mean_uw": {
+        "original_mean": 1.537496660658534,
+        "full_mean": 1.5546479467597885
+      },
+      "remaining_energy_kj": {
+        "original_mean": 81.47690090907216,
+        "full_mean": 81.04275861439723
+      },
+      "literal_energy_score": {
+        "original_mean": 1002.5676147129288,
+        "full_mean": 1002.0340391424438
+      },
+      "literal_rss_sum_mean": {
+        "original_mean": -6109.884690676784,
+        "full_mean": -6108.184265927625
+      },
+      "handovers_per_second": {
+        "original_mean": 0.24077629901424918,
+        "full_mean": 0.025095914214255905
+      }
+    },
+    "step_cdf_medians": {
+      "original": {
+        "snr_db": 63.41,
+        "neighbor_rss_power_uw": 1.579703376523277
+      },
+      "full": {
+        "snr_db": 62.41,
+        "neighbor_rss_power_uw": 1.5952088862603693
+      }
+    }
+  }
+}

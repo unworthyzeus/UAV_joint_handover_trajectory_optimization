@@ -36,7 +36,7 @@ def main():
                                   "locator": match[1]})
     freezes = {}
     for name in ("frozen_comparison_v1.json", "frozen_connectivity_v2.json", "frozen_reward_comparison_v15.json",
-                 "frozen_service_reward_v21.json"):
+                 "frozen_service_reward_v21.json", "frozen_thesis_metrics_v22.json"):
         manifest = json.loads((ROOT / "configs" / name).read_text())
         freezes[name] = {p: digest(ROOT / p) == value
                          for p, value in manifest["source_hashes"].items()}
@@ -96,6 +96,23 @@ def main():
     service_interval = service_primary["success_difference_ci95_pp"]
     assert f"{service_primary['success_difference_pp']:+.3f}" in text
     assert all(f"{value:.3f}" in text for value in service_interval)
+    guard = json.loads((ROOT / "results/thesis_metrics_v22/analysis/statistics.json").read_text())
+    guard_replay = json.loads((ROOT / "results/thesis_metrics_v22/replay_audit.json").read_text())
+    assert guard['total_evaluated_episodes'] == guard_replay['exact_episode_and_metric_matches'] == 23000
+    assert guard_replay['all_sample_arrays_exact']
+    assert '55012/55013' in text and 'V2.2' in text and '78.41' in text
+    for arm in ('original', 'full', 'service', 'guard', 'straight_radio', 'joint_mpc', 'joint_lookahead'):
+        for split in ('test', 'longer_test'):
+            assert f"{100*guard['groups'][arm+'_'+split]['success_rate']:.2f}" in text
+    guard_seeds = (ROOT / 'paper/v22_seed_table.tex').read_text(encoding='utf-8')
+    for i, seed in enumerate(range(2101, 2106)):
+        cells = [' / '.join(f"{100*guard['groups'][arm+'_'+split]['per_seed_success_rates'][i]:.1f}"
+                           for split in ('test', 'longer_test')) for arm in ('original', 'full', 'service', 'guard')]
+        assert str(seed)+' & '+' & '.join(cells)+r'\\' in guard_seeds
+    for split in ('test', 'longer_test'):
+        contrast = guard['contrasts']['guard_minus_full_'+split]
+        assert f"{contrast['success_difference_pp']:+.3f}" in text
+        assert all(f"{value:.3f}" in text for value in contrast['success_difference_ci95_pp'])
     seed_table = (ROOT / "paper/v21_seed_table.tex").read_text(encoding="utf-8")
     for i, seed in enumerate([2101, 2102, 2103, 2104, 2105]):
         cells = [' / '.join(f"{100 * service['groups'][arm + '_' + split]['per_seed_success_rates'][i]:.1f}"
@@ -161,7 +178,15 @@ def main():
                   "results/reward_comparison/replay_v15/audit.json",
                   "results/service_reward_v21/analysis/statistics.json",
                   "models/service_reward_manifest.json",
-                  "results/service_reward_v21/replay/audit.json")},
+                  "results/service_reward_v21/replay/audit.json",
+                  "results/thesis_metrics_v22/analysis/statistics.json",
+                  "results/thesis_metrics_v22/replay_audit.json",
+                  "results/thesis_metrics_v22/initial_replay/audit.json")},
+              "guard_followup": {"episodes": 23000, "new_checkpoints": 0,
+                  "per_seed_success_values_checked": 40,
+                  "primary_completion_improvement": guard['primary_completion_improvement'],
+                  "initial_recovered_episodes": 4000,
+                  "report_builder_sha256": digest(ROOT / 'scripts/build_thesis_metrics_report.py')},
               "service_followup": {"episodes": 18000, "checkpoint_count": 5,
                   "per_seed_success_values_checked": 30,
                   "primary_completion_improvement": service["primary_completion_improvement"],
@@ -176,12 +201,12 @@ def main():
                       "scripts/build_long_route_figures.py", "results/reward_comparison/analysis_v15/long_route_illustration.json",
                       "results/reward_comparison/analysis_v15/reward_comparison_example.pdf",
                       "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf")}},
-              "scope": "One paper with the initial V1.5/V2 comparison and a separately frozen V2.1 followup. Historical V1 excluded; all outcomes retained."}
+              "scope": "One paper with the initial V1.5/V2 comparison, separate V2.1 reward and V2.2 supervisor studies, and source metric recovery. Historical V1 excluded; all outcomes retained."}
     if previous.get("pdf_sha256") == report["pdf_sha256"]:
         report["visual_review"] = previous.get("visual_review", report["visual_review"])
     report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"pages": len(pdf), "tfm_citations": len(citations),
-                      "fonts": len(fonts), "all_four_freezes_match": True,
+                      "fonts": len(fonts), "all_five_freezes_match": True,
                       "visual_review": report["visual_review"]}))
 
 

@@ -8,6 +8,24 @@
 *.npz binary
 *.pt binary
 
+# Preserve the declared thesis metric recovery and V2.2 supervisor study.
+src/uav_joint_optimization/thesis_metrics.py -text
+src/uav_joint_optimization/connectivity_guard.py -text
+scripts/run_thesis_metrics_study.py -text
+scripts/analyze_thesis_metrics_study.py -text
+tests/test_thesis_metrics_guard.py -text
+docs/51_thesis_metrics_and_guard_protocol.md -text
+configs/thesis_metrics_scenarios_v22.json -text
+# Preserve the harmless trailing blank line already included in the freeze.
+src/uav_joint_optimization/thesis_metrics.py whitespace=cr-at-eol,-blank-at-eof
+results/thesis_metrics_v22/development/source_snapshot/src/uav_joint_optimization/thesis_metrics.py whitespace=cr-at-eol,-blank-at-eof
+results/thesis_metrics_v22/confirmatory/source_snapshot/src/uav_joint_optimization/thesis_metrics.py whitespace=cr-at-eol,-blank-at-eof
+# Supplementary replay/reporting hashes must also survive checkout.
+scripts/finish_thesis_metrics_parallel.py -text
+scripts/recover_initial_thesis_metrics.py -text
+scripts/build_thesis_metrics_report.py -text
+scripts/build_service_reward_report.py -text
+
 # Preserve the separately declared V2.1 development and final study bytes.
 src/uav_joint_optimization/service_reward_env.py -text
 src/uav_joint_optimization/service_reward_ppo.py -text

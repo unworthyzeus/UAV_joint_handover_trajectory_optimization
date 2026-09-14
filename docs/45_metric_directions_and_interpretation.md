@@ -2,6 +2,12 @@
 
 Date: 14 September 2026.
 
+Subsequent update: [note 52](52_recovered_thesis_metrics.md) adds source
+Eq. (8) SNR, a declared linear Eq. (9) proxy, remaining energy and handover
+frequency to the unchanged initial flights. [Note 53](53_v22_guard_results.md)
+reports a separate controller study. The interpretation below retains the
+initial V1.5/full V2 comparison; physical uplink is still unevaluated.
+
 ## What Changed and Why
 
 The user asked for more numbers in the original thesis comparison table,

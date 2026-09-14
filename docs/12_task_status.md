@@ -1,13 +1,19 @@
 # Research Task Status
 
-Updated 14 September 2026 after the V2.1 reward improvement attempt.
+Updated 14 September 2026 after the thesis metric recovery and V2.2 controller study.
 
 The current [paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf) contains
-V2 and its V1.5 original reward control, plus the separate V2.1 followup.
+V2 and its V1.5 original reward control, the separate V2.1 reward followup,
+and the V2.2 supervisor study. The [root README](../README.md) contains the
+main current comparisons. [Note 53](53_v22_guard_results.md) reports the
+fresh 55012/55013 results and uncertainty, while
+[note 52](52_recovered_thesis_metrics.md) reports missing metric recovery
+and the source SNR inconsistency. V2.2 reuses full V2 weights and changes
+action selection through lookahead; it is not new PPO training.
 Historical V1 is excluded from the
 final paper and reduced to one brief note in the root README.
 
-The new candidate does not meet the user's completion first priority: fresh
+The earlier V2.1 reward candidate did not meet the user's completion first priority: fresh
 standard success is 95.48% versus full V2's 96.92%, and longer success is
 88.60% versus 91.84%. It remains an evaluated research candidate rather than
 the main model. [Note 48](48_service_reward_results.md) reports the paired
@@ -15,6 +21,14 @@ uncertainty, service metrics and all failures. [Note 49](49_service_reward_model
 documents the additional five weights and reproduction commands. The source
 comparison table now includes our numerical values and preferred metric
 directions; [note 45](45_metric_directions_and_interpretation.md) explains them.
+
+The added measurements preserve all 4,000 initial V1.5/full V2 trajectories.
+The separate V2.2 study evaluates 23,000 fresh episodes, with every final
+episode and sample array replayed exactly. The implementation suite passes
+94 tests; all five source freezes and twenty checkpoints are preserved.
+[Note 54](54_thesis_metrics_reproduction.md) explains dataset placement,
+existing weights and the new evaluator. Physical uplink calibration, source
+energy units and source handover normalization remain unresolved.
 
 The table below preserves the status of the initial V1.5/V2 comparison.
 

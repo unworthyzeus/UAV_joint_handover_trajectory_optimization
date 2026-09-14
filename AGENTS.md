@@ -53,6 +53,14 @@ When adding research work, create or update a Markdown note that records:
     that misses the declared completion gate is not promoted through favorable
     wording about another metric. New tuning requires a new declared study and
     evaluation data; notes 46-49 record this completed followup.
+13. Preserve every source/protocol file hashed in
+    `configs/frozen_thesis_metrics_v22.json` and all reused checkpoint hashes.
+    V2.2 is a fixed weight lookahead supervisor, not new PPO training or a
+    reward replacement. Report its fresh 55012/55013 results separately.
+    Notes 51-54 distinguish source equation proxies from physical quantities.
+    Do not label the all neighbor RSS power proxy as calibrated uplink, or
+    the literal source energy recurrence as physical energy. All historical
+    flights and unsuccessful candidates remain part of the record.
 
 ## Implementation Rules
 

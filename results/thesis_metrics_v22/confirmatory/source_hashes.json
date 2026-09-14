@@ -1,0 +1,8 @@
+{
+  "src/uav_joint_optimization/thesis_metrics.py": "81943c55802717089259bc92d7808529f8917798be258c118eb9f48fd98e832a",
+  "src/uav_joint_optimization/connectivity_guard.py": "0483722fb94053187a80fa2917c8beaca33847ee19f6947372426a6c8943a750",
+  "scripts/run_thesis_metrics_study.py": "6fface37240af15be2523f3bf08af8257de1f5f1d9e3b3c11f0c13c96f0589b9",
+  "scripts/analyze_thesis_metrics_study.py": "d2222ac65f3b6b4bcd785812ab4160f36ab715f4de4857768e9bd8fd024b4b9b",
+  "tests/test_thesis_metrics_guard.py": "45d8cf12636bfb298e5acedad335c221dd7834cb36a4069146794a44ce1a92a5",
+  "docs/51_thesis_metrics_and_guard_protocol.md": "1ebcbd78c1b853c60922c2c988671517330d8d75181b1a597c51cf3d5f67315e"
+}

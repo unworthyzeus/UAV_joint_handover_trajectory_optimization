@@ -1,7 +1,7 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "869bcb83d878c74fd5d2dac65cbf86e1aac5274c2162eafae9c1f53b0cc148a8",
-  "pages": 8,
+  "pdf_sha256": "15ceebeeaab91fba0fe748cef0e632930dff4c4850865202366e03df8b11bbeb",
+  "pages": 10,
   "fonts": {
     "4": {
       "name": "IHAIZV+NimbusRomNo9L-Regu",
@@ -102,12 +102,17 @@
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
+    },
+    "150": {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
     }
   },
   "all_fonts_embedded_and_no_type3": true,
   "no_unresolved_references_or_overfull_boxes": true,
   "text_outside_page": [],
-  "tfm_citation_count": 35,
+  "tfm_citation_count": 39,
   "tfm_citations": [
     {
       "file": "paper/unified.tex",
@@ -216,32 +221,32 @@
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 27,
+      "line": 24,
       "locator": "pp.~6--7, Sec.~3.1"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 28,
+      "line": 25,
       "locator": "p.~10, Eq.~(11)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 29,
+      "line": 26,
       "locator": "p.~11, Eq.~(12),\nC2 and C4"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 31,
+      "line": 28,
       "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 33,
+      "line": 30,
       "locator": "p.~12, Eqs.~(13)--(14)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 41,
+      "line": 38,
       "locator": "p.~12, Sec.~5.2"
     },
     {
@@ -281,24 +286,47 @@
     },
     {
       "file": "paper/v15_findings.tex",
-      "line": 95,
+      "line": 96,
       "locator": "p.~21, Sec.~8"
+    },
+    {
+      "file": "paper/v22_followup.tex",
+      "line": 3,
+      "locator": "p.~10, Eq.~(8); p.~15, Table~3"
+    },
+    {
+      "file": "paper/v22_followup.tex",
+      "line": 3,
+      "locator": "pp.~18, 20, Figs.~6, 8"
+    },
+    {
+      "file": "paper/v22_followup.tex",
+      "line": 4,
+      "locator": "p.~10, Eq.~(9)"
+    },
+    {
+      "file": "paper/v22_followup.tex",
+      "line": 4,
+      "locator": "p.~10, Eq.~(10); p.~15, Table~3"
     }
   ],
   "source_hashes": {
-    "paper/unified.tex": "df6af964ee790a780c4195932b776da2cec14b4fac5681285c34d7f0cc69136b",
+    "paper/unified.tex": "7c8b83ecc4bd785f56012e02aa66126037e27cf5cb83bd04294dbe77a7652f25",
     "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
-    "paper/v15_front.tex": "7e5258cbc5ffca2f630b415e32fe04c375265eba373fc35fda7236f506d94d37",
+    "paper/v15_front.tex": "11bb8c41741cf759974b4dc3e00c17d67f1eacc7ef130d8c7e6cb6e1af839a28",
     "paper/v21_abstract.tex": "c00a1d6cd3b49e06992c8b527ee81a4fee57744c8697ab134c5fa76bb8274a1a",
+    "paper/v22_abstract.tex": "78e127f3e2a75fd5e29c645f4475127c0f5f67183ec1e190d5f3898c4a354775",
     "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
-    "paper/v15_findings.tex": "b53a6b3ade4d43e9e077ae0aa8f3a13f794df40016f0a1644182abb23ad9816b",
+    "paper/v15_findings.tex": "33e7e55930d66635ea5ab70d41db07d89e74dd8ab6ab0d9b075e84a741ee68b6",
     "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
     "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
     "paper/v21_followup.tex": "f465538239e08e877f086c50c1d3a68b07c80328bff98852c835b78fce720774",
-    "paper/v21_conclusion.tex": "5f9b289bf8f8c222e2be3e932d4c25ade4fb86449615778acd323cf6dd966219",
+    "paper/v22_followup.tex": "2bf26f55205444b7da1524752dd0e6141d1b3a02e971ce5b01ae9a8c094a5ae3",
+    "paper/v22_conclusion.tex": "f369c384866798182468f18ae9d144e1d81e24bc0b54a956d191a9058939bd62",
     "paper/v15_seed_table.tex": "3b1aa380bcdb6bc4b51129533e6e892eab36f6a89ca94bdc21cd6ecdcb61af40",
-    "paper/v21_seed_table.tex": "9712e51293bc90bbed797616ec9e5ca08c807ed6f607d7824c4141b0614d63af"
+    "paper/v21_seed_table.tex": "9712e51293bc90bbed797616ec9e5ca08c807ed6f607d7824c4141b0614d63af",
+    "paper/v22_seed_table.tex": "80abf2fa780af8f6070944cdf234143e24d7cc1bf73b237f26f486522cb8c4b3"
   },
   "frozen_sources_match": {
     "frozen_comparison_v1.json": {
@@ -335,6 +363,14 @@
       "scripts/evaluate_service_reward_controller.py": true,
       "tests/test_service_reward.py": true,
       "docs/46_service_reward_development_protocol.md": true
+    },
+    "frozen_thesis_metrics_v22.json": {
+      "src/uav_joint_optimization/thesis_metrics.py": true,
+      "src/uav_joint_optimization/connectivity_guard.py": true,
+      "scripts/run_thesis_metrics_study.py": true,
+      "scripts/analyze_thesis_metrics_study.py": true,
+      "tests/test_thesis_metrics_guard.py": true,
+      "docs/51_thesis_metrics_and_guard_protocol.md": true
     }
   },
   "statistic_hashes": {
@@ -343,7 +379,18 @@
     "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c",
     "results/service_reward_v21/analysis/statistics.json": "8b9343f8379d686886a45ec229bf9aca45fdd985eedf2462a0af09cff2774289",
     "models/service_reward_manifest.json": "1e0a3a636c98a3b767aeefbace7148009c2c70d84f3a5d78f49421893c2e1889",
-    "results/service_reward_v21/replay/audit.json": "f130a9311f99cbeb5817f465929fc0da8a28c872d015aa558478b83c6f42c549"
+    "results/service_reward_v21/replay/audit.json": "f130a9311f99cbeb5817f465929fc0da8a28c872d015aa558478b83c6f42c549",
+    "results/thesis_metrics_v22/analysis/statistics.json": "8fbd58b78891a31fc25b68b3e384d2091783ad97988870a08ef897030c251521",
+    "results/thesis_metrics_v22/replay_audit.json": "17f0b0b789b8266711b14ff249952119de6d31247d31e46575c9ad2190178368",
+    "results/thesis_metrics_v22/initial_replay/audit.json": "42397faafec5bdaa46bd8d1106a500fafb6df0fc3e5e1a52728af01bdc22e185"
+  },
+  "guard_followup": {
+    "episodes": 23000,
+    "new_checkpoints": 0,
+    "per_seed_success_values_checked": 40,
+    "primary_completion_improvement": true,
+    "initial_recovered_episodes": 4000,
+    "report_builder_sha256": "b0c98c538ce996282092eb8999e6d8b7ab6687da3b07a8ea662ee36dd52fe05c"
   },
   "service_followup": {
     "episodes": 18000,
@@ -353,7 +400,7 @@
     "primary_completion_and_delay_gate": false,
     "report_builder_sha256": "65506bcf56eebcc487829959ac8f29bc7717708c699250e27283fc3f1f0b6ba1"
   },
-  "visual_review": "Passed: all eight final rendered pages reviewed; pages 1-6 retain legible equations, tables and three figures, page 7 contains the new paired and completion tables, and page 8 contains both seed tables, observations and references. No clipping, overlaps, unresolved text or isolated near-empty continuation pages.",
+  "visual_review": "Passed: all ten rendered pages reviewed; new tables, source citations, six panel metric figure and complete seed appendix are readable, with no clipping or overlaps.",
   "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
   "long_route_illustration": {
     "scenario_id": "53013_0023",
@@ -369,5 +416,5 @@
       "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf": "c82761b67e332fcf74b7ab4dc8ed0066e2d4b684170891eafdfc1b6ce96a91c2"
     }
   },
-  "scope": "One paper with the initial V1.5/V2 comparison and a separately frozen V2.1 followup. Historical V1 excluded; all outcomes retained."
+  "scope": "One paper with the initial V1.5/V2 comparison, separate V2.1 reward and V2.2 supervisor studies, and source metric recovery. Historical V1 excluded; all outcomes retained."
 }

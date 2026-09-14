@@ -1,10 +1,11 @@
 # Current IEEE Research Paper
 
 [UAV_joint_reward_connectivity_IEEE.pdf](UAV_joint_reward_connectivity_IEEE.pdf)
-is the current paper, **Reward Design under Shared Connectivity Constraints
-for Cellular UAV Control**, by Guillem Moreno Garcia and Evgenii Vinogradov.
+is the current paper, **Reward and Controller Comparisons for Cellular UAVs
+under Shared Connectivity Constraints**, by Guillem Moreno Garcia and Evgenii Vinogradov.
 It contains the V2/V1.5 original reward comparison and a separately declared
-V2.1 service reward followup. It is an IEEE format research draft, not an
+V2.1 service reward followup and a V2.2 fixed weight supervisor study with
+additional thesis metrics. It is an IEEE format research draft, not an
 accepted publication.
 
 The study uses **the same Barcelona ray tracing dataset as the original
@@ -21,7 +22,8 @@ all failures and does not claim overall PPO or reward superiority.
 
 The initial comparison tables use route seeds 53012 and 53013. The V2.1
 followup tables use new 54012/54013 routes and report its own completion and
-service results. Those samples are not pooled. The earlier arrival study is
+service results. The V2.2 study uses fresh 55012/55013 routes. These three
+samples are not pooled. The earlier arrival study is
 absent from the final paper. All twenty final weights are included in Git;
 the private map is still required separately. See the
 [initial setup guide](../docs/35_dataset_and_model_setup.md),
@@ -36,6 +38,15 @@ metrics and failures are in [note 48](../docs/48_service_reward_results.md).
 The paper retains this unsuccessful improvement attempt as part of the
 evidence rather than promoting the candidate as the main model.
 
+The [V2.2 results](../docs/53_v22_guard_results.md) test a five step lookahead
+supervisor using unchanged full V2 weights. The paper reports its completion
+and service differences and additional SNR, all neighbor RSS power and
+remaining energy metrics. The source SNR plots cannot follow from its
+stated equation and this map's maximum RSS. This consistency finding and
+the uncalibrated uplink and energy quantities are explained in
+[note 52](../docs/52_recovered_thesis_metrics.md). The supervisor adds no weights;
+its [usage guide](../docs/54_thesis_metrics_reproduction.md) includes saved and custom routes.
+
 ## Sources and Generated Artifacts
 
 - `unified.tex`: main file, source requirements and shared V2 model.
@@ -44,8 +55,10 @@ evidence rather than promoting the candidate as the main model.
 - `v15_findings.tex`: results, limits, conclusion and appendices.
 - `v15_macros.tex` and `v15_*_table.tex`: generated from verified fresh results.
 - `v21_followup.tex`, `v21_abstract.tex`, `v21_conclusion.tex` and `v21_seed_table.tex`: generated from the separate V2.1 analysis.
+- `v22_followup.tex`, `v22_abstract.tex`, `v22_conclusion.tex` and `v22_seed_table.tex`: generated from the separate supervisor and metric analysis.
 - `../results/reward_comparison/analysis_v15/`: statistics, three figures and paper audit.
 - `../results/service_reward_v21/`: pilot outcomes, final weights, fresh records, analysis and exact replay.
+- `../results/thesis_metrics_v22/`: all supervisor pilots, fresh results, recovered initial metrics, sample arrays and replay verification.
 
 The trajectory illustration now uses the longest of the 200 declared longer
 test routes: 1,784.7 m, selected by geometry without filtering on outcomes.
@@ -68,6 +81,9 @@ python scripts/analyze_reward_comparison.py
 python scripts/build_reward_comparison_report.py
 python scripts/analyze_service_reward_study.py
 python scripts/build_service_reward_report.py
+python scripts/analyze_thesis_metrics_study.py
+python scripts/build_thesis_metrics_report.py
+python scripts/update_thesis_metrics_readme.py
 ```
 
 The report builder uses committed verified dense traces for the long route
@@ -98,11 +114,12 @@ python scripts/audit_v2_reward_paper.py
 ```
 
 The audit requires PyMuPDF and Pillow in addition to experiment dependencies.
-It checks all four source freezes, twenty checkpoint hashes, 7,600 initial
-and 18,000 followup exact replays,
+It checks all five source freezes, twenty checkpoint hashes, 7,600 initial,
+18,000 V2.1 and 23,000 V2.2 exact replays,
 printed page citations, embedded fonts, final pass references, text bounds and
 absence of the historical arrival study. Rendered pages require separate visual
 review; a prior build report alone cannot validate a changed PDF.
+The final delivery audit is `scripts/audit_thesis_metrics_delivery.py`.
 
 ## Archived Manuscripts
 

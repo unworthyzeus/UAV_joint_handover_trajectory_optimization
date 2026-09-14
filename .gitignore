@@ -28,6 +28,7 @@ wandb/
 *.hdf5
 *.npy
 *.npz
+!/results/thesis_metrics_v22/**/*.npz
 *.pkl
 *.pickle
 

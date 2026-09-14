@@ -375,3 +375,46 @@ Added "higher is better" or "lower is better" to all metric labels and
 success column headings. Retained the service qualification for handovers
 and intended direction caveats for unresolved source scales. The audit checks
 every result metric label; this is a reporting change only.
+
+## 2026-09-14: Recovered Thesis Metrics and a Successful Supervisor Test
+
+Added source Eq. (8) SNR, a linear power interpretation of Eq. (9), remaining
+energy under V2 accounting, explicit handover frequency and per step metric
+arrays. All 4,000 initial V1.5/full V2 episodes retain every original field.
+The same Operator 1 map has maximum RSS -25 dBm, implying a maximum source
+Eq. (8) SNR of 78.41 dB. The source medians around 122-127 dB cannot follow
+from those stated inputs. The literal source Eq. (10) score increases at
+every permitted V2 speed; it remains an arithmetic diagnostic without a
+physical energy unit. Physical uplink and source handover normalization remain
+unresolved. Note 52 records these findings without guessing the original bug.
+
+Declared three fixed weight supervisor horizons before testing them on
+validation. Horizons 3, 5 and 8 completed 90, 92 and 92 of 96 missions,
+versus full V2's 91. The completion and delay gate selected horizon 5 before
+freezing sources and generating fresh 55012/55013 routes. V2.2 uses the five
+existing full V2 policies and additional known map lookahead; it is not new
+PPO training or an isolated reward intervention.
+
+Evaluated 23,000 fresh flights across all declared controllers and seeds.
+V2.2/full V2 success is 96.44%/94.44% standard and 96.32%/90.64% longer.
+The primary difference is +2.000 percentage points [0.320, 3.681]; the
+secondary longer difference is +5.680 [3.200, 8.280]. On common successful
+flights, delay decreases by 92.1% and 92.5%, SNR and SINR increase and both
+interference proxies decrease. Handovers increase versus full V2; energy and
+flight time intervals contain zero. Against V1.5, completion and service
+improve, but energy consumption increases. V2.2 is preferred for the declared
+completion first, then service priority within this simulator, without claiming
+improvement in every metric or numerical superiority over the source agent.
+
+Every fresh episode and sample array replayed exactly; all 94 implementation
+tests passed. The parallel finish reused completed records and restarted one
+unfinished run through the unchanged frozen evaluator. All 33 source/protocol
+files and 20 checkpoints are preserved. The README now leads with the new
+metrics, full results, failures and interpretation, while the unified paper
+retains the initial null reward finding and unsuccessful V2.1 reward study.
+The final ten pages were rendered and reviewed. Notes 51-55 cover the protocol,
+source consistency findings, complete results, model usage and delivery audit.
+
+No further controller tuning followed the fresh tests. Future work needs
+independent route or map tests and declared component ablations, including
+the additional computation and any benefit attributable to the PPO proposal.

@@ -2,6 +2,12 @@
 
 Date: 14 September 2026.
 
+Subsequent measurement update: [note 52](52_recovered_thesis_metrics.md)
+adds SNR and other recoverable metrics to the unchanged initial flights.
+The README now reports both source Eq. (8) SNR and our SINR in separate
+rows. It also adds an explicit linear Eq. (9) proxy; this does not supply
+physical uplink calibration. The reporting rules below remain applicable.
+
 ## What Changed and Why
 
 The user pointed out that the table explained signs rather than the meaning

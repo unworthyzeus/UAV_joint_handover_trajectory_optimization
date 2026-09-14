@@ -1,0 +1,331 @@
+{
+  "exact_episode_and_metric_matches": 23000,
+  "all_sample_arrays_exact": true,
+  "runs": [
+    {
+      "run": "confirmatory/full_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "130556b9125253a31c4cecafb5f50bbb63dda9e66ebd47075558f50c9307ab2c",
+      "samples_sha256": "860cc8812a7a46443eacf9f7c490f069a9a59763259da2670206b147b7b1fed3",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "0639b0ae675e86999a8ba09a96d51b4c860903ed860b814eed5f47d63eb3bb96",
+      "samples_sha256": "c3a0c7203dcc9f94ba5792a8dfe487d0b58ffef316609a94ffb016b56ed477dd",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "85f4533bab076c7e67f1f91a8c030c8a6fc779e7718fb24d5d0ef40d201be659",
+      "samples_sha256": "92fb26606847e29991272e72c6dc3be3984a5c8c4eaf8b2453e0a889de0f4496",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "3f8ff50c617a593a65adc1bd6e29426e8da8e164369efc6826434c2605078f07",
+      "samples_sha256": "1b917d838b6764baccbd2b5c67e3749a81b92158be1a5db02da058000f926e00",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "e7569c717a6bd9747e597d569821febe1a0e4e92f174aaba765a522b16ff6c37",
+      "samples_sha256": "28925ddd24dc8d20ec797e4572e1a6a5dde77a49754161b373bcf5977e1fa9ec",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "3cc6685603a32c10eebe24d6e5cbaa661a0a288bdf7a76f9a739d7bda8b71170",
+      "samples_sha256": "d7f8900095306e04a0dfc8d3c4196dc7036dba5e055aeec41cb720d65c7def6d",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "6157177273ad17f3bfe934e9dd16335f9922ce1a0a9d67d3c48fd279a9999863",
+      "samples_sha256": "858a6530674a68b27fde542e463f2ff7eaa5d5b0b98cd8664c494d587fbc808c",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "c9c8af81e61de8ed4798a894898f3b3653a7031bdb70d9a0167079e8ac4bf3c1",
+      "samples_sha256": "20fb33963c9ccc12d43af669a0cadd50c3480966257e37f484eb573cde7c3593",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "cdc6ea04d7fb8d1da685cd567f486e97acaf3e7e68d1f53fe42945223a75db0d",
+      "samples_sha256": "12f11386472134084006a6896efc637ae0d5a9506a49e3377ef7340a381ce0a3",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/full_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "a65e3d8c4902a8505b0ced54c0595e35f9a9f0eb806cbe3afa99f0a76a9da7d7",
+      "samples_sha256": "4f5cdd83555b686963194c3308a917d6c718c0a6c18d89b43660860b46c92acb",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/guard_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "5caea5314f7f344bedee9cc808f2bc1355ca96f6193f49732af384d49a3ab2cb",
+      "samples_sha256": "80367c4db6fe54f5e449b91a93c99e2a514ba12e9c4c0c54bd7bfd47edd51200",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/guard_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "130922ed1713b3404880a3fa69cf32e9ead58489042d7695ee5236ef20c1f5c5",
+      "samples_sha256": "d18dd92c2616bb82a03705cd6557290dbbfc8931da5b012b8a03ec09197c995b",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/guard_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "b01da3b47e5e68ab89cd3c90e690ad172510541faa38a6647c03228c9a4556e8",
+      "samples_sha256": "3e56cc44b7f49f4a257d40c3b27a2ee8f03c47face99dc229ff8195c215ecfeb",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "363686d7a9b48af6b180f8a5d4d953bd562efe0dabbac3ef618d36fa49bf7db2",
+      "samples_sha256": "0184d6df387c97f258927b96380887920d05d2de4901d154cf143f23ca822516",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/guard_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "6bf2eea0720b6861c927872987b1e922b11f0e5340393477c621cb7d41134c7f",
+      "samples_sha256": "9ec4545c45f7e7065030d185d72195ed434fdb62f7a9fabff1115e44080a5f81",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "990881ed149b956f7ac0485578819e61b1d3ccac126bf580b6c5857aecb31e4f",
+      "samples_sha256": "9cce9d5a7427144b29a564d20045ba95376798516af8d16a2354373d071acb9b",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "ea8e6e6ca59a563aadd50c4edeee97d696b8368b237aa967ee01029763288d03",
+      "samples_sha256": "e0ff38d806504332c83564267510e886f4ba423a9357b6547f07999096ac2fc3",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "5190b8bb38d0dddff55f819db03d7e1180a961a63d6bf71e73b3f168c75ff89a",
+      "samples_sha256": "0d330e64ab6df5ae8d9bfd71a1dc7ea095055ccdd8fbdd1dde560c0c6dc56a74",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "c78265a3f2e1761f95049e9fc6a015168163096cf0c7f4bf7eedb1d247a654fc",
+      "samples_sha256": "a015fd009e33f4d56ef9d815d0b2495759e740dd0d126d11419e518a835e9ac9",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/guard_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "be164b8737e37ea846710c7c41716b12992e1a0415df5cc21c4f845b822c5a63",
+      "samples_sha256": "08a12de236faac572ffcfd9708a2bd96748be885ee2e32aa0af61758c75e6c39",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/joint_lookahead/longer_test",
+      "episodes": 500,
+      "record_sha256": "f9c73d41b58583dbf9df5f9842232147737b5cc8f7bf6fbc58a0bc8ca69f9015",
+      "samples_sha256": "34f12f3a3b38e5c1f5cf6abd79c90c88da137ffa6394bd563d1b5fea83eacd12",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/joint_lookahead/test",
+      "episodes": 500,
+      "record_sha256": "b8394227938fea3c42d63e6c08d87b4499f5364855c053733a1e194521024c83",
+      "samples_sha256": "694848b68c9fdcf4605dbc69ead6c2a99332d6fdc1cfeb58d4dbcd2f2dbddef6",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/joint_mpc/longer_test",
+      "episodes": 500,
+      "record_sha256": "6a7281403fdbf63bf2d4d748c6ffcfa437ee685ed7bfa192cb8ea658c96b66ba",
+      "samples_sha256": "fb79468ce3d221e503d7cefa77091dd076577d73e78b6c2ed663bb696e76a5fe",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/joint_mpc/test",
+      "episodes": 500,
+      "record_sha256": "06f6b079f2dd1edce0b7adbd99526cfa3a9e7e0f48fb00a4f7490ce4e972105d",
+      "samples_sha256": "e93180059d7b9ef00140bb82027263ed8ba04a1ac07f2bb29a00a415ab8a3359",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/original_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "91e923cc136aa224f70f088add3196f527d3159362b12b8a1e1d3f65b3853b17",
+      "samples_sha256": "3780770a7ca99557995b8c40f9f0755730929844e94ff8e3d09ae2aa17612572",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "90790210acb58e468d3de6b49e58c4bd3d56d627b59bfd1b46022dd67380088d",
+      "samples_sha256": "8f9672d85d9834ed3ba27e24122c0c8a9bd1e8bb344417d76963269be5feda4d",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "365f0a3cee0674d73e200048b45b63c83d69c4d8361f3f6586622b695d7a188c",
+      "samples_sha256": "c77ef7b186e7dda74834c6913da4a4f5e4c831aef4e03f2d115c2aed0ecdb200",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "15c1f3847ce6629143ddfc1ac3a284feecd4fc6b379f25151766d38d544075e9",
+      "samples_sha256": "eb437cdd81713703a51aadaa94ae715b5c7a19bc7e7943ab0f6fb3cac3e302ed",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "96a93c54630736f39e2048245aa4f4a3428947acc8e698e5a43e1d7f2da8c1dd",
+      "samples_sha256": "bc17ba4757e04a8583a488e5ddbb505b937b81b8be9904f57f653e4c729a95f4",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "e6351fe5daa672e413fd0e3f09b2bcebd8b09b5dc3d2da7b6288a3c7f0f23d2e",
+      "samples_sha256": "6cd95b14775037836117f5edda13ee055a988be55016f8dbda4ed2845233c74e",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "f2889d0f0f879520d95e798cf548977e3fe434dce5eb42fb603dd2d7ab0573f8",
+      "samples_sha256": "bd6fe878a4a2b0cf1561e9e39618847e4b5b31dd76ea688013fcba64149ca7d2",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "fb41fc1be6e9fad86f27bf6e3ca9731f9201e00c768d99cea61ba555f2aeed0f",
+      "samples_sha256": "f7da24ddfd9689901bd482e17fa5eaf7c8ff365d6fb2135777a5b4bae3a6e46c",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "4206e688b62438a518db8bd4eb4478306f3fa641e4ed6358f924308f175a3b17",
+      "samples_sha256": "2d650b7b66c2d0fc07c0dd95e6dd26a79f00f225df7faab8b3188d42eee721b1",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/original_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "8e2fcba4a9d7bd8800ced7edc84b600291e0e8d47dbaef1a517386dcfc2bdffe",
+      "samples_sha256": "638d0ade5f1adb4809426795ef9638ebb280ec25c8bee9833da1c0ceb195df10",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "327147c1d26199633134355a2457827b5ae42f89b088d500584806fad84cafc1",
+      "samples_sha256": "6efe2429825d680b36f21d1ed6ad25fcea0a0e90b1060a9541d11efb9321350a",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "1cb8e495038177dad9557cbff09261357ac6f1176bc88fdc21d1cb42f7b1aad5",
+      "samples_sha256": "8588e9b30cf396d5631daf2acde1b1da3afcfdd4d53c779a044dd73fa9922d95",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "ce9ce1b72942ac2959c65f7412025151d28aed066846c31743fc55ebacb3f4d2",
+      "samples_sha256": "b6dcdc22485480c49e5fd97e18bbefbaf85c51a1117115537f11c428b1a10b81",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "079455e25b27b7be2c11085d110cea0d55b58389cf64d83ab8595e89f59cb20f",
+      "samples_sha256": "1a680f955d24721931375b2b72db05901ae2f865f7dc5d532bb5c09626fa433d",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "60ac92ab48dc22b40b27eaf78351c35846cb3021df0e6b00165101a07b550a6a",
+      "samples_sha256": "9d367564cfeaff21a5c284c1337f993d59ff1caeba9328d6311d589d753a6ee1",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "d3818f9f90625728f52ad3dbafe7b550f578a11ebb5b2e52649ba36f66c0ae9c",
+      "samples_sha256": "aea8a59e107ebbd6f7f50a8e401f5617e1e01dde5fd67c9a30d022abb35bd277",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "756dcfcfb85d9a335c39e5f92f262d7d797e8edf26850350b7a122a273bfe113",
+      "samples_sha256": "89cc80dadb4f893d530bbf37bfb07910e21cb5914a30c0d69a4cda5f3602bf99",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "29bf97cf9e086cddbe90dd3a34349dbcd5ca25786f1dcd446f09f505a2034691",
+      "samples_sha256": "c1eff3628fb51f05c35a645a7e5b93965fe06f12cda434a09b1c513c68ff6abd",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "deae34147369c4c34b5e0d0d09f0c53931b310d4908a01eafbdf04c5cf0acbef",
+      "samples_sha256": "2ddf39d7909eaef0fadb7c9336dfccbaec9450dbee534a0b0c17c72e6ba29931",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/service_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "a60209ccb9e2a016e30bc62ffec35b2c22e2017e1f539ae2d1bf5cbe7a4fb2e9",
+      "samples_sha256": "8db3ce45bf5cf58a352bfa64721f448d71a2102acc921225e4ef64fa0bbc38f4",
+      "existing_run_reused": true
+    },
+    {
+      "run": "confirmatory/straight_radio/longer_test",
+      "episodes": 500,
+      "record_sha256": "7bf3771d8b662af7355f3c6d08f4b938d69f7de85fe393e9843547acf3558bd4",
+      "samples_sha256": "b32c4d0977f494c3dc484baf18835afcbc293305568d985113e2dc84ccf721f5",
+      "existing_run_reused": false
+    },
+    {
+      "run": "confirmatory/straight_radio/test",
+      "episodes": 500,
+      "record_sha256": "8ae140d514d1ef153245598d766a1f5bc62c87d161fd93469b734c676ba9ad82",
+      "samples_sha256": "f0df431a74a4182a8137c22bc09cc9f434a3aed11732df6daedf68d5303a6f37",
+      "existing_run_reused": false
+    }
+  ],
+  "workers": 3,
+  "orchestration_sha256": "0e936d3171a2ab631fe0e427d7d9c9adb9a87983c3d2525b39809284e83eb961",
+  "execution_note": "The serial evaluator was stopped during an unfinished run to parallelize independent jobs. Completed runs were retained and replayed; missing runs used the frozen evaluator unchanged."
+}

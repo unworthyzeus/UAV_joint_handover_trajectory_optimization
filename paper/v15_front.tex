@@ -1,21 +1,18 @@
 \begin{abstract}
-Reward comparisons for cellular UAV control must preserve the communication
-requirements that make a mission successful. We compare a master's thesis
-reward with a replacement within the same strict sampled connectivity system,
-V2, using the same Barcelona ray tracing dataset as the original thesis.
-The original reward arm, V1.5, retains reciprocal radio utilities, a binary
-approach bonus and source penalties; it shares V2's dynamics, observations,
-actions, residual navigation prior, safety filter, PPO settings and termination.
-Five training seeds per learned arm and 400 fresh shared routes support the
-comparison. Full V2 achieves \FullStd\% standard and \FullLong\% longer joint
+We compare a master's thesis reward with a replacement within a shared
+cellular UAV control system, V2, using the same Barcelona ray tracing dataset
+as the original thesis. The original reward arm, V1.5, shares V2's dynamics,
+observations, navigation prior, safety filter, PPO settings and strict sampled
+connectivity rules. Five training seeds and 400 fresh shared routes support
+the initial comparison. Full V2 achieves \FullStd\% standard and \FullLong\% longer joint
 success, versus \OriginalStd\% and \OriginalLong\% for V1.5. The primary
 standard difference is \PrimaryDiff\ percentage points, with a 95\% crossed
 seed and route bootstrap interval \PrimaryCI. \PrimaryAbstract{}
-An arrival reward control and four deterministic references expose communication
-tradeoffs and the shared controller's role. Every successful mission meets the
-sampled RSS and buffer constraints. These results concern a declared surrogate,
-not the unavailable original simulator or physical connectivity between samples.
+Full trades fewer handovers for higher delay. Every successful mission meets
+the sampled RSS and buffer constraints. These results concern our declared
+simulator; the original implementation remains unavailable.
 \input{v21_abstract.tex}
+\input{v22_abstract.tex}
 \end{abstract}
 \begin{IEEEkeywords}
 Cellular UAV, connectivity constraints, reward design, handover, trajectory
@@ -47,3 +44,5 @@ seeds, explicit failures and reproducible artifacts. PPO\cite{ppo} is an
 established algorithm; we claim no new learning method. Thesis citations give
 printed pages; add two for the PDF viewer page. We use the same thesis dataset;
 the original simulator and trained policy remain unavailable.
+We also recover source motivated metrics and test a separately declared
+lookahead supervisor using unchanged full V2 weights on a third fresh route set.

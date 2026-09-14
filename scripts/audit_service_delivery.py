@@ -95,7 +95,8 @@ def main():
     assert '88 passed' in test_log.read_text()
     assert not subprocess.check_output(['git','ls-files','*.h5','*.hdf5'],cwd=ROOT).strip()
     assert readme.count('Historical V1 was')==1
-    report={'scope':'Current README interpretation, failed V2.1 improvement attempt and unified paper delivery.',
+    report={'scope':'V2.1 component checks within the current README and paper; the complete V2.2 delivery has a separate audit.',
+            'current_delivery_validation':'results/thesis_metrics_v22/analysis/delivery_validation.json',
             'frozen_source_protocol_files_verified':len(frozen),'checkpoint_count':len(models),
             'checkpoint_bytes':sum(r['bytes'] for r in models),'implementation_tests_passed':88,
             'implementation_test_log_sha256':sha(test_log),

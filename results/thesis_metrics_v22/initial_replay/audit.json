@@ -1,0 +1,148 @@
+{
+  "scope": "Additional measurements on unchanged initial 53012/53013 flights; no new independent experiment.",
+  "exact_core_episode_matches": 4000,
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "script_sha256": "6653165c6b287ed7a7c4432fb08748f62790f5b9191359d9a9db4c37ac5c609e",
+  "runs": [
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2101/test.json",
+      "source_sha256": "e5f03719ae7c2dd78922a154787ca65e7b71c68f85804a7de7d18d0d37cfb207",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2101/test.json",
+      "recovered_sha256": "024c077690dcc9cb4df69c827cca76437787309585dd4a7887f0d900ae7e5e83",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2101/longer_test.json",
+      "source_sha256": "25cbf4157fc42d55d42d9a1bdcd0009064c943f88bd0992112154fd6b4c99529",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2101/longer_test.json",
+      "recovered_sha256": "fc96485239a9840d691b5c6560e46a8f51af536410d728159d31f930299871ba",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2102/test.json",
+      "source_sha256": "1ff01819fe0b08306bc945dd2e0b792bd6ae845a3a18ce1a483af94c4abae944",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2102/test.json",
+      "recovered_sha256": "ca9c8b905067a22dc5d56999034160f41b93ce6c41bd51ebb61aadc6c92beeb4",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2102/longer_test.json",
+      "source_sha256": "78b35980fc7d520d253904d61674d4b48aeb4771a40f5ea3409273f257378010",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2102/longer_test.json",
+      "recovered_sha256": "4966ade480466778dc52c7d92c5a573642d811678ffc91a70d343b22e8bcb580",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2103/test.json",
+      "source_sha256": "77dc8ca0f079cda2fb78f5641abab1ce9b0f92989b63103e8d07933282c43621",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2103/test.json",
+      "recovered_sha256": "44adf192fcbc3511c715fd392c1c6a0cf1a18a118eb34e5b8af83a3fc709c4dc",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2103/longer_test.json",
+      "source_sha256": "c0b049b92d079d972a3a4a44b1a558e6526cacd203bfcdbe6fe723e563da6022",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2103/longer_test.json",
+      "recovered_sha256": "753eb475278fd3cedb430a8838a797537c44271bc9507c64c5d7e046af9072dc",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2104/test.json",
+      "source_sha256": "e0ae30388571c45ff082456a98d2467b47ad9523c0fd40321058a4d5d6549663",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2104/test.json",
+      "recovered_sha256": "89a6c30fb13de7ed451b4fffbd138d819934d41e6fa134b5fa0d757ee6716bb6",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2104/longer_test.json",
+      "source_sha256": "cfa9a485615b89938fda12d4d49c343c9401191596eae9e80ff5f0c9ee18eda3",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2104/longer_test.json",
+      "recovered_sha256": "750db58db6d83d7e26049d1d9baf3a3cbbf3466eeb38a387179dbb6f5b9fa10b",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2105/test.json",
+      "source_sha256": "e1ddce8c52904f9a5f90062353bc9d388a918f39fa7c1b96e81b511b0433a08d",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2105/test.json",
+      "recovered_sha256": "c08a9b705f829f071dcd0fa93728039165a037669ac88082c8bcad7443e5d021",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/original_seed_2105/longer_test.json",
+      "source_sha256": "e6a04d00dccd4c2c14d38cce1a59b5d0efc0f93129e4c72bfd4ae20bc2379704",
+      "recovered": "results/thesis_metrics_v22/initial_replay/original_seed_2105/longer_test.json",
+      "recovered_sha256": "ace24689f52dc9b095ebf8f4dc61a9dd67adbe62b1bc85445fefa9736babf22f",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2101/test.json",
+      "source_sha256": "7fdc7bb7e147fb5ac9468c32d1344d9145be607acc31e36be4a1b243208c3e87",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2101/test.json",
+      "recovered_sha256": "14be8b8e8d7c34729be98fd5c71bb8b8a320f1a6b1b794231447d3203902f951",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2101/longer_test.json",
+      "source_sha256": "8b5cfbdf04553265e432b2a17f11651c664f1ec51fdf081ee6953f9083b86c58",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2101/longer_test.json",
+      "recovered_sha256": "74177aba0cc19328d5c0aaaa6cd7ee4d8724f979e30e5db18ff34c6b9db6a5b5",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2102/test.json",
+      "source_sha256": "7da77f7f35a5777319fdee28f924006055cccde71f47bb40869cdba26b13422c",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2102/test.json",
+      "recovered_sha256": "c9c90296d7126c2effa53043958fa7b8ca8eb7c373964f026fac2c8edc17f863",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2102/longer_test.json",
+      "source_sha256": "f975d013eff7c0908bb9c464515c3061b5490b804e2abc3d9a5a37da626d02db",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2102/longer_test.json",
+      "recovered_sha256": "ed3660fd1af9b9367df33f4d5e8550e7f67d407f0e40ef9492571b164f75b762",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2103/test.json",
+      "source_sha256": "1070ee820251f101c8fd779ebf0f0cbc9fb16fe4c3705da668bc87a20a2c90db",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2103/test.json",
+      "recovered_sha256": "68619829b3a258ef754e9a4b94f42bec468613fb53f170e3d409ce840e2f9778",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2103/longer_test.json",
+      "source_sha256": "e330290faf92920ea91f80645a0bc6124012d993ab72bf2d443ddb4e71d757af",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2103/longer_test.json",
+      "recovered_sha256": "7a2df6d118fa3a843070cda2b83c407194ab6274eab56357372232333e86142c",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2104/test.json",
+      "source_sha256": "e1df99714fafc8bc99f21d4606e6090c667a46eead2879d166f5584ae8138e1e",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2104/test.json",
+      "recovered_sha256": "119114b865ca4e004bbc490258972501b4ccd99da2523a7461c8dc968c1bc554",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2104/longer_test.json",
+      "source_sha256": "6be84b38902b409b05f59861f9547d88f6eafb6b5ce7054052b6e7b89a519988",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2104/longer_test.json",
+      "recovered_sha256": "1a3e2891015e3d46cc0e4c5a61cbff5f2b18420b4cb1c8b2b6e87eb906bf6272",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2105/test.json",
+      "source_sha256": "5221b06ed287e07a2617ab2d6ba4639f0e4d8c91e0a992fb44ffe7d76843a408",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2105/test.json",
+      "recovered_sha256": "3073c0d1fb30e2a6a5a23f313133ca33e6fd77da60872c45e334835eff4655fd",
+      "exact_core_matches": 200
+    },
+    {
+      "source": "results/reward_comparison/confirmatory_v15/full_seed_2105/longer_test.json",
+      "source_sha256": "d995286706cb7a8282e2fe6c802561175ee0ec018c1864a8fe78e1747ba59a11",
+      "recovered": "results/thesis_metrics_v22/initial_replay/full_seed_2105/longer_test.json",
+      "recovered_sha256": "f11e93095e832d5a73e87fdc4a13ea1011a8d18d433fa0f39719a196079dcf83",
+      "exact_core_matches": 200
+    }
+  ]
+}

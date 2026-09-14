@@ -1,0 +1,7 @@
+{
+  "minimum_stored_rss": -128,
+  "maximum_stored_rss": -25,
+  "maximum_eq8_snr_db": 78.41,
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "map_is_same_as_original_thesis": true
+}

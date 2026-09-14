@@ -82,6 +82,7 @@ sampled points does not establish connectivity between samples.}
 \end{figure*}
 
 \input{v21_followup.tex}
+\input{v22_followup.tex}
 
 \section{Interpretation and Limitations}
 The contrast isolates the reward package conditional on V2. It does not identify
@@ -97,14 +98,23 @@ sentinel meaning remains unverified. One map, static load, ideal service and unc
 inference. No physical continuity, packet latency, collision safety or deployment
 claim follows. A successful arrival can still retain queued data. The initial
 comparison uses seeds 53012/53013; the V2.1 followup uses fresh 54012/54013
-routes. These test samples are reported separately.
+routes; the supervisor study uses 55012/55013. These test samples are reported
+separately. The supervisor has additional map queries and computation; its
+performance cannot be attributed to PPO training or reward replacement.
 
 \section{Conclusion}
-\ConclusionResult{} \input{v21_conclusion.tex} The initial experiment compares the written original reward and a
-replacement under identical sampled constraints and control machinery, retaining
-failed missions and communication tradeoffs. Further claims require independent
-maps, traffic and controller ablations rather than tuning on these test routes.
+In the initial V1.5/full V2 comparison, reward replacement does not establish
+improved mission completion. Full V2 reduces handovers and flight time but
+increases delay and consumed energy. The separate V2.1 service reward improves
+delay while missing its completion first gate. Neither result justifies a
+reward only diagnosis of the original thesis's behavior.
+\input{v22_conclusion.tex}
+The controller improvement is conditional on the shared simulator and additional
+lookahead computation. Further claims require independent maps, traffic and
+controller ablations rather than tuning on these test routes.
 
+\clearpage
+\onecolumn\twocolumn
 \appendices
 \section{Artifacts and Reproduction}
 The repository includes all 15 initial comparison checkpoints and five V2.1
@@ -112,19 +122,22 @@ checkpoints, source, configuration, raw
 records, analysis, source snapshots and this paper:
 \url{https://github.com/unworthyzeus/UAV_joint_handover_trajectory_optimization}.
 The initial comparison uses ten unchanged V2 policies and five V1.5 policies;
-the followup adds five policies with the validation selected service reward.
+the reward followup adds five policies with the validation selected service reward.
+The supervisor adds no weights and reuses the five full V2 policies.
 The private
 dataset belongs at \texttt{dataset/Barcelona\_dataset\_January.h5}; the setup
 guide records its checksum, dependency versions, exact commands and outputs.
 Note 36 is the initial frozen protocol, note 37 records its results, and
 note 38 records its delivery validation. Notes 46--49 document the V2.1
-protocol, development, results and reproduction. The README documents the exact V2 differences from the
+protocol, development, results and reproduction. Notes 51--54 cover the supervisor,
+recovered metrics, fresh results and model usage. The README documents the exact V2 differences from the
 TFM with page locators. This is a research draft, not an accepted publication.
 
 \section{Every Seed and Observation Layout}
 \input{v15_seed_table.tex}
-\newpage
+\medskip
 \input{v21_seed_table.tex}
+\input{v22_seed_table.tex}
 \par\noindent\begin{minipage}{\columnwidth}
 \captionof{table}{Identical V2 observation layout in all four learned reward arms, including V2.1.}
 \centering\small

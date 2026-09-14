@@ -2,16 +2,81 @@
 
 Updated 14 September 2026. Non THz n3cat research project.
 
-**V2 and its V1.5 original reward control, with a completed V2.1 service reward followup.**
+**V2 with its original reward control, the V2.1 reward study, and the V2.2 controller and thesis metric study.**
 **All experiments use the same Barcelona ray tracing dataset as the original
 thesis.** The supplied HDF5 is preserved unchanged; the simulation and control
 implementation are our own.
 
 The [current IEEE paper](paper/UAV_joint_reward_connectivity_IEEE.pdf) is by
 Guillem Moreno Garcia and Evgenii Vinogradov. Start with the
-[results and every seed](docs/37_v15_reward_results.md),
+[new controller results and every seed](docs/53_v22_guard_results.md),
+[initial reward comparison](docs/37_v15_reward_results.md),
 [frozen protocol](docs/36_v15_reward_comparison_protocol.md), or
 [dataset and model setup guide](docs/35_dataset_and_model_setup.md).
+
+## Recovered Thesis Metrics and V2.2 Controller Test
+
+**We now report SNR, remaining energy, all neighbor RSS power, handover distributions and all flight outage.** The all neighbor power is a declared linear interpretation of the thesis Eq. (9), not a calibrated physical uplink measurement. The original 4,000 V1.5/full V2 flights were replayed without changing any prior result; the source comparison further below now includes the recoverable metrics.
+
+**New controller test:** a five-step lookahead supervisor uses the existing full V2 policy weights. It changes motion/network action selection; there is no new PPO training or isolated reward change. Three declared horizons were tested on validation before selecting five steps. It retains the thesis RSS and buffer requirements through the unchanged V2 system. These results use **fresh 55012/55013 routes**, separate from the earlier tables.
+
+| Controller | Standard success (%), higher is better | Longer success (%), higher is better | Episodes per split | Original thesis comparison |
+| --- | ---: | ---: | ---: | --- |
+| V1.5 original reward | 93.80 | 89.12 | 2500 | Comparable original joint success NR [printed pp. 16-20]. |
+| Full V2 | 94.44 | 90.64 | 2500 | Comparable original joint success NR [printed pp. 16-20]. |
+| V2.1 service | 93.16 | 88.64 | 2500 | Comparable original joint success NR [printed pp. 16-20]. |
+| V2.2 guarded V2 | 96.44 | 96.32 | 2500 | Comparable original joint success NR [printed pp. 16-20]. |
+| Goal radio | 93.60 | 91.60 | 500 | Comparable original joint success NR [printed pp. 16-20]. |
+| Joint one step | 94.20 | 87.80 | 500 | Comparable original joint success NR [printed pp. 16-20]. |
+| Joint three step | 91.60 | 87.40 | 500 | Comparable original joint success NR [printed pp. 16-20]. |
+
+**The primary fresh comparison supports improved standard mission completion.**
+V2.2 minus full V2 completion is +2.000 percentage points [0.320, 3.681] on standard routes and +5.680 [3.200, 8.280] on longer routes (95% intervals).
+
+| Recovered or service metric | Standard full V2 / V2.2 | Difference, 95% interval | Longer full V2 / V2.2 | Difference, 95% interval | Original thesis definition / comparability |
+| --- | --- | --- | --- | --- | --- |
+| SNR (dB), higher is better | 62.238 / 64.667 | +2.429 [2.282, 2.576] | 62.045 / 64.707 | +2.662 [2.563, 2.757] | Eq. (8), printed p. 10. The source plotted SNR cannot follow from its stated inputs; see the bound below. |
+| All neighbor RSS power (µW), lower is better | 1.447 / 1.386 | -0.061 [-0.066, -0.057] | 1.536 / 1.465 | -0.072 [-0.075, -0.068] | Linear interpretation of Eq. (9), printed p. 10; source conversion/aggregation unverified. No physical uplink comparison. |
+| Remaining energy (kJ), higher is better | 91.766 / 91.762 | -0.003 [-0.012, 0.006] | 80.620 / 80.607 | -0.012 [-0.024, 0.001] | Our remaining energy under V2 accounting. Source Eq. (10), printed p. 10, has unresolved arithmetic and units. |
+| Executed handovers, lower is better while preserving service | 0.466 / 4.811 | +4.345 [4.133, 4.564] | 1.607 / 10.527 | +8.920 [8.584, 9.233] | Source Figs. 6/8, printed pp. 18/20, have unknown count normalization; no numerical source comparison. |
+| Delay proxy (s), lower is better | 5.404 / 0.429 | -4.975 [-5.536, -4.441] | 6.609 / 0.498 | -6.111 [-6.472, -5.744] | Queue/rate in Eq. (4), printed p. 9; source numerical delay NR. |
+| Flight time (s), lower is better | 29.384 / 29.392 | +0.008 [-0.079, 0.075] | 61.330 / 61.288 | -0.042 [-0.157, 0.054] | Matched arrival time NR; source continues after arrival [printed p. 12, Sec. 5.2]. |
+| SINR (dB), higher is better | -9.355 / -5.775 | +3.580 [3.426, 3.732] | -9.828 / -6.035 | +3.793 [3.684, 3.896] | Corresponding SINR NR; source reports SNR [printed p. 10, Eq. (8)]. |
+| Cochannel downlink interference (µW), lower is better | 0.741 / 0.566 | -0.174 [-0.182, -0.167] | 0.775 / 0.594 | -0.180 [-0.186, -0.175] | Corresponding cochannel downlink result NR [printed p. 10, Eq. (9)]. |
+| Consumed energy (kJ), lower is better | 8.234 / 8.238 | +0.003 [-0.006, 0.012] | 19.380 / 19.393 | +0.012 [-0.001, 0.024] | V2 energy accounting. Source Eq. (10), printed p. 10, cannot be converted into this consumed energy metric. |
+| Handovers per second, lower is better while preserving service | 0.014 / 0.161 | +0.147 [0.141, 0.153] | 0.026 / 0.171 | +0.145 [0.140, 0.150] | Explicit switches/flight duration. Source Figs. 6/8, printed pp. 18/20, do not specify this denominator. |
+
+Service means use 2331 standard and 2225 longer common successful pairs. All failures count in mission success. Secondary intervals are descriptive and unadjusted for multiple comparisons.
+
+**Interpretation:**
+
+For the declared completion first, then service priority, V2.2 is the preferred controller among the tested V2 variants in this simulator. It passes the primary completion criterion and reduces delay. This conclusion is about the complete supervised controller, including its extra lookahead computation.
+
+Delay falls by 92.1% on standard and 92.5% on longer common successes. SNR improves by 2.429 and 2.662 dB; SINR also improves, and both all neighbor power and cochannel interference decrease. SNR measures signal relative to noise alone; SINR also accounts for interfering transmitters. The neighbor sum is a map based equation proxy, not measured physical uplink interference.
+
+The cost is more handovers than full V2: 0.466 to 4.811 per standard flight and 1.607 to 10.527 per longer flight. These are executed station switches and therefore extra control overhead. Flight time and energy differences versus full V2 have intervals containing zero; we do not claim an energy saving.
+
+Against the V1.5 original reward control on these same fresh routes, completion improves by 2.640 points [0.920, 4.480] standard and 7.200 [5.160, 9.320] longer. Delay, flight time, signal quality and handover count also improve on their common successes, but V2.2 consumes 0.148 and 0.454 kJ more. It does not improve every objective. These secondary comparisons have unadjusted intervals, and V1.5 is our original reward control on V2, not the unavailable original thesis agent.
+
+| Controller | Standard RSS / buffer / timeout failures, lower is better | Longer RSS / buffer / timeout failures, lower is better | All flight mean outage standard / longer (s), lower is better | Original thesis comparison |
+| --- | --- | --- | --- | --- |
+| V1.5 original reward | 151 / 4 / 0 | 249 / 19 / 4 | 0.0604 / 0.0996 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| Full V2 | 124 / 15 / 0 | 178 / 55 / 1 | 0.0496 / 0.0712 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| V2.1 service | 171 / 0 / 0 | 278 / 5 / 1 | 0.0684 / 0.1112 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| V2.2 guarded V2 | 89 / 0 / 0 | 87 / 0 / 5 | 0.0356 / 0.0348 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| Goal radio | 31 / 1 / 0 | 39 / 2 / 1 | 0.0620 / 0.0780 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| Joint one step | 29 / 0 / 0 | 57 / 2 / 2 | 0.0580 / 0.1140 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+| Joint three step | 18 / 0 / 24 | 27 / 0 / 36 | 0.0360 / 0.0540 | Source outage bars are approximate; first failure counts NR [printed pp. 18, 20, Figs. 6/8]. |
+
+These failure counts use 2,500 flights per learned arm and 500 per deterministic reference in each split. Energy and boundary failures are zero. Mean outage includes successful and failed flights, but is censored by termination at the first violation. It is not a full continuing episode outage duration.
+
+![New standard route metric comparisons](results/thesis_metrics_v22/analysis/metric_comparison_test.png)
+
+![New longer route metric comparisons](results/thesis_metrics_v22/analysis/metric_comparison_longer_test.png)
+
+**Source consistency finding:** the same dataset has maximum Operator 1 RSS of -25 dBm. With the thesis Eq. (8) and Table 3 noise settings, SNR cannot exceed **78.41 dB**. Its plotted medians around 122-127 dB therefore cannot be reproduced from the stated inputs. This is an unresolved source inconsistency, not evidence that our controller should aim for those numbers.
+
+[Recovered metrics and source audit](docs/52_recovered_thesis_metrics.md), [all new results, failures and policy seeds](docs/53_v22_guard_results.md), [declared protocol](docs/51_thesis_metrics_and_guard_protocol.md) and [model usage and reproduction](docs/54_thesis_metrics_reproduction.md).
 
 ## Initial V1.5 Versus V2 Conclusion
 
@@ -239,14 +304,18 @@ aggregation; placing numbers together does not make those statistics equivalent.
 | --- | --- | --- | --- | --- | --- |
 | Joint mission success (%): higher is better | NR / NR | NR / NR / NR | 95.7% / 95.7% | 85.8% / 87.3% | Fraction of flights reaching and stopping at the goal within the time and connectivity limits. Neither split establishes a completion improvement. The source supplies no comparable success rate. |
 | Arrival flight time (s): lower is better on common successes | NR / NR | NR / NR / NR | 31.252 / 28.112 | 65.394 / 60.145 | Time needed to finish a successful mission. V2 finishes sooner. Source episode duration includes time after arrival, so it cannot serve as the same measure [p. 12, Sec. 5.2]. |
-| Source SNR (dB): higher is better (source interpretation) | CDF median ≈124 / ≈127 | CDF median ≈122-123 for all three | NC: SINR reported separately | NC: SINR reported separately | SNR describes signal strength relative to noise alone. The source uses its printed arithmetic; these readings cannot quantify an advantage over our SINR [p. 10, Eq. (8)]. |
+| SNR sample CDF median (dB): higher is better | CDF median ≈124 / ≈127 | CDF median ≈122-123 for all three | Pooled sample median 63.410 / 63.410 | Pooled sample median 63.410 / 62.410 | Eq. (8) is now evaluated on our unchanged flights. Its maximum possible value on this map is 78.41 dB, below the source plotted medians. Source inputs or implementation are inconsistent; its CDF aggregation is also unspecified [pp. 10, 15, 18, 20]. |
+| Mean SNR (dB): higher is better | NR as a per flight mean | NR as a per flight mean | 63.445 / 62.429 | 63.237 / 62.046 | Signal relative to noise alone, averaged per flight. This is distinct from a sample CDF median and from SINR. Same written Eq. (8), with the source figure inconsistency explained above. |
 | SINR (dB): higher is better | NR: source reports SNR | NR: source reports SNR | Mean -8.322 / -9.305 | Mean -8.773 / -9.957 | Desired signal power relative to interference plus noise; higher values mean a cleaner radio link. V2's SINR is lower by 0.983 and 1.184 dB, so signal quality worsens. |
 | Outage duration (s): lower is better | Bar ≈0 / ≈2 | Bar ≈0 / ≈1 / ≈1 | 0 / 0 on successes | 0 / 0 on successes | Time below the required signal threshold. Our successes must have zero sampled outage. Reliability is assessed using all flights, including failures; zero outage within this selected subset does not prove better reliability. |
 | Source uplink interference (µW): lower is better | CDF median ≈0.316 / ≈1.585 | CDF median ≈0.100 / ≈0.100 / ≈0.158 | Not evaluated | Not evaluated | Interference metric labeled uplink in the source [p. 10, Eq. (9)]. Values are approximate readings of its plotted medians. Our study has no matched uplink evaluation. |
 | Downlink interference (µW): lower is better | NR | NR | Mean 0.753 / 0.748 | Mean 0.794 / 0.791 | Unwanted cochannel power received at the UAV from other base stations. V2's small reduction is inconclusive. The source supplies no corresponding downlink result. |
+| All neighbor RSS power (µW): lower is better | NR as a verified linear sum | NR as a verified linear sum | 1.452 / 1.462 | 1.537 / 1.555 | Added linear power interpretation of source Eq. (9), including every nonserving Operator 1 station. Source conversion and aggregation are unverified. This proxy is not calibrated physical uplink. |
 | Consumed energy proxy (kJ): lower is better | NR | NR | 7.651 / 7.788 | 18.523 / 18.957 | Estimated energy spent completing the flight. V2 consumes more on both splits. This is an engineering estimate under our energy model, not a measured battery discharge. |
+| Remaining energy under V2 (kJ): higher is better | NR under this energy model | NR under this energy model | 92.349 / 92.212 | 81.477 / 81.043 | Added energy remaining from the shared 100 kJ budget. It is the complement of our consumed energy, not a conversion of the source energy display. |
 | Source remaining energy display (printed kW): higher is better (intended; unit unresolved) | Bar ≈370 / ≈440 | Bar ≈310 / ≈260 / ≈770 | NC: no matching quantity | NC: no matching quantity | The source intends to show energy left, but labels its axis with a power unit. These values are retained as plot readings only; no energy conversion is justified [p. 10, Eq. (10); p. 15, Table 3]. |
 | Executed handovers (count per flight): lower is better while preserving service | NR as an executed count per flight | NR as an executed count per flight | Mean 6.843 / 0.443 | Mean 15.826 / 1.528 | Switches between serving base stations. V2 switches less often but has higher delay and lower SINR. Fewer switches alone do not establish better communication. |
+| Handover frequency (switches/s): lower is better while preserving service | NR with this denominator | NR with this denominator | 0.214 / 0.014 | 0.241 / 0.025 | Added executed handovers divided by actual flight duration, then averaged over common successes. Source normalization is unknown, so its fractional axis is not substituted here. |
 | Source handover CDF (raw plotted x): lower is better (intended; normalization unresolved) | Median ≈0.0046 / ≈0.0129 | Median ≈0.0025 / ≈0.0041 / ≈0.0033 | NC: no matching normalized quantity | NC: no matching normalized quantity | Source axes mention "over 200 episodes" and a 1e-2 scale without specifying normalization. The readings cannot be converted into executed handovers per flight [pp. 18, 20, Figs. 6, 8]. |
 | Transmission delay proxy (s): lower is better | NR / NR | NR / NR / NR | Mean 1.942 / 5.827 | Mean 2.857 / 6.818 | Queued data divided by current service capacity. V2 has more queued work relative to its service rate. This measures backlog pressure, not the time individual packets actually wait [p. 9, Eq. (4)]. |
 | Accumulated radio cost (dimensionless): lower is better under fixed weights | NR / NR | NR / NR / NR | 7.094 / 5.309 | 16.800 / 13.803 | Weighted communication penalties summed until arrival. V2's lower total coexists with worse delay and SINR; it does not mean every service metric improves. Source objective/reward are different quantities [pp. 10, 12, Eqs. (11), (13)-(14)]. |
@@ -259,8 +328,9 @@ result in that row. Interference uses `P(µW) = 1000 × 10^(P(dBm)/10)`:
 the source readings -35, -28, -40 and -38 dBm become approximately 0.316,
 1.585, 0.100 and 0.158 µW. These remain approximate plot readings; conversion
 does not make an uplink CDF median equivalent to a downlink mean. They have
-separate rows: our uplink result is not evaluated and the source downlink
-result is not reported. Source SNR, the unresolved remaining energy display
+separate rows: physical uplink remains unevaluated, while the explicit Eq. (9)
+linear power proxy is now reported in its own row. The source cochannel
+downlink result is not reported. Source SNR, the unresolved remaining energy display
 and the normalized handover axis also have their own rows. Each numerical
 comparison must match the quantity and link direction as well as the unit.
 See the [unit and wording correction](docs/50_clear_metric_descriptions_and_units.md).
@@ -450,6 +520,17 @@ python scripts/evaluate_service_reward_controller.py --checkpoint results/servic
 The [V2.1 guide](docs/49_service_reward_models_and_reproduction.md) explains its
 500 route test splits, custom flights and complete reproduction under a new label.
 
+For V2.2, use the existing full V2 weights through the new supervisor evaluator.
+**No additional model download or training is needed.**
+
+```powershell
+python scripts/evaluate_thesis_metrics_controller.py --controller guard --seed 2101 --split test --output outputs/v22_check
+python scripts/evaluate_thesis_metrics_controller.py --controller guard --seed 2101 --start 1000 1000 --goal 1800 1300 --output outputs/v22_custom
+```
+
+The [V2.2 reproduction guide](docs/54_thesis_metrics_reproduction.md) covers all controllers,
+custom coordinates, dataset placement, metric sample arrays and fresh output labels.
+
 ## Exact Mission Definition and Source Pages
 
 | Component | Current behavior | Original TFM locator or difference |
@@ -528,6 +609,7 @@ navigation competence. Source discrete acceleration/heading actions differ
 | Information | Known map and dynamics at prospective positions, shared by all arms | Offline radio map is available; lookahead map queries inside a repair controller are not specified [pp. 6-8, Sec. 3.1; p. 12, Sec. 5.2]. |
 | Unresolved violation | Still terminates failure; mask cannot be bypassed | RSS penalty and energy termination are stated; equivalent strict queue/RSS termination and mask enforcement are unknown [p. 11, Eq. (12); p. 12, Sec. 5.2]. |
 | Diagnostics | Network and motion interventions counted separately | Intervention counts NR in the five reported metrics [p. 16, Sec. 7; pp. 18, 20, Figs. 6, 8]. |
+| V2.2 supervisor | PPO motion proposal plus nine existing motion primitives, each followed by goal/braking guidance over five steps; feasible network options prioritize RSS then a bounded capacity tie breaker | No corresponding fixed weight lookahead supervisor is defined in the source action/PPO implementation [pp. 12-13, Secs. 5.2-5.3]. This is our separate controller intervention. |
 | PPO likelihoods | Proposed actions; projection and filtering are environment transformations | PPO probability ratio is described; likelihood handling of projected or repaired actions is unspecified [p. 13, Algorithm 1]. |
 
 The source lists BS and RBG requests [TFM, p. 12, Sec. 5.2]. Candidate
@@ -536,6 +618,8 @@ restriction, masks, residual motion and the filter are our implementation.
 ## Every Observation Feature
 
 V1.5, full V2, arrival V2 and V2.1 all have the same 156 inputs; indices are zero based.
+V2.2 uses the unchanged full V2 network and this same observation layout;
+its supervisor additionally queries the known map during planning.
 
 | Indices | Definition | Original thesis listed state |
 | --- | --- | --- |
@@ -651,6 +735,8 @@ assumed to establish the original configuration.
 | Reused V2 weights | Ten policies | All full and arrival seeds, fixed by hash before new training/test | This reuse is our experimental design; no corresponding source comparison [p. 16, Sec. 6.3]. |
 | Final evaluations | 7,600 episodes | 6,000 learned + 1,600 deterministic | Total final evaluation count and comparable route/seed accounting NR; handover axes refer to 200 episodes [pp. 18, 20, Figs. 6, 8]. |
 | Exact replay | 7,600 episodes | Every new record compared exactly | Exact replay count and record hashes NR [pp. 16-20, Secs. 6.3-7.2]. |
+| V2.2 controller evaluation | 23,000 episodes | Separate 500 standard + 500 longer routes, seeds 55012/55013; four learned arms × five fixed seeds and three deterministic references; all exactly replayed | Original joint success and independently specified test split NR [pp. 15-20]. |
+| Initial metric recovery | 4,000 unchanged episodes | Added metrics on the original 53012/53013 V1.5/full V2 flights; no new independent observations | Source SNR and interference equations p. 10; plotted metrics pp. 18/20. |
 
 New test pairs are disjoint from prior saved routes. V2's earlier outcomes
 were known; the new protocol was fixed before new training and fresh tests.
