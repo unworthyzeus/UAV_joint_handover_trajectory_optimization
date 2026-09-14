@@ -1,0 +1,67 @@
+{
+  "scope": "Executed samples from common successful V2.2/V2.3 pairs only.",
+  "source_hashes": {
+    "results/signal_guard_v23/confirmatory/v22_seed_2101/test.json": "b057fd138d4a60099c51e237e91b8c12ef8a508d33e5ab0e50c7893374e6263e",
+    "results/signal_guard_v23/confirmatory/v22_seed_2101/test.npz": "d20fd4e3b345f0d2ddae6e95902d889563a54923755541d753176097dd7b1a7c",
+    "results/signal_guard_v23/confirmatory/signal_seed_2101/test.json": "74eee1a2ae71d4890819b57e337bb1349421d67d0053fed4bc60f12ddd6d318e",
+    "results/signal_guard_v23/confirmatory/signal_seed_2101/test.npz": "e01a41c844477a689c60b20e79329d47d299cc6f72e450b45dc0007d9a9c4919",
+    "results/signal_guard_v23/confirmatory/v22_seed_2102/test.json": "e38415f3c5f6a8955f3ed6d883123886e2f43c773d287d63910e7a27554f5057",
+    "results/signal_guard_v23/confirmatory/v22_seed_2102/test.npz": "5ad1ccac58f785f1725da59b92d62577698cddcaa8017cb90bf8c25c41468c60",
+    "results/signal_guard_v23/confirmatory/signal_seed_2102/test.json": "6562ee24a9915a226914564b8ec2ae509e1024ad3b3fcc123a2c20325fcc43ee",
+    "results/signal_guard_v23/confirmatory/signal_seed_2102/test.npz": "e2c867009ad6629ebaee83c41d2f07bdda9b3b8453e9739b0e5ffb5a62bacfb4",
+    "results/signal_guard_v23/confirmatory/v22_seed_2103/test.json": "758c7f3d4cd3caeaeb92d3fa37c6af3bf4dcdca29515258ada9a0250b82f58b2",
+    "results/signal_guard_v23/confirmatory/v22_seed_2103/test.npz": "51ed3cfe698fec95900b334a8f296a4d4c6af7c2fb175add5769dae1db3f06dd",
+    "results/signal_guard_v23/confirmatory/signal_seed_2103/test.json": "c14feaa66d237460196d0c8a1fc2a0d6ff9284862912c0a89ffe4ffd6247259a",
+    "results/signal_guard_v23/confirmatory/signal_seed_2103/test.npz": "4ec1feb25d2e433df287f280d84a36c96f7efb0710841f2944de1c4b98a2497a",
+    "results/signal_guard_v23/confirmatory/v22_seed_2104/test.json": "129295c31e2a32669ab441ac63d05d9f4a976ba549e98af0d27f87af13f8e0a6",
+    "results/signal_guard_v23/confirmatory/v22_seed_2104/test.npz": "1ada20c0220f04a3794437c3fcdfde1238408bc84239b1b4fd562d7645b4a340",
+    "results/signal_guard_v23/confirmatory/signal_seed_2104/test.json": "74252b0c0ea20ff6a7fc552c73b1717ac532a51abebfb081cd805b093dac73de",
+    "results/signal_guard_v23/confirmatory/signal_seed_2104/test.npz": "cb640b409bf5b75713be673973e66c179f528bd064e849859c56840e014a40bc",
+    "results/signal_guard_v23/confirmatory/v22_seed_2105/test.json": "81926f49ad74b4b3e26965c071011debd017ba6f8e21924e79b7b1a3eb72b972",
+    "results/signal_guard_v23/confirmatory/v22_seed_2105/test.npz": "7b7f504d70e12acae05319cb340734b63bbdbba310704c4e2a05f59847796ca2",
+    "results/signal_guard_v23/confirmatory/signal_seed_2105/test.json": "c976703c6ad3c96670cf1266bbd096f04b99de11a46afd5e5308b9f221e422af",
+    "results/signal_guard_v23/confirmatory/signal_seed_2105/test.npz": "77bf347233f8b27a18d385570e79ca0ceff9d0cf042e42a8bf8a865432589709",
+    "results/signal_guard_v23/confirmatory/v22_seed_2101/longer_test.json": "9cc6b377cb0db1249fc1b2c476fe58337634760baee5b26a5eb2639a407526eb",
+    "results/signal_guard_v23/confirmatory/v22_seed_2101/longer_test.npz": "4f7f1ae2964ea969ebbbe82c408a1b6a84678dc8ab32ece9126d573d5b65c9df",
+    "results/signal_guard_v23/confirmatory/signal_seed_2101/longer_test.json": "ef8e0a062347081e3b6b5fa324f9a37087c2430540273ff5e2f75b74810cad4f",
+    "results/signal_guard_v23/confirmatory/signal_seed_2101/longer_test.npz": "1e84f2177c0ca4670b99805f8d6703039526fc0d60bbc5d02a50f3881fef8df3",
+    "results/signal_guard_v23/confirmatory/v22_seed_2102/longer_test.json": "1027493b12f1bf0b241b93e02327979bc3f8b863c99c2698e05cb3e7d64cae7e",
+    "results/signal_guard_v23/confirmatory/v22_seed_2102/longer_test.npz": "08004b73884da8a0a11af2d5511c13a04777b39aa0b58fc8c5b50fa462e4657a",
+    "results/signal_guard_v23/confirmatory/signal_seed_2102/longer_test.json": "07138812f6591ab69d3a78fbf7a117420dfb7f294336a04ddd62b50f621e09b9",
+    "results/signal_guard_v23/confirmatory/signal_seed_2102/longer_test.npz": "89015f94ca12192f79c097119d5531e01457590aa627ce85243bb2295582f9fd",
+    "results/signal_guard_v23/confirmatory/v22_seed_2103/longer_test.json": "bbbe06b633931f74217ce4a264a057c9afb38a62150ca9c477807f2818e91a15",
+    "results/signal_guard_v23/confirmatory/v22_seed_2103/longer_test.npz": "7bd76847f8a6796eca7d03e9cb8526c8805943a7fdc2e52eaed43b0c0121e3f0",
+    "results/signal_guard_v23/confirmatory/signal_seed_2103/longer_test.json": "d33688c7ff19ae380c08135514d03fad021a2eaf2bf1f409f6ec3c086fd49165",
+    "results/signal_guard_v23/confirmatory/signal_seed_2103/longer_test.npz": "1e7f8400cbb082cc8d6bb1e42e8eeac5902a3c04f8e260d73307382dcb4766d6",
+    "results/signal_guard_v23/confirmatory/v22_seed_2104/longer_test.json": "6ee1356a2bf80053875ec1b319d12c4a7b76d077fe559b829f6d5642f839aa6e",
+    "results/signal_guard_v23/confirmatory/v22_seed_2104/longer_test.npz": "9a38f6fc23e8189c4bc9fb0fd854bd95deae69eaadaf8a589f740d2d666a4ca6",
+    "results/signal_guard_v23/confirmatory/signal_seed_2104/longer_test.json": "0eae451c5e6d6dd10c21ef31032c047225a02f41b3fe35fbf081d8522d9e8897",
+    "results/signal_guard_v23/confirmatory/signal_seed_2104/longer_test.npz": "295b3e45e9a382ef94ea8f685d6e164f9ea1e394b20a670908bedc03a78d3574",
+    "results/signal_guard_v23/confirmatory/v22_seed_2105/longer_test.json": "eab66b41466a7e8454c1f16f3048f17450b224abbbed40f4f4b61ae0e004219b",
+    "results/signal_guard_v23/confirmatory/v22_seed_2105/longer_test.npz": "eb5bdeb07c1f68ac6b7b2f669aaab392ff7f94793988a61fe2d757eb8bfaff4d",
+    "results/signal_guard_v23/confirmatory/signal_seed_2105/longer_test.json": "c4badd711ef598f7f3a380403fc2ba4c5f7a88ab982d4047ca1aecbff5224c48",
+    "results/signal_guard_v23/confirmatory/signal_seed_2105/longer_test.npz": "fbcf412e2c23dc2799271d93f739d22128f0de214e7cf762838059d3638d2b2a"
+  },
+  "splits": {
+    "test": {
+      "v22": {
+        "pooled_sample_snr_median_db": 65.41,
+        "executed_sample_count": 70276
+      },
+      "signal": {
+        "pooled_sample_snr_median_db": 65.41,
+        "executed_sample_count": 70725
+      }
+    },
+    "longer_test": {
+      "v22": {
+        "pooled_sample_snr_median_db": 65.41,
+        "executed_sample_count": 142799
+      },
+      "signal": {
+        "pooled_sample_snr_median_db": 66.41,
+        "executed_sample_count": 143298
+      }
+    }
+  }
+}

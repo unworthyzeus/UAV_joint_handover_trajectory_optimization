@@ -1,0 +1,409 @@
+{
+  "scope": "Fresh 56012/56013 paired V2.3 versus V2.2; fixed weights and unchanged mission.",
+  "selected_allowance_m": 1,
+  "groups": {
+    "v22_test": {
+      "episodes": 2500,
+      "successes": 2465,
+      "outcomes": {
+        "success": 2465,
+        "connectivity": 30,
+        "timeout": 5
+      },
+      "per_seed_successes": [
+        493,
+        493,
+        493,
+        493,
+        493
+      ],
+      "all_flight_mean_outage_s": 0.012,
+      "successful_means": {
+        "snr_mean_db": 64.70710873406146,
+        "sinr_mean_db": -5.6150227883381065,
+        "delay_proxy_mean_s": 0.3762946597568758,
+        "handovers": 4.62474645030426,
+        "time_s": 28.571196754563896,
+        "energy_proxy_j": 7934.952030081295,
+        "remaining_energy_kj": 92.06504802587791,
+        "interference_mean_w": 5.547010364585139e-07,
+        "neighbor_rss_power_mean_uw": 1.3595062397744377,
+        "handovers_per_second": 0.16081679049079153,
+        "path_m": 560.6472105571754,
+        "radio_cost_sum": 3.3193820259708713
+      }
+    },
+    "signal_test": {
+      "episodes": 2500,
+      "successes": 2464,
+      "outcomes": {
+        "success": 2464,
+        "connectivity": 31,
+        "timeout": 5
+      },
+      "per_seed_successes": [
+        493,
+        492,
+        494,
+        492,
+        493
+      ],
+      "all_flight_mean_outage_s": 0.0124,
+      "successful_means": {
+        "snr_mean_db": 65.08695912010502,
+        "sinr_mean_db": -5.235160964288274,
+        "delay_proxy_mean_s": 0.27652462154050994,
+        "handovers": 4.26176948051948,
+        "time_s": 28.784496753246753,
+        "energy_proxy_j": 7956.555802679681,
+        "remaining_energy_kj": 92.04344421238095,
+        "interference_mean_w": 5.544994461440459e-07,
+        "neighbor_rss_power_mean_uw": 1.3583474667087785,
+        "handovers_per_second": 0.14669861394391018,
+        "path_m": 562.0719213299938,
+        "radio_cost_sum": 2.9678472832600855
+      }
+    },
+    "v22_longer_test": {
+      "episodes": 2500,
+      "successes": 2343,
+      "outcomes": {
+        "success": 2343,
+        "connectivity": 157
+      },
+      "per_seed_successes": [
+        471,
+        467,
+        468,
+        469,
+        468
+      ],
+      "all_flight_mean_outage_s": 0.0628,
+      "successful_means": {
+        "snr_mean_db": 64.69334788469746,
+        "sinr_mean_db": -6.0281890063422185,
+        "delay_proxy_mean_s": 0.49209958581032587,
+        "handovers": 10.878787878787879,
+        "time_s": 61.43235168587281,
+        "energy_proxy_j": 19441.370174705906,
+        "remaining_energy_kj": 80.55862979343495,
+        "interference_mean_w": 5.951915638364714e-07,
+        "neighbor_rss_power_mean_uw": 1.4639101775586942,
+        "handovers_per_second": 0.17690576183110174,
+        "path_m": 1382.5971620293494,
+        "radio_cost_sum": 7.917935826906131
+      }
+    },
+    "signal_longer_test": {
+      "episodes": 2500,
+      "successes": 2340,
+      "outcomes": {
+        "success": 2340,
+        "connectivity": 160
+      },
+      "per_seed_successes": [
+        469,
+        469,
+        467,
+        467,
+        468
+      ],
+      "all_flight_mean_outage_s": 0.064,
+      "successful_means": {
+        "snr_mean_db": 64.97786889019525,
+        "sinr_mean_db": -5.738248869802198,
+        "delay_proxy_mean_s": 0.39611749531164164,
+        "handovers": 10.235042735042734,
+        "time_s": 61.68333333333333,
+        "energy_proxy_j": 19469.28292267628,
+        "remaining_energy_kj": 80.53071714547964,
+        "interference_mean_w": 5.943710304435368e-07,
+        "neighbor_rss_power_mean_uw": 1.4625854296570706,
+        "handovers_per_second": 0.16545925139958628,
+        "path_m": 1384.5045726026226,
+        "radio_cost_sum": 7.347627112022327
+      }
+    }
+  },
+  "contrasts": {
+    "test": {
+      "candidate_successes": 2464,
+      "baseline_successes": 2465,
+      "episodes_per_arm": 2500,
+      "common_successes": 2459,
+      "success_difference_pp": -0.04,
+      "metrics": {
+        "snr_mean_db": {
+          "candidate_mean": 65.08682076939357,
+          "baseline_mean": 64.71011109518966,
+          "difference": 0.37670967420391527,
+          "ci95": [
+            0.3399419537361808,
+            0.41543061782596546
+          ]
+        },
+        "sinr_mean_db": {
+          "candidate_mean": -5.2363122158451665,
+          "baseline_mean": -5.616077404877534,
+          "difference": 0.3797651890323669,
+          "ci95": [
+            0.3415496605139146,
+            0.4201031167474338
+          ]
+        },
+        "delay_proxy_mean_s": {
+          "candidate_mean": 0.2768855791601994,
+          "baseline_mean": 0.3765685646496837,
+          "difference": -0.0996829854894843,
+          "ci95": [
+            -0.12035925946117289,
+            -0.08054230950962271
+          ]
+        },
+        "handovers": {
+          "candidate_mean": 4.265961773078487,
+          "baseline_mean": 4.626270841805612,
+          "difference": -0.36030906872712487,
+          "ci95": [
+            -0.4491139511797081,
+            -0.2777755157437568
+          ]
+        },
+        "time_s": {
+          "candidate_mean": 28.761691744611632,
+          "baseline_mean": 28.579097193981294,
+          "difference": 0.18259455063033753,
+          "ci95": [
+            0.13238851966984672,
+            0.2369558314106887
+          ],
+          "two_percent_margin_ci95": [
+            -0.4411060815334644,
+            -0.3340596874695472
+          ]
+        },
+        "energy_proxy_j": {
+          "candidate_mean": 7954.600682739903,
+          "baseline_mean": 7939.875079924035,
+          "difference": 14.725602815867731,
+          "ci95": [
+            9.59566095489506,
+            20.06291973082143
+          ],
+          "two_percent_margin_ci95": [
+            -151.81642145282433,
+            -136.26363018226837
+          ]
+        },
+        "remaining_energy_kj": {
+          "candidate_mean": 92.04539933423774,
+          "baseline_mean": 92.06012497785956,
+          "difference": -0.014725643621803832,
+          "ci95": [
+            -0.020063085008615904,
+            -0.009595636544669788
+          ]
+        },
+        "interference_mean_w": {
+          "candidate_mean": 5.546983949908475e-07,
+          "baseline_mean": 5.55029664790159e-07,
+          "difference": -3.312697993116494e-10,
+          "ci95": [
+            -1.2402741968883546e-09,
+            5.906584369482929e-10
+          ]
+        },
+        "neighbor_rss_power_mean_uw": {
+          "candidate_mean": 1.358880049572613,
+          "baseline_mean": 1.360490174337977,
+          "difference": -0.001610124765364109,
+          "ci95": [
+            -0.0032122610521200757,
+            -0.00010560710934877233
+          ]
+        },
+        "handovers_per_second": {
+          "candidate_mean": 0.14688506903529677,
+          "baseline_mean": 0.16078319313490694,
+          "difference": -0.013898124099610172,
+          "ci95": [
+            -0.01718556732573692,
+            -0.010835051296372224
+          ]
+        },
+        "path_m": {
+          "candidate_mean": 562.0163954168182,
+          "baseline_mean": 561.014917200685,
+          "difference": 1.0014782161332574,
+          "ci95": [
+            0.8957172701040446,
+            1.1140913148667781
+          ]
+        },
+        "radio_cost_sum": {
+          "candidate_mean": 2.969426453967388,
+          "baseline_mean": 3.3212857550063126,
+          "difference": -0.3518593010389246,
+          "ci95": [
+            -0.40372105639743733,
+            -0.30509141003887175
+          ]
+        }
+      },
+      "success_ci95_pp": [
+        -0.6,
+        0.52
+      ],
+      "gates": {
+        "completion": false,
+        "delay": true,
+        "handovers": true,
+        "time": true,
+        "energy": true,
+        "snr": true
+      }
+    },
+    "longer_test": {
+      "candidate_successes": 2340,
+      "baseline_successes": 2343,
+      "episodes_per_arm": 2500,
+      "common_successes": 2325,
+      "success_difference_pp": -0.12,
+      "metrics": {
+        "snr_mean_db": {
+          "candidate_mean": 64.97946260363184,
+          "baseline_mean": 64.69566022891975,
+          "difference": 0.28380237471208863,
+          "ci95": [
+            0.24457475213776195,
+            0.3270070974464731
+          ]
+        },
+        "sinr_mean_db": {
+          "candidate_mean": -5.737984218494867,
+          "baseline_mean": -6.02632265593416,
+          "difference": 0.288338437439293,
+          "ci95": [
+            0.24744477477570945,
+            0.33326133825779825
+          ]
+        },
+        "delay_proxy_mean_s": {
+          "candidate_mean": 0.39642798675063534,
+          "baseline_mean": 0.49225597244651803,
+          "difference": -0.09582798569588276,
+          "ci95": [
+            -0.11902788507340022,
+            -0.07401617442033075
+          ]
+        },
+        "handovers": {
+          "candidate_mean": 10.22967741935484,
+          "baseline_mean": 10.868387096774194,
+          "difference": -0.6387096774193548,
+          "ci95": [
+            -0.7864796751738081,
+            -0.4937419076391886
+          ]
+        },
+        "time_s": {
+          "candidate_mean": 61.63354838709677,
+          "baseline_mean": 61.4189247311828,
+          "difference": 0.2146236559139785,
+          "ci95": [
+            0.16453777873698414,
+            0.2658575233759591
+          ],
+          "two_percent_margin_ci95": [
+            -1.066532439523935,
+            -0.9603066761279847
+          ]
+        },
+        "energy_proxy_j": {
+          "candidate_mean": 19452.62842237903,
+          "baseline_mean": 19436.960509912635,
+          "difference": 15.66791246639785,
+          "ci95": [
+            10.330986123267925,
+            20.88198670497683
+          ],
+          "two_percent_margin_ci95": [
+            -381.1080505429168,
+            -365.010903873111
+          ]
+        },
+        "remaining_energy_kj": {
+          "candidate_mean": 80.54737163912866,
+          "baseline_mean": 80.5630394556189,
+          "difference": -0.015667816490255376,
+          "ci95": [
+            -0.020881912929926128,
+            -0.010330787036105132
+          ]
+        },
+        "interference_mean_w": {
+          "candidate_mean": 5.946276665149861e-07,
+          "baseline_mean": 5.953117760849641e-07,
+          "difference": -6.841095699780377e-10,
+          "ci95": [
+            -1.2983344259769212e-09,
+            -6.568487365815754e-11
+          ]
+        },
+        "neighbor_rss_power_mean_uw": {
+          "candidate_mean": 1.4630801352151122,
+          "baseline_mean": 1.464219940588526,
+          "difference": -0.001139805373413868,
+          "ci95": [
+            -0.002298014194733362,
+            -8.823338644712893e-05
+          ]
+        },
+        "handovers_per_second": {
+          "candidate_mean": 0.16549693539727994,
+          "baseline_mean": 0.17675433511605274,
+          "difference": -0.011257399718772782,
+          "ci95": [
+            -0.013731478490633019,
+            -0.00885025708368471
+          ]
+        },
+        "path_m": {
+          "candidate_mean": 1383.322896216608,
+          "baseline_mean": 1382.2874126344086,
+          "difference": 1.0354835821992607,
+          "ci95": [
+            0.9184569234948521,
+            1.1967864511350508
+          ]
+        },
+        "radio_cost_sum": {
+          "candidate_mean": 7.343165116356101,
+          "baseline_mean": 7.910727655329433,
+          "difference": -0.5675625389733329,
+          "ci95": [
+            -0.6755610016430013,
+            -0.46424897668249127
+          ]
+        }
+      },
+      "success_ci95_pp": [
+        -0.88,
+        0.72
+      ],
+      "gates": {
+        "completion": false,
+        "delay": true,
+        "handovers": true,
+        "time": true,
+        "energy": true,
+        "snr": true
+      }
+    }
+  },
+  "combined_improvement_gate": false,
+  "bootstrap_seed": 66000,
+  "bootstrap_draws": 5000,
+  "new_training": false,
+  "new_weights": 0
+}

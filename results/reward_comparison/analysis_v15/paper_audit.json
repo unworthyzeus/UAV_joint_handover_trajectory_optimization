@@ -1,7 +1,7 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "e331427df7fd8f1843d9eceb513280f822e29b97580af36518a83606900acd08",
-  "pages": 10,
+  "pdf_sha256": "853298aa536a0242fedd11717ba0a2e4b50da3f0ca2486719ba2840e03c6b96d",
+  "pages": 11,
   "fonts": {
     "4": {
       "name": "IHAIZV+NimbusRomNo9L-Regu",
@@ -48,12 +48,12 @@
       "type": "Type1",
       "embedded": true
     },
-    "27": {
+    "30": {
       "name": "FKPJSN+CMR7",
       "type": "Type1",
       "embedded": true
     },
-    "28": {
+    "31": {
       "name": "PVTTLK+CMMI10",
       "type": "Type1",
       "embedded": true
@@ -103,7 +103,7 @@
       "type": "Type0",
       "embedded": true
     },
-    "151": {
+    "150": {
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
@@ -112,7 +112,7 @@
   "all_fonts_embedded_and_no_type3": true,
   "no_unresolved_references_or_overfull_boxes": true,
   "text_outside_page": [],
-  "tfm_citation_count": 40,
+  "tfm_citation_count": 41,
   "tfm_citations": [
     {
       "file": "paper/unified.tex",
@@ -221,32 +221,32 @@
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 24,
+      "line": 25,
       "locator": "pp.~6--7, Sec.~3.1"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 25,
+      "line": 26,
       "locator": "p.~10, Eq.~(11)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 26,
+      "line": 27,
       "locator": "p.~11, Eq.~(12),\nC2 and C4"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 28,
+      "line": 29,
       "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 30,
+      "line": 31,
       "locator": "p.~12, Eqs.~(13)--(14)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 38,
+      "line": 39,
       "locator": "p.~12, Sec.~5.2"
     },
     {
@@ -286,7 +286,7 @@
     },
     {
       "file": "paper/v15_findings.tex",
-      "line": 96,
+      "line": 99,
       "locator": "p.~21, Sec.~8"
     },
     {
@@ -313,25 +313,34 @@
       "file": "paper/v22_followup.tex",
       "line": 5,
       "locator": "p.~10, Eq.~(10); p.~15, Table~3"
+    },
+    {
+      "file": "paper/v23_followup.tex",
+      "line": 14,
+      "locator": "p.~10, Eq.~(8); p.~15, Table~3"
     }
   ],
   "source_hashes": {
     "paper/unified.tex": "7c8b83ecc4bd785f56012e02aa66126037e27cf5cb83bd04294dbe77a7652f25",
     "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
-    "paper/v15_front.tex": "11bb8c41741cf759974b4dc3e00c17d67f1eacc7ef130d8c7e6cb6e1af839a28",
+    "paper/v15_front.tex": "82e202198e4f0090c5f2b0ee218a5e85fcbf76c77f13cb2312584e2e511ab375",
     "paper/v21_abstract.tex": "c00a1d6cd3b49e06992c8b527ee81a4fee57744c8697ab134c5fa76bb8274a1a",
     "paper/v22_abstract.tex": "78e127f3e2a75fd5e29c645f4475127c0f5f67183ec1e190d5f3898c4a354775",
+    "paper/v23_abstract.tex": "2dfce0ff3ef802e0aae6b77c2e7538b30ad49fc8219056fb351c0183d670e76a",
     "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
-    "paper/v15_findings.tex": "33e7e55930d66635ea5ab70d41db07d89e74dd8ab6ab0d9b075e84a741ee68b6",
+    "paper/v15_findings.tex": "0686387389afac9568dee1b7633c9c769a5370a48c450a9b2ec00536d98852fb",
     "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
     "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
     "paper/v21_followup.tex": "f465538239e08e877f086c50c1d3a68b07c80328bff98852c835b78fce720774",
     "paper/v22_followup.tex": "e61f000af5e359529a3fe951123885cbe725b8f41f72c1ed21b41be88f4027b3",
+    "paper/v23_followup.tex": "5d7cd65fd91ad46b032b591088e45cb68378a552702c648bf700c1675fdf3329",
     "paper/v22_conclusion.tex": "f369c384866798182468f18ae9d144e1d81e24bc0b54a956d191a9058939bd62",
+    "paper/v23_conclusion.tex": "0696adc517932442d3f6d6d62dc92058241f070af87333d1961b65b6f8f4d355",
     "paper/v15_seed_table.tex": "3b1aa380bcdb6bc4b51129533e6e892eab36f6a89ca94bdc21cd6ecdcb61af40",
     "paper/v21_seed_table.tex": "9712e51293bc90bbed797616ec9e5ca08c807ed6f607d7824c4141b0614d63af",
-    "paper/v22_seed_table.tex": "80abf2fa780af8f6070944cdf234143e24d7cc1bf73b237f26f486522cb8c4b3"
+    "paper/v22_seed_table.tex": "80abf2fa780af8f6070944cdf234143e24d7cc1bf73b237f26f486522cb8c4b3",
+    "paper/v23_seed_table.tex": "412265cd274a871c93f8f7a9f109bfeb1a3267d7598e16b9441308daf2a35f9c"
   },
   "frozen_sources_match": {
     "frozen_comparison_v1.json": {
@@ -376,6 +385,13 @@
       "scripts/analyze_thesis_metrics_study.py": true,
       "tests/test_thesis_metrics_guard.py": true,
       "docs/51_thesis_metrics_and_guard_protocol.md": true
+    },
+    "frozen_signal_guard_v23.json": {
+      "src/uav_joint_optimization/signal_guard.py": true,
+      "scripts/run_signal_guard_study.py": true,
+      "scripts/analyze_signal_guard_study.py": true,
+      "tests/test_signal_guard.py": true,
+      "docs/58_signal_guard_protocol.md": true
     }
   },
   "statistic_hashes": {
@@ -405,7 +421,7 @@
     "primary_completion_and_delay_gate": false,
     "report_builder_sha256": "65506bcf56eebcc487829959ac8f29bc7717708c699250e27283fc3f1f0b6ba1"
   },
-  "visual_review": "Passed: updated SNR paragraph and continuation inspected at full page resolution on pages 7-8; pages 7-10 contact sheet checked; ten page layout, tables and figures remain clear.",
+  "visual_review": "Passed: reviewed all 11 rendered pages and both contact sheets; inspected the new section and appendix at full size. Tables, figures, captions, equations and citations are legible with no clipping or overlap. The V2.3 table appears with its explanation on page 10; all policy seeds remain in the appendix.",
   "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
   "long_route_illustration": {
     "scenario_id": "53013_0023",
@@ -421,5 +437,14 @@
       "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf": "c82761b67e332fcf74b7ab4dc8ed0066e2d4b684170891eafdfc1b6ce96a91c2"
     }
   },
-  "scope": "One paper with the initial V1.5/V2 comparison, separate V2.1 reward and V2.2 supervisor studies, and source metric recovery. Historical V1 excluded; all outcomes retained."
+  "scope": "One paper with the initial V1.5/V2 comparison, separate V2.1 reward and V2.2 supervisor studies, and source metric recovery. Historical V1 excluded; all outcomes retained. Includes the separate frozen V2.3 signal path study and every declared development candidate.",
+  "signal_followup": {
+    "episodes": 10000,
+    "development_episodes": 1536,
+    "selected_allowance_m": 1,
+    "combined_improvement_gate": false,
+    "statistics_sha256": "b9d0455fb05c9a444d29559257dde2a7ce95dac92be504b1c19e167a34390e23",
+    "replay_audit_sha256": "6b266baf90bcec2bf0cae10ed9d588b2f959957aca111364f0d42ffae1c91124",
+    "report_builder_sha256": "67aa2bb0c80d19b2d602a7aee8c42dacdcb05f3760f6249936d4e98016579da2"
+  }
 }

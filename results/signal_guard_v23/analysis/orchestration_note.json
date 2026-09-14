@@ -1,0 +1,8 @@
+{
+  "reason": "Increase independent job concurrency from three to six on a 16 logical processor, 32 GB workstation; observed processor load was 36 percent.",
+  "saved_records_retained": true,
+  "frozen_controller_and_evaluator_changed": false,
+  "old_workers": 3,
+  "new_workers": 6,
+  "verification": "Every existing and newly generated final record is replayed by the unchanged frozen evaluator."
+}

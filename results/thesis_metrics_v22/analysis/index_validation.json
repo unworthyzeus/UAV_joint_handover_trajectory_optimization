@@ -1,9 +1,9 @@
 {
   "frozen_sources": 33,
   "unchanged_checkpoints": 20,
-  "new_study_artifacts_checked": 184,
-  "paper_inputs_checked": 16,
-  "paper_pdf_sha256": "e331427df7fd8f1843d9eceb513280f822e29b97580af36518a83606900acd08",
+  "new_study_artifacts_checked": 183,
+  "paper_inputs_checked": 20,
+  "paper_pdf_sha256": "853298aa536a0242fedd11717ba0a2e4b50da3f0ca2486719ba2840e03c6b96d",
   "private_dataset_and_weights_not_changed": true,
   "all_checked_git_blobs_match_working_files": true
 }

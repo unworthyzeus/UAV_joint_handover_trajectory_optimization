@@ -451,3 +451,12 @@ correction requires original code or figure data; the source prose itself
 says the conversion was implemented. No controller, frozen study, flight,
 weight or performance conclusion changed. The conditional greedy estimate
 also precludes presenting this exercise as evidence of V2.2 superiority.
+
+
+## 2026-09-14: Further Signal Path Selection
+
+Declared and tested 1, 3 and 6 m rollout progress allowances with the unchanged V2.2 system. All 1,536 development episodes were retained. Only 1 m qualified; larger candidates gained more SNR but lost standard completions. Source, selection and weights were frozen before the 56012/56013 route set was generated. Both controllers then used five fixed full V2 policies on 500 standard and 500 longer routes, with all 10,000 final episodes and metric arrays exactly replayed.
+
+V2.3 does not pass the declared combined improvement gate; V2.2 remains the default. Standard: SNR +0.377 dB; delay -26.5%; handovers -7.8%; flight time +0.64%; consumed energy +0.19%. Failed gates: completion. Longer: SNR +0.284 dB; delay -19.5%; handovers -5.9%; flight time +0.35%; consumed energy +0.08%. Failed gates: completion.
+
+The implementation suite passes 100 tests. A single route command was checked on a custom 854 m mission; that demonstration is not added to the final evidence. The same private dataset and all twenty released checkpoints remain unchanged. Notes 58–59 give the protocol, complete results, gates, failures and reproduction. No further tuning uses these final routes.

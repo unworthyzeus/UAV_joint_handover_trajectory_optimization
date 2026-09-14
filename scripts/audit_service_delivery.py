@@ -53,7 +53,8 @@ def main():
     for row,arm in zip(completion[2:],arms):
         for i,split in [(1,'test'),(2,'longer_test')]:
             assert row[i]==f"{100*s['groups'][arm+'_'+split]['success_rate']:.2f}%"
-    paired=next(t for t in ts if t[0][0]=='Metric and preferred direction')
+    paired=next(t for t in ts if t[0][0]=='Metric and preferred direction'
+                and 'V2.1' in t[0][1])
     metrics=[('time_s',1),('delay_proxy_mean_s',1),('handovers',1),('energy_proxy_j',.001),('sinr_mean_db',1)]
     for row,(metric,scale) in zip(paired[2:],metrics):
         for ix,split in [(1,'test'),(3,'longer_test')]:
@@ -95,8 +96,8 @@ def main():
     assert '88 passed' in test_log.read_text()
     assert not subprocess.check_output(['git','ls-files','*.h5','*.hdf5'],cwd=ROOT).strip()
     assert readme.count('Historical V1 was')==1
-    report={'scope':'V2.1 component checks within the current README and paper; the complete V2.2 delivery has a separate audit.',
-            'current_delivery_validation':'results/thesis_metrics_v22/analysis/delivery_validation.json',
+    report={'scope':'V2.1 component checks within the current README and paper; V2.2 and V2.3 have separate delivery audits.',
+            'current_delivery_validation':'results/signal_guard_v23/analysis/delivery_validation.json',
             'frozen_source_protocol_files_verified':len(frozen),'checkpoint_count':len(models),
             'checkpoint_bytes':sum(r['bytes'] for r in models),'implementation_tests_passed':88,
             'implementation_test_log_sha256':sha(test_log),

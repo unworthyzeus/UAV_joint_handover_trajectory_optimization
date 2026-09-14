@@ -29,6 +29,7 @@ wandb/
 *.npy
 *.npz
 !/results/thesis_metrics_v22/**/*.npz
+!/results/signal_guard_v23/**/*.npz
 *.pkl
 *.pickle
 

@@ -1,0 +1,7 @@
+{
+  "src/uav_joint_optimization/signal_guard.py": "f840fe93250a4aa2be058dd1f4392be86e1c32ca7f0f22b37999b059aa709d6c",
+  "scripts/run_signal_guard_study.py": "0f525e00360d9560c8e8266ae3d234c8c9901fc2f4f3b78b0230107b53a02a0f",
+  "scripts/analyze_signal_guard_study.py": "4794fe62b59ddd4ac4d8942490d1e099cc8fcda715d55ea4d7523981c85addb4",
+  "tests/test_signal_guard.py": "8d839dfe84d2d02fb3b03f56a050f8ff4bc72b9fae1a6a70c9841c5d6d8c5322",
+  "docs/58_signal_guard_protocol.md": "3bac3784cc28ba88a5d0d3064da92155defd78c997a541dae347df41ac871982"
+}

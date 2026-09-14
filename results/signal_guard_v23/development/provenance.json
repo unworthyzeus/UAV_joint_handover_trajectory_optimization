@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-09-14T09:59:50.957953+00:00",
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "scenarios_sha256": "4741be259772116d421fae9d32f95281d7baafc87ac7586622a219b8010cfef9",
+  "reused_checkpoint_hashes": {
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt": "fc2566064cfd9911dd850c8c07e2c1abc8bbe65e75e8892e08a47f52ddde598b",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2102/checkpoint.pt": "e67e72220be579a30c5e957ba845a47cb45c4f74205591def759d54916dfc0a1"
+  },
+  "historical_manifest_hashes": {
+    "frozen_comparison_v1.json": "c94d2de9398c11e4317a9ae2028c1adb3b36101e2f54da1d714165bc3b8a4627",
+    "frozen_connectivity_v2.json": "a074a0ec8ec3a23f58ec8ed4ebb7dfe6590e19492c978f581db819e486f4029d",
+    "frozen_reward_comparison_v15.json": "a0c47d4997f7d8b8fee742bec7568d33b62f5f772daeff9cc194187107ea1401",
+    "frozen_service_reward_v21.json": "ab15db61237f746cf24a69e963cd9e3d94eefeb5f9ea17054d6dadf36a2aa82c",
+    "frozen_thesis_metrics_v22.json": "8f37320788498ede48ec3a930f12af5127a16259cb0d381c412120ce5c0f052c"
+  }
+}

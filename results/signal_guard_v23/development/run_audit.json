@@ -1,0 +1,126 @@
+{
+  "runs": [
+    {
+      "run": "development/signal_1_seed_2101/longer_test",
+      "episodes": 64,
+      "record_sha256": "a6d6d12156b64281def6fad603ce2b860fc255199982c9eebfe37e0a54b7c643",
+      "samples_sha256": "14b8544089a9021d4760e88c15275a2b9b3c067d2490a29121505f6366de521c",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_1_seed_2101/test",
+      "episodes": 128,
+      "record_sha256": "43e395dbc824e68fbf3307c5a5ad342c30ea8c1415c15885eeee508ce9dd9d98",
+      "samples_sha256": "33bb6912dcb7138280c57ee3df2e5b92cc61c42dfb61d39a49cca2f1f12b126b",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_1_seed_2102/longer_test",
+      "episodes": 64,
+      "record_sha256": "d169e1d0be13ebdbcb969b5d388cb97b2f128ee8c983125f34a8f37de41314c3",
+      "samples_sha256": "5e331fdd7efdab710254256d6b686a3a53300028c73f5cbd098ca54e9ccfe5cc",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_1_seed_2102/test",
+      "episodes": 128,
+      "record_sha256": "c984a0b4beb34feea8da3162548982577170dda33642ad7e2a8dbe5b938424f8",
+      "samples_sha256": "28341748eee5e28751e8d4ad659e072cc48b9af3e0cb4f1e92211ac0e9b2afcc",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_3_seed_2101/longer_test",
+      "episodes": 64,
+      "record_sha256": "6cc7fcb673a4e68be8cb85e65d2b8c9be7aafb1ca3735be6f20dd0695e798da8",
+      "samples_sha256": "f7dd0ac1fab8c81f72b3029c188a83fe3da0b2e37205a6df9f15fff46513a2c4",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_3_seed_2101/test",
+      "episodes": 128,
+      "record_sha256": "57db69169f84ccfe966458d08baad210dc0f2b1afc78b1ef6afb11f9e613aa35",
+      "samples_sha256": "405aa5c1491757247ee3551e4f17dffbb52567e674132e19aa0b7b9889ca4b1f",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_3_seed_2102/longer_test",
+      "episodes": 64,
+      "record_sha256": "c4a7ac854a11151936cd04ed5a6079f49bf5781b11676e72e898c6da134170c5",
+      "samples_sha256": "0230ad584caf45087eab4893f508bf73511e3568f924f89c2bcbbe2c31103e30",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_3_seed_2102/test",
+      "episodes": 128,
+      "record_sha256": "5fc04896e56b07b65e5b77d036a1eb16403656a3e1b31ded45625636db9b62cd",
+      "samples_sha256": "bbb0c1f317ecaa953951abe908b311c23b5b875db37a29558c57f4f44c37c534",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_6_seed_2101/longer_test",
+      "episodes": 64,
+      "record_sha256": "b2625776a2162bc0e68a61549265bf24c36471c2197994c5b8cf6a574828d25d",
+      "samples_sha256": "3bdb687ee270736e70d1b4e176640fe2aa500fe57c708f284237005db0861d85",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_6_seed_2101/test",
+      "episodes": 128,
+      "record_sha256": "5ea15e81dbd46c86bd5258dda43d792b945adae9709c45a840f36f928f8670ca",
+      "samples_sha256": "d83dcc75ce791ca498e1226db9c1bd15ac93aede2007e91e1b3ece076cf22149",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_6_seed_2102/longer_test",
+      "episodes": 64,
+      "record_sha256": "f6de8e5edc90d78b43122983b1daf8979490fc081d359217ebcdf1a16b62a79c",
+      "samples_sha256": "f7e0c105fe8ea1d4c6c14927fff1222cfadfc8ec67e47ad0c0d529b12324ab57",
+      "exact_replay": false
+    },
+    {
+      "run": "development/signal_6_seed_2102/test",
+      "episodes": 128,
+      "record_sha256": "bfd715bd51b1261ff7d293b0c84430c7fdb61f2bc88133c58d7a1c129de0f6e9",
+      "samples_sha256": "d474291f62853cf5498399722127fa9969651579f10d71b7ae3c381f8481f438",
+      "exact_replay": false
+    },
+    {
+      "run": "development/v22_seed_2101/longer_test",
+      "episodes": 64,
+      "record_sha256": "2898ba7c5197caf61f8c4a04f04e99150c467aa76071b258b9d73d4d860828c3",
+      "samples_sha256": "a6fef70e78a9e6b8dff023a47da6e8465745565a3561ec74a29d0f1b7a9ff49d",
+      "exact_replay": false
+    },
+    {
+      "run": "development/v22_seed_2101/test",
+      "episodes": 128,
+      "record_sha256": "6506fb5ba469c2ade78a41a05e13523d78720f1acdbaff07f8d28522b88c6c9d",
+      "samples_sha256": "c705a76b33a1fc734ba07561b605d4da2fd347fd47f6bf9067408fb7cd312597",
+      "exact_replay": false
+    },
+    {
+      "run": "development/v22_seed_2102/longer_test",
+      "episodes": 64,
+      "record_sha256": "8e3d067d4cfed6a83dd47038464c76007b35b6e1f116b8471148b10c02db50d3",
+      "samples_sha256": "bc5a77fdd1f43907496d9707150c74f55250c880802c124a77ed4ac9005babcd",
+      "exact_replay": false
+    },
+    {
+      "run": "development/v22_seed_2102/test",
+      "episodes": 128,
+      "record_sha256": "4b304084280c874d3fa39fdfdeed217119cb22ed9e505c1afa974cdcff7c0b3f",
+      "samples_sha256": "efd60c320ee0eb7189b74ab15230cdbcb1e85744515bfab612be56364a56a8ed",
+      "exact_replay": false
+    }
+  ],
+  "episodes": 1536,
+  "workers": 3,
+  "all_exactly_replayed": false,
+  "source_hashes": {
+    "src/uav_joint_optimization/signal_guard.py": "f840fe93250a4aa2be058dd1f4392be86e1c32ca7f0f22b37999b059aa709d6c",
+    "scripts/run_signal_guard_study.py": "0f525e00360d9560c8e8266ae3d234c8c9901fc2f4f3b78b0230107b53a02a0f",
+    "scripts/analyze_signal_guard_study.py": "4794fe62b59ddd4ac4d8942490d1e099cc8fcda715d55ea4d7523981c85addb4",
+    "tests/test_signal_guard.py": "8d839dfe84d2d02fb3b03f56a050f8ff4bc72b9fae1a6a70c9841c5d6d8c5322",
+    "docs/58_signal_guard_protocol.md": "3bac3784cc28ba88a5d0d3064da92155defd78c997a541dae347df41ac871982"
+  }
+}

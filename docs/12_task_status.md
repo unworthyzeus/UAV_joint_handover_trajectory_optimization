@@ -1,6 +1,14 @@
 # Research Task Status
 
-Updated 14 September 2026 after the thesis metric recovery and V2.2 controller study.
+Updated 14 September 2026 after the separate V2.3 signal path study.
+
+## Latest Signal Path Study
+
+V2.3 does not pass the declared combined improvement gate; V2.2 remains the default. Standard: SNR +0.377 dB; delay -26.5%; handovers -7.8%; flight time +0.64%; consumed energy +0.19%. Failed gates: completion. Longer: SNR +0.284 dB; delay -19.5%; handovers -5.9%; flight time +0.35%; consumed energy +0.08%. Failed gates: completion.
+
+[Complete results and reproduction](59_signal_guard_results.md).
+
+## Earlier Study Status
 
 The current [paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf) contains
 V2 and its V1.5 original reward control, the separate V2.1 reward followup,

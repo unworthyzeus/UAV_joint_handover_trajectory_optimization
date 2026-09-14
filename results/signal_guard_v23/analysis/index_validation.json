@@ -1,0 +1,15 @@
+{
+  "frozen_sources": 38,
+  "unchanged_checkpoints": 20,
+  "new_study_artifacts_checked": 97,
+  "sample_archives_checked": 36,
+  "new_study_bytes": 26165650,
+  "historical_study_artifacts_checked": 183,
+  "historical_manifest_filtered_bytes_checked": 5,
+  "historical_manifest_git_blobs_unchanged": true,
+  "paper_inputs_checked": 20,
+  "paper_pdf_sha256": "853298aa536a0242fedd11717ba0a2e4b50da3f0ca2486719ba2840e03c6b96d",
+  "private_dataset_untracked": true,
+  "historical_results_unchanged_except_publication_audits": true,
+  "all_checked_git_blobs_match_working_files": true
+}

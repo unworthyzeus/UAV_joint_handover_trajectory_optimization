@@ -61,6 +61,14 @@ When adding research work, create or update a Markdown note that records:
     Do not label the all neighbor RSS power proxy as calibrated uplink, or
     the literal source energy recurrence as physical energy. All historical
     flights and unsuccessful candidates remain part of the record.
+14. Preserve every file hashed in `configs/frozen_signal_guard_v23.json`,
+    its development selection, source snapshots and reused checkpoint hashes.
+    V2.3 is a separately declared signal path selection rule on V2.2 with
+    fresh 56012/56013 tests, not new training or a reward replacement.
+    Notes 58–59 distinguish development from final evidence and retain the
+    rejected 3 m and 6 m candidates. Report each completion and service gate
+    and its declared uncertainty margin. Do not promote the candidate if
+    its combined gate fails, or retune it against those final routes.
 
 ## Implementation Rules
 

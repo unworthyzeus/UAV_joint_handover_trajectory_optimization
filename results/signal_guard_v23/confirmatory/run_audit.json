@@ -1,0 +1,154 @@
+{
+  "runs": [
+    {
+      "run": "confirmatory/signal_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "ef8e0a062347081e3b6b5fa324f9a37087c2430540273ff5e2f75b74810cad4f",
+      "samples_sha256": "1e84f2177c0ca4670b99805f8d6703039526fc0d60bbc5d02a50f3881fef8df3",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "74eee1a2ae71d4890819b57e337bb1349421d67d0053fed4bc60f12ddd6d318e",
+      "samples_sha256": "e01a41c844477a689c60b20e79329d47d299cc6f72e450b45dc0007d9a9c4919",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "07138812f6591ab69d3a78fbf7a117420dfb7f294336a04ddd62b50f621e09b9",
+      "samples_sha256": "89015f94ca12192f79c097119d5531e01457590aa627ce85243bb2295582f9fd",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "6562ee24a9915a226914564b8ec2ae509e1024ad3b3fcc123a2c20325fcc43ee",
+      "samples_sha256": "e2c867009ad6629ebaee83c41d2f07bdda9b3b8453e9739b0e5ffb5a62bacfb4",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "d33688c7ff19ae380c08135514d03fad021a2eaf2bf1f409f6ec3c086fd49165",
+      "samples_sha256": "1e7f8400cbb082cc8d6bb1e42e8eeac5902a3c04f8e260d73307382dcb4766d6",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "c14feaa66d237460196d0c8a1fc2a0d6ff9284862912c0a89ffe4ffd6247259a",
+      "samples_sha256": "4ec1feb25d2e433df287f280d84a36c96f7efb0710841f2944de1c4b98a2497a",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "0eae451c5e6d6dd10c21ef31032c047225a02f41b3fe35fbf081d8522d9e8897",
+      "samples_sha256": "295b3e45e9a382ef94ea8f685d6e164f9ea1e394b20a670908bedc03a78d3574",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "74252b0c0ea20ff6a7fc552c73b1717ac532a51abebfb081cd805b093dac73de",
+      "samples_sha256": "cb640b409bf5b75713be673973e66c179f528bd064e849859c56840e014a40bc",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "c4badd711ef598f7f3a380403fc2ba4c5f7a88ab982d4047ca1aecbff5224c48",
+      "samples_sha256": "fbcf412e2c23dc2799271d93f739d22128f0de214e7cf762838059d3638d2b2a",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/signal_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "c976703c6ad3c96670cf1266bbd096f04b99de11a46afd5e5308b9f221e422af",
+      "samples_sha256": "77bf347233f8b27a18d385570e79ca0ceff9d0cf042e42a8bf8a865432589709",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2101/longer_test",
+      "episodes": 500,
+      "record_sha256": "9cc6b377cb0db1249fc1b2c476fe58337634760baee5b26a5eb2639a407526eb",
+      "samples_sha256": "4f7f1ae2964ea969ebbbe82c408a1b6a84678dc8ab32ece9126d573d5b65c9df",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2101/test",
+      "episodes": 500,
+      "record_sha256": "b057fd138d4a60099c51e237e91b8c12ef8a508d33e5ab0e50c7893374e6263e",
+      "samples_sha256": "d20fd4e3b345f0d2ddae6e95902d889563a54923755541d753176097dd7b1a7c",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2102/longer_test",
+      "episodes": 500,
+      "record_sha256": "1027493b12f1bf0b241b93e02327979bc3f8b863c99c2698e05cb3e7d64cae7e",
+      "samples_sha256": "08004b73884da8a0a11af2d5511c13a04777b39aa0b58fc8c5b50fa462e4657a",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2102/test",
+      "episodes": 500,
+      "record_sha256": "e38415f3c5f6a8955f3ed6d883123886e2f43c773d287d63910e7a27554f5057",
+      "samples_sha256": "5ad1ccac58f785f1725da59b92d62577698cddcaa8017cb90bf8c25c41468c60",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2103/longer_test",
+      "episodes": 500,
+      "record_sha256": "bbbe06b633931f74217ce4a264a057c9afb38a62150ca9c477807f2818e91a15",
+      "samples_sha256": "7bd76847f8a6796eca7d03e9cb8526c8805943a7fdc2e52eaed43b0c0121e3f0",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2103/test",
+      "episodes": 500,
+      "record_sha256": "758c7f3d4cd3caeaeb92d3fa37c6af3bf4dcdca29515258ada9a0250b82f58b2",
+      "samples_sha256": "51ed3cfe698fec95900b334a8f296a4d4c6af7c2fb175add5769dae1db3f06dd",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2104/longer_test",
+      "episodes": 500,
+      "record_sha256": "6ee1356a2bf80053875ec1b319d12c4a7b76d077fe559b829f6d5642f839aa6e",
+      "samples_sha256": "9a38f6fc23e8189c4bc9fb0fd854bd95deae69eaadaf8a589f740d2d666a4ca6",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2104/test",
+      "episodes": 500,
+      "record_sha256": "129295c31e2a32669ab441ac63d05d9f4a976ba549e98af0d27f87af13f8e0a6",
+      "samples_sha256": "1ada20c0220f04a3794437c3fcdfde1238408bc84239b1b4fd562d7645b4a340",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2105/longer_test",
+      "episodes": 500,
+      "record_sha256": "eab66b41466a7e8454c1f16f3048f17450b224abbbed40f4f4b61ae0e004219b",
+      "samples_sha256": "eb5bdeb07c1f68ac6b7b2f669aaab392ff7f94793988a61fe2d757eb8bfaff4d",
+      "exact_replay": true
+    },
+    {
+      "run": "confirmatory/v22_seed_2105/test",
+      "episodes": 500,
+      "record_sha256": "81926f49ad74b4b3e26965c071011debd017ba6f8e21924e79b7b1a3eb72b972",
+      "samples_sha256": "7b7f504d70e12acae05319cb340734b63bbdbba310704c4e2a05f59847796ca2",
+      "exact_replay": true
+    }
+  ],
+  "episodes": 10000,
+  "workers": 6,
+  "all_exactly_replayed": true,
+  "source_hashes": {
+    "src/uav_joint_optimization/signal_guard.py": "f840fe93250a4aa2be058dd1f4392be86e1c32ca7f0f22b37999b059aa709d6c",
+    "scripts/run_signal_guard_study.py": "0f525e00360d9560c8e8266ae3d234c8c9901fc2f4f3b78b0230107b53a02a0f",
+    "scripts/analyze_signal_guard_study.py": "4794fe62b59ddd4ac4d8942490d1e099cc8fcda715d55ea4d7523981c85addb4",
+    "tests/test_signal_guard.py": "8d839dfe84d2d02fb3b03f56a050f8ff4bc72b9fae1a6a70c9841c5d6d8c5322",
+    "docs/58_signal_guard_protocol.md": "3bac3784cc28ba88a5d0d3064da92155defd78c997a541dae347df41ac871982"
+  }
+}

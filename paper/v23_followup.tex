@@ -1,0 +1,21 @@
+\twocolumn[{
+\section{Signal Aware Path Selection}
+\noindent\begin{minipage}{\textwidth}\centering\footnotesize
+\captionof{table}{Fresh V2.2 / V2.3 means on common successful pairs. Brackets give 95\% intervals for V2.3 minus V2.2. Higher SNR and lower other quantities are preferable.}
+\label{tab:v23metrics}
+\begin{tabular}{lrrrr}\toprule
+Metric & Standard & Difference interval & Longer & Difference interval\\\midrule
+SNR (dB) & 64.710 / 65.087 & [0.340, 0.415] & 64.696 / 64.979 & [0.245, 0.327]\\
+Delay (s) & 0.377 / 0.277 & [-0.120, -0.081] & 0.492 / 0.396 & [-0.119, -0.074]\\
+Handovers & 4.626 / 4.266 & [-0.449, -0.278] & 10.868 / 10.230 & [-0.786, -0.494]\\
+Flight time (s) & 28.579 / 28.762 & [0.132, 0.237] & 61.419 / 61.634 & [0.165, 0.266]\\
+Consumed energy (kJ) & 7.940 / 7.955 & [0.010, 0.020] & 19.437 / 19.453 & [0.010, 0.021]\\
+\bottomrule\end{tabular}\end{minipage}\vspace{1em}}]
+We next tested a separately declared path selection rule, V2.3, retaining V2.2\textquotesingle s five step rollouts, ten motion candidates, feasible strongest signal association and executed filter. Outside 50 m of the goal, it chooses a higher predicted mean SNR path only within a fixed rollout progress allowance and with no predicted increase in delay or handovers. No weights, reward, RSS requirement or buffer limit change. SNR still follows the source Eq.~(8) \cite[p.~10, Eq.~(8); p.~15, Table~3]{thesis}.
+Development used 128 standard and 64 longer new routes (56001/56002), with fixed policies 2101 and 2102. Allowances 1, 3 and 6 m were tested, totaling 1536 episodes including V2.2. Only 1 m qualified. It preserved 252/256 standard and 122/128 longer completions while increasing matched mean SNR by 0.421/0.297 dB and reducing delay and handovers. Both larger allowances lost standard completions and exceeded the 2\% standard time allowance; all candidates remain in note 59.
+After freezing source and selection, we generated 500 standard and 500 longer routes (56012/56013). Both controllers used all five unchanged full V2 policies, for 10000 final episodes. Every episode and sample array replayed exactly. No tuning followed the final tests. The 1 m allowance applies to predicted terminal progress within the same safety class, not total mission detour distance.
+Standard completion is 98.60\% / 98.56\% for V2.2/V2.3, difference -0.040 percentage points, 95\% interval [-0.600, 0.520].
+Longer completion is 93.72\% / 93.60\% for V2.2/V2.3, difference -0.120 percentage points, 95\% interval [-0.880, 0.720].
+The combined claim requires nonnegative completion differences with interval lower bounds above $-1$ percentage point in both splits; nonpositive delay and handover differences with upper bounds below 0.05 s and 0.25 switches; and time and energy increases below 2\%. Subject to these gates, the SNR lower bound must exceed 0.1 dB standard and zero longer. These are declared study margins, not source requirements or proof of equal reliability. Intervals use 5000 crossed policy/route bootstrap draws, seed 66000. Other metrics are descriptive and unadjusted.
+There are 2459 standard and 2325 longer common successful pairs. Every failure remains in completion denominators. Note 59 reports SINR, interference, all failures, sample medians and every policy seed.
+V2.3 fails the combined gate and is not promoted over V2.2. Failed gates: test completion, longer test completion. Both completion intervals include zero and exclude a loss of one percentage point. The conservative nonnegative point requirement fails; a completion decrease is not statistically resolved.

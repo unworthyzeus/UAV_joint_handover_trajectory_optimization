@@ -1,0 +1,19 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.3.5",
+  "torch": "2.4.1+cpu",
+  "h5py": "3.16.0",
+  "matplotlib": "3.9.0",
+  "worker_torch_threads": 1,
+  "final_workers": 6,
+  "inference_device": "cpu",
+  "historical_manifest_checkout_hash_checks": {
+    "frozen_comparison_v1.json": true,
+    "frozen_connectivity_v2.json": true,
+    "frozen_reward_comparison_v15.json": true,
+    "frozen_service_reward_v21.json": true,
+    "frozen_thesis_metrics_v22.json": true
+  },
+  "note": "Historical manifests use explicit CRLF checkout attributes to preserve the bytes hashed before final evaluation on every platform."
+}

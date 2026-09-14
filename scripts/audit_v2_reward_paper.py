@@ -35,8 +35,11 @@ def main():
                                   "line": source.count("\n", 0, match.start()) + 1,
                                   "locator": match[1]})
     freezes = {}
-    for name in ("frozen_comparison_v1.json", "frozen_connectivity_v2.json", "frozen_reward_comparison_v15.json",
-                 "frozen_service_reward_v21.json", "frozen_thesis_metrics_v22.json"):
+    freeze_names = ["frozen_comparison_v1.json", "frozen_connectivity_v2.json", "frozen_reward_comparison_v15.json",
+                    "frozen_service_reward_v21.json", "frozen_thesis_metrics_v22.json"]
+    if (ROOT/'configs/frozen_signal_guard_v23.json').exists():
+        freeze_names.append('frozen_signal_guard_v23.json')
+    for name in freeze_names:
         manifest = json.loads((ROOT / "configs" / name).read_text())
         freezes[name] = {p: digest(ROOT / p) == value
                          for p, value in manifest["source_hashes"].items()}
@@ -101,6 +104,20 @@ def main():
     assert guard['total_evaluated_episodes'] == guard_replay['exact_episode_and_metric_matches'] == 23000
     assert guard_replay['all_sample_arrays_exact']
     assert '55012/55013' in text and 'V2.2' in text and '78.41' in text
+    signal = None
+    if (ROOT/'results/signal_guard_v23/analysis/statistics.json').exists():
+        signal = json.loads((ROOT/'results/signal_guard_v23/analysis/statistics.json').read_text())
+        signal_replay = json.loads((ROOT/'results/signal_guard_v23/confirmatory/run_audit.json').read_text())
+        assert signal_replay['episodes'] == 10000 and signal_replay['all_exactly_replayed']
+        assert '56012/56013' in text and 'V2.3' in text
+        for sp, d in signal['contrasts'].items():
+            for side in ('baseline', 'candidate'):
+                assert f"{100*d[side+'_successes']/d['episodes_per_arm']:.2f}" in text
+            for key, scale in [('snr_mean_db', 1), ('delay_proxy_mean_s', 1), ('handovers', 1),
+                               ('time_s', 1), ('energy_proxy_j', .001)]:
+                for side in ('baseline', 'candidate'):
+                    assert f"{d['metrics'][key][side+'_mean']*scale:.3f}" in text
+        assert ('passes the combined gate' if signal['combined_improvement_gate'] else 'fails the combined gate') in text
     for arm in ('original', 'full', 'service', 'guard', 'straight_radio', 'joint_mpc', 'joint_lookahead'):
         for split in ('test', 'longer_test'):
             assert f"{100*guard['groups'][arm+'_'+split]['success_rate']:.2f}" in text
@@ -204,9 +221,17 @@ def main():
               "scope": "One paper with the initial V1.5/V2 comparison, separate V2.1 reward and V2.2 supervisor studies, and source metric recovery. Historical V1 excluded; all outcomes retained."}
     if previous.get("pdf_sha256") == report["pdf_sha256"]:
         report["visual_review"] = previous.get("visual_review", report["visual_review"])
+    if signal is not None:
+        report['signal_followup'] = {'episodes': 10000, 'development_episodes': 1536,
+            'selected_allowance_m': signal['selected_allowance_m'],
+            'combined_improvement_gate': signal['combined_improvement_gate'],
+            'statistics_sha256': digest(ROOT/'results/signal_guard_v23/analysis/statistics.json'),
+            'replay_audit_sha256': digest(ROOT/'results/signal_guard_v23/confirmatory/run_audit.json'),
+            'report_builder_sha256': digest(ROOT/'scripts/build_signal_guard_report.py')}
+        report['scope'] += ' Includes the separate frozen V2.3 signal path study and every declared development candidate.'
     report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"pages": len(pdf), "tfm_citations": len(citations),
-                      "fonts": len(fonts), "all_five_freezes_match": True,
+                      "fonts": len(fonts), "all_source_freezes_match": True, "source_freezes_checked": len(freezes),
                       "visual_review": report["visual_review"]}))
 
 

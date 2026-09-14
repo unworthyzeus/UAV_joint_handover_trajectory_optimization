@@ -4,8 +4,9 @@
 is the current paper, **Reward and Controller Comparisons for Cellular UAVs
 under Shared Connectivity Constraints**, by Guillem Moreno Garcia and Evgenii Vinogradov.
 It contains the V2/V1.5 original reward comparison and a separately declared
-V2.1 service reward followup and a V2.2 fixed weight supervisor study with
-additional thesis metrics. It is an IEEE format research draft, not an
+V2.1 service reward followup, a V2.2 fixed weight supervisor study with
+additional thesis metrics, and the separate V2.3 signal path comparison.
+It is an IEEE format research draft, not an
 accepted publication.
 
 The study uses **the same Barcelona ray tracing dataset as the original
@@ -22,7 +23,8 @@ all failures and does not claim overall PPO or reward superiority.
 
 The initial comparison tables use route seeds 53012 and 53013. The V2.1
 followup tables use new 54012/54013 routes and report its own completion and
-service results. The V2.2 study uses fresh 55012/55013 routes. These three
+service results. The V2.2 study uses fresh 55012/55013 routes and V2.3 uses
+56012/56013. These four
 samples are not pooled. The earlier arrival study is
 absent from the final paper. All twenty final weights are included in Git;
 the private map is still required separately. See the
@@ -47,6 +49,13 @@ the uncalibrated uplink and energy quantities are explained in
 [note 52](../docs/52_recovered_thesis_metrics.md). The supervisor adds no weights;
 its [usage guide](../docs/54_thesis_metrics_reproduction.md) includes saved and custom routes.
 
+The [V2.3 results and usage](../docs/59_signal_guard_results.md) compare the
+selected 1 m signal path allowance with V2.2 using all five existing full V2
+policies. The complete 10,000 episode final comparison is separate from
+the 1,536 episode development study. The paper retains every selection
+decision and reports the combined completion, service and SNR gate.
+No additional weights or new training were introduced.
+
 ## Sources and Generated Artifacts
 
 - `unified.tex`: main file, source requirements and shared V2 model.
@@ -56,9 +65,11 @@ its [usage guide](../docs/54_thesis_metrics_reproduction.md) includes saved and 
 - `v15_macros.tex` and `v15_*_table.tex`: generated from verified fresh results.
 - `v21_followup.tex`, `v21_abstract.tex`, `v21_conclusion.tex` and `v21_seed_table.tex`: generated from the separate V2.1 analysis.
 - `v22_followup.tex`, `v22_abstract.tex`, `v22_conclusion.tex` and `v22_seed_table.tex`: generated from the separate supervisor and metric analysis.
+- `v23_followup.tex`, `v23_abstract.tex`, `v23_conclusion.tex` and `v23_seed_table.tex`: generated from the frozen signal path comparison.
 - `../results/reward_comparison/analysis_v15/`: statistics, three figures and paper audit.
 - `../results/service_reward_v21/`: pilot outcomes, final weights, fresh records, analysis and exact replay.
 - `../results/thesis_metrics_v22/`: all supervisor pilots, fresh results, recovered initial metrics, sample arrays and replay verification.
+- `../results/signal_guard_v23/`: every signal path candidate, final episode and sample arrays, source snapshots, analysis and exact replay.
 
 The trajectory illustration now uses the longest of the 200 declared longer
 test routes: 1,784.7 m, selected by geometry without filtering on outcomes.

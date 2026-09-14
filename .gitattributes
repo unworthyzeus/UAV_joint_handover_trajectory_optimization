@@ -74,3 +74,23 @@ results/tables/reward_alignment_diagnostic.json text=auto
 paper/*.tex -text
 # Retain the historical appendix's final blank line without rewriting its source.
 paper/thesis_comparison.tex whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve the separately declared signal path selection study and snapshots.
+src/uav_joint_optimization/signal_guard.py -text
+scripts/run_signal_guard_study.py -text
+scripts/analyze_signal_guard_study.py -text
+tests/test_signal_guard.py -text
+docs/58_signal_guard_protocol.md -text
+configs/signal_guard_development_v23.json -text
+configs/signal_guard_scenarios_v23.json -text
+configs/frozen_signal_guard_v23.json -text
+scripts/build_signal_guard_report.py -text
+scripts/evaluate_signal_guard_controller.py -text
+
+# V2.3 records hashes of the existing manifest bytes as read on Windows.
+# Reconstruct those same bytes on every platform without changing Git blobs.
+configs/frozen_comparison_v1.json text eol=crlf
+configs/frozen_connectivity_v2.json text eol=crlf
+configs/frozen_reward_comparison_v15.json text eol=crlf
+configs/frozen_service_reward_v21.json text eol=crlf
+configs/frozen_thesis_metrics_v22.json text eol=crlf

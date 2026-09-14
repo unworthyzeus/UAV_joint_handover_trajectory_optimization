@@ -1,0 +1,39 @@
+{
+  "frozen_utc": "2026-09-14T10:03:08.313003+00:00",
+  "study": "signal_guard_v23",
+  "selected_allowance_m": 1,
+  "source_hashes": {
+    "src/uav_joint_optimization/signal_guard.py": "f840fe93250a4aa2be058dd1f4392be86e1c32ca7f0f22b37999b059aa709d6c",
+    "scripts/run_signal_guard_study.py": "0f525e00360d9560c8e8266ae3d234c8c9901fc2f4f3b78b0230107b53a02a0f",
+    "scripts/analyze_signal_guard_study.py": "4794fe62b59ddd4ac4d8942490d1e099cc8fcda715d55ea4d7523981c85addb4",
+    "tests/test_signal_guard.py": "8d839dfe84d2d02fb3b03f56a050f8ff4bc72b9fae1a6a70c9841c5d6d8c5322",
+    "docs/58_signal_guard_protocol.md": "3bac3784cc28ba88a5d0d3064da92155defd78c997a541dae347df41ac871982"
+  },
+  "scenarios_sha256": "e76e021f81d53753997f948ab5bd9223245e6f56065a4e7bf65bb3469b0d838a",
+  "development_scenarios_sha256": "4741be259772116d421fae9d32f95281d7baafc87ac7586622a219b8010cfef9",
+  "selection_sha256": "24b72ce8ba6bd852bdf5a8a6dab57ce67608d26abdc7f680dff02120136ccd79",
+  "dataset_sha256": "d4630dd3a6c45419e12d0b60dd08473c4ffa4062ca4fab1decabecf2b992ea0d",
+  "historical_manifest_hashes": {
+    "frozen_comparison_v1.json": "c94d2de9398c11e4317a9ae2028c1adb3b36101e2f54da1d714165bc3b8a4627",
+    "frozen_connectivity_v2.json": "a074a0ec8ec3a23f58ec8ed4ebb7dfe6590e19492c978f581db819e486f4029d",
+    "frozen_reward_comparison_v15.json": "a0c47d4997f7d8b8fee742bec7568d33b62f5f772daeff9cc194187107ea1401",
+    "frozen_service_reward_v21.json": "ab15db61237f746cf24a69e963cd9e3d94eefeb5f9ea17054d6dadf36a2aa82c",
+    "frozen_thesis_metrics_v22.json": "8f37320788498ede48ec3a930f12af5127a16259cb0d381c412120ce5c0f052c"
+  },
+  "reused_checkpoint_hashes": {
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2101/checkpoint.pt": "fc2566064cfd9911dd850c8c07e2c1abc8bbe65e75e8892e08a47f52ddde598b",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2102/checkpoint.pt": "e67e72220be579a30c5e957ba845a47cb45c4f74205591def759d54916dfc0a1",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2103/checkpoint.pt": "d69ff23301aac166073dcb91bfdfa80510bd978ce9e9388364bdf23b12c00b88",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2104/checkpoint.pt": "4a072dbb175955290c69ebe55210be31cecc1eaef694f61e8710fc762d77f28e",
+    "results/connectivity_experiment/confirmatory_v2/full_seed_2105/checkpoint.pt": "45252100f99c1104b7901e54f8195feb6108d9f604c5e43acda7d0779905ab16"
+  },
+  "seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105
+  ],
+  "bootstrap_seed": 66000,
+  "bootstrap_draws": 5000
+}

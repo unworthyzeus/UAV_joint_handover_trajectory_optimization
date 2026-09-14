@@ -1,0 +1,434 @@
+{
+  "completed_utc": "2026-09-14T10:02:54.657575+00:00",
+  "selected_allowance_m": 1,
+  "candidates": {
+    "signal_1": {
+      "test": {
+        "candidate_successes": 252,
+        "baseline_successes": 252,
+        "episodes_per_arm": 256,
+        "common_successes": 252,
+        "success_difference_pp": 0.0,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 65.0026464222005,
+            "baseline_mean": 64.58152570942235,
+            "difference": 0.4211207127781553
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -5.224784311912362,
+            "baseline_mean": -5.637040487002759,
+            "difference": 0.4122561750903962
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.2729470817398789,
+            "baseline_mean": 0.4121870242713988,
+            "difference": -0.13923994253151986
+          },
+          "handovers": {
+            "candidate_mean": 3.9523809523809526,
+            "baseline_mean": 4.444444444444445,
+            "difference": -0.49206349206349204
+          },
+          "time_s": {
+            "candidate_mean": 28.206349206349206,
+            "baseline_mean": 27.98015873015873,
+            "difference": 0.2261904761904762
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 7729.698075551835,
+            "baseline_mean": 7710.425405350942,
+            "difference": 19.272670200892858
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 92.2703021216014,
+            "baseline_mean": 92.28957418411497,
+            "difference": -0.01927206251356337
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.557217991393298e-07,
+            "baseline_mean": 5.541844424240035e-07,
+            "difference": 1.5373567153261454e-09
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.3413287776479623,
+            "baseline_mean": 1.3397585586014897,
+            "difference": 0.0015702190464728415
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.13752049300085945,
+            "baseline_mean": 0.1576340076347011,
+            "difference": -0.020113514633841617
+          },
+          "path_m": {
+            "candidate_mean": 545.3325671846904,
+            "baseline_mean": 544.2853545537071,
+            "difference": 1.047212630983383
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 2.7839978112348542,
+            "baseline_mean": 3.175253146815941,
+            "difference": -0.39125533558108627
+          }
+        },
+        "selection_gate": true
+      },
+      "longer_test": {
+        "candidate_successes": 122,
+        "baseline_successes": 122,
+        "episodes_per_arm": 128,
+        "common_successes": 122,
+        "success_difference_pp": 0.0,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 64.90731896492606,
+            "baseline_mean": 64.61030454119005,
+            "difference": 0.29701442373602555
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -5.466681550760738,
+            "baseline_mean": -5.770285134432746,
+            "difference": 0.30360358367200757
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.3605536105490671,
+            "baseline_mean": 0.4632464176352839,
+            "difference": -0.10269280708621695
+          },
+          "handovers": {
+            "candidate_mean": 10.28688524590164,
+            "baseline_mean": 10.975409836065573,
+            "difference": -0.6885245901639344
+          },
+          "time_s": {
+            "candidate_mean": 60.60655737704918,
+            "baseline_mean": 60.295081967213115,
+            "difference": 0.3114754098360656
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 19057.635446016906,
+            "baseline_mean": 19032.583992379612,
+            "difference": 25.051453637295083
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 80.94236430183786,
+            "baseline_mean": 80.96741635682153,
+            "difference": -0.025052054983670594
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.551291334229348e-07,
+            "baseline_mean": 5.554984010997278e-07,
+            "difference": -3.6926767679300356e-10
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.37063085474499,
+            "baseline_mean": 1.3704721319958622,
+            "difference": 0.00015872274912804787
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.17010305149241828,
+            "baseline_mean": 0.18241257550403392,
+            "difference": -0.01230952401161564
+          },
+          "path_m": {
+            "candidate_mean": 1354.6260060795018,
+            "baseline_mean": 1353.4633313788743,
+            "difference": 1.1626747006275615
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 7.039781865544104,
+            "baseline_mean": 7.633220017241974,
+            "difference": -0.5934381516978684
+          }
+        },
+        "selection_gate": true
+      }
+    },
+    "signal_3": {
+      "test": {
+        "candidate_successes": 250,
+        "baseline_successes": 252,
+        "episodes_per_arm": 256,
+        "common_successes": 250,
+        "success_difference_pp": -0.78125,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 65.54799390936466,
+            "baseline_mean": 64.58896243122676,
+            "difference": 0.9590314781379143
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -4.691692899823189,
+            "baseline_mean": -5.653303459763527,
+            "difference": 0.9616105599403382
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.11704281891114528,
+            "baseline_mean": 0.4154207308671665,
+            "difference": -0.2983779119560212
+          },
+          "handovers": {
+            "candidate_mean": 3.372,
+            "baseline_mean": 4.424,
+            "difference": -1.052
+          },
+          "time_s": {
+            "candidate_mean": 28.528,
+            "baseline_mean": 27.956,
+            "difference": 0.572
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 7751.310508789063,
+            "baseline_mean": 7701.1255703125,
+            "difference": 50.1849384765625
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 92.24868966674805,
+            "baseline_mean": 92.2988740234375,
+            "difference": -0.050184356689453126
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.554507205251975e-07,
+            "baseline_mean": 5.563995742551562e-07,
+            "difference": -9.488537299588198e-10
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.3455648505552271,
+            "baseline_mean": 1.3452340159944378,
+            "difference": 0.0003308345607895652
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.11708888224062719,
+            "baseline_mean": 0.15708862808287546,
+            "difference": -0.039999745842248274
+          },
+          "path_m": {
+            "candidate_mean": 548.3199006958008,
+            "baseline_mean": 543.6016742553711,
+            "difference": 4.718226440429688
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 2.2124523038610366,
+            "baseline_mean": 3.177264841392802,
+            "difference": -0.964812537531765
+          }
+        },
+        "selection_gate": false
+      },
+      "longer_test": {
+        "candidate_successes": 123,
+        "baseline_successes": 122,
+        "episodes_per_arm": 128,
+        "common_successes": 120,
+        "success_difference_pp": 0.78125,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 65.9480259127345,
+            "baseline_mean": 64.61720752821499,
+            "difference": 1.3308183845194999
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -4.462234030167262,
+            "baseline_mean": -5.787716878453891,
+            "difference": 1.3254828482866288
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.08358107900420059,
+            "baseline_mean": 0.46587734770037215,
+            "difference": -0.38229626869617156
+          },
+          "handovers": {
+            "candidate_mean": 7.275,
+            "baseline_mean": 11.025,
+            "difference": -3.75
+          },
+          "time_s": {
+            "candidate_mean": 61.483333333333334,
+            "baseline_mean": 60.35,
+            "difference": 1.1333333333333333
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 19190.33955078125,
+            "baseline_mean": 19050.491796875,
+            "difference": 139.84775390625
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 80.80965995788574,
+            "baseline_mean": 80.9495085398356,
+            "difference": -0.1398485819498698
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.584538171967518e-07,
+            "baseline_mean": 5.582565436473233e-07,
+            "difference": 1.9727354942862846e-10
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.3849616203509352,
+            "baseline_mean": 1.376386640444537,
+            "difference": 0.008574979906398151
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.11775944114783701,
+            "baseline_mean": 0.1831403383779503,
+            "difference": -0.06538089723011326
+          },
+          "path_m": {
+            "candidate_mean": 1365.8781748453775,
+            "baseline_mean": 1354.6970606486002,
+            "difference": 11.181114196777344
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 4.671908475824717,
+            "baseline_mean": 7.668041936701326,
+            "difference": -2.9961334608766106
+          }
+        },
+        "selection_gate": true
+      }
+    },
+    "signal_6": {
+      "test": {
+        "candidate_successes": 250,
+        "baseline_successes": 252,
+        "episodes_per_arm": 256,
+        "common_successes": 250,
+        "success_difference_pp": -0.78125,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 65.75702221644626,
+            "baseline_mean": 64.58896243122676,
+            "difference": 1.1680597852194987
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -4.500647030621767,
+            "baseline_mean": -5.653303459763527,
+            "difference": 1.1526564291417598
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.09268580912145219,
+            "baseline_mean": 0.4154207308671665,
+            "difference": -0.3227349217457143
+          },
+          "handovers": {
+            "candidate_mean": 3.212,
+            "baseline_mean": 4.424,
+            "difference": -1.212
+          },
+          "time_s": {
+            "candidate_mean": 29.152,
+            "baseline_mean": 27.956,
+            "difference": 1.196
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 7728.970982421875,
+            "baseline_mean": 7701.1255703125,
+            "difference": 27.845412109375
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 92.27102835083008,
+            "baseline_mean": 92.2988740234375,
+            "difference": -0.027845672607421875
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.584431096885687e-07,
+            "baseline_mean": 5.563995742551562e-07,
+            "difference": 2.043535433412522e-09
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.3469530696446574,
+            "baseline_mean": 1.3452340159944378,
+            "difference": 0.0017190536502197688
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.10937504785651168,
+            "baseline_mean": 0.15708862808287546,
+            "difference": -0.04771358022636377
+          },
+          "path_m": {
+            "candidate_mean": 550.6985187377929,
+            "baseline_mean": 543.6016742553711,
+            "difference": 7.096844482421875
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 2.051335821218023,
+            "baseline_mean": 3.177264841392802,
+            "difference": -1.125929020174779
+          }
+        },
+        "selection_gate": false
+      },
+      "longer_test": {
+        "candidate_successes": 120,
+        "baseline_successes": 122,
+        "episodes_per_arm": 128,
+        "common_successes": 118,
+        "success_difference_pp": -1.5625,
+        "metrics": {
+          "snr_mean_db": {
+            "candidate_mean": 66.17591648512006,
+            "baseline_mean": 64.62165561181212,
+            "difference": 1.5542608733079468
+          },
+          "sinr_mean_db": {
+            "candidate_mean": -4.264553285756354,
+            "baseline_mean": -5.80794751947209,
+            "difference": 1.5433942337157363
+          },
+          "delay_proxy_mean_s": {
+            "candidate_mean": 0.054681697426172786,
+            "baseline_mean": 0.4718880351952227,
+            "difference": -0.4172063377690499
+          },
+          "handovers": {
+            "candidate_mean": 6.677966101694915,
+            "baseline_mean": 11.067796610169491,
+            "difference": -4.389830508474576
+          },
+          "time_s": {
+            "candidate_mean": 63.601694915254235,
+            "baseline_mean": 60.59322033898305,
+            "difference": 3.0084745762711864
+          },
+          "energy_proxy_j": {
+            "candidate_mean": 19222.18918829449,
+            "baseline_mean": 19137.32216631356,
+            "difference": 84.86702198093221
+          },
+          "remaining_energy_kj": {
+            "candidate_mean": 80.77781108274299,
+            "baseline_mean": 80.86267820455261,
+            "difference": -0.08486712180961997
+          },
+          "interference_mean_w": {
+            "candidate_mean": 5.617568569442064e-07,
+            "baseline_mean": 5.606775803847533e-07,
+            "difference": 1.0792765594530295e-09
+          },
+          "neighbor_rss_power_mean_uw": {
+            "candidate_mean": 1.3882132259642073,
+            "baseline_mean": 1.382827433591141,
+            "difference": 0.005385792373065812
+          },
+          "handovers_per_second": {
+            "candidate_mean": 0.1045043066531715,
+            "baseline_mean": 0.18335178051542544,
+            "difference": -0.07884747386225396
+          },
+          "path_m": {
+            "candidate_mean": 1379.8325862561242,
+            "baseline_mean": 1360.9277648925781,
+            "difference": 18.90482136354608
+          },
+          "radio_cost_sum": {
+            "candidate_mean": 4.303859926503121,
+            "baseline_mean": 7.700240529675167,
+            "difference": -3.3963806031720436
+          }
+        },
+        "selection_gate": false
+      }
+    }
+  },
+  "final_test_opened": false,
+  "development_only": true
+}

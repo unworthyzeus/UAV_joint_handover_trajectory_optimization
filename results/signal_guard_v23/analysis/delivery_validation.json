@@ -1,0 +1,23 @@
+{
+  "scope": "Final signal path study, every development candidate and current publications.",
+  "source_protocol_files_preserved": 38,
+  "checkpoints_preserved": 20,
+  "new_weights": 0,
+  "new_ppo_training": false,
+  "development_episodes_checked": 1536,
+  "final_episodes_checked_and_exactly_replayed": 10000,
+  "sample_arrays_checked": 36,
+  "new_means_checked": 48,
+  "new_difference_intervals_checked": 24,
+  "pooled_sample_medians_checked": 4,
+  "tests_passed": 100,
+  "test_log_sha256": "7cddb4b83d1447ff5fca54f0408253ca738f6631dff15ea93dde84c07d9f51d3",
+  "combined_improvement_gate": false,
+  "selected_allowance_m": 1,
+  "readme_tables_with_original_comparison": 25,
+  "local_links_checked": 123,
+  "paper_sha256": "853298aa536a0242fedd11717ba0a2e4b50da3f0ca2486719ba2840e03c6b96d",
+  "paper_pages": 11,
+  "paper_visual_review": "Passed: reviewed all 11 rendered pages and both contact sheets; inspected the new section and appendix at full size. Tables, figures, captions, equations and citations are legible with no clipping or overlap. The V2.3 table appears with its explanation on page 10; all policy seeds remain in the appendix.",
+  "private_dataset_untracked": true
+}

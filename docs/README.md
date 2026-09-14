@@ -7,7 +7,8 @@ status or preliminary hypotheses from being mistaken for current findings.
 ## Current V2 Study and Original Reward Control
 
 The current paper contains the V2/V1.5 comparison, the separately declared
-V2.1 service reward followup, and the V2.2 supervisor and metric study.
+V2.1 service reward followup, the V2.2 supervisor and metric study, and the
+separate V2.3 signal path comparison on fresh 56012/56013 routes.
 The [root README](../README.md) is the main entry point for current results.
 V1.5 is the original written reward
 on the complete V2 system. The initial comparison does not establish improved
@@ -29,6 +30,12 @@ fresh 55012/55013 routes using the unchanged full V2 weights. It is a
 controller intervention, not new training or a reward comparison. Notes
 51-54 retain the source consistency audit, all candidates, final results,
 failure counts, five policy seeds and reproduction instructions.
+
+The V2.3 study keeps the V2.2 system and chooses among similar progress paths
+using predicted SNR, delay and handovers. A 1 m rollout allowance qualified
+on new development routes; the rejected 3 m and 6 m candidates remain in
+the record. [Note 59](59_signal_guard_results.md) reports the complete final
+comparison, every gate, every policy seed and a command for custom routes.
 
 The supplied Barcelona HDF5 is **the same dataset used in the original
 thesis**. [Note 43](43_confirmed_thesis_dataset_identity.md) records the
@@ -58,6 +65,8 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [55: V2.2 delivery verification](55_thesis_metrics_delivery.md) | Source and weight preservation, exact replay, metric audit and final paper review |
 | [56: Current SNR comparison](56_snr_comparison_clarification.md) | Existing V2.2 SNR improvement, matched CDF medians and separation of the unverified source scale |
 | [57: Original SNR recovery attempt](57_source_snr_recovery.md) | Digitized source medians, a conditional noise correction and what remains unverified |
+| [58: Signal path protocol](58_signal_guard_protocol.md) | Declared candidates, new development and test splits, completion and service gates |
+| [59: Signal path results and usage](59_signal_guard_results.md) | All V2.3 outcomes, rejected candidates, exact replay, existing weights and custom routes |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 
