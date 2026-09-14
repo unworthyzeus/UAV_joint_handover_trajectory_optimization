@@ -10,6 +10,7 @@ import numpy as np
 
 from audit_service_delivery import tables
 from build_thesis_metrics_report import METRICS, NAMES, interval_text
+from report_snr_comparison import recover as recover_snr
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT/'results/thesis_metrics_v22'
@@ -122,12 +123,28 @@ def main():
             d = recovered[split]['metrics'][key]
             assert row[ix] == f"{d['original_mean']:.3f} / {d['full_mean']:.3f}"
     cdf = next(r for r in source[2:] if r[0].startswith('SNR sample CDF'))
+    assert cdf[1:3] == ['NR as a verified Eq. (8) result']*2
+    source_snr = next(r for r in source[2:] if r[0].startswith('Source plotted SNR'))
+    assert source_snr[3:5] == ['NC: unverified source scale']*2
+    assert '≈124 / ≈127' in source_snr[1] and '≈122-123' in source_snr[2]
     for ix, split in ((3, 'test'), (4, 'longer_test')):
         d = recovered[split]['step_cdf_medians']
         assert cdf[ix] == f"Pooled sample median {d['original']['snr_db']:.3f} / {d['full']['snr_db']:.3f}"
+    snr = load(BASE/'analysis/snr_comparison.json')
+    assert snr == recover_snr()
+    snr_table = next(t for t in ts if t[0][0] == 'SNR statistic and preferred direction')
+    assert len(snr_table) == 6
+    for offset, split in ((2, 'test'), (4, 'longer_test')):
+        d = snr['splits'][split]
+        for ix, metric in ((offset, 'mean_flight_snr_db'), (offset+1, 'pooled_sample_median_db')):
+            assert 'higher is better' in snr_table[ix][0]
+            assert snr_table[ix][1:3] == [f"{d[arm][metric]:.3f}" for arm in ('full', 'guard')]
+        assert snr_table[offset][3] == f"{d['mean_difference_db']:+.3f}; 95% interval {interval_text(d['mean_difference_ci95_db'])}"
+        delta = d['guard']['pooled_sample_median_db']-d['full']['pooled_sample_median_db']
+        assert snr_table[offset+1][3] == f"{delta:+.3f}; descriptive"
     assert '78.41' in readme and 'same Barcelona ray tracing dataset' in readme
     paths = ['README.md', 'docs/README.md', 'docs/12_task_status.md', 'paper/README.md']
-    paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'docs').glob('5[1-5]_*.md')]
+    paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'docs').glob('5[1-6]_*.md')]
     links = 0
     for name in paths:
         p = ROOT/name; text = p.read_text(encoding='utf-8'); tables(text)
@@ -161,6 +178,8 @@ def main():
         test_log_sha256=sha(tests), readme_tables_with_original_comparisons=len(ts),
         new_success_values_checked=14, new_service_means_checked=40, new_service_intervals_checked=20,
         initial_recovered_means_checked=16, initial_cdf_medians_checked=4, local_links_checked=links,
+        current_snr_means_checked=4, current_snr_medians_checked=4, current_snr_source_files_checked=40,
+        unverified_source_snr_scale_separated=True,
         paper_pages=paper['pages'], paper_sha256=paper['pdf_sha256'], paper_visual_review=paper['visual_review'],
         primary_completion_improvement=s['primary_completion_improvement'],
         primary_delay_no_regression=s['primary_delay_no_regression'],

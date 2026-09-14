@@ -418,3 +418,19 @@ source consistency findings, complete results, model usage and delivery audit.
 No further controller tuning followed the fresh tests. Future work needs
 independent route or map tests and declared component ablations, including
 the additional computation and any benefit attributable to the PPO proposal.
+
+## 2026-09-14: Identify the Current SNR Improvement
+
+The user highlighted the source SNR comparison row and asked whether it
+should improve. That row represented initial V1.5/full V2 flights, not
+V2.2. Separated unverified original plot readings from valid Eq. (8)
+measurements and added a current full V2/V2.2 SNR table to the README.
+
+On existing fresh common successes, the pooled sample median rises from
+62.41 to 65.41 dB in both splits. The previously reported mean gains remain
+2.429 and 2.662 dB. The two statistics use different weighting and are
+reported in separate rows. No controller, trajectory, frozen statistic,
+checkpoint or paper changed. The new report records all input hashes and
+sample counts; note 56 explains the source inconsistency and why the map
+maximum is not a universal mission average target. Future tuning still
+requires new evaluation routes and must preserve completion and service.

@@ -1,15 +1,19 @@
 """Integrate the current metric recovery and fresh controller results."""
 import json
 from pathlib import Path
+from report_snr_comparison import write_report as write_snr_report
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT/'results/thesis_metrics_v22'
 
 
 def main():
+    write_snr_report()
     p = ROOT/'README.md'; text = p.read_text(encoding='utf-8')
     initial = json.loads((BASE/'analysis/initial_recovered_metrics.json').read_text())
     fragment = (BASE/'analysis/readme_fragment.md').read_text(encoding='utf-8')
+    snr_fragment = (BASE/'analysis/snr_readme_fragment.md').read_text(encoding='utf-8')
+    fragment += '\n'+snr_fragment
     heading = '## Recovered Thesis Metrics and V2.2 Controller Test'
     if heading in text:
         start = text.index(heading); end = text.index('\n## ', start+len(heading))
@@ -28,17 +32,26 @@ def main():
         d = initial[split]['metrics'][key]
         return f"{d['original_mean']:.3f} / {d['full_mean']:.3f}"
     for line in table:
+        if line.startswith('| Source plotted SNR '):
+            continue
         if line.startswith(added_names):
             continue
         if line.startswith('| Source SNR ') or line.startswith('| SNR sample CDF '):
             cells = line.split('|')
             cells[1] = ' SNR sample CDF median (dB): higher is better '
+            cells[2] = ' NR as a verified Eq. (8) result '
+            cells[3] = ' NR as a verified Eq. (8) result '
             for ix, split in [(4, 'test'), (5, 'longer_test')]:
                 d = initial[split]['step_cdf_medians']
                 cells[ix] = f" Pooled sample median {d['original']['snr_db']:.3f} / {d['full']['snr_db']:.3f} "
-            cells[6] = (' Eq. (8) is now evaluated on our unchanged flights. Its maximum possible value on this map is '
-                        '78.41 dB, below the source plotted medians. Source inputs or implementation are inconsistent; '
-                        'its CDF aggregation is also unspecified [pp. 10, 15, 18, 20]. ')
+            cells[6] = (' Valid Eq. (8) measurements on the initial V1.5/full V2 flights. V2.2 is not in these two columns; '
+                        'see the [current SNR comparison](#snr-comparison-for-the-current-controller). '
+                        'The unverified source plot scale is retained separately above. ')
+            revised.append('| Source plotted SNR median (dB): higher is better only if the scale is valid | '
+                'Unverified CDF median ≈124 / ≈127 | Unverified CDF median ≈122-123 for all three | '
+                'NC: unverified source scale | NC: unverified source scale | '
+                'These plot readings exceed the 78.41 dB maximum implied by the stated equation, noise settings and same map. '
+                'They are not a valid target for model improvement [p. 10, Eq. (8); p. 15, Table 3; pp. 18, 20, Figs. 6/8]. |')
             line = '|'.join(cells)
             revised.append(line)
             revised.append('| Mean SNR (dB): higher is better | NR as a per flight mean | NR as a per flight mean | '+

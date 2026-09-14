@@ -1,0 +1,84 @@
+{
+  "scope": "Reporting only: existing 55012/55013 flights, common successful full V2/V2.2 pairs.",
+  "statistics_sha256": "8fbd58b78891a31fc25b68b3e384d2091783ad97988870a08ef897030c251521",
+  "source_hashes": {
+    "results/thesis_metrics_v22/confirmatory/full_seed_2101/test.json": "0639b0ae675e86999a8ba09a96d51b4c860903ed860b814eed5f47d63eb3bb96",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2101/test.npz": "c3a0c7203dcc9f94ba5792a8dfe487d0b58ffef316609a94ffb016b56ed477dd",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2101/test.json": "130922ed1713b3404880a3fa69cf32e9ead58489042d7695ee5236ef20c1f5c5",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2101/test.npz": "d18dd92c2616bb82a03705cd6557290dbbfc8931da5b012b8a03ec09197c995b",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2102/test.json": "3f8ff50c617a593a65adc1bd6e29426e8da8e164369efc6826434c2605078f07",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2102/test.npz": "1b917d838b6764baccbd2b5c67e3749a81b92158be1a5db02da058000f926e00",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2102/test.json": "363686d7a9b48af6b180f8a5d4d953bd562efe0dabbac3ef618d36fa49bf7db2",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2102/test.npz": "0184d6df387c97f258927b96380887920d05d2de4901d154cf143f23ca822516",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2103/test.json": "3cc6685603a32c10eebe24d6e5cbaa661a0a288bdf7a76f9a739d7bda8b71170",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2103/test.npz": "d7f8900095306e04a0dfc8d3c4196dc7036dba5e055aeec41cb720d65c7def6d",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2103/test.json": "990881ed149b956f7ac0485578819e61b1d3ccac126bf580b6c5857aecb31e4f",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2103/test.npz": "9cce9d5a7427144b29a564d20045ba95376798516af8d16a2354373d071acb9b",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2104/test.json": "c9c8af81e61de8ed4798a894898f3b3653a7031bdb70d9a0167079e8ac4bf3c1",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2104/test.npz": "20fb33963c9ccc12d43af669a0cadd50c3480966257e37f484eb573cde7c3593",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2104/test.json": "5190b8bb38d0dddff55f819db03d7e1180a961a63d6bf71e73b3f168c75ff89a",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2104/test.npz": "0d330e64ab6df5ae8d9bfd71a1dc7ea095055ccdd8fbdd1dde560c0c6dc56a74",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2105/test.json": "a65e3d8c4902a8505b0ced54c0595e35f9a9f0eb806cbe3afa99f0a76a9da7d7",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2105/test.npz": "4f5cdd83555b686963194c3308a917d6c718c0a6c18d89b43660860b46c92acb",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2105/test.json": "be164b8737e37ea846710c7c41716b12992e1a0415df5cc21c4f845b822c5a63",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2105/test.npz": "08a12de236faac572ffcfd9708a2bd96748be885ee2e32aa0af61758c75e6c39",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2101/longer_test.json": "130556b9125253a31c4cecafb5f50bbb63dda9e66ebd47075558f50c9307ab2c",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2101/longer_test.npz": "860cc8812a7a46443eacf9f7c490f069a9a59763259da2670206b147b7b1fed3",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2101/longer_test.json": "5caea5314f7f344bedee9cc808f2bc1355ca96f6193f49732af384d49a3ab2cb",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2101/longer_test.npz": "80367c4db6fe54f5e449b91a93c99e2a514ba12e9c4c0c54bd7bfd47edd51200",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2102/longer_test.json": "85f4533bab076c7e67f1f91a8c030c8a6fc779e7718fb24d5d0ef40d201be659",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2102/longer_test.npz": "92fb26606847e29991272e72c6dc3be3984a5c8c4eaf8b2453e0a889de0f4496",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2102/longer_test.json": "b01da3b47e5e68ab89cd3c90e690ad172510541faa38a6647c03228c9a4556e8",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2102/longer_test.npz": "3e56cc44b7f49f4a257d40c3b27a2ee8f03c47face99dc229ff8195c215ecfeb",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2103/longer_test.json": "e7569c717a6bd9747e597d569821febe1a0e4e92f174aaba765a522b16ff6c37",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2103/longer_test.npz": "28925ddd24dc8d20ec797e4572e1a6a5dde77a49754161b373bcf5977e1fa9ec",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2103/longer_test.json": "6bf2eea0720b6861c927872987b1e922b11f0e5340393477c621cb7d41134c7f",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2103/longer_test.npz": "9ec4545c45f7e7065030d185d72195ed434fdb62f7a9fabff1115e44080a5f81",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2104/longer_test.json": "6157177273ad17f3bfe934e9dd16335f9922ce1a0a9d67d3c48fd279a9999863",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2104/longer_test.npz": "858a6530674a68b27fde542e463f2ff7eaa5d5b0b98cd8664c494d587fbc808c",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2104/longer_test.json": "ea8e6e6ca59a563aadd50c4edeee97d696b8368b237aa967ee01029763288d03",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2104/longer_test.npz": "e0ff38d806504332c83564267510e886f4ba423a9357b6547f07999096ac2fc3",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2105/longer_test.json": "cdc6ea04d7fb8d1da685cd567f486e97acaf3e7e68d1f53fe42945223a75db0d",
+    "results/thesis_metrics_v22/confirmatory/full_seed_2105/longer_test.npz": "12f11386472134084006a6896efc637ae0d5a9506a49e3377ef7340a381ce0a3",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2105/longer_test.json": "c78265a3f2e1761f95049e9fc6a015168163096cf0c7f4bf7eedb1d247a654fc",
+    "results/thesis_metrics_v22/confirmatory/guard_seed_2105/longer_test.npz": "a015fd009e33f4d56ef9d815d0b2495759e740dd0d126d11419e518a835e9ac9"
+  },
+  "splits": {
+    "test": {
+      "common_success_pairs": 2331,
+      "full": {
+        "mean_flight_snr_db": 62.238378006664604,
+        "pooled_sample_median_db": 62.41,
+        "executed_sample_count": 68494
+      },
+      "guard": {
+        "mean_flight_snr_db": 64.66747392324108,
+        "pooled_sample_median_db": 65.41,
+        "executed_sample_count": 68513
+      },
+      "mean_difference_db": 2.429095916576459,
+      "mean_difference_ci95_db": [
+        2.2820816500222336,
+        2.5761128369503643
+      ]
+    },
+    "longer_test": {
+      "common_success_pairs": 2225,
+      "full": {
+        "mean_flight_snr_db": 62.045376768032995,
+        "pooled_sample_median_db": 62.41,
+        "executed_sample_count": 136459
+      },
+      "guard": {
+        "mean_flight_snr_db": 64.70706395052144,
+        "pooled_sample_median_db": 65.41,
+        "executed_sample_count": 136366
+      },
+      "mean_difference_db": 2.6616871824884685,
+      "mean_difference_ci95_db": [
+        2.563306413246489,
+        2.7570436894186563
+      ]
+    }
+  }
+}

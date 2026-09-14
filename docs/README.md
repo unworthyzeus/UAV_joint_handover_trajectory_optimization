@@ -56,6 +56,7 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [53: V2.2 supervisor results](53_v22_guard_results.md) | Completion, service, uncertainty, every failure and every fixed policy seed |
 | [54: V2.2 usage and reproduction](54_thesis_metrics_reproduction.md) | Reused weights, dataset path, saved/custom routes, sample arrays and reproduction |
 | [55: V2.2 delivery verification](55_thesis_metrics_delivery.md) | Source and weight preservation, exact replay, metric audit and final paper review |
+| [56: Current SNR comparison](56_snr_comparison_clarification.md) | Existing V2.2 SNR improvement, matched CDF medians and separation of the unverified source scale |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 
