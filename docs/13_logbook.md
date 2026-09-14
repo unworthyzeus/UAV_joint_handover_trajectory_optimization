@@ -434,3 +434,20 @@ checkpoint or paper changed. The new report records all input hashes and
 sample counts; note 56 explains the source inconsistency and why the map
 maximum is not a universal mission average target. Future tuning still
 requires new evaluation routes and must preserve completion and service.
+
+## 2026-09-14: Attempt to Recover Original SNR Values
+
+Rechecked the thesis equations, noise explanation, figure images and linked
+repository. The source repository still returns 404. Digitized the original
+SNR medians as approximately 124/127 dB for equal PPO/greedy and 123/122/123
+dB for the priority policies. Note 57 and its script preserve extraction
+coordinates, image hashes and a conservative reading allowance.
+
+Omitting the stated conversion from initial noise −174 to −112.41 would
+explain a constant 61.59 dB excess. Added the resulting conditional medians
+62.4/65.4 and 61.4/60.4/61.4 dB to the README and unified paper. They remain
+explicitly unverified estimates, separate from measured results. The actual
+correction requires original code or figure data; the source prose itself
+says the conversion was implemented. No controller, frozen study, flight,
+weight or performance conclusion changed. The conditional greedy estimate
+also precludes presenting this exercise as evidence of V2.2 superiority.

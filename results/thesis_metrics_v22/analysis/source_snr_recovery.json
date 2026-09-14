@@ -1,0 +1,227 @@
+{
+  "scope": "Source plot digitization, not source raw data or a verified corrected result.",
+  "source_sha256": "b445da8ac15543ff932af876938e7a681d11116011e1f56caa3365cceb990f70",
+  "source_equation_printed_page": 10,
+  "noise_explanation_printed_page": 14,
+  "noise_table_printed_page": 15,
+  "bandwidth_hz": 1440000,
+  "source_initial_noise_value": -174.0,
+  "source_final_noise_dbm": -112.41,
+  "noise_figure_db": 9.0,
+  "conditional_offset_db": 61.59,
+  "bandwidth_log_term_db": 61.583624920952495,
+  "correction_confirmed": false,
+  "plot_reading_tolerance_db": 1.0,
+  "tolerance_definition": "Conservative pixel, calibration and integer rounding allowance; not a statistical interval and not uncertainty about the cause.",
+  "figures": [
+    {
+      "printed_page": 18,
+      "pdf_viewer_page": 20,
+      "image_xref": 44,
+      "embedded_image_sha256": "0d6aa6d482534d465866854d11b1efa85546cc0e88a7f32e7745fa1a563da426",
+      "x_tick_pixels": [
+        108,
+        215,
+        322,
+        429,
+        535
+      ],
+      "x_tick_values_db": [
+        40.0,
+        60.0,
+        80.0,
+        100.0,
+        120.0
+      ],
+      "cdf_zero_y_pixel": 422,
+      "cdf_one_y_pixel": 20,
+      "median_scan_rows": [
+        219,
+        220,
+        221,
+        222,
+        223
+      ],
+      "calibration_max_residual_db": 0.07504637796023417,
+      "policies": [
+        {
+          "policy": "Equal PPO",
+          "color": "purple",
+          "trace_x_pixels_by_row": [
+            [
+              556,
+              557
+            ],
+            [
+              556,
+              557
+            ],
+            [
+              556,
+              557
+            ],
+            [
+              556,
+              557
+            ],
+            [
+              556,
+              557
+            ]
+          ],
+          "pixel_estimate_db": 123.9511567312042,
+          "reported_plot_median_db": 124.0,
+          "conditional_corrected_median_db": 62.41,
+          "purple_red_overlap": false
+        },
+        {
+          "policy": "Greedy",
+          "color": "red",
+          "trace_x_pixels_by_row": [
+            [
+              572,
+              573
+            ],
+            [
+              572,
+              573
+            ],
+            [
+              572,
+              573
+            ],
+            [
+              572,
+              573
+            ],
+            [
+              572,
+              573
+            ]
+          ],
+          "pixel_estimate_db": 126.94740090546608,
+          "reported_plot_median_db": 127.0,
+          "conditional_corrected_median_db": 65.41,
+          "purple_red_overlap": false
+        }
+      ]
+    },
+    {
+      "printed_page": 20,
+      "pdf_viewer_page": 22,
+      "image_xref": 60,
+      "embedded_image_sha256": "ac5ecdc63a98f1099cc7699e521035b99b38185b9565ada3f66e7f4d766e9705",
+      "x_tick_pixels": [
+        107,
+        211,
+        315,
+        418,
+        522
+      ],
+      "x_tick_values_db": [
+        40.0,
+        60.0,
+        80.0,
+        100.0,
+        120.0
+      ],
+      "cdf_zero_y_pixel": 422,
+      "cdf_one_y_pixel": 20,
+      "median_scan_rows": [
+        219,
+        220,
+        221,
+        222,
+        223
+      ],
+      "calibration_max_residual_db": 0.07714539712767987,
+      "policies": [
+        {
+          "policy": "Transmission delay PPO",
+          "color": "purple",
+          "trace_x_pixels_by_row": [
+            [
+              536,
+              538
+            ],
+            [
+              536,
+              538
+            ],
+            [
+              536,
+              538
+            ],
+            [
+              536,
+              538
+            ],
+            [
+              536,
+              538
+            ]
+          ],
+          "pixel_estimate_db": 122.89284080299655,
+          "reported_plot_median_db": 123.0,
+          "conditional_corrected_median_db": 61.41,
+          "purple_red_overlap": true
+        },
+        {
+          "policy": "Interference PPO",
+          "color": "green",
+          "trace_x_pixels_by_row": [
+            [
+              531,
+              532
+            ],
+            [
+              531,
+              532
+            ],
+            [
+              531,
+              532
+            ],
+            [
+              531,
+              532
+            ],
+            [
+              531,
+              532
+            ]
+          ],
+          "pixel_estimate_db": 121.83209159249078,
+          "reported_plot_median_db": 122.0,
+          "conditional_corrected_median_db": 60.41,
+          "purple_red_overlap": false
+        },
+        {
+          "policy": "Handover PPO",
+          "color": "red",
+          "trace_x_pixels_by_row": [
+            [
+              537
+            ],
+            [
+              537
+            ],
+            [
+              537
+            ],
+            [
+              537
+            ],
+            [
+              537
+            ]
+          ],
+          "pixel_estimate_db": 122.89284080299655,
+          "reported_plot_median_db": 123.0,
+          "conditional_corrected_median_db": 61.41,
+          "purple_red_overlap": false
+        }
+      ]
+    }
+  ]
+}

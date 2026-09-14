@@ -11,6 +11,7 @@ import numpy as np
 from audit_service_delivery import tables
 from build_thesis_metrics_report import METRICS, NAMES, interval_text
 from report_snr_comparison import recover as recover_snr
+from recover_source_snr import recover as recover_source_snr
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT/'results/thesis_metrics_v22'
@@ -126,7 +127,7 @@ def main():
     assert cdf[1:3] == ['NR as a verified Eq. (8) result']*2
     source_snr = next(r for r in source[2:] if r[0].startswith('Source plotted SNR'))
     assert source_snr[3:5] == ['NC: unverified source scale']*2
-    assert '≈124 / ≈127' in source_snr[1] and '≈122-123' in source_snr[2]
+    assert '≈124 / ≈127' in source_snr[1] and '≈123 / ≈122 / ≈123' in source_snr[2]
     for ix, split in ((3, 'test'), (4, 'longer_test')):
         d = recovered[split]['step_cdf_medians']
         assert cdf[ix] == f"Pooled sample median {d['original']['snr_db']:.3f} / {d['full']['snr_db']:.3f}"
@@ -143,8 +144,23 @@ def main():
         delta = d['guard']['pooled_sample_median_db']-d['full']['pooled_sample_median_db']
         assert snr_table[offset+1][3] == f"{delta:+.3f}; descriptive"
     assert '78.41' in readme and 'same Barcelona ray tracing dataset' in readme
+    source_recovery = load(BASE/'analysis/source_snr_recovery.json')
+    assert source_recovery == recover_source_snr()
+    assert not source_recovery['correction_confirmed']
+    conditional = next(t for t in ts if t[0][0].startswith('Original thesis policy (SNR:'))
+    recovered_policies = [r for f in source_recovery['figures'] for r in f['policies']]
+    assert len(conditional[2:]) == len(recovered_policies) == 5
+    for row, recorded in zip(conditional[2:], recovered_policies):
+        assert row[0] == recorded['policy']
+        assert row[1] == f"≈{recorded['reported_plot_median_db']:.0f}"
+        assert row[2] == f"≈{recorded['conditional_corrected_median_db']:.1f}"
+    assert 'Conditional corrected' in conditional[0][2]
+    assert 'not recovered actual measurements' in readme
+    paper_source = (ROOT/'paper/v22_followup.tex').read_text()
+    assert 'conditional hypothesis, not a recovered actual result' in paper_source
+    assert '62.4/65.4' in paper_source and '61.4/60.4/61.4' in paper_source
     paths = ['README.md', 'docs/README.md', 'docs/12_task_status.md', 'paper/README.md']
-    paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'docs').glob('5[1-6]_*.md')]
+    paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'docs').glob('5[1-7]_*.md')]
     links = 0
     for name in paths:
         p = ROOT/name; text = p.read_text(encoding='utf-8'); tables(text)
@@ -180,6 +196,8 @@ def main():
         initial_recovered_means_checked=16, initial_cdf_medians_checked=4, local_links_checked=links,
         current_snr_means_checked=4, current_snr_medians_checked=4, current_snr_source_files_checked=40,
         unverified_source_snr_scale_separated=True,
+        source_plot_medians_digitized=5, conditional_source_estimates_checked=5,
+        source_correction_confirmed=False,
         paper_pages=paper['pages'], paper_sha256=paper['pdf_sha256'], paper_visual_review=paper['visual_review'],
         primary_completion_improvement=s['primary_completion_improvement'],
         primary_delay_no_regression=s['primary_delay_no_regression'],

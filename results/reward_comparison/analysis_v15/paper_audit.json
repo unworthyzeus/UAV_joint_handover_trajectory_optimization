@@ -1,6 +1,6 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "15ceebeeaab91fba0fe748cef0e632930dff4c4850865202366e03df8b11bbeb",
+  "pdf_sha256": "e331427df7fd8f1843d9eceb513280f822e29b97580af36518a83606900acd08",
   "pages": 10,
   "fonts": {
     "4": {
@@ -103,7 +103,7 @@
       "type": "Type0",
       "embedded": true
     },
-    "150": {
+    "151": {
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
@@ -112,7 +112,7 @@
   "all_fonts_embedded_and_no_type3": true,
   "no_unresolved_references_or_overfull_boxes": true,
   "text_outside_page": [],
-  "tfm_citation_count": 39,
+  "tfm_citation_count": 40,
   "tfm_citations": [
     {
       "file": "paper/unified.tex",
@@ -302,11 +302,16 @@
     {
       "file": "paper/v22_followup.tex",
       "line": 4,
+      "locator": "p.~14, Sec.~6.1; p.~15, Table~3"
+    },
+    {
+      "file": "paper/v22_followup.tex",
+      "line": 5,
       "locator": "p.~10, Eq.~(9)"
     },
     {
       "file": "paper/v22_followup.tex",
-      "line": 4,
+      "line": 5,
       "locator": "p.~10, Eq.~(10); p.~15, Table~3"
     }
   ],
@@ -322,7 +327,7 @@
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
     "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
     "paper/v21_followup.tex": "f465538239e08e877f086c50c1d3a68b07c80328bff98852c835b78fce720774",
-    "paper/v22_followup.tex": "2bf26f55205444b7da1524752dd0e6141d1b3a02e971ce5b01ae9a8c094a5ae3",
+    "paper/v22_followup.tex": "e61f000af5e359529a3fe951123885cbe725b8f41f72c1ed21b41be88f4027b3",
     "paper/v22_conclusion.tex": "f369c384866798182468f18ae9d144e1d81e24bc0b54a956d191a9058939bd62",
     "paper/v15_seed_table.tex": "3b1aa380bcdb6bc4b51129533e6e892eab36f6a89ca94bdc21cd6ecdcb61af40",
     "paper/v21_seed_table.tex": "9712e51293bc90bbed797616ec9e5ca08c807ed6f607d7824c4141b0614d63af",
@@ -390,7 +395,7 @@
     "per_seed_success_values_checked": 40,
     "primary_completion_improvement": true,
     "initial_recovered_episodes": 4000,
-    "report_builder_sha256": "b0c98c538ce996282092eb8999e6d8b7ab6687da3b07a8ea662ee36dd52fe05c"
+    "report_builder_sha256": "f9ca6872c6d4bfaee661f5e4af179d7181d6cd2ba83e5c2ca27370f3674d525b"
   },
   "service_followup": {
     "episodes": 18000,
@@ -400,7 +405,7 @@
     "primary_completion_and_delay_gate": false,
     "report_builder_sha256": "65506bcf56eebcc487829959ac8f29bc7717708c699250e27283fc3f1f0b6ba1"
   },
-  "visual_review": "Passed: all ten rendered pages reviewed; new tables, source citations, six panel metric figure and complete seed appendix are readable, with no clipping or overlaps.",
+  "visual_review": "Passed: updated SNR paragraph and continuation inspected at full page resolution on pages 7-8; pages 7-10 contact sheet checked; ten page layout, tables and figures remain clear.",
   "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
   "long_route_illustration": {
     "scenario_id": "53013_0023",

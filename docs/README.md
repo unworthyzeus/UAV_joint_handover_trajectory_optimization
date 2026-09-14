@@ -57,6 +57,7 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [54: V2.2 usage and reproduction](54_thesis_metrics_reproduction.md) | Reused weights, dataset path, saved/custom routes, sample arrays and reproduction |
 | [55: V2.2 delivery verification](55_thesis_metrics_delivery.md) | Source and weight preservation, exact replay, metric audit and final paper review |
 | [56: Current SNR comparison](56_snr_comparison_clarification.md) | Existing V2.2 SNR improvement, matched CDF medians and separation of the unverified source scale |
+| [57: Original SNR recovery attempt](57_source_snr_recovery.md) | Digitized source medians, a conditional noise correction and what remains unverified |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 

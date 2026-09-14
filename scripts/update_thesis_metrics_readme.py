@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from report_snr_comparison import write_report as write_snr_report
+from recover_source_snr import write_report as write_source_snr_report
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT/'results/thesis_metrics_v22'
@@ -9,11 +10,13 @@ BASE = ROOT/'results/thesis_metrics_v22'
 
 def main():
     write_snr_report()
+    write_source_snr_report()
     p = ROOT/'README.md'; text = p.read_text(encoding='utf-8')
     initial = json.loads((BASE/'analysis/initial_recovered_metrics.json').read_text())
     fragment = (BASE/'analysis/readme_fragment.md').read_text(encoding='utf-8')
     snr_fragment = (BASE/'analysis/snr_readme_fragment.md').read_text(encoding='utf-8')
     fragment += '\n'+snr_fragment
+    fragment += '\n'+(BASE/'analysis/source_snr_readme_fragment.md').read_text(encoding='utf-8')
     heading = '## Recovered Thesis Metrics and V2.2 Controller Test'
     if heading in text:
         start = text.index(heading); end = text.index('\n## ', start+len(heading))
@@ -48,10 +51,11 @@ def main():
                         'see the [current SNR comparison](#snr-comparison-for-the-current-controller). '
                         'The unverified source plot scale is retained separately above. ')
             revised.append('| Source plotted SNR median (dB): higher is better only if the scale is valid | '
-                'Unverified CDF median ≈124 / ≈127 | Unverified CDF median ≈122-123 for all three | '
+                'Unverified CDF median ≈124 / ≈127 | Unverified CDF median ≈123 / ≈122 / ≈123 | '
                 'NC: unverified source scale | NC: unverified source scale | '
                 'These plot readings exceed the 78.41 dB maximum implied by the stated equation, noise settings and same map. '
-                'They are not a valid target for model improvement [p. 10, Eq. (8); p. 15, Table 3; pp. 18, 20, Figs. 6/8]. |')
+                'See the [conditional correction](#recovering-the-original-thesis-snr), which is not a verified result '
+                '[p. 10, Eq. (8); pp. 14-15, Sec. 6.1/Table 3; pp. 18, 20, Figs. 6/8]. |')
             line = '|'.join(cells)
             revised.append(line)
             revised.append('| Mean SNR (dB): higher is better | NR as a per flight mean | NR as a per flight mean | '+

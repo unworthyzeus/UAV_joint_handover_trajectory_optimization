@@ -321,6 +321,13 @@ def build_tex(s, primary, longer, verdict, initial):
         r'\cite[p.~10, Eq.~(8); p.~15, Table~3]{thesis}. The same map has maximum Operator 1 RSS of '
         r'$-25$ dBm, so this expression cannot exceed 78.41 dB. The source plotted medians near 122--127 dB '
         r'\cite[pp.~18, 20, Figs.~6, 8]{thesis} cannot follow from these stated inputs. We do not infer the coding cause.',
+        r'The source explicitly converts an initial noise value of $-174$ to $-112.41$ dBm '
+        r'\cite[p.~14, Sec.~6.1; p.~15, Table~3]{thesis}. If that conversion were omitted in the plotted calculation, '
+        r'subtracting 61.59 dB would give approximate median SNRs of 62.4/65.4 dB for equal PPO/greedy and '
+        r'61.4/60.4/61.4 dB for delay/interference/handover policies. Note 57 records native image digitization '
+        r'and a conservative $\pm1$ dB reading allowance. This is a conditional hypothesis, not a recovered '
+        r'actual result: source code and raw figure data remain unavailable. Neither this correction nor '
+        r'superiority over the source policies is established.',
         r'For Eq.~(9), we explicitly sum the linear RSS powers of all nonserving stations, without cochannel masking '
         r'\cite[p.~10, Eq.~(9)]{thesis}. This is a source equation proxy; it is not calibrated physical uplink. '
         r'We retain cochannel downlink interference separately. Remaining energy is $100-E_{\mathrm{used}}/1000$ kJ '

@@ -95,6 +95,24 @@ The comparisons use 2,331 standard and 2,225 longer common successful pairs. A m
 
 Further SNR gains must preserve completion and communication service. SNR alone excludes interference; the SINR, delay, handover and failure rows above remain necessary. [Reporting clarification and sample counts](docs/56_snr_comparison_clarification.md).
 
+### Recovering the Original Thesis SNR
+
+**The actual corrected source result is still unverified.** We recovered the plot medians from the original embedded images. A specific possible explanation is omission of the noise bandwidth conversion: the thesis starts from −174 and explicitly gives −112.41 dBm after accounting for 180 kHz × 8 [printed p. 14, Sec. 6.1; p. 15, Table 3]. If its plotted calculation used the initial value instead, each SNR would be too high by 61.59 dB. The resulting conditional estimates are:
+
+| Original thesis policy (SNR: higher is better) | Plotted CDF median (dB) | Conditional corrected CDF median (dB) | Source location |
+| --- | ---: | ---: | --- |
+| Equal PPO | ≈124 | ≈62.4 | Printed p. 18, Fig. 6. |
+| Greedy | ≈127 | ≈65.4 | Printed p. 18, Fig. 6. |
+| Transmission delay PPO | ≈123 | ≈61.4 | Printed p. 20, Fig. 8. |
+| Interference PPO | ≈122 | ≈60.4 | Printed p. 20, Fig. 8. |
+| Handover PPO | ≈123 | ≈61.4 | Printed p. 20, Fig. 8. |
+
+**Conditional calculation:** `corrected median = plotted median − 61.59 dB`. Allow approximately ±1 dB for image reading and rounding; this is not a confidence interval. It does not quantify uncertainty about the assumed error. The figure has no raw samples or clear CDF aggregation specification, and the linked source repository still returned 404 on 14 September 2026. **These are estimates under a hypothesis, not recovered actual measurements.**
+
+V2.2 has a measured pooled sample median of 65.41 dB on both fresh splits. The conditional greedy estimate is also about 65.4 dB, so even this hypothesis does not establish superiority over the thesis. Routes, failure handling and aggregation are unmatched. The verified source result rows below remain NR; the conditional values belong only in this explicitly labeled table.
+
+[Full derivation, pixel extraction and limitations](docs/57_source_snr_recovery.md).
+
 ## Initial V1.5 Versus V2 Conclusion
 
 **Replacing the original reward has not demonstrated better mission completion
@@ -321,7 +339,7 @@ aggregation; placing numbers together does not make those statistics equivalent.
 | --- | --- | --- | --- | --- | --- |
 | Joint mission success (%): higher is better | NR / NR | NR / NR / NR | 95.7% / 95.7% | 85.8% / 87.3% | Fraction of flights reaching and stopping at the goal within the time and connectivity limits. Neither split establishes a completion improvement. The source supplies no comparable success rate. |
 | Arrival flight time (s): lower is better on common successes | NR / NR | NR / NR / NR | 31.252 / 28.112 | 65.394 / 60.145 | Time needed to finish a successful mission. V2 finishes sooner. Source episode duration includes time after arrival, so it cannot serve as the same measure [p. 12, Sec. 5.2]. |
-| Source plotted SNR median (dB): higher is better only if the scale is valid | Unverified CDF median ≈124 / ≈127 | Unverified CDF median ≈122-123 for all three | NC: unverified source scale | NC: unverified source scale | These plot readings exceed the 78.41 dB maximum implied by the stated equation, noise settings and same map. They are not a valid target for model improvement [p. 10, Eq. (8); p. 15, Table 3; pp. 18, 20, Figs. 6/8]. |
+| Source plotted SNR median (dB): higher is better only if the scale is valid | Unverified CDF median ≈124 / ≈127 | Unverified CDF median ≈123 / ≈122 / ≈123 | NC: unverified source scale | NC: unverified source scale | These plot readings exceed the 78.41 dB maximum implied by the stated equation, noise settings and same map. See the [conditional correction](#recovering-the-original-thesis-snr), which is not a verified result [p. 10, Eq. (8); pp. 14-15, Sec. 6.1/Table 3; pp. 18, 20, Figs. 6/8]. |
 | SNR sample CDF median (dB): higher is better | NR as a verified Eq. (8) result | NR as a verified Eq. (8) result | Pooled sample median 63.410 / 63.410 | Pooled sample median 63.410 / 62.410 | Valid Eq. (8) measurements on the initial V1.5/full V2 flights. V2.2 is not in these two columns; see the [current SNR comparison](#snr-comparison-for-the-current-controller). The unverified source plot scale is retained separately above. |
 | Mean SNR (dB): higher is better | NR as a per flight mean | NR as a per flight mean | 63.445 / 62.429 | 63.237 / 62.046 | Signal relative to noise alone, averaged per flight. This is distinct from a sample CDF median and from SINR. Same written Eq. (8), with the source figure inconsistency explained above. |
 | SINR (dB): higher is better | NR: source reports SNR | NR: source reports SNR | Mean -8.322 / -9.305 | Mean -8.773 / -9.957 | Desired signal power relative to interference plus noise; higher values mean a cleaner radio link. V2's SINR is lower by 0.983 and 1.184 dB, so signal quality worsens. |
