@@ -1,10 +1,22 @@
 # Research Task Status
 
-Updated 13 September 2026 after the V2 focused reward comparison.
+Updated 14 September 2026 after the V2.1 reward improvement attempt.
 
 The current [paper](../paper/UAV_joint_reward_connectivity_IEEE.pdf) contains
-V2 and its V1.5 original reward control. Historical V1 is excluded from the
+V2 and its V1.5 original reward control, plus the separate V2.1 followup.
+Historical V1 is excluded from the
 final paper and reduced to one brief note in the root README.
+
+The new candidate does not meet the user's completion first priority: fresh
+standard success is 95.48% versus full V2's 96.92%, and longer success is
+88.60% versus 91.84%. It remains an evaluated research candidate rather than
+the main model. [Note 48](48_service_reward_results.md) reports the paired
+uncertainty, service metrics and all failures. [Note 49](49_service_reward_models_and_reproduction.md)
+documents the additional five weights and reproduction commands. The source
+comparison table now includes our numerical values and preferred metric
+directions; [note 45](45_metric_directions_and_interpretation.md) explains them.
+
+The table below preserves the status of the initial V1.5/V2 comparison.
 
 | Task | Status | Evidence |
 | --- | --- | --- |

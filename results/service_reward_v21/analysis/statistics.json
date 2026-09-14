@@ -1,0 +1,1590 @@
+{
+  "scope": "Fresh 54012/54013 evaluation of the validation selected V2.1 candidate; no retuning after tests.",
+  "selected": "service",
+  "groups": {
+    "service_test": {
+      "failure_counts": {
+        "connectivity": 111,
+        "buffer": 2,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.9548,
+      "feasible_success_rate": 0.9548,
+      "failure_distance_mean_m": 305.0175940990448,
+      "successful_time_s": 28.674067867616255,
+      "successful_path_m": 559.4491142397602,
+      "successful_energy_proxy_j": 7895.326259732896,
+      "successful_handovers": 9.832844574780058,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.2838060380574035,
+      "successful_interference_mean_w": 7.216209409298214e-07,
+      "successful_sinr_mean_db": -7.444154222193476,
+      "successful_sinr_p05_db": -15.047604916831865,
+      "successful_radio_cost_sum": 6.909673474087777,
+      "successful_radio_cost_mean": 0.23307545402849028,
+      "successful_resource_changes": 15.850858818600754,
+      "successful_final_buffer_bits": 21128.229583420612,
+      "per_seed_success_rates": [
+        0.95,
+        0.964,
+        0.954,
+        0.96,
+        0.946
+      ]
+    },
+    "full_test": {
+      "failure_counts": {
+        "connectivity": 71,
+        "buffer": 6,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.9692,
+      "feasible_success_rate": 0.9692,
+      "failure_distance_mean_m": 334.45090618381255,
+      "successful_time_s": 28.479983491539414,
+      "successful_path_m": 560.7089902820343,
+      "successful_energy_proxy_j": 7919.7824597203235,
+      "successful_handovers": 0.4073462649607924,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 4.768760869921766,
+      "successful_interference_mean_w": 7.344490479861736e-07,
+      "successful_sinr_mean_db": -8.929245830352487,
+      "successful_sinr_p05_db": -17.3172412957724,
+      "successful_radio_cost_sum": 5.203744500845062,
+      "successful_radio_cost_mean": 0.17324811836403217,
+      "successful_resource_changes": 6.288072637226579,
+      "successful_final_buffer_bits": 285333.4855518727,
+      "per_seed_success_rates": [
+        0.968,
+        0.972,
+        0.97,
+        0.966,
+        0.97
+      ]
+    },
+    "original_test": {
+      "failure_counts": {
+        "connectivity": 96,
+        "buffer": 3,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.9604,
+      "feasible_success_rate": 0.9604,
+      "failure_distance_mean_m": 304.4499495535186,
+      "successful_time_s": 31.677217825905874,
+      "successful_path_m": 557.1443173219044,
+      "successful_energy_proxy_j": 7782.351425838192,
+      "successful_handovers": 6.846314035818409,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 2.030476038014758,
+      "successful_interference_mean_w": 7.304049041120625e-07,
+      "successful_sinr_mean_db": -8.043247368306183,
+      "successful_sinr_p05_db": -15.313348396675432,
+      "successful_radio_cost_sum": 7.037375935417619,
+      "successful_radio_cost_mean": 0.21343969267125584,
+      "successful_resource_changes": 13.509371095376926,
+      "successful_final_buffer_bits": 97046.12550434715,
+      "per_seed_success_rates": [
+        0.952,
+        0.966,
+        0.97,
+        0.954,
+        0.96
+      ]
+    },
+    "straight_radio_test": {
+      "failure_counts": {
+        "connectivity": 13,
+        "buffer": 0,
+        "timeout": 0,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.974,
+      "feasible_success_rate": 0.974,
+      "failure_distance_mean_m": 392.09617966871997,
+      "successful_time_s": 28.357289527720738,
+      "successful_path_m": 559.9129977999771,
+      "successful_energy_proxy_j": 7910.535419440612,
+      "successful_handovers": 1.0082135523613962,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.0567263518526435,
+      "successful_interference_mean_w": 5.62887016618639e-07,
+      "successful_sinr_mean_db": -6.936306793036158,
+      "successful_sinr_p05_db": -14.046996987575868,
+      "successful_radio_cost_sum": 3.390249804374226,
+      "successful_radio_cost_mean": 0.11364652376623195,
+      "successful_resource_changes": 11.919917864476385,
+      "successful_final_buffer_bits": 94119.32932815708,
+      "per_seed_success_rates": [
+        0.974
+      ]
+    },
+    "joint_mpc_test": {
+      "failure_counts": {
+        "connectivity": 17,
+        "buffer": 0,
+        "timeout": 2,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.962,
+      "feasible_success_rate": 0.962,
+      "failure_distance_mean_m": 220.40883206252596,
+      "successful_time_s": 29.962577962577964,
+      "successful_path_m": 576.0864264157111,
+      "successful_energy_proxy_j": 8125.269984001429,
+      "successful_handovers": 0.8627858627858628,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.7501034897736919,
+      "successful_interference_mean_w": 5.577343334404985e-07,
+      "successful_sinr_mean_db": -6.699689452511233,
+      "successful_sinr_p05_db": -12.557702612232518,
+      "successful_radio_cost_sum": 2.752725160800374,
+      "successful_radio_cost_mean": 0.08592120771926466,
+      "successful_resource_changes": 12.363825363825363,
+      "successful_final_buffer_bits": 79317.8372531185,
+      "per_seed_success_rates": [
+        0.962
+      ]
+    },
+    "joint_lookahead_test": {
+      "failure_counts": {
+        "connectivity": 7,
+        "buffer": 0,
+        "timeout": 23,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.94,
+      "feasible_success_rate": 0.94,
+      "failure_distance_mean_m": 67.3358949661255,
+      "successful_time_s": 34.191489361702125,
+      "successful_path_m": 595.1182132802111,
+      "successful_energy_proxy_j": 8574.131784512134,
+      "successful_handovers": 0.8723404255319149,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.2568143312685552,
+      "successful_interference_mean_w": 5.496601001467825e-07,
+      "successful_sinr_mean_db": -5.893181273452145,
+      "successful_sinr_p05_db": -10.560063942949823,
+      "successful_radio_cost_sum": 1.8873764738868455,
+      "successful_radio_cost_mean": 0.052810898787671035,
+      "successful_resource_changes": 12.874468085106383,
+      "successful_final_buffer_bits": 45355.2236037234,
+      "per_seed_success_rates": [
+        0.94
+      ]
+    },
+    "service_longer_test": {
+      "failure_counts": {
+        "connectivity": 276,
+        "buffer": 4,
+        "timeout": 5,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.886,
+      "feasible_success_rate": 0.886,
+      "failure_distance_mean_m": 677.8169623475326,
+      "successful_time_s": 60.95981941309255,
+      "successful_path_m": 1361.3006671156356,
+      "successful_energy_proxy_j": 19092.30055639814,
+      "successful_handovers": 23.020767494356658,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.570076916505338,
+      "successful_interference_mean_w": 7.533735807513312e-07,
+      "successful_sinr_mean_db": -7.97304500780041,
+      "successful_sinr_p05_db": -16.643126177303408,
+      "successful_radio_cost_sum": 16.250801509208504,
+      "successful_radio_cost_mean": 0.2659461072828239,
+      "successful_resource_changes": 36.01038374717833,
+      "successful_final_buffer_bits": 17584.457082392775,
+      "per_seed_success_rates": [
+        0.872,
+        0.89,
+        0.884,
+        0.884,
+        0.9
+      ]
+    },
+    "full_longer_test": {
+      "failure_counts": {
+        "connectivity": 160,
+        "buffer": 39,
+        "timeout": 5,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.9184,
+      "feasible_success_rate": 0.9184,
+      "failure_distance_mean_m": 689.6849129644095,
+      "successful_time_s": 60.471689895470384,
+      "successful_path_m": 1358.4119664634147,
+      "successful_energy_proxy_j": 19079.68740472561,
+      "successful_handovers": 1.4377177700348431,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 6.1573568392190055,
+      "successful_interference_mean_w": 7.53048096537518e-07,
+      "successful_sinr_mean_db": -9.707057735541971,
+      "successful_sinr_p05_db": -18.94885427154315,
+      "successful_radio_cost_sum": 13.352537774609559,
+      "successful_radio_cost_mean": 0.2197966956657017,
+      "successful_resource_changes": 14.026567944250871,
+      "successful_final_buffer_bits": 349278.47745059343,
+      "per_seed_success_rates": [
+        0.912,
+        0.912,
+        0.926,
+        0.914,
+        0.928
+      ]
+    },
+    "original_longer_test": {
+      "failure_counts": {
+        "connectivity": 244,
+        "buffer": 14,
+        "timeout": 5,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 2500,
+      "success_rate": 0.8948,
+      "feasible_success_rate": 0.8948,
+      "failure_distance_mean_m": 699.8951626286307,
+      "successful_time_s": 65.87885561019222,
+      "successful_path_m": 1356.0831581494294,
+      "successful_energy_proxy_j": 18661.42097832616,
+      "successful_handovers": 15.609298167188198,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 2.5997031090828466,
+      "successful_interference_mean_w": 7.565181963868603e-07,
+      "successful_sinr_mean_db": -8.596962647614971,
+      "successful_sinr_p05_db": -16.641641693984923,
+      "successful_radio_cost_sum": 16.2101077738121,
+      "successful_radio_cost_mean": 0.24537744752981064,
+      "successful_resource_changes": 29.54626732230666,
+      "successful_final_buffer_bits": 105046.45419018216,
+      "per_seed_success_rates": [
+        0.892,
+        0.892,
+        0.898,
+        0.89,
+        0.902
+      ]
+    },
+    "straight_radio_longer_test": {
+      "failure_counts": {
+        "connectivity": 37,
+        "buffer": 3,
+        "timeout": 1,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.918,
+      "feasible_success_rate": 0.918,
+      "failure_distance_mean_m": 711.6144117960116,
+      "successful_time_s": 60.43355119825708,
+      "successful_path_m": 1361.4902821127366,
+      "successful_energy_proxy_j": 19133.79167304943,
+      "successful_handovers": 2.4335511982570806,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.6001473952597578,
+      "successful_interference_mean_w": 5.830545443933582e-07,
+      "successful_sinr_mean_db": -7.708854472195661,
+      "successful_sinr_p05_db": -15.367065126340114,
+      "successful_radio_cost_sum": 8.839333621360922,
+      "successful_radio_cost_mean": 0.14495071891989442,
+      "successful_resource_changes": 26.226579520697168,
+      "successful_final_buffer_bits": 114346.55422794117,
+      "per_seed_success_rates": [
+        0.918
+      ]
+    },
+    "joint_mpc_longer_test": {
+      "failure_counts": {
+        "connectivity": 38,
+        "buffer": 2,
+        "timeout": 3,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.914,
+      "feasible_success_rate": 0.914,
+      "failure_distance_mean_m": 690.2219673422879,
+      "successful_time_s": 63.0437636761488,
+      "successful_path_m": 1388.3052496377957,
+      "successful_energy_proxy_j": 19468.04084467314,
+      "successful_handovers": 2.299781181619256,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 1.0408452447587517,
+      "successful_interference_mean_w": 5.7478223802674e-07,
+      "successful_sinr_mean_db": -7.364588146919234,
+      "successful_sinr_p05_db": -13.727384588128889,
+      "successful_radio_cost_sum": 7.008955502129918,
+      "successful_radio_cost_mean": 0.10955008152951917,
+      "successful_resource_changes": 26.63894967177243,
+      "successful_final_buffer_bits": 100731.71705757659,
+      "per_seed_success_rates": [
+        0.914
+      ]
+    },
+    "joint_lookahead_longer_test": {
+      "failure_counts": {
+        "connectivity": 12,
+        "buffer": 0,
+        "timeout": 24,
+        "energy": 0,
+        "boundary": 0
+      },
+      "episodes": 500,
+      "success_rate": 0.928,
+      "feasible_success_rate": 0.928,
+      "failure_distance_mean_m": 268.8579892847273,
+      "successful_time_s": 70.07112068965517,
+      "successful_path_m": 1428.0217329880286,
+      "successful_energy_proxy_j": 20215.4934734476,
+      "successful_handovers": 2.1508620689655173,
+      "successful_outage_s": 0.0,
+      "successful_dropped_bits": 0.0,
+      "successful_delay_proxy_mean_s": 0.46937733716584856,
+      "successful_interference_mean_w": 5.672479430715237e-07,
+      "successful_sinr_mean_db": -6.578238228528664,
+      "successful_sinr_p05_db": -11.639494587635172,
+      "successful_radio_cost_sum": 4.900544542936795,
+      "successful_radio_cost_mean": 0.06975501940191568,
+      "successful_resource_changes": 28.379310344827587,
+      "successful_final_buffer_bits": 55333.59026468211,
+      "per_seed_success_rates": [
+        0.928
+      ]
+    }
+  },
+  "contrasts": {
+    "service_minus_full_test": {
+      "success_difference_pp": -1.44,
+      "success_difference_ci95_pp": [
+        -3.16,
+        0.32
+      ],
+      "paired_success_count": 2335,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 28.59357601713062,
+        "right_mean_on_common_success": 28.347323340471092,
+        "paired_mean_difference": 0.2462526766595289,
+        "difference_ci95": [
+          0.01953790700422217,
+          0.5195417955969466
+        ],
+        "relative_difference_pct": 0.8686981613814648
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.2912147728783623,
+        "right_mean_on_common_success": 4.741748187981564,
+        "paired_mean_difference": -3.450533415103201,
+        "difference_ci95": [
+          -3.956586391259261,
+          -2.962295217991556
+        ],
+        "relative_difference_pct": -72.76922515305482
+      },
+      "handovers": {
+        "left_mean_on_common_success": 9.8389721627409,
+        "right_mean_on_common_success": 0.40171306209850105,
+        "paired_mean_difference": 9.437259100642398,
+        "difference_ci95": [
+          8.968068172008739,
+          9.896660622074283
+        ],
+        "relative_difference_pct": 2349.2537313432836
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7867.906495499866,
+        "right_mean_on_common_success": 7873.079964994312,
+        "paired_mean_difference": -5.173469494445931,
+        "difference_ci95": [
+          -13.547901423437766,
+          4.686236627494703
+        ],
+        "relative_difference_pct": -0.06571087195161862
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.45658108825921,
+        "right_mean_on_common_success": -8.915722197927614,
+        "paired_mean_difference": 1.4591411096684044,
+        "difference_ci95": [
+          1.2964203190750714,
+          1.6281561056407
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.248623320663305e-07,
+        "right_mean_on_common_success": 7.357283253903903e-07,
+        "paired_mean_difference": -1.0865993324059786e-08,
+        "difference_ci95": [
+          -1.9122896725820738e-08,
+          -2.0172360529903277e-09
+        ],
+        "relative_difference_pct": -1.4769029476055628
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 6.922725485988777,
+        "right_mean_on_common_success": 5.17357253162578,
+        "paired_mean_difference": 1.7491529543629982,
+        "difference_ci95": [
+          1.5200300668206648,
+          1.9825360470830136
+        ],
+        "relative_difference_pct": 33.80938304567138
+      },
+      "path_m": {
+        "left_mean_on_common_success": 557.4820591013743,
+        "right_mean_on_common_success": 557.3622708829108,
+        "paired_mean_difference": 0.11978821846351378,
+        "difference_ci95": [
+          -0.32088186849995953,
+          0.4968130448514331
+        ],
+        "relative_difference_pct": 0.021491985504096256
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 21099.721644138117,
+        "right_mean_on_common_success": 282171.78461924515,
+        "paired_mean_difference": -261072.06297510705,
+        "difference_ci95": [
+          -292348.6626065916,
+          -231058.94921351183
+        ],
+        "relative_difference_pct": -92.52238430833562
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.039400428265524624,
+        "right_mean_on_common_success": 0.44839400428265525,
+        "paired_mean_difference": -0.4089935760171306,
+        "difference_ci95": [
+          -0.4748008229573604,
+          -0.344416185385802
+        ],
+        "relative_difference_pct": -91.21298949379178
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.004282655246252677,
+        "right_mean_on_common_success": 0.005139186295503212,
+        "paired_mean_difference": -0.0008565310492505353,
+        "difference_ci95": [
+          -0.00834631760985015,
+          0.0051905926449215
+        ],
+        "relative_difference_pct": -16.666666666666664
+      }
+    },
+    "service_minus_original_test": {
+      "success_difference_pp": -0.5599999999999999,
+      "success_difference_ci95_pp": [
+        -2.04,
+        0.76
+      ],
+      "paired_success_count": 2334,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 28.598114824335905,
+        "right_mean_on_common_success": 31.53898886032562,
+        "paired_mean_difference": -2.9408740359897174,
+        "difference_ci95": [
+          -3.3028753223620146,
+          -2.600588108573891
+        ],
+        "relative_difference_pct": -9.324566646742383
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.2852915126973585,
+        "right_mean_on_common_success": 2.0172158289895,
+        "paired_mean_difference": -0.7319243162921414,
+        "difference_ci95": [
+          -1.5784107111300691,
+          0.01446789339786637
+        ],
+        "relative_difference_pct": -36.28388721591532
+      },
+      "handovers": {
+        "left_mean_on_common_success": 9.823479005998287,
+        "right_mean_on_common_success": 6.835047129391603,
+        "paired_mean_difference": 2.988431876606684,
+        "difference_ci95": [
+          0.8615364321200116,
+          5.138011876329781
+        ],
+        "relative_difference_pct": 43.722183915251044
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7869.934794683383,
+        "right_mean_on_common_success": 7738.606376170704,
+        "paired_mean_difference": 131.3284185126794,
+        "difference_ci95": [
+          108.23804219086374,
+          155.26961612578555
+        ],
+        "relative_difference_pct": 1.697055156043037
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.448422431438242,
+        "right_mean_on_common_success": -8.035522033572963,
+        "paired_mean_difference": 0.5870996021347211,
+        "difference_ci95": [
+          0.1073966035398003,
+          1.0668738869600496
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.238907673485634e-07,
+        "right_mean_on_common_success": 7.311823676572788e-07,
+        "paired_mean_difference": -7.291600308715443e-09,
+        "difference_ci95": [
+          -1.4370538639482342e-08,
+          -5.570935484064477e-10
+        ],
+        "relative_difference_pct": -0.9972341554238873
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 6.907984144091169,
+        "right_mean_on_common_success": 7.003685485488644,
+        "paired_mean_difference": -0.09570134139747398,
+        "difference_ci95": [
+          -0.3625893150928948,
+          0.1961273594199896
+        ],
+        "relative_difference_pct": -1.3664425907725875
+      },
+      "path_m": {
+        "left_mean_on_common_success": 557.6265659152491,
+        "right_mean_on_common_success": 553.913414184518,
+        "paired_mean_difference": 3.7131517307310915,
+        "difference_ci95": [
+          3.0141050542939967,
+          4.427785061912105
+        ],
+        "relative_difference_pct": 0.670348764923423
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 21055.097318176948,
+        "right_mean_on_common_success": 95534.91001566517,
+        "paired_mean_difference": -74479.81269748822,
+        "difference_ci95": [
+          -150240.28614530887,
+          -11469.127481687161
+        ],
+        "relative_difference_pct": -77.96083409224495
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.04113110539845758,
+        "right_mean_on_common_success": 0.12767780634104542,
+        "paired_mean_difference": -0.08654670094258783,
+        "difference_ci95": [
+          -0.17532503023867257,
+          -0.010073475690879404
+        ],
+        "relative_difference_pct": -67.78523489932886
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.004284490145672665,
+        "right_mean_on_common_success": 0.009425878320479864,
+        "paired_mean_difference": -0.005141388174807198,
+        "difference_ci95": [
+          -0.013977197724268822,
+          0.002150630290058511
+        ],
+        "relative_difference_pct": -54.54545454545454
+      }
+    },
+    "service_minus_straight_radio_test": {
+      "success_difference_pp": -1.92,
+      "success_difference_ci95_pp": [
+        -3.4799999999999995,
+        -0.36
+      ],
+      "paired_success_count": 2359,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 28.610004239084358,
+        "right_mean_on_common_success": 28.2471386180585,
+        "paired_mean_difference": 0.3628656210258584,
+        "difference_ci95": [
+          0.18069701432074975,
+          0.5988133719917937
+        ],
+        "relative_difference_pct": 1.2846101898401852
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.2904894227740442,
+        "right_mean_on_common_success": 1.0592852665716437,
+        "paired_mean_difference": 0.2312041562024005,
+        "difference_ci95": [
+          0.04484885784562382,
+          0.4164405199744787
+        ],
+        "relative_difference_pct": 21.826429905014
+      },
+      "handovers": {
+        "left_mean_on_common_success": 9.82874099194574,
+        "right_mean_on_common_success": 1.0169563374311148,
+        "paired_mean_difference": 8.811784654514625,
+        "difference_ci95": [
+          8.368375665588243,
+          9.256163297944497
+        ],
+        "relative_difference_pct": 866.48603584827
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7873.082642481255,
+        "right_mean_on_common_success": 7872.059050569296,
+        "paired_mean_difference": 1.0235919119595167,
+        "difference_ci95": [
+          -13.03437961338701,
+          14.221662201253292
+        ],
+        "relative_difference_pct": 0.013002848497256636
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.4449560647327395,
+        "right_mean_on_common_success": -6.929968937808248,
+        "paired_mean_difference": -0.5149871269244923,
+        "difference_ci95": [
+          -0.6522614787656965,
+          -0.3741283720533813
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.228885850714624e-07,
+        "right_mean_on_common_success": 5.641452249111097e-07,
+        "paired_mean_difference": 1.5874336016035267e-07,
+        "difference_ci95": [
+          1.5218483098174748e-07,
+          1.656205313775152e-07
+        ],
+        "relative_difference_pct": 28.13874037228008
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 6.910181517713529,
+        "right_mean_on_common_success": 3.384152850671197,
+        "paired_mean_difference": 3.5260286670423318,
+        "difference_ci95": [
+          3.2795744445632167,
+          3.772411165819288
+        ],
+        "relative_difference_pct": 104.19235840198517
+      },
+      "path_m": {
+        "left_mean_on_common_success": 557.8535040143487,
+        "right_mean_on_common_success": 557.1645482780066,
+        "paired_mean_difference": 0.6889557363422001,
+        "difference_ci95": [
+          0.18999896427690785,
+          1.1842556710773327
+        ],
+        "relative_difference_pct": 0.12365390771389428
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 21354.575296735904,
+        "right_mean_on_common_success": 91899.12274467465,
+        "paired_mean_difference": -70544.54744793875,
+        "difference_ci95": [
+          -90705.19597727158,
+          -51779.88740207653
+        ],
+        "relative_difference_pct": -76.76302595829365
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.04027130139889784,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.04027130139889784,
+        "difference_ci95": [
+          0.025105849254595455,
+          0.060502952947951
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.00423908435777872,
+        "right_mean_on_common_success": 0.007630351844001695,
+        "paired_mean_difference": -0.003391267486222976,
+        "difference_ci95": [
+          -0.011185188404421,
+          0.002972462312646005
+        ],
+        "relative_difference_pct": -44.44444444444444
+      }
+    },
+    "service_minus_joint_mpc_test": {
+      "success_difference_pp": -0.72,
+      "success_difference_ci95_pp": [
+        -2.4,
+        0.96
+      ],
+      "paired_success_count": 2337,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 28.634574240479246,
+        "right_mean_on_common_success": 29.82456140350877,
+        "paired_mean_difference": -1.1899871630295251,
+        "difference_ci95": [
+          -1.5207631812884619,
+          -0.8546771230747495
+        ],
+        "relative_difference_pct": -3.989956958393115
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.2862375384758145,
+        "right_mean_on_common_success": 0.7599416864277647,
+        "paired_mean_difference": 0.5262958520480497,
+        "difference_ci95": [
+          0.3050413881178713,
+          0.7214302927466529
+        ],
+        "relative_difference_pct": 69.2547680233194
+      },
+      "handovers": {
+        "left_mean_on_common_success": 9.84510055626872,
+        "right_mean_on_common_success": 0.858793324775353,
+        "paired_mean_difference": 8.986307231493367,
+        "difference_ci95": [
+          8.5273298972537,
+          9.441332250500372
+        ],
+        "relative_difference_pct": 1046.3876432486297
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7881.550319294568,
+        "right_mean_on_common_success": 8079.634036650554,
+        "paired_mean_difference": -198.08371735598524,
+        "difference_ci95": [
+          -248.47715885061754,
+          -152.89933155094243
+        ],
+        "relative_difference_pct": -2.4516421963846957
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.4401112613824125,
+        "right_mean_on_common_success": -6.692961755650621,
+        "paired_mean_difference": -0.7471495057317912,
+        "difference_ci95": [
+          -0.8850476961480478,
+          -0.6057703241119888
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.225893275797345e-07,
+        "right_mean_on_common_success": 5.590705705946403e-07,
+        "paired_mean_difference": 1.6351875698509411e-07,
+        "difference_ci95": [
+          1.5674541062176763e-07,
+          1.7059898053479179e-07
+        ],
+        "relative_difference_pct": 29.248321336458826
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 6.9164598322672735,
+        "right_mean_on_common_success": 2.739509046086462,
+        "paired_mean_difference": 4.176950786180811,
+        "difference_ci95": [
+          3.8979684530106424,
+          4.455807092079001
+        ],
+        "relative_difference_pct": 152.47077910357015
+      },
+      "path_m": {
+        "left_mean_on_common_success": 558.4638391183797,
+        "right_mean_on_common_success": 572.8381476673653,
+        "paired_mean_difference": -14.374308548985661,
+        "difference_ci95": [
+          -18.053273015884173,
+          -11.22833975957009
+        ],
+        "relative_difference_pct": -2.509314124333162
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 21535.2201406718,
+        "right_mean_on_common_success": 78492.09957343817,
+        "paired_mean_difference": -56956.87943276636,
+        "difference_ci95": [
+          -76592.57568888499,
+          -38976.93241362191
+        ],
+        "relative_difference_pct": -72.56383730629707
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.04150620453572957,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.04150620453572957,
+        "difference_ci95": [
+          0.02532660815157972,
+          0.06363367577327039
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.0038510911424903724,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.0038510911424903724,
+        "difference_ci95": [
+          0.0008535882868445408,
+          0.007735364617609052
+        ],
+        "relative_difference_pct": null
+      }
+    },
+    "service_minus_joint_lookahead_test": {
+      "success_difference_pp": 1.48,
+      "success_difference_ci95_pp": [
+        -1.0,
+        3.9600000000000004
+      ],
+      "paired_success_count": 2256,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 28.488475177304963,
+        "right_mean_on_common_success": 33.914450354609926,
+        "paired_mean_difference": -5.425975177304965,
+        "difference_ci95": [
+          -6.9395068411972725,
+          -4.177862938783638
+        ],
+        "relative_difference_pct": -15.999006678778215
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.2575068615996288,
+        "right_mean_on_common_success": 0.2586262774054365,
+        "paired_mean_difference": 0.9988805841941922,
+        "difference_ci95": [
+          0.8734410097695984,
+          1.1431448666601904
+        ],
+        "relative_difference_pct": 386.22548111315587
+      },
+      "handovers": {
+        "left_mean_on_common_success": 9.692375886524824,
+        "right_mean_on_common_success": 0.8661347517730497,
+        "paired_mean_difference": 8.826241134751774,
+        "difference_ci95": [
+          8.358601449688594,
+          9.293625366529252
+        ],
+        "relative_difference_pct": 1019.0378710337768
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 7830.19652097445,
+        "right_mean_on_common_success": 8501.751177307562,
+        "paired_mean_difference": -671.5546563331117,
+        "difference_ci95": [
+          -833.1204170829295,
+          -533.9072350172352
+        ],
+        "relative_difference_pct": -7.899015653687802
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.39616424458577,
+        "right_mean_on_common_success": -5.885216544887566,
+        "paired_mean_difference": -1.5109476996982034,
+        "difference_ci95": [
+          -1.6518895649126526,
+          -1.3679131862169431
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.185086752016653e-07,
+        "right_mean_on_common_success": 5.508655982911142e-07,
+        "paired_mean_difference": 1.6764307691055115e-07,
+        "difference_ci95": [
+          1.6021255760418443e-07,
+          1.750336870922178e-07
+        ],
+        "relative_difference_pct": 30.43266405283078
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 6.7842168399334355,
+        "right_mean_on_common_success": 1.8743300212613803,
+        "paired_mean_difference": 4.909886818672057,
+        "difference_ci95": [
+          4.611203524156349,
+          5.217303806041649
+        ],
+        "relative_difference_pct": 261.95423233779377
+      },
+      "path_m": {
+        "left_mean_on_common_success": 554.7827654831798,
+        "right_mean_on_common_success": 590.4641096101585,
+        "paired_mean_difference": -35.681344126978665,
+        "difference_ci95": [
+          -42.31039118085827,
+          -29.50692458773862
+        ],
+        "relative_difference_pct": -6.042931915122917
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 20117.278223348847,
+        "right_mean_on_common_success": 44247.494275681514,
+        "paired_mean_difference": -24130.216052332667,
+        "difference_ci95": [
+          -39110.11660865706,
+          -9822.513973904246
+        ],
+        "relative_difference_pct": -54.534649808621296
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.03856382978723404,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.03856382978723404,
+        "difference_ci95": [
+          0.024956197651803912,
+          0.05461231653339659
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.004875886524822695,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.004875886524822695,
+        "difference_ci95": [
+          0.0013398390545670995,
+          0.009267636266954421
+        ],
+        "relative_difference_pct": null
+      }
+    },
+    "service_minus_full_longer_test": {
+      "success_difference_pp": -3.2399999999999998,
+      "success_difference_ci95_pp": [
+        -5.64,
+        -0.88
+      ],
+      "paired_success_count": 2086,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 60.785234899328856,
+        "right_mean_on_common_success": 60.40939597315436,
+        "paired_mean_difference": 0.37583892617449666,
+        "difference_ci95": [
+          0.03914908740431625,
+          0.747008489658057
+        ],
+        "relative_difference_pct": 0.6221530941006526
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.5828468321642866,
+        "right_mean_on_common_success": 6.198604276844034,
+        "paired_mean_difference": -4.6157574446797485,
+        "difference_ci95": [
+          -4.956654358154332,
+          -4.287395074564303
+        ],
+        "relative_difference_pct": -74.46446391041147
+      },
+      "handovers": {
+        "left_mean_on_common_success": 23.058005752636625,
+        "right_mean_on_common_success": 1.4415148609779482,
+        "paired_mean_difference": 21.616490891658678,
+        "difference_ci95": [
+          20.922866479351867,
+          22.287310845508348
+        ],
+        "relative_difference_pct": 1499.5676754240105
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19032.29741337338,
+        "right_mean_on_common_success": 19057.070182822237,
+        "paired_mean_difference": -24.772769448855463,
+        "difference_ci95": [
+          -48.55246073271987,
+          1.6312762297378276
+        ],
+        "relative_difference_pct": -0.12999253931060828
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.978234124777987,
+        "right_mean_on_common_success": -9.745074975410564,
+        "paired_mean_difference": 1.766840850632577,
+        "difference_ci95": [
+          1.6616350004360474,
+          1.870401343823972
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.547658133994594e-07,
+        "right_mean_on_common_success": 7.63278161119269e-07,
+        "paired_mean_difference": -8.512347719809497e-09,
+        "difference_ci95": [
+          -1.5718143136578065e-08,
+          -1.5165050628738423e-09
+        ],
+        "relative_difference_pct": -1.1152353301091544
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 16.268677673961125,
+        "right_mean_on_common_success": 13.437035583953703,
+        "paired_mean_difference": 2.831642090007417,
+        "difference_ci95": [
+          2.3771584992264967,
+          3.279876750169404
+        ],
+        "relative_difference_pct": 21.073413643325644
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1356.9876158907223,
+        "right_mean_on_common_success": 1356.7737659370225,
+        "paired_mean_difference": 0.21384995369988913,
+        "difference_ci95": [
+          -0.3149368499654389,
+          0.7166132454297484
+        ],
+        "relative_difference_pct": 0.01576165157881615
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 17984.735075353547,
+        "right_mean_on_common_success": 352925.66266928334,
+        "paired_mean_difference": -334940.92759392975,
+        "difference_ci95": [
+          -365716.7832952791,
+          -304963.2393083633
+        ],
+        "relative_difference_pct": -94.90410106781991
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.11697027804410355,
+        "right_mean_on_common_success": 1.7085330776605945,
+        "paired_mean_difference": -1.591562799616491,
+        "difference_ci95": [
+          -1.7098795180722892,
+          -1.4763169256424933
+        ],
+        "relative_difference_pct": -93.15375982042649
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.01821668264621285,
+        "right_mean_on_common_success": 0.02732502396931927,
+        "paired_mean_difference": -0.009108341323106424,
+        "difference_ci95": [
+          -0.03033391598940407,
+          0.00891202908507958
+        ],
+        "relative_difference_pct": -33.333333333333336
+      }
+    },
+    "service_minus_original_longer_test": {
+      "success_difference_pp": -0.88,
+      "success_difference_ci95_pp": [
+        -2.921,
+        1.16
+      ],
+      "paired_success_count": 2056,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 60.79912451361868,
+        "right_mean_on_common_success": 65.76750972762646,
+        "paired_mean_difference": -4.968385214007782,
+        "difference_ci95": [
+          -5.592908606103429,
+          -4.370579544545061
+        ],
+        "relative_difference_pct": -7.554467600467396
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.5760229184910988,
+        "right_mean_on_common_success": 2.62363115310769,
+        "paired_mean_difference": -1.0476082346165918,
+        "difference_ci95": [
+          -2.200176304981267,
+          -0.04591182596836898
+        ],
+        "relative_difference_pct": -39.9297070922374
+      },
+      "handovers": {
+        "left_mean_on_common_success": 22.9931906614786,
+        "right_mean_on_common_success": 15.60943579766537,
+        "paired_mean_difference": 7.3837548638132295,
+        "difference_ci95": [
+          1.8850015524440438,
+          12.922766662231373
+        ],
+        "relative_difference_pct": 47.30315021967406
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19037.94990129879,
+        "right_mean_on_common_success": 18626.696663348128,
+        "paired_mean_difference": 411.2532379506627,
+        "difference_ci95": [
+          354.6918882202536,
+          468.1194304199169
+        ],
+        "relative_difference_pct": 2.2078699480831077
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.981133815727345,
+        "right_mean_on_common_success": -8.61968274200009,
+        "paired_mean_difference": 0.6385489262727448,
+        "difference_ci95": [
+          0.17357326900601922,
+          1.0997797105545484
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.574199675013938e-07,
+        "right_mean_on_common_success": 7.635939585948463e-07,
+        "paired_mean_difference": -6.173991093452571e-09,
+        "difference_ci95": [
+          -1.0817625255801787e-08,
+          -1.2155536589147039e-09
+        ],
+        "relative_difference_pct": -0.8085437324325984
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 16.24342679489179,
+        "right_mean_on_common_success": 16.25350151219821,
+        "paired_mean_difference": -0.010074717306420952,
+        "difference_ci95": [
+          -0.7242582227291042,
+          0.7375195622912977
+        ],
+        "relative_difference_pct": -0.06198490398428014
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1357.4045595102273,
+        "right_mean_on_common_success": 1353.5706813827098,
+        "paired_mean_difference": 3.833878127517403,
+        "difference_ci95": [
+          3.134744485347495,
+          4.450721366574249
+        ],
+        "relative_difference_pct": 0.2832418122119096
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 17733.798022555933,
+        "right_mean_on_common_success": 105803.12745090589,
+        "paired_mean_difference": -88069.32942834996,
+        "difference_ci95": [
+          -166212.33016900672,
+          -15004.241020354371
+        ],
+        "relative_difference_pct": -83.23887161957035
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.11332684824902724,
+        "right_mean_on_common_success": 0.4100194552529183,
+        "paired_mean_difference": -0.29669260700389105,
+        "difference_ci95": [
+          -0.6256030335059137,
+          -0.023215397525784456
+        ],
+        "relative_difference_pct": -72.3606168446026
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.017023346303501944,
+        "right_mean_on_common_success": 0.026750972762645913,
+        "paired_mean_difference": -0.009727626459143969,
+        "difference_ci95": [
+          -0.03291111995573922,
+          0.010111591411804918
+        ],
+        "relative_difference_pct": -36.36363636363637
+      }
+    },
+    "service_minus_straight_radio_longer_test": {
+      "success_difference_pp": -3.2,
+      "success_difference_ci95_pp": [
+        -6.04,
+        -0.27999999999999997
+      ],
+      "paired_success_count": 2083,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 60.86989918386942,
+        "right_mean_on_common_success": 60.30580892942871,
+        "paired_mean_difference": 0.5640902544407105,
+        "difference_ci95": [
+          0.28305760698663607,
+          0.8926764169860404
+        ],
+        "relative_difference_pct": 0.9353829497599886
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.594308819721328,
+        "right_mean_on_common_success": 1.6258693224106977,
+        "paired_mean_difference": -0.03156050268936987,
+        "difference_ci95": [
+          -0.23458790659054235,
+          0.15099007704806441
+        ],
+        "relative_difference_pct": -1.941146330418153
+      },
+      "handovers": {
+        "left_mean_on_common_success": 23.15698511761882,
+        "right_mean_on_common_success": 2.4368698991838693,
+        "paired_mean_difference": 20.720115218434948,
+        "difference_ci95": [
+          20.03159038437371,
+          21.384734045712968
+        ],
+        "relative_difference_pct": 850.2758077226162
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19062.7577974976,
+        "right_mean_on_common_success": 19088.84819024169,
+        "paired_mean_difference": -26.090392744089055,
+        "difference_ci95": [
+          -55.210809645583176,
+          2.4943675292816803
+        ],
+        "relative_difference_pct": -0.13667871672543574
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -8.005703389844927,
+        "right_mean_on_common_success": -7.733803024671997,
+        "paired_mean_difference": -0.27190036517292965,
+        "difference_ci95": [
+          -0.3798273722958904,
+          -0.15692413373619463
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.596384464696014e-07,
+        "right_mean_on_common_success": 5.905473248975044e-07,
+        "paired_mean_difference": 1.6909112157209715e-07,
+        "difference_ci95": [
+          1.6339303416186752e-07,
+          1.745943658789577e-07
+        ],
+        "relative_difference_pct": 28.632950221465258
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 16.375737880523527,
+        "right_mean_on_common_success": 8.878297409577922,
+        "paired_mean_difference": 7.4974404709456035,
+        "difference_ci95": [
+          7.026956021830442,
+          7.9598530971803205
+        ],
+        "relative_difference_pct": 84.44682719073316
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1359.140656001054,
+        "right_mean_on_common_success": 1358.2700493602415,
+        "paired_mean_difference": 0.87060664081253,
+        "difference_ci95": [
+          0.33472230287375876,
+          1.2791638845258682
+        ],
+        "relative_difference_pct": 0.06409672665774746
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 17912.763145853336,
+        "right_mean_on_common_success": 116598.39323541766,
+        "paired_mean_difference": -98685.63008956434,
+        "difference_ci95": [
+          -122110.86627843583,
+          -75303.44448139892
+        ],
+        "relative_difference_pct": -84.63721270181946
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.1156985117618819,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.1156985117618819,
+        "difference_ci95": [
+          0.0924164176797857,
+          0.14203482158436573
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.01728276524243879,
+        "right_mean_on_common_success": 0.009121459433509362,
+        "paired_mean_difference": 0.00816130580892943,
+        "difference_ci95": [
+          -0.006232097735043031,
+          0.023640941511168363
+        ],
+        "relative_difference_pct": 89.4736842105263
+      }
+    },
+    "service_minus_joint_mpc_longer_test": {
+      "success_difference_pp": -2.8000000000000003,
+      "success_difference_ci95_pp": [
+        -5.72,
+        0.12
+      ],
+      "paired_success_count": 2073,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 60.92619392185239,
+        "right_mean_on_common_success": 62.939700916546066,
+        "paired_mean_difference": -2.0135069946936808,
+        "difference_ci95": [
+          -2.423540798755763,
+          -1.5717105170975751
+        ],
+        "relative_difference_pct": -3.199104802489383
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.5804998170843312,
+        "right_mean_on_common_success": 1.0530589608889267,
+        "paired_mean_difference": 0.5274408561954047,
+        "difference_ci95": [
+          0.38078559288189656,
+          0.6745898763351642
+        ],
+        "relative_difference_pct": 50.086545557731355
+      },
+      "handovers": {
+        "left_mean_on_common_success": 23.071394114809454,
+        "right_mean_on_common_success": 2.313555233960444,
+        "paired_mean_difference": 20.75783888084901,
+        "difference_ci95": [
+          20.05016422383709,
+          21.437445601714913
+        ],
+        "relative_difference_pct": 897.2268557130942
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19080.978206592197,
+        "right_mean_on_common_success": 19424.017189007478,
+        "paired_mean_difference": -343.0389824152798,
+        "difference_ci95": [
+          -410.1936513429338,
+          -282.14841712667334
+        ],
+        "relative_difference_pct": -1.7660558013170125
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.98159203469552,
+        "right_mean_on_common_success": -7.404115798331894,
+        "paired_mean_difference": -0.5774762363636258,
+        "difference_ci95": [
+          -0.6839585367665774,
+          -0.47300171486646614
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.572659214288576e-07,
+        "right_mean_on_common_success": 5.827100240163496e-07,
+        "paired_mean_difference": 1.74555897412508e-07,
+        "difference_ci95": [
+          1.684164218321232e-07,
+          1.803920779443598e-07
+        ],
+        "relative_difference_pct": 29.955876888709643
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 16.29397921233706,
+        "right_mean_on_common_success": 7.082867836443233,
+        "paired_mean_difference": 9.211111375893822,
+        "difference_ci95": [
+          8.717052118040387,
+          9.710995729872476
+        ],
+        "relative_difference_pct": 130.04776580046033
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1360.4510788942844,
+        "right_mean_on_common_success": 1385.1493494647514,
+        "paired_mean_difference": -24.698270570467017,
+        "difference_ci95": [
+          -29.10343786148913,
+          -20.646700283664334
+        ],
+        "relative_difference_pct": -1.7830763577957098
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 17867.10818032441,
+        "right_mean_on_common_success": 102181.46241105885,
+        "paired_mean_difference": -84314.35423073445,
+        "difference_ci95": [
+          -107765.56585348811,
+          -61934.87942288966
+        ],
+        "relative_difference_pct": -82.5143350283557
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.11673902556681139,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.11673902556681139,
+        "difference_ci95": [
+          0.0925556692789679,
+          0.1428588330741667
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.017848528702363725,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.017848528702363725,
+        "difference_ci95": [
+          0.007256631118403063,
+          0.030967496211142347
+        ],
+        "relative_difference_pct": null
+      }
+    },
+    "service_minus_joint_lookahead_longer_test": {
+      "success_difference_pp": -4.2,
+      "success_difference_ci95_pp": [
+        -7.16,
+        -1.28
+      ],
+      "paired_success_count": 2083,
+      "paired_evaluations": 2500,
+      "time_s": {
+        "left_mean_on_common_success": 60.74891982717235,
+        "right_mean_on_common_success": 69.94527124339895,
+        "paired_mean_difference": -9.196351416226596,
+        "difference_ci95": [
+          -10.787562809623171,
+          -7.816928687499913
+        ],
+        "relative_difference_pct": -13.1479244454206
+      },
+      "delay_proxy_mean_s": {
+        "left_mean_on_common_success": 1.5783344592975284,
+        "right_mean_on_common_success": 0.48253764494092416,
+        "paired_mean_difference": 1.0957968143566041,
+        "difference_ci95": [
+          0.9768140187845822,
+          1.215333449532147
+        ],
+        "relative_difference_pct": 227.090430320884
+      },
+      "handovers": {
+        "left_mean_on_common_success": 23.01776284205473,
+        "right_mean_on_common_success": 2.156505040806529,
+        "paired_mean_difference": 20.8612578012482,
+        "difference_ci95": [
+          20.160557968961648,
+          21.534271955937722
+        ],
+        "relative_difference_pct": 967.3642030276046
+      },
+      "energy_proxy_j": {
+        "left_mean_on_common_success": 19019.305205082812,
+        "right_mean_on_common_success": 20168.704035458173,
+        "paired_mean_difference": -1149.3988303753601,
+        "difference_ci95": [
+          -1335.0652334859706,
+          -979.1965875913282
+        ],
+        "relative_difference_pct": -5.698922589942446
+      },
+      "sinr_mean_db": {
+        "left_mean_on_common_success": -7.975895425761713,
+        "right_mean_on_common_success": -6.595188339398677,
+        "paired_mean_difference": -1.3807070863630355,
+        "difference_ci95": [
+          -1.5052950956005635,
+          -1.2576455339676085
+        ],
+        "relative_difference_pct": null
+      },
+      "interference_mean_w": {
+        "left_mean_on_common_success": 7.539705045305055e-07,
+        "right_mean_on_common_success": 5.757417972485132e-07,
+        "paired_mean_difference": 1.7822870728199227e-07,
+        "difference_ci95": [
+          1.717788358557367e-07,
+          1.8469779622506815e-07
+        ],
+        "relative_difference_pct": 30.95636066961831
+      },
+      "radio_cost_sum": {
+        "left_mean_on_common_success": 16.253085832757233,
+        "right_mean_on_common_success": 4.940772351111258,
+        "paired_mean_difference": 11.312313481645973,
+        "difference_ci95": [
+          10.80299244961512,
+          11.816880710631628
+        ],
+        "relative_difference_pct": 228.9584032160813
+      },
+      "path_m": {
+        "left_mean_on_common_success": 1356.0652644852864,
+        "right_mean_on_common_success": 1425.144821745698,
+        "paired_mean_difference": -69.07955726041166,
+        "difference_ci95": [
+          -77.38905711485066,
+          -61.01520124166247
+        ],
+        "relative_difference_pct": -4.847195611726973
+      },
+      "final_buffer_bits": {
+        "left_mean_on_common_success": 17769.6914718855,
+        "right_mean_on_common_success": 56089.38004455713,
+        "paired_mean_difference": -38319.68857267163,
+        "difference_ci95": [
+          -56089.33149686677,
+          -22298.673671037934
+        ],
+        "relative_difference_pct": -68.31897329268153
+      },
+      "network_interventions": {
+        "left_mean_on_common_success": 0.1200192030724916,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.1200192030724916,
+        "difference_ci95": [
+          0.09755677660072223,
+          0.14453731095481026
+        ],
+        "relative_difference_pct": null
+      },
+      "motion_interventions": {
+        "left_mean_on_common_success": 0.019683149303888623,
+        "right_mean_on_common_success": 0.0,
+        "paired_mean_difference": 0.019683149303888623,
+        "difference_ci95": [
+          0.00861223434912677,
+          0.03382974416623439
+        ],
+        "relative_difference_pct": null
+      }
+    }
+  },
+  "total_evaluated_episodes": 18000,
+  "primary_contrast": "service_minus_full_test",
+  "primary_completion_improvement": false,
+  "primary_delay_no_regression_evidence": true,
+  "primary_completion_and_delay_gate": false,
+  "bootstrap_seed": 64000,
+  "bootstrap_draws": 5000,
+  "deterministic_comparison_note": "A deterministic route record is paired with every learned seed, without counting the repeated pairing as additional evaluation episodes."
+}

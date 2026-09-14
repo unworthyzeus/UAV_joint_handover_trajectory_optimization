@@ -1,0 +1,9 @@
+{
+  "checkpoints": {
+    "results/service_reward_v21/confirmatory/service_seed_2101/checkpoint.pt": "82432daae35a095b3c2e3b27e54e569867b08bfe958aa681e80465fc8b36b76e",
+    "results/service_reward_v21/confirmatory/service_seed_2102/checkpoint.pt": "a59f72cb4c7f7e5c6bedaaaba3d03c5dbc879c8e6c7f2dab2fb1d6790cbb620e",
+    "results/service_reward_v21/confirmatory/service_seed_2103/checkpoint.pt": "4902d01559bf003431571da70399a5e7ab06056fe75dd5f2a866e375b9460e2d",
+    "results/service_reward_v21/confirmatory/service_seed_2104/checkpoint.pt": "e8f2e825e45ff99ba7aa7263a28b7d1fc5b6de55b2bdc606dc143741a3f1c05d",
+    "results/service_reward_v21/confirmatory/service_seed_2105/checkpoint.pt": "f431b51b2c6d8f5fdf76565c65d199a6f17acfae69b400b5120d3ff9718803c6"
+  }
+}

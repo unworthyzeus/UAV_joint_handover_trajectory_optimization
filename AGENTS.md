@@ -44,6 +44,15 @@ When adding research work, create or update a Markdown note that records:
     The current paper and README center on V2 and the fresh 53012/53013 tests.
     Historical V1 has no role in the final paper and only a brief README note.
     Preserve its records for provenance without promoting them as current evidence.
+12. Preserve every source/protocol file hashed in
+    `configs/frozen_service_reward_v21.json` and all checkpoint hashes it reuses.
+    The V2.1 service reward followup has separate fresh 54012/54013 tests and
+    must not be pooled with the 53012/53013 comparison. Retain every declared
+    pilot and final seed, including unsuccessful improvement attempts. The user
+    prioritized mission completion first, then delay and handovers. A candidate
+    that misses the declared completion gate is not promoted through favorable
+    wording about another metric. New tuning requires a new declared study and
+    evaluation data; notes 46-49 record this completed followup.
 
 ## Implementation Rules
 

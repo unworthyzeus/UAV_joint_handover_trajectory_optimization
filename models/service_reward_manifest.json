@@ -1,0 +1,62 @@
+{
+  "description": "Five final V2.1 service reward checkpoints; original fifteen policies remain in checkpoint_manifest.json. Private dataset not included.",
+  "count": 5,
+  "total_bytes": 686570,
+  "checkpoints": [
+    {
+      "path": "results/service_reward_v21/confirmatory/service_seed_2101/checkpoint.pt",
+      "study": "V2.1",
+      "arm": "service",
+      "seed": 2101,
+      "bytes": 137314,
+      "sha256": "82432daae35a095b3c2e3b27e54e569867b08bfe958aa681e80465fc8b36b76e",
+      "steps": 524288,
+      "observation_features": 156,
+      "network_options": 61
+    },
+    {
+      "path": "results/service_reward_v21/confirmatory/service_seed_2102/checkpoint.pt",
+      "study": "V2.1",
+      "arm": "service",
+      "seed": 2102,
+      "bytes": 137314,
+      "sha256": "a59f72cb4c7f7e5c6bedaaaba3d03c5dbc879c8e6c7f2dab2fb1d6790cbb620e",
+      "steps": 524288,
+      "observation_features": 156,
+      "network_options": 61
+    },
+    {
+      "path": "results/service_reward_v21/confirmatory/service_seed_2103/checkpoint.pt",
+      "study": "V2.1",
+      "arm": "service",
+      "seed": 2103,
+      "bytes": 137314,
+      "sha256": "4902d01559bf003431571da70399a5e7ab06056fe75dd5f2a866e375b9460e2d",
+      "steps": 524288,
+      "observation_features": 156,
+      "network_options": 61
+    },
+    {
+      "path": "results/service_reward_v21/confirmatory/service_seed_2104/checkpoint.pt",
+      "study": "V2.1",
+      "arm": "service",
+      "seed": 2104,
+      "bytes": 137314,
+      "sha256": "e8f2e825e45ff99ba7aa7263a28b7d1fc5b6de55b2bdc606dc143741a3f1c05d",
+      "steps": 524288,
+      "observation_features": 156,
+      "network_options": 61
+    },
+    {
+      "path": "results/service_reward_v21/confirmatory/service_seed_2105/checkpoint.pt",
+      "study": "V2.1",
+      "arm": "service",
+      "seed": 2105,
+      "bytes": 137314,
+      "sha256": "f431b51b2c6d8f5fdf76565c65d199a6f17acfae69b400b5120d3ff9718803c6",
+      "steps": 524288,
+      "observation_features": 156,
+      "network_options": 61
+    }
+  ]
+}

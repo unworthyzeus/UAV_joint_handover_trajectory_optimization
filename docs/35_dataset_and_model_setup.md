@@ -1,5 +1,12 @@
 # Dataset Placement and Model Setup
 
+The subsequent V2.1 research candidate has five additional final weights and
+a dedicated evaluator. See [note 49](49_service_reward_models_and_reproduction.md)
+for those paths and [note 48](48_service_reward_results.md) for its fresh results.
+The original fifteen checkpoints described below remain unchanged; the
+combined release contains twenty final policies. Inclusion of a candidate's
+weights is for reproducibility and does not imply that it is a better model.
+
 Updated 13 September 2026. The examples use PowerShell and Python 3.12 on
 Windows, matching the recorded CPU environment. Use `evaluate_reward_controller.py`
 for the current V1.5/V2 comparison on the fresh test routes.

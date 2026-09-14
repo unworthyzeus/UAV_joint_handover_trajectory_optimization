@@ -1,17 +1,25 @@
 # Research Documentation Index
 
-Updated 13 September 2026. This index separates the completed received data
+Updated 14 September 2026. This index separates the completed received data
 study from historical proposals and asset searches, preventing obsolete blocked
 status or preliminary hypotheses from being mistaken for current findings.
 
 ## Current V2 Study and Original Reward Control
 
-The current paper contains V2 and V1.5 only. V1.5 is the original written reward
-on the complete V2 system. Its new comparison does not establish improved
+The current paper contains the V2/V1.5 comparison and a separately declared
+V2.1 service reward followup. V1.5 is the original written reward
+on the complete V2 system. The initial comparison does not establish improved
 completion from reward replacement: both reach 95.7% on standard routes;
 full reaches 87.3% versus 85.8% on longer routes, with both difference intervals
 including zero. Lower aggregate radio cost coexists with substantially higher
-delay. All current results use new test seeds 53012 and 53013.
+delay. Those initial results use test seeds 53012 and 53013.
+
+The V2.1 followup uses new 54012/54013 routes and adds five trained policies.
+It does not meet the completion first priority: 95.48% versus 96.92% standard
+success and 88.60% versus 91.84% longer success for V2.1 versus full V2.
+Its complete uncertainty and service results are in note 48. The failed
+improvement attempt remains part of the record; V2.1 is not promoted as the
+main model.
 
 The supplied Barcelona HDF5 is **the same dataset used in the original
 thesis**. [Note 43](43_confirmed_thesis_dataset_identity.md) records the
@@ -28,6 +36,11 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [42: Current findings and thesis differences in the README](42_readme_current_findings_and_thesis_differences.md) | Shared changes, the reward contrast, general results, visible failures and revised causal conclusions |
 | [43: Confirmed thesis dataset identity](43_confirmed_thesis_dataset_identity.md) | Confirmation that the supplied HDF5 is the same dataset as the original thesis; current paper and README corrected |
 | [44: Original thesis comparisons throughout the README](44_readme_original_thesis_comparisons.md) | Original parameters and results beside current values, approximate figure readings, unavailable metrics and comparability limits |
+| [45: Metric directions and interpretation](45_metric_directions_and_interpretation.md) | Current values beside source readings, higher or lower guidance, service tradeoffs and the improvement request |
+| [46: V2.1 development protocol](46_service_reward_development_protocol.md) | Bounded reward candidates, completion first selection, fixed requirements and a fresh evaluation gate |
+| [47: V2.1 development results](47_service_reward_development.md) | Every pilot, the selected service reward and unsuccessful stronger penalty candidates |
+| [48: V2.1 fresh evaluation](48_service_reward_results.md) | New 54012/54013 results, completion first verdict, all seeds, failures and matched service metrics |
+| [49: V2.1 models and reproduction](49_service_reward_models_and_reproduction.md) | Five additional final weights, dataset location, standalone evaluation and separate reproduction labels |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 

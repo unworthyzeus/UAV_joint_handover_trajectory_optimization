@@ -25,6 +25,10 @@ flight has zero sampled RSS outage and zero dropped bits.
 Full versus original secondary comparisons contain \PairStd\ common successful
 standard seed/route pairs and \PairLong\ longer pairs.
 Table~\ref{tab:paired} reports conditional paired values and intervals.
+Higher success and SINR are preferable. Lower delay, interference, consumed
+energy and flight time are preferable on common successful missions; fewer
+handovers are useful only while preserving service. A lower weighted radio
+cost does not imply improvement in every component.
 \RadioInterpretation{} A favorable aggregate cost is not interchangeable with
 delay, interference, handovers or completion. Different successful subsets
 must not be treated as matched counterfactual outcomes.
@@ -77,6 +81,8 @@ sampled points does not establish connectivity between samples.}
 \label{fig:diagnostics}
 \end{figure*}
 
+\input{v21_followup.tex}
+
 \section{Interpretation and Limitations}
 The contrast isolates the reward package conditional on V2. It does not identify
 individual terms or behavior without the navigation prior and prospective
@@ -89,33 +95,38 @@ the reward on V2 cannot identify the cause of the thesis's wandering
 \cite[p.~21, Sec.~8]{thesis}. The dataset is the same as the thesis's;
 sentinel meaning remains unverified. One map, static load, ideal service and uncalibrated energy limit
 inference. No physical continuity, packet latency, collision safety or deployment
-claim follows. A successful arrival can still retain queued data. Every table
-here uses the newly declared route seeds; earlier V2 results remain separate.
+claim follows. A successful arrival can still retain queued data. The initial
+comparison uses seeds 53012/53013; the V2.1 followup uses fresh 54012/54013
+routes. These test samples are reported separately.
 
 \section{Conclusion}
-\ConclusionResult{} The experiment compares the written original reward and a
+\ConclusionResult{} \input{v21_conclusion.tex} The initial experiment compares the written original reward and a
 replacement under identical sampled constraints and control machinery, retaining
 failed missions and communication tradeoffs. Further claims require independent
 maps, traffic and controller ablations rather than tuning on these test routes.
 
-\clearpage
 \appendices
 \section{Artifacts and Reproduction}
-The repository includes all 15 final checkpoints, source, configuration, raw
+The repository includes all 15 initial comparison checkpoints and five V2.1
+checkpoints, source, configuration, raw
 records, analysis, source snapshots and this paper:
 \url{https://github.com/unworthyzeus/UAV_joint_handover_trajectory_optimization}.
-Ten are unchanged V2 policies and five are new V1.5 policies. The private
+The initial comparison uses ten unchanged V2 policies and five V1.5 policies;
+the followup adds five policies with the validation selected service reward.
+The private
 dataset belongs at \texttt{dataset/Barcelona\_dataset\_January.h5}; the setup
 guide records its checksum, dependency versions, exact commands and outputs.
-Note 36 is the frozen protocol, note 37 records results, and note 38 records
-delivery validation. The README documents the exact V2 differences from the
+Note 36 is the initial frozen protocol, note 37 records its results, and
+note 38 records its delivery validation. Notes 46--49 document the V2.1
+protocol, development, results and reproduction. The README documents the exact V2 differences from the
 TFM with page locators. This is a research draft, not an accepted publication.
 
 \section{Every Seed and Observation Layout}
 \input{v15_seed_table.tex}
 \newpage
+\input{v21_seed_table.tex}
 \par\noindent\begin{minipage}{\columnwidth}
-\captionof{table}{Identical V2 observation layout in all three learned arms.}
+\captionof{table}{Identical V2 observation layout in all four learned reward arms, including V2.1.}
 \centering\small
 \begin{tabular}{ll}\toprule
 Indices & Meaning\\\midrule

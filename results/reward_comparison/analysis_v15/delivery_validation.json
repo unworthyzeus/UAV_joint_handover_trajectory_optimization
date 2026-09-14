@@ -1,5 +1,5 @@
 {
-  "scope": "Dataset identity correction in the current paper and exhaustive original thesis comparisons in all 15 README tables. Existing experiment results, figures and weights unchanged.",
+  "scope": "Historical delivery validation at commit d53b293. All current_pdf and README fields below describe that seven page version, not the subsequent V2.1 delivery.",
   "frozen_source_protocol_blobs_verified": 20,
   "checkpoint_blobs_verified": 15,
   "checkpoint_bytes": 2054910,
@@ -29,5 +29,7 @@
     "success_intervals_checked": 2,
     "local_links_checked": 77,
     "original_figure_readings": "Visually reviewed; approximate CDF medians and bar heights, not exact source data."
-  }
+  },
+  "validated_commit": "d53b2932b1f98a13879f2b716ff73f94a719a785",
+  "superseded_for_current_delivery_by": "results/service_reward_v21/analysis/delivery_validation.json"
 }

@@ -35,7 +35,8 @@ def main():
                                   "line": source.count("\n", 0, match.start()) + 1,
                                   "locator": match[1]})
     freezes = {}
-    for name in ("frozen_comparison_v1.json", "frozen_connectivity_v2.json", "frozen_reward_comparison_v15.json"):
+    for name in ("frozen_comparison_v1.json", "frozen_connectivity_v2.json", "frozen_reward_comparison_v15.json",
+                 "frozen_service_reward_v21.json"):
         manifest = json.loads((ROOT / "configs" / name).read_text())
         freezes[name] = {p: digest(ROOT / p) == value
                          for p, value in manifest["source_hashes"].items()}
@@ -66,7 +67,7 @@ def main():
     assert not bounds, bounds
     assert all(x["embedded"] and x["type"] != "Type3" for x in fonts.values())
     assert "Guillem Moreno Garcia" in text and "Evgenii Vinogradov" in text
-    assert not re.search(r"\bV1(?!\.5)\b|Study I\b|21\.4%|92\.2%", text), "Historical V1 material remains"
+    assert not re.search(r"\bV1(?!\.5)\b|Study I\b", text), "Historical V1 material remains"
     replay = json.loads((ROOT / "results/reward_comparison/replay_v15/audit.json").read_text())
     assert replay["exact_episode_matches"] == 7600
     weights = json.loads((ROOT / "models/checkpoint_manifest.json").read_text())
@@ -81,6 +82,25 @@ def main():
             assert f"\\newcommand{{\\{prefix}{suffix}}}{{{value}}}" in macro_source
             assert value in text
     assert statistics["primary_positive_completion_evidence"] is False
+    service_weights = json.loads((ROOT / "models/service_reward_manifest.json").read_text())
+    assert service_weights["count"] == 5
+    assert all(digest(ROOT / row["path"]) == row["sha256"] for row in service_weights["checkpoints"])
+    service = json.loads((ROOT / "results/service_reward_v21/analysis/statistics.json").read_text())
+    service_replay = json.loads((ROOT / "results/service_reward_v21/replay/audit.json").read_text())
+    assert service["total_evaluated_episodes"] == service_replay["exact_episode_matches"] == 18000
+    assert "54012/54013" in text and "V2.1" in text
+    for arm in ("original", "full", "service", "straight_radio", "joint_mpc", "joint_lookahead"):
+        for split in ("test", "longer_test"):
+            assert f"{100 * service['groups'][arm + '_' + split]['success_rate']:.2f}" in text
+    service_primary = service["contrasts"]["service_minus_full_test"]
+    service_interval = service_primary["success_difference_ci95_pp"]
+    assert f"{service_primary['success_difference_pp']:+.3f}" in text
+    assert all(f"{value:.3f}" in text for value in service_interval)
+    seed_table = (ROOT / "paper/v21_seed_table.tex").read_text(encoding="utf-8")
+    for i, seed in enumerate([2101, 2102, 2103, 2104, 2105]):
+        cells = [' / '.join(f"{100 * service['groups'][arm + '_' + split]['per_seed_success_rates'][i]:.1f}"
+                           for split in ("test", "longer_test")) for arm in ("original", "full", "service")]
+        assert str(seed) + ' & ' + ' & '.join(cells) + r'\\' in seed_table
     illustration_path = ROOT / "results/reward_comparison/analysis_v15/long_route_illustration.json"
     illustration = json.loads(illustration_path.read_text())
     selection_path = ROOT / "configs/long_route_illustration_v15.json"
@@ -138,7 +158,15 @@ def main():
               "statistic_hashes": {p: digest(ROOT / p) for p in (
                   "results/reward_comparison/analysis_v15/statistics.json",
                   "models/checkpoint_manifest.json",
-                  "results/reward_comparison/replay_v15/audit.json")},
+                  "results/reward_comparison/replay_v15/audit.json",
+                  "results/service_reward_v21/analysis/statistics.json",
+                  "models/service_reward_manifest.json",
+                  "results/service_reward_v21/replay/audit.json")},
+              "service_followup": {"episodes": 18000, "checkpoint_count": 5,
+                  "per_seed_success_values_checked": 30,
+                  "primary_completion_improvement": service["primary_completion_improvement"],
+                  "primary_completion_and_delay_gate": service["primary_completion_and_delay_gate"],
+                  "report_builder_sha256": digest(ROOT / "scripts/build_service_reward_report.py")},
               "visual_review": "Required separately after rendering",
               "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
               "long_route_illustration": {"scenario_id": longest["id"], "distance_m": illustration["selection"]["distance_m"],
@@ -148,12 +176,12 @@ def main():
                       "scripts/build_long_route_figures.py", "results/reward_comparison/analysis_v15/long_route_illustration.json",
                       "results/reward_comparison/analysis_v15/reward_comparison_example.pdf",
                       "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf")}},
-              "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained."}
+              "scope": "One paper with the initial V1.5/V2 comparison and a separately frozen V2.1 followup. Historical V1 excluded; all outcomes retained."}
     if previous.get("pdf_sha256") == report["pdf_sha256"]:
         report["visual_review"] = previous.get("visual_review", report["visual_review"])
     report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"pages": len(pdf), "tfm_citations": len(citations),
-                      "fonts": len(fonts), "all_three_freezes_match": True,
+                      "fonts": len(fonts), "all_four_freezes_match": True,
                       "visual_review": report["visual_review"]}))
 
 

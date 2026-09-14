@@ -1,0 +1,8 @@
+{
+  "src/uav_joint_optimization/service_reward_env.py": "b792bae2a252578a08c7f57e284cf98dd43c4723a8bad78fc5f346dd7d6201ce",
+  "src/uav_joint_optimization/service_reward_ppo.py": "0ca25240980d86b6d830ede0d57976442229792192c1934ac17a899dd7c9b399",
+  "scripts/run_service_reward_study.py": "85b986b94dfdbaf51661d5069f6287b45e3545398b01734e2d53cdb2f0aab88c",
+  "scripts/analyze_service_reward_study.py": "ae2d65dbec8bd3b6a4307b85860631018b6c4f7c77d174d0957bcf7a4ddb1d98",
+  "tests/test_service_reward.py": "e021e7cf18951ad1fce6f4663a612c2fc7062920e566c9136a052bfb88391a4a",
+  "docs/46_service_reward_development_protocol.md": "b46eb3e38090a1c44e61c9a5a8bdf9199a136e4b21635fa7a4bd45fd1e3425c7"
+}

@@ -287,3 +287,52 @@ ceilings and actual interactions. No library defaults or original output
 normalizations were assumed. Existing result cells, statistics, models and
 all experiment freezes are preserved. This documentation revision does not
 change the null primary result or demonstrate a repair of the original agent.
+
+## 2026-09-14: Metric Interpretation and a Completion First Improvement Attempt
+
+The user requested more numerical source comparisons, interpretation and
+preferred directions, and a better model, then clarified completion first
+and service second. Expanded the README source comparison with 28 current
+means, failure counts and denominators. Explained how lower delay, time,
+interference and consumed energy differ from higher success, SINR and
+remaining energy, and why fewer handovers can trade against service.
+Unreported thesis values remain unreported; incompatible quantities retain
+their original units and limitations. Note 45 records the interpretation.
+
+Declared three reward candidates and a fresh full V2 control before running
+four pilots. All used 524,288 interactions and pilot seed 2199. The service
+candidate passed the declared validation gate with 91/96 missions against
+90/96 for control; the stronger reliability candidates achieved 87/96 and
+89/96. Preserved every pilot outcome. Froze the selected reward and source,
+then trained five final models with seeds 2101-2105. The reward adapter
+preserves V2 transitions, observations, navigation, filters and mission rules.
+The dataset is the same unchanged private HDF5 as in the original thesis.
+
+Evaluated 500 new standard and 500 new longer routes, separately from the
+initial comparison, for 18,000 total final episodes. All 18,000 replayed
+exactly. V2.1 / full V2 success is 95.48% / 96.92% standard and 88.60% /
+91.84% longer. The primary difference is -1.44 percentage points with a
+95% interval [-3.16, 0.32]; the longer difference is -3.24 [-5.64, -0.88].
+The candidate did not improve completion. It reduces delay on common
+successes, but produces more handovers and more RSS failures. V2 remains
+the main model; no additional candidate or tuning followed these results.
+Notes 46-48 retain the protocol, all development outcomes and final results.
+
+Added the five final weights and a usage guide in note 49, bringing the
+published total to 20 checkpoints and 2,741,480 bytes. Pilot weights stay
+local with their hashes and regeneration commands retained. The single
+IEEE paper now contains both separate comparisons, all final training seeds,
+the existing informative route plots and the negative improvement finding.
+The final eight pages were rendered and visually inspected. All 88 tests
+passed, all four freezes and all checkpoint hashes match, and the initial
+statistics, figures and model weights remain unchanged. The current delivery
+audit is `results/service_reward_v21/analysis/delivery_validation.json`;
+the prior delivery record is explicitly historical at commit `d53b293`.
+
+The completed study does not establish a better overall model or identify
+the original thesis implementation's failure. Single city sampling, five
+training seeds, static traffic, proxy energy, ideal handovers and sampled
+connectivity remain limitations. The next research decision is a separately
+declared investigation of RSS failures and controller constraints, followed
+by new evaluation routes if further tuning is undertaken. No such additional
+experiment is claimed here.

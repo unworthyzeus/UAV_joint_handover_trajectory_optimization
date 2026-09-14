@@ -1,0 +1,64 @@
+\section{Completion First Service Reward Followup}
+
+\label{sec:v21}
+
+\begin{table*}[!t]\centering\small
+
+\caption{V2.1 minus full V2 on common successful fresh pairs. Values are means; intervals describe paired differences. Lower time, delay, handovers and consumed energy and higher SINR are preferable.}
+
+\label{tab:v21paired}
+
+\begin{tabular}{lrrlrrl}\toprule & \multicolumn{3}{c}{Standard} & \multicolumn{3}{c}{Longer}\\
+Metric & Full V2 & V2.1 & 95\% difference interval & Full V2 & V2.1 & 95\% difference interval\\\midrule
+Flight time (s) & 28.347 & 28.594 & [0.020, 0.520] & 60.409 & 60.785 & [0.039, 0.747]\\
+Delay proxy (s) & 4.742 & 1.291 & [-3.957, -2.962] & 6.199 & 1.583 & [-4.957, -4.287]\\
+Handovers & 0.402 & 9.839 & [8.968, 9.897] & 1.442 & 23.058 & [20.923, 22.287]\\
+Consumed energy (kJ) & 7.873 & 7.868 & [-0.014, 0.005] & 19.057 & 19.032 & [-0.049, 0.002]\\
+SINR (dB) & -8.916 & -7.457 & [1.296, 1.628] & -9.745 & -7.978 & [1.662, 1.870]\\
+Interference ($\mu$W) & 0.736 & 0.725 & [-0.019, -0.002] & 0.763 & 0.755 & [-0.016, -0.002]\\
+Fixed V2 radio cost & 5.174 & 6.923 & [1.520, 1.983] & 13.437 & 16.269 & [2.377, 3.280]\\
+\bottomrule\end{tabular}\end{table*}
+
+After the initial comparison, we declared a separate V2.1 study to prioritize completion, then service. The full V2 delay cost is 0.318 at 1 s, 0.344 at 6 s and 0.347 at 10 s; a handover costs about 0.347. This saturation motivates a different reward, not a conclusion about trained performance.
+
+\subsection{Development and Frozen Protocol}
+
+Four pilots used seed 2199 and 524,288 interactions each, with the same 64 standard and 32 longer validation routes. Full V2 completed 90/96 missions, the service candidate 91/96, and two candidates with stronger RSS, queue and failure penalties 87/96 and 89/96. The declared rule selected by completion first, then matched delay and handovers; advancement required no larger matched delay in either split. All candidates were retained.
+
+The selected service cost is
+
+\begin{align}
+C^{\mathrm{svc}}_t={}&0.10\log(1+D_t/(1\,\mathrm{s}))+0.20(q_t/Q)^2\nonumber\\
+&+0.03H_t+0.30\frac{10^5I_t}{1+10^5I_t}.
+\end{align}
+
+It replaces only the training radio cost; V2 potential shaping, time cost and terminal payments remain. One second is a normalization scale, not a packet deadline. The selected candidate has no RSS shaping term. Transitions, observations, actions, navigation aid, filter, PPO and mission requirements remain identical. The filter and all reported fixed radio costs continue to use the original V2 cost, preventing a hidden controller change.
+
+After selection, the source and coefficients were frozen. Five new policies used seeds 2101--2105 and 524,288 interactions each. They were compared with the five fixed V1.5 and five full V2 checkpoints on 500 new standard and 500 new longer routes, seeds 54012/54013. Goal radio and both joint search references were also evaluated. All 18,000 episodes replayed exactly. These routes are disjoint from prior saved routes but remain on the same map and within training distances.
+
+The primary contrast is V2.1 minus full V2 standard success. A 95\% crossed seed/route interval uses 5,000 draws and seed 64000. A favorable completion claim requires its lower bound above zero; a claim of completion improvement without a delay regression additionally requires the paired delay interval upper bound at most zero. Other intervals are descriptive. No tuning followed the fresh tests.
+
+\subsection{Fresh Results and Tradeoffs}
+
+\begin{table}[t]\centering\small
+
+\caption{V2.1 followup joint success on new 54012/54013 routes. Learned arms use 2,500 episodes per split; references use 500. Higher is preferable.}
+
+\label{tab:v21success}
+
+\begin{tabular}{lrr}\toprule Controller & Standard (\%) & Longer (\%)\\\midrule
+V2.1 service & 95.48 & 88.60\\
+Full V2 & 96.92 & 91.84\\
+Original reward V1.5 & 96.04 & 89.48\\
+Goal radio & 97.40 & 91.80\\
+Joint one step & 96.20 & 91.40\\
+Joint three step & 94.00 & 92.80\\
+\bottomrule\end{tabular}\end{table}
+
+Standard V2.1 minus full V2 is -1.440 percentage points, interval [-3.160, 0.320]. The fresh standard comparison does not establish improved completion over full V2. On longer routes the difference is -3.240 points, interval [-5.640, -0.880]. The longer route interval supports lower completion than full V2.
+
+The paired service comparison contains 2335 standard and 2086 longer common successes. The standard paired delay difference is -3.451 s and the handover difference is +9.437, conditional on common successes. A service improvement does not establish improved completion or simultaneous improvement in every radio metric. All failures remain in the success denominators.
+
+For standard V2.1 / full V2, first RSS failures are 111 / 71 and first buffer failures are 2 / 6; for longer routes they are 276 / 160 and 4 / 39, respectively. Other failure types and every seed are retained in note 48.
+
+Against V1.5, standard completion differs by -0.560 points, interval [-2.040, 0.760]. This is a comparison with the written original reward on V2, not the original thesis agent. Selection from a small validation set and only five final training seeds limit inference.

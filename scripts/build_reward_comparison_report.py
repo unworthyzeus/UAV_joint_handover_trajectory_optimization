@@ -92,7 +92,7 @@ def main():
     for arm in ARMS:
         for i,seed in enumerate(SEEDS):
             seed_rows.append([NAMES[arm],seed,f"{100*g[arm+'_test']['per_seed_success_rates'][i]:.1f}",f"{100*g[arm+'_longer_test']['per_seed_success_rates'][i]:.1f}"])
-    table("v15_seed_table.tex","Every learned seed: joint success percentages.","tab:seeds","lrrr",["Arm","Seed","Standard","Longer"],seed_rows)
+    table("v15_seed_table.tex","Every learned seed on initial 53012/53013 routes: joint success percentages.","tab:seeds","lrrr",["Arm","Seed","Standard","Longer"],seed_rows)
     seed_file = PAPER / "v15_seed_table.tex"
     seed_file.write_text(seed_file.read_text().replace(r"\begin{table}[t]", r"\par\noindent\begin{minipage}{\columnwidth}").replace(r"\caption{", r"\captionof{table}{").replace(r"\end{table}", r"\end{minipage}\par"), encoding="utf-8")
     plt.rcParams.update({'font.size':10,'pdf.fonttype':42,'ps.fonttype':42,'axes.spines.top':False,'axes.spines.right':False})

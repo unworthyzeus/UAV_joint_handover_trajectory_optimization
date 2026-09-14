@@ -1,0 +1,266 @@
+{
+  "completed_utc": "2026-09-14T07:46:22.946825+00:00",
+  "pilot_seed": 2199,
+  "steps_per_policy": 524288,
+  "candidates": {
+    "full_control": {
+      "summaries": {
+        "validation": {
+          "failure_counts": {
+            "connectivity": 1,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 64,
+          "success_rate": 0.984375,
+          "feasible_success_rate": 0.984375,
+          "failure_distance_mean_m": 537.1010131835938,
+          "successful_time_s": 28.38095238095238,
+          "successful_path_m": 555.6387329101562,
+          "successful_energy_proxy_j": 7851.83730546255,
+          "successful_handovers": 0.3333333333333333,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 4.410117136312364,
+          "successful_interference_mean_w": 7.791576596222646e-07,
+          "successful_sinr_mean_db": -8.971602094551873,
+          "successful_sinr_p05_db": -17.287176003531805,
+          "successful_radio_cost_sum": 5.192625557315831,
+          "successful_radio_cost_mean": 0.17791862484090012,
+          "successful_resource_changes": 10.53968253968254,
+          "successful_final_buffer_bits": 288194.0714285714
+        },
+        "validation_longer": {
+          "failure_counts": {
+            "connectivity": 3,
+            "buffer": 2,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 32,
+          "success_rate": 0.84375,
+          "feasible_success_rate": 0.84375,
+          "failure_distance_mean_m": 864.2832855224609,
+          "successful_time_s": 59.370370370370374,
+          "successful_path_m": 1329.749683521412,
+          "successful_energy_proxy_j": 18673.011140046296,
+          "successful_handovers": 1.2962962962962963,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 5.81042999052243,
+          "successful_interference_mean_w": 6.843728533505512e-07,
+          "successful_sinr_mean_db": -9.867018222808838,
+          "successful_sinr_p05_db": -18.384890026516384,
+          "successful_radio_cost_sum": 13.164361887911134,
+          "successful_radio_cost_mean": 0.22159877397724154,
+          "successful_resource_changes": 20.25925925925926,
+          "successful_final_buffer_bits": 287865.38310185185
+        }
+      },
+      "successes": 90,
+      "matched_delay_differences": {
+        "validation": 0.0,
+        "validation_longer": 0.0
+      },
+      "checkpoint_sha256": "2c6eb41db19885fcd93ae3d4ee16a433abe98fa88456c715fe1cc5600ea10c07"
+    },
+    "service": {
+      "summaries": {
+        "validation": {
+          "failure_counts": {
+            "connectivity": 1,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 64,
+          "success_rate": 0.984375,
+          "feasible_success_rate": 0.984375,
+          "failure_distance_mean_m": 87.07131958007812,
+          "successful_time_s": 28.555555555555557,
+          "successful_path_m": 556.6380455380395,
+          "successful_energy_proxy_j": 7863.709736173115,
+          "successful_handovers": 9.619047619047619,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.0567767312243925,
+          "successful_interference_mean_w": 7.640521579498488e-07,
+          "successful_sinr_mean_db": -7.575051574479966,
+          "successful_sinr_p05_db": -14.874002350701225,
+          "successful_radio_cost_sum": 6.9796920012763985,
+          "successful_radio_cost_mean": 0.2392424576563869,
+          "successful_resource_changes": 16.063492063492063,
+          "successful_final_buffer_bits": 24169.88963293651
+        },
+        "validation_longer": {
+          "failure_counts": {
+            "connectivity": 4,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 32,
+          "success_rate": 0.875,
+          "feasible_success_rate": 0.875,
+          "failure_distance_mean_m": 989.6544494628906,
+          "successful_time_s": 61.25,
+          "successful_path_m": 1375.4339556012835,
+          "successful_energy_proxy_j": 19301.948835100447,
+          "successful_handovers": 21.642857142857142,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.637567866916606,
+          "successful_interference_mean_w": 7.133016306254344e-07,
+          "successful_sinr_mean_db": -7.960237383842468,
+          "successful_sinr_p05_db": -16.700183153152466,
+          "successful_radio_cost_sum": 15.418865408839855,
+          "successful_radio_cost_mean": 0.2523254181757712,
+          "successful_resource_changes": 34.714285714285715,
+          "successful_final_buffer_bits": 20322.256696428572
+        }
+      },
+      "successes": 91,
+      "matched_delay_differences": {
+        "validation": -3.4221010789121884,
+        "validation_longer": -4.860687126623337
+      },
+      "checkpoint_sha256": "b02095396b40b9a83ecfcbf906c894c3dcb7b1d88a91e1f66465c3b7c90a87f5"
+    },
+    "reliability": {
+      "summaries": {
+        "validation": {
+          "failure_counts": {
+            "connectivity": 2,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 64,
+          "success_rate": 0.96875,
+          "feasible_success_rate": 0.96875,
+          "failure_distance_mean_m": 71.50675964355469,
+          "successful_time_s": 28.758064516129032,
+          "successful_path_m": 561.3800600113407,
+          "successful_energy_proxy_j": 7921.167791551159,
+          "successful_handovers": 9.451612903225806,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.1608396291062748,
+          "successful_interference_mean_w": 7.709581407476383e-07,
+          "successful_sinr_mean_db": -7.746867562253629,
+          "successful_sinr_p05_db": -14.961879099569012,
+          "successful_radio_cost_sum": 6.795188489797076,
+          "successful_radio_cost_mean": 0.23751088348336682,
+          "successful_resource_changes": 17.274193548387096,
+          "successful_final_buffer_bits": 17293.249495967742
+        },
+        "validation_longer": {
+          "failure_counts": {
+            "connectivity": 7,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 32,
+          "success_rate": 0.78125,
+          "feasible_success_rate": 0.78125,
+          "failure_distance_mean_m": 751.8224051339286,
+          "successful_time_s": 62.0,
+          "successful_path_m": 1388.5012719726562,
+          "successful_energy_proxy_j": 19463.5276953125,
+          "successful_handovers": 23.52,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.4222971038551835,
+          "successful_interference_mean_w": 7.363517524385837e-07,
+          "successful_sinr_mean_db": -8.086720905303956,
+          "successful_sinr_p05_db": -16.76238109588623,
+          "successful_radio_cost_sum": 16.553893988792243,
+          "successful_radio_cost_mean": 0.2657794820051241,
+          "successful_resource_changes": 39.52,
+          "successful_final_buffer_bits": 0.0
+        }
+      },
+      "successes": 87,
+      "matched_delay_differences": {
+        "validation": -3.375370228004795,
+        "validation_longer": -5.015316215855449
+      },
+      "checkpoint_sha256": "ae921ef39947990509897f9853a96fe76b7cb35c52da44d8a8921ece183b85ea"
+    },
+    "reliability_strong": {
+      "summaries": {
+        "validation": {
+          "failure_counts": {
+            "connectivity": 1,
+            "buffer": 1,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 64,
+          "success_rate": 0.96875,
+          "feasible_success_rate": 0.96875,
+          "failure_distance_mean_m": 140.9862060546875,
+          "successful_time_s": 28.596774193548388,
+          "successful_path_m": 553.7646521291425,
+          "successful_energy_proxy_j": 7802.284341135332,
+          "successful_handovers": 10.209677419354838,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.19630968324223,
+          "successful_interference_mean_w": 7.605887427180184e-07,
+          "successful_sinr_mean_db": -7.716408869912548,
+          "successful_sinr_p05_db": -15.19865297502087,
+          "successful_radio_cost_sum": 7.3487859494812815,
+          "successful_radio_cost_mean": 0.2557939381003149,
+          "successful_resource_changes": 15.483870967741936,
+          "successful_final_buffer_bits": 21754.561743951614
+        },
+        "validation_longer": {
+          "failure_counts": {
+            "connectivity": 5,
+            "buffer": 0,
+            "timeout": 0,
+            "energy": 0,
+            "boundary": 0
+          },
+          "episodes": 32,
+          "success_rate": 0.84375,
+          "feasible_success_rate": 0.84375,
+          "failure_distance_mean_m": 942.8676376342773,
+          "successful_time_s": 61.25925925925926,
+          "successful_path_m": 1360.5912746853298,
+          "successful_energy_proxy_j": 19037.988642939814,
+          "successful_handovers": 22.666666666666668,
+          "successful_outage_s": 0.0,
+          "successful_dropped_bits": 0.0,
+          "successful_delay_proxy_mean_s": 1.6713847557498567,
+          "successful_interference_mean_w": 7.124498426244265e-07,
+          "successful_sinr_mean_db": -8.219657014917445,
+          "successful_sinr_p05_db": -16.628730491355615,
+          "successful_radio_cost_sum": 16.307765880715053,
+          "successful_radio_cost_mean": 0.26719774587587386,
+          "successful_resource_changes": 32.888888888888886,
+          "successful_final_buffer_bits": 17289.177372685186
+        }
+      },
+      "successes": 89,
+      "matched_delay_differences": {
+        "validation": -3.1497553362403314,
+        "validation_longer": -4.598833103402883
+      },
+      "checkpoint_sha256": "f5b87a6fab1537f208c98a4395957e2bd0838a7c1bb39c7820e3238f6d3ed541"
+    }
+  },
+  "selected": "service",
+  "gate_passed": true,
+  "selection_uses_validation_only": true
+}

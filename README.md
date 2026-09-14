@@ -1,8 +1,8 @@
 # Joint Handover and Trajectory Optimization with Strict Connectivity
 
-Updated 13 September 2026. Non THz n3cat research project.
+Updated 14 September 2026. Non THz n3cat research project.
 
-**Current study: V2, with V1.5 as the original reward control on the same system.**
+**V2 and its V1.5 original reward control, with a completed V2.1 service reward followup.**
 **All experiments use the same Barcelona ray tracing dataset as the original
 thesis.** The supplied HDF5 is preserved unchanged; the simulation and control
 implementation are our own.
@@ -13,7 +13,7 @@ Guillem Moreno Garcia and Evgenii Vinogradov. Start with the
 [frozen protocol](docs/36_v15_reward_comparison_protocol.md), or
 [dataset and model setup guide](docs/35_dataset_and_model_setup.md).
 
-## Current Conclusion
+## Initial V1.5 Versus V2 Conclusion
 
 **Replacing the original reward has not demonstrated better mission completion
 under our shared V2 system.** Original reward V1.5 and full reward V2 both
@@ -33,6 +33,39 @@ Read the [main differences](#main-differences-from-the-thesis),
 [conclusions](#conclusions-and-revised-diagnosis) first. The detailed inventory
 below retains every observation, action, physical assumption, reward term,
 PPO setting, split and reproduction command.
+
+## V2.1 Followup on Fresh Routes
+
+**A new candidate was trained and tested with completion first, then service as the priority.** Three declared candidates and a fresh V2 pilot control were evaluated on validation routes. The service candidate completed 91/96 versus 90/96 for control; the stronger failure penalty candidates completed 87/96 and 89/96. The selected reward uses logarithmic delay cost, a queue fraction penalty and a smaller handover payment. Physical transitions, the safety filter and all mission requirements stay V2.
+
+The following results use **new seeds 54012 and 54013: 500 standard and 500 longer routes**, five training seeds per learned arm and 18,000 final episodes including references. They are separate from the 53012/53013 tables below; results from different test sets are not pooled.
+
+| Controller | New standard success | New longer success | Episodes per split | Original thesis comparison |
+| --- | ---: | ---: | ---: | --- |
+| V2.1 service | 95.48% | 88.60% | 2,500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+| Full V2 | 96.92% | 91.84% | 2,500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+| Original reward V1.5 | 96.04% | 89.48% | 2,500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+| Goal radio | 97.40% | 91.80% | 500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+| Joint one step | 96.20% | 91.40% | 500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+| Joint three step | 94.00% | 92.80% | 500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
+
+**The fresh standard comparison does not establish improved completion over full V2.** The candidate fails the declared completion first gate and is not promoted as the main model. The primary V2.1 minus full V2 difference is -1.440 percentage points, 95% interval [-3.160, 0.320]. The longer difference is -3.240 points [-5.640, -0.880]. The longer interval supports worse completion. An interval containing zero does not prove equivalence. The paired bootstrap uses 5,000 crossed seed/route draws.
+
+| Metric and preferred direction | New standard: full V2 / V2.1 | Paired difference, 95% interval | New longer: full V2 / V2.1 | Paired difference, 95% interval | Original thesis comparison |
+| --- | --- | --- | --- | --- | --- |
+| Flight time (s), lower | 28.347 / 28.594 | +0.246 [0.020, 0.520] | 60.409 / 60.785 | +0.376 [0.039, 0.747] | Comparable mean arrival time NR; source continues after arrival [p. 12, Sec. 5.2]. |
+| Delay proxy (s), lower | 4.742 / 1.291 | -3.451 [-3.957, -2.962] | 6.199 / 1.583 | -4.616 [-4.957, -4.287] | Queue/rate defined [p. 9, Eq. (4)]; numerical delay results NR in Figs. 6 and 8 [pp. 18, 20]. |
+| Handovers, lower with service | 0.402 / 9.839 | +9.437 [8.968, 9.897] | 1.442 / 23.058 | +21.616 [20.923, 22.287] | CDF raw scale is not a mean executed count per successful flight [pp. 18, 20, Figs. 6, 8]. |
+| Consumed energy (kJ), lower | 7.873 / 7.868 | -0.005 [-0.014, 0.005] | 19.057 / 19.032 | -0.025 [-0.049, 0.002] | Source remaining energy bars labeled kW use a different model [p. 10, Eq. (10); pp. 18, 20]. |
+| SINR (dB), higher | -8.916 / -7.457 | +1.459 [1.296, 1.628] | -9.745 / -7.978 | +1.767 [1.662, 1.870] | Source SNR and its CDF medians are not this metric [p. 10, Eq. (8); pp. 18, 20]. |
+
+These service means use **2335 standard and 2086 longer common successful pairs**. All failed flights still count in completion rates. Secondary intervals are descriptive and are not adjusted for multiple comparisons. Smaller delay does not imply fewer handovers, and a new reward is not an overall better controller unless the relevant metrics support that conclusion.
+
+[Every new result, failure count and seed](docs/48_service_reward_results.md), [all pilot outcomes](docs/47_service_reward_development.md), [frozen protocol](docs/46_service_reward_development_protocol.md) and [V2.1 model usage](docs/49_service_reward_models_and_reproduction.md) are retained. All 18,000 fresh evaluations replayed exactly. The implementation suite passed 88 tests. No additional candidate or training change followed these test outcomes.
+
+### What the New Reward Means
+
+This followup tests a reward package with the same neural architecture and control system. It does not isolate each reward term, improve the propagation model, reproduce the source simulator or demonstrate performance in another city. The next research decision must follow the measured completion and service tradeoffs, not a requirement to produce a favorable conclusion.
 
 ## Main Differences from the Thesis
 
@@ -100,7 +133,7 @@ V1.5 versus full V2 contrast a reproduction of the thesis simulator.
 
 ## General Results
 
-All current results use **fresh test seeds 53012 and 53013**, separate from
+Results in this initial comparison use **test seeds 53012 and 53013**, separate from
 the earlier V2 evaluation. Standard routes span 200-1000 m; longer routes
 span 1000-1800 m. Both ranges occur in training. There are 200 shared routes
 per split, five learned training seeds per arm, and **7,600 final episodes**
@@ -143,13 +176,13 @@ objectives.
 
 | Metric | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 | Original thesis result and comparability |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Flight time (s) | 31.252 | 28.112 | 65.394 | 60.145 | NR as a mean arrival time on common successful flights; source continues after arrival [p. 12, Sec. 5.2; pp. 17-20, Figs. 5-8]. |
-| Handovers | 6.843 | 0.443 | 15.826 | 1.528 | CDFs on an unexplained 1e-2 axis scale; source PPO is lower than greedy. NC with our mean executed counts per successful flight [p. 18, Fig. 6; p. 20, Fig. 8; readings below]. |
-| Delay proxy (s) | 1.942 | 5.827 | 2.857 | 6.818 | D = q/r is defined, but no numerical delay result is reported in the five metric panels, including the delay priority experiment [p. 9, Eq. (4); pp. 18, 20, Figs. 6, 8]. |
-| Energy proxy (kJ) | 7.651 | 7.788 | 18.523 | 18.957 | Remaining energy bars, labeled kW, approximately 370 for PPO and 440 for greedy. NC with consumed kJ under our different proxy [p. 18, Fig. 6; p. 10, Eq. (10)]. |
-| SINR (dB) | -8.322 | -9.305 | -8.773 | -9.957 | SNR CDF medians approximately 124 dB for PPO and 127 dB for greedy. NC: source SNR and our SINR use different arithmetic, and medians are not means [p. 10, Eq. (8); p. 18, Fig. 6]. |
-| Interference (µW) | 0.753 | 0.748 | 0.794 | 0.791 | Uplink interference CDF medians approximately -35 dBm for PPO and -28 dBm for greedy. NC with mean linear cochannel downlink power [p. 10, Eq. (9); p. 18, Fig. 6]. |
-| Accumulated radio cost | 7.094 | 5.309 | 16.800 | 13.803 | NR for our transformed cost accumulated until joint arrival; source objective and positive reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
+| Flight time (s); lower | 31.252 | 28.112 | 65.394 | 60.145 | NR as a mean arrival time on common successful flights; source continues after arrival [p. 12, Sec. 5.2; pp. 17-20, Figs. 5-8]. |
+| Handovers; lower while preserving service | 6.843 | 0.443 | 15.826 | 1.528 | CDFs on an unexplained 1e-2 axis scale; source PPO is lower than greedy. NC with our mean executed counts per successful flight [p. 18, Fig. 6; p. 20, Fig. 8; readings below]. |
+| Delay proxy (s); lower | 1.942 | 5.827 | 2.857 | 6.818 | D = q/r is defined, but no numerical delay result is reported in the five metric panels, including the delay priority experiment [p. 9, Eq. (4); pp. 18, 20, Figs. 6, 8]. |
+| Energy proxy (kJ); lower | 7.651 | 7.788 | 18.523 | 18.957 | Remaining energy bars, labeled kW, approximately 370 for PPO and 440 for greedy. NC with consumed kJ under our different proxy [p. 18, Fig. 6; p. 10, Eq. (10)]. |
+| SINR (dB); higher | -8.322 | -9.305 | -8.773 | -9.957 | SNR CDF medians approximately 124 dB for PPO and 127 dB for greedy. NC: source SNR and our SINR use different arithmetic, and medians are not means [p. 10, Eq. (8); p. 18, Fig. 6]. |
+| Interference (µW); lower | 0.753 | 0.748 | 0.794 | 0.791 | Uplink interference CDF medians approximately -35 dBm for PPO and -28 dBm for greedy. NC with mean linear cochannel downlink power [p. 10, Eq. (9); p. 18, Fig. 6]. |
+| Accumulated radio cost; lower under fixed weights | 7.094 | 5.309 | 16.800 | 13.803 | NR for our transformed cost accumulated until joint arrival; source objective and positive reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
 
 Full V2 reduces handovers by 93.5% on standard pairs and 90.3% on longer
 pairs, with flights shorter by 3.14 s and 5.25 s. Its delay proxy increases
@@ -188,24 +221,32 @@ For a CDF, the reading is the approximate median at cumulative probability
 0.5; for a bar, it is its height. These are not tabulated source means,
 verified physical values, or measurements recomputed from the dataset.
 
-The first two columns of results come from **printed p. 18, Fig. 6**.
+The original equal PPO and greedy results come from **printed p. 18, Fig. 6**.
 The three priority policies come from **printed p. 20, Fig. 8**, in the order
 delay / interference / handover. We preserve the source labels and scaling
 even where their physical interpretation is unresolved. The original raw
 evaluation records and plotting code are unavailable to this study.
 
-| Outcome or plotted quantity | Original equal policy PPO, Fig. 6 | Original greedy, Fig. 6 | Original priority PPO policies, Fig. 8: D / I / H | Current study comparison |
-| --- | --- | --- | --- | --- |
-| Joint mission success rate | NR | NR | NR / NR / NR | V1.5 / full V2: 95.7% / 95.7% standard and 85.8% / 87.3% longer; no original percentage is available for a numerical improvement claim. |
-| Arrival flight time on common successes | NR | NR | NR / NR / NR | Mean 31.252 / 28.112 s standard and 65.394 / 60.145 s longer; source arrival does not terminate [p. 12, Sec. 5.2]. |
-| SNR CDF median (dB) | ≈124 | ≈127 | ≈122-123 for all three | NC with our mean SINR: source Eq. (8) uses RSS minus noise; our SINR also includes interference [p. 10]. No subtraction or percentage improvement across these scales. |
-| Outage bar height (s) | ≈0 | ≈2 | ≈0 / ≈1 / ≈1 | Successful V1.5 and V2 missions have zero sampled outage by definition; failed episodes remain in the preceding table. Source bars do not establish strict joint success. |
-| Uplink interference CDF median (dBm) | ≈-35 | ≈-28 | ≈-40 / ≈-40 / ≈-38 | NC with our downlink cochannel means in µW; interference definition, statistic and aggregation differ [p. 10, Eq. (9)]. |
-| Remaining energy bar height, axis labeled kW | ≈370 | ≈440 | ≈310 / ≈260 / ≈770 | NC with our consumed energy in kJ. kW is a power unit; the source label and model do not justify converting these bars into joules [p. 10, Eq. (10); p. 15, Table 3]. |
-| Handover CDF median, raw plotted x value | ≈0.0046 | ≈0.0129 | ≈0.0025 / ≈0.0041 / ≈0.0033 | NC with our counts per flight. Both source x axes say "over 200 episodes" and display a 1e-2 multiplier; the normalization is unspecified. No multiplication or division by 200 is assumed. |
-| Transmission delay result (s) | NR | NR | NR / NR / NR | We report q/r means for both splits. A policy named transmission delay does not supply a numerical delay result [p. 9, Eq. (4); p. 16, Sec. 7]. |
-| Accumulated radio cost until arrival | NR | NR | NR / NR / NR | Our transformed cost is a new reporting quantity; it cannot be compared numerically with unspecified original returns [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
-| Trajectory behavior | Source PPO prioritizes radio metrics over the destination | Source greedy prioritizes reaching the destination | Wandering and overshoot are discussed | Our goal and braking aid is shared across rewards. Straight paths do not isolate a reward effect [p. 17, Sec. 7.1/Fig. 5; p. 19, Sec. 7.2/Fig. 7]. |
+Our numerical pairs are always **V1.5 / full V2**. Flight time and service
+values use the same 925 standard and 781 longer common successful pairs as
+the preceding table. Completion and failure counts use all 1,000 episodes
+per arm and split. Original CDF medians and bars keep their own source
+aggregation; placing numbers together does not make those statistics equivalent.
+
+| Outcome and preferred direction | Original equal PPO / greedy, Fig. 6 | Original priority PPO D / I / H, Fig. 8 | Our V1.5 / full V2: standard | Our V1.5 / full V2: longer | Interpretation and comparison limit |
+| --- | --- | --- | --- | --- | --- |
+| Joint mission success: higher | NR / NR | NR / NR / NR | 95.7% / 95.7% | 85.8% / 87.3% | Completion is primary. V2 differences are 0.0 pp [-2.8, 2.7] and +1.5 pp [-2.9, 6.1]; neither establishes improved completion. No original percentage can be recovered from its plots. |
+| Arrival flight time: lower, conditional on success | NR / NR | NR / NR / NR | 31.252 / 28.112 s | 65.394 / 60.145 s | V2 completes common successful flights sooner. Source arrival does not terminate [p. 12, Sec. 5.2], so its episode length would not be a matched arrival time. |
+| Signal quality: higher SNR or SINR | SNR CDF median ≈124 / ≈127 dB | SNR CDF median ≈122-123 dB for all three | Mean SINR -8.322 / -9.305 dB | Mean SINR -8.773 / -9.957 dB | V2 has lower SINR, by 0.983 and 1.184 dB. A less negative value is higher. NC across studies: source SNR arithmetic and CDF medians differ from our mean SINR [p. 10, Eq. (8)]. |
+| Outage: lower | Bar ≈0 / ≈2 s | Bar ≈0 / ≈1 / ≈1 s | 0 / 0 s on successes | 0 / 0 s on successes | Zero is required for our successful missions, so this alone is not evidence of a better controller. All failed episodes remain in success denominators; source bars do not establish strict joint success. |
+| Interference: lower | Uplink CDF median ≈-35 / ≈-28 dBm | Uplink CDF median ≈-40 / ≈-40 / ≈-38 dBm | Mean downlink 0.753 / 0.748 µW | Mean downlink 0.794 / 0.791 µW | V2 point estimates are slightly lower, but paired intervals include zero. In dBm, more negative means less power. NC across studies: source Eq. (9), power aggregation and statistic differ [p. 10]. |
+| Energy: higher remaining; lower consumed | Remaining bar ≈370 / ≈440, axis kW | Remaining bar ≈310 / ≈260 / ≈770, axis kW | Consumed proxy 7.651 / 7.788 kJ | Consumed proxy 18.523 / 18.957 kJ | V2 uses more proxy energy, by 1.8% and 2.3%. NC with source remaining energy: kW is a power unit, and the energy models differ [p. 10, Eq. (10); p. 15, Table 3]. |
+| Handovers: usually lower, while preserving service | CDF median raw x ≈0.0046 / ≈0.0129 | CDF median raw x ≈0.0025 / ≈0.0041 / ≈0.0033 | Mean executed count 6.843 / 0.443 | Mean executed count 15.826 / 1.528 | V2 reduces handovers by 93.5% and 90.3%, but delay worsens. NC with source raw x values: both axes say "over 200 episodes" and use 1e-2 scaling; normalization is unspecified. |
+| Transmission delay: lower | NR / NR | NR / NR / NR | Mean q/r proxy 1.942 / 5.827 s | Mean q/r proxy 2.857 / 6.818 s | V2 delay increases by 200.1% and 138.7%. This is backlog divided by capacity, not measured packet latency. A delay priority policy name does not supply a source delay result [p. 9, Eq. (4); p. 16, Sec. 7]. |
+| Accumulated radio cost: lower under these fixed weights | NR / NR | NR / NR / NR | 7.094 / 5.309 | 16.800 / 13.803 | V2 cost falls by 25.2% and 17.8%, despite worse delay, energy and SINR. Cost combines transformed terms and duration; it is not an overall service score. Source objective/reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
+| RSS first failures: lower | NR; outage bars are different | NR / NR / NR | 40 / 34 out of 1,000 | 136 / 112 out of 1,000 | V2 has fewer observed RSS failures. These counts use all flights, not the common successful subset. Equivalent original mission failure counts are unreported [pp. 18, 20, Figs. 6, 8]. |
+| Buffer first failures: lower | NR / NR | NR / NR / NR | 3 / 9 out of 1,000 | 6 / 15 out of 1,000 | V2 has more overflows. Zero sampled outage among successful flights does not erase these failures. Source removes a dump reward penalty but gives no measured overflow count [pp. 20-21, Sec. 7.3]. |
+| Trajectory: successful feasible arrival first | PPO prioritizes radio metrics; greedy prioritizes destination | Wandering and overshoot discussed | 925 common successful pairs | 781 common successful pairs | Counts specify the subset for our flight/service means, not an original route score. Straightness alone is not a quality metric. Both rewards share our goal and braking aid [p. 17, Sec. 7.1/Fig. 5; p. 19, Sec. 7.2/Fig. 7]. |
 
 The source's qualitative finding is lower interference and fewer handovers
 for PPO than greedy [printed p. 17, Sec. 7.1]. In the priority comparison,
@@ -216,7 +257,38 @@ do not turn those descriptions into a matched statistical comparison with V2.
 The [comparison provenance note](docs/44_readme_original_thesis_comparisons.md)
 records the reading convention and all limits.
 
+### How to Read These Numbers
+
+**Completion comes first.** V2 has no measured standard completion advantage.
+Its longer route point estimate is higher, but the interval still admits no
+improvement. A controller that fails early can appear efficient in flight time,
+energy or handovers, which is why those comparisons use common successes.
+
+**V2 exchanges delay and signal quality for fewer handovers and shorter flights.**
+For standard missions it saves about 3.14 s and 6.40 handovers, while adding
+about 3.89 s to the average delay proxy and 0.137 kJ to energy consumption.
+For longer missions it saves about 5.25 s and 14.30 handovers, while adding
+about 3.96 s of delay and 0.434 kJ. Lower handover counts are useful only
+alongside acceptable connectivity and service; zero handovers is not the goal.
+
+**The original plots support their own limited comparisons.** Within Fig. 6,
+PPO has lower plotted interference and handovers and less outage than greedy;
+greedy has slightly higher plotted SNR and remaining energy. In Fig. 8, the
+handover priority policy has the highest remaining energy bar, but that alone
+does not demonstrate successful or efficient mission completion. Values such
+as 124 dB SNR and the fractional handover axis must not be read as a numerical
+advantage over our differently defined SINR and executed counts.
+
+The cost decrease is explained by the reward tradeoff, not by uniform improvement.
+For example, V2's delay cost is `0.35 × 10D / (1 + 10D)`: it is approximately
+0.318 at D = 1 s, 0.344 at D = 6 s and 0.347 at D = 10 s. One handover adds
+approximately 0.347 at that step. Once delay is large, making it worse adds
+little immediate cost. This algebra motivates a new reward experiment; it does
+not by itself establish the cause of the learned behavior or a successful fix.
+
 ## Conclusions and Revised Diagnosis
+
+The following conclusions concern the initial 53012/53013 comparison. The V2.1 followup above has its own fresh results and interpretation.
 
 1. **We have not demonstrated that reward replacement improves mission
    completion.** V1.5 performs similarly on the observed completion rates
@@ -282,9 +354,11 @@ than replacing the aggregate comparison above.
 
 ## Setup: Dataset and Model Checkpoints
 
-A clone includes source, configuration, results and **all 15 final checkpoints**:
-five original reward V1.5, five full V2 and five arrival V2. Total size is about
-2.05 MB. The private map must be supplied separately by its owner.
+A clone includes source, configuration, results and **all 20 final checkpoints**:
+five original reward V1.5, five full V2, five arrival V2 and five service V2.1.
+Their combined size is about **2.74 MB**. The initial fifteen remain in their
+original manifest; [the V2.1 manifest](models/service_reward_manifest.json) adds
+five final policies and their hashes. The private map must be supplied separately by its owner.
 
 `Barcelona_dataset_January.h5` is the same dataset used in the original
 thesis. Its required location and checksum are given below.
@@ -310,7 +384,8 @@ UAV_joint_handover_trajectory_optimization/
 
 Each arm also includes seeds 2102 through 2105. Seed 2101 is the first declared
 seed, not a selected best model. The [checkpoint manifest](models/checkpoint_manifest.json)
-lists every path, size and SHA256. Checkpoints contain policy tensors and
+lists the initial fifteen paths, sizes and SHA256 values; the V2.1 manifest
+lists the additional five. Checkpoints contain policy tensors and
 configuration metadata, not the dataset.
 
 The dataset belongs in singular `dataset`, not `data/raw`, `data/processed`
@@ -348,6 +423,15 @@ prefix, producing JSON and CSV. Reusing a prefix overwrites those files.
 JSON includes every episode record and traces for the first four routes.
 The [complete guide](docs/35_dataset_and_model_setup.md) covers absolute paths,
 checksum verification, splits, environment installation and troubleshooting.
+
+For a V2.1 checkpoint, use its dedicated evaluator and a fresh output prefix:
+
+```powershell
+python scripts/evaluate_service_reward_controller.py --checkpoint results/service_reward_v21/confirmatory/service_seed_2101/checkpoint.pt --split validation --output outputs/service_validation_01
+```
+
+The [V2.1 guide](docs/49_service_reward_models_and_reproduction.md) explains its
+500 route test splits, custom flights and complete reproduction under a new label.
 
 ## Exact Mission Definition and Source Pages
 
@@ -426,7 +510,7 @@ restriction, masks, residual motion and the filter are our implementation.
 
 ## Every Observation Feature
 
-All three learned arms have the same 156 inputs; indices are zero based.
+V1.5, full V2, arrival V2 and V2.1 all have the same 156 inputs; indices are zero based.
 
 | Indices | Definition | Original thesis listed state |
 | --- | --- | --- |
@@ -621,7 +705,8 @@ provenance; its weights are not needed for the current study.
 | Path | Contents | Original thesis counterpart |
 | --- | --- | --- |
 | `dataset/` | Required private HDF5, excluded from Git | Same Barcelona ray tracing dataset described on pp. 6-7, Sec. 3.1; this relative path and checksum manifest are our packaging. |
-| `models/checkpoint_manifest.json` | All 15 published paths, sizes and SHA256 values | No original checkpoint bundle is available to us; these are our 15 policies, not original thesis weights [source PPO: p. 13, Sec. 5.3]. |
+| `models/checkpoint_manifest.json` | The initial 15 published paths, sizes and SHA256 values | No original checkpoint bundle is available to us; these are our 15 policies, not original thesis weights [source PPO: p. 13, Sec. 5.3]. |
+| `models/service_reward_manifest.json` | Five additional V2.1 final weights, sizes and hashes | Our followup models; no original thesis weights are available [source PPO: p. 13, Sec. 5.3]. |
 | `src/uav_joint_optimization/` | Frozen V2 system, original reward adapter and PPO | Our implementation of a related problem; original executable unavailable [source environment/PPO: pp. 12-13, Secs. 5.2-5.3]. |
 | `configs/` | Frozen settings, source hashes and route pools | Source parameters are in Tables 3-4, pp. 15-16; machine readable freezes and route pools are provided here. |
 | `results/connectivity_experiment/confirmatory_v2/` | Ten reused final V2 models and prior V2 records | Our prior V2 artifacts, not original thesis evaluations or weights [source experiment design: p. 16, Sec. 6.3]. |

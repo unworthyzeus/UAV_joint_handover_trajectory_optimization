@@ -8,6 +8,16 @@
 *.npz binary
 *.pt binary
 
+# Preserve the separately declared V2.1 development and final study bytes.
+src/uav_joint_optimization/service_reward_env.py -text
+src/uav_joint_optimization/service_reward_ppo.py -text
+scripts/run_service_reward_study.py -text
+scripts/analyze_service_reward_study.py -text
+scripts/evaluate_service_reward_controller.py -text
+configs/service_reward_scenarios_v21.json -text
+docs/46_service_reward_development_protocol.md -text
+tests/test_service_reward.py -text
+
 # Reporting traces retain these source and selection hashes across platforms.
 configs/long_route_illustration_v15.json -text
 scripts/replay_long_route_illustration.py -text

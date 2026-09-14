@@ -1,7 +1,7 @@
 {
   "pdf": "paper/UAV_joint_reward_connectivity_IEEE.pdf",
-  "pdf_sha256": "8935ae05ccef8d4ac99b643aa6b06668f1b1782bfbba012dfe9b16817858b7eb",
-  "pages": 7,
+  "pdf_sha256": "869bcb83d878c74fd5d2dac65cbf86e1aac5274c2162eafae9c1f53b0cc148a8",
+  "pages": 8,
   "fonts": {
     "4": {
       "name": "IHAIZV+NimbusRomNo9L-Regu",
@@ -68,7 +68,7 @@
       "type": "Type1",
       "embedded": true
     },
-    "49": {
+    "52": {
       "name": "KPXLOM+MSBM10",
       "type": "Type1",
       "embedded": true
@@ -93,12 +93,12 @@
       "type": "Type0",
       "embedded": true
     },
-    "116": {
+    "115": {
       "name": "GCWXDV+DejaVuSans-Oblique",
       "type": "Type0",
       "embedded": true
     },
-    "123": {
+    "122": {
       "name": "BMQQDV+DejaVuSans",
       "type": "Type0",
       "embedded": true
@@ -216,32 +216,32 @@
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 26,
+      "line": 27,
       "locator": "pp.~6--7, Sec.~3.1"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 27,
+      "line": 28,
       "locator": "p.~10, Eq.~(11)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 28,
+      "line": 29,
       "locator": "p.~11, Eq.~(12),\nC2 and C4"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 30,
+      "line": 31,
       "locator": "p.~19, Sec.~7.2; p.~21, Sec.~8"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 32,
+      "line": 33,
       "locator": "p.~12, Eqs.~(13)--(14)"
     },
     {
       "file": "paper/v15_front.tex",
-      "line": 40,
+      "line": 41,
       "locator": "p.~12, Sec.~5.2"
     },
     {
@@ -281,20 +281,24 @@
     },
     {
       "file": "paper/v15_findings.tex",
-      "line": 89,
+      "line": 95,
       "locator": "p.~21, Sec.~8"
     }
   ],
   "source_hashes": {
-    "paper/unified.tex": "88fafc6157d3cd3659e1b23fa61b3fa2cba58ab688a5608c0cf021c69f86d6bb",
+    "paper/unified.tex": "df6af964ee790a780c4195932b776da2cec14b4fac5681285c34d7f0cc69136b",
     "paper/v15_macros.tex": "a724c98679b61d4445cc02cf017b40a7ead256fe7cb4e8ec3a45963fa935a578",
-    "paper/v15_front.tex": "b9e9716de2054341f448bc4e36978d5f51ca31bfef453389b64120cf56109e7a",
+    "paper/v15_front.tex": "7e5258cbc5ffca2f630b415e32fe04c375265eba373fc35fda7236f506d94d37",
+    "paper/v21_abstract.tex": "c00a1d6cd3b49e06992c8b527ee81a4fee57744c8697ab134c5fa76bb8274a1a",
     "paper/v15_protocol.tex": "fd01b14bc4907ff53f45304503e65662c09c00302793bfe16af648c32ea695d4",
-    "paper/v15_findings.tex": "d92fc99e53029bc99fd4714c2c41306214ae404be2da5a18d839bff4bdf14a11",
+    "paper/v15_findings.tex": "b53a6b3ade4d43e9e077ae0aa8f3a13f794df40016f0a1644182abb23ad9816b",
     "paper/v15_results_table.tex": "91779b9c3f459571c393b94225b738b7442c45e3e6117cadf3f262ebb48698d4",
     "paper/v15_failure_table.tex": "150e29b53035f96d165432b3b767a906861c9aa87e4bee5535981455bdd7e2ea",
     "paper/v15_paired_table.tex": "7bd810218035c5576a4a97f0fc477df2af4f0ad9dc9123328248032f0f2dd8d4",
-    "paper/v15_seed_table.tex": "eb5fca872fd5b38435bae8276bac0232881a953e83a188ed7b5eb880918037e6"
+    "paper/v21_followup.tex": "f465538239e08e877f086c50c1d3a68b07c80328bff98852c835b78fce720774",
+    "paper/v21_conclusion.tex": "5f9b289bf8f8c222e2be3e932d4c25ade4fb86449615778acd323cf6dd966219",
+    "paper/v15_seed_table.tex": "3b1aa380bcdb6bc4b51129533e6e892eab36f6a89ca94bdc21cd6ecdcb61af40",
+    "paper/v21_seed_table.tex": "9712e51293bc90bbed797616ec9e5ca08c807ed6f607d7824c4141b0614d63af"
   },
   "frozen_sources_match": {
     "frozen_comparison_v1.json": {
@@ -322,14 +326,34 @@
       "configs/reward_comparison_scenarios_v15.json": true,
       "docs/36_v15_reward_comparison_protocol.md": true,
       "tests/test_reward_comparison.py": true
+    },
+    "frozen_service_reward_v21.json": {
+      "src/uav_joint_optimization/service_reward_env.py": true,
+      "src/uav_joint_optimization/service_reward_ppo.py": true,
+      "scripts/run_service_reward_study.py": true,
+      "scripts/analyze_service_reward_study.py": true,
+      "scripts/evaluate_service_reward_controller.py": true,
+      "tests/test_service_reward.py": true,
+      "docs/46_service_reward_development_protocol.md": true
     }
   },
   "statistic_hashes": {
     "results/reward_comparison/analysis_v15/statistics.json": "efc7532c62c3cb0bc6583f12812c3f213d4fbd378fe91a0a5298efe85db8e888",
     "models/checkpoint_manifest.json": "e5f7bfe8553f21e794801f27c8944e940bfb0effa27ebbb24ff36491cd82f2a4",
-    "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c"
+    "results/reward_comparison/replay_v15/audit.json": "56d581202f8df5a283590e498ba18c126fcc1821774de078f768b14ba660f51c",
+    "results/service_reward_v21/analysis/statistics.json": "8b9343f8379d686886a45ec229bf9aca45fdd985eedf2462a0af09cff2774289",
+    "models/service_reward_manifest.json": "1e0a3a636c98a3b767aeefbace7148009c2c70d84f3a5d78f49421893c2e1889",
+    "results/service_reward_v21/replay/audit.json": "f130a9311f99cbeb5817f465929fc0da8a28c872d015aa558478b83c6f42c549"
   },
-  "visual_review": "Passed: all seven final pages inspected after dataset provenance correction; no clipping, overlap or figure changes.",
+  "service_followup": {
+    "episodes": 18000,
+    "checkpoint_count": 5,
+    "per_seed_success_values_checked": 30,
+    "primary_completion_improvement": false,
+    "primary_completion_and_delay_gate": false,
+    "report_builder_sha256": "65506bcf56eebcc487829959ac8f29bc7717708c699250e27283fc3f1f0b6ba1"
+  },
+  "visual_review": "Passed: all eight final rendered pages reviewed; pages 1-6 retain legible equations, tables and three figures, page 7 contains the new paired and completion tables, and page 8 contains both seed tables, observations and references. No clipping, overlaps, unresolved text or isolated near-empty continuation pages.",
   "dataset_identity": "Same dataset as the original thesis, confirmed by the researcher who supplied it; see note 43.",
   "long_route_illustration": {
     "scenario_id": "53013_0023",
@@ -345,5 +369,5 @@
       "results/reward_comparison/analysis_v15/reward_comparison_diagnostics.pdf": "c82761b67e332fcf74b7ab4dc8ed0066e2d4b684170891eafdfc1b6ce96a91c2"
     }
   },
-  "scope": "Current V2 paper with V1.5 original reward control; historical V1 excluded. Primary null finding and all fresh results retained."
+  "scope": "One paper with the initial V1.5/V2 comparison and a separately frozen V2.1 followup. Historical V1 excluded; all outcomes retained."
 }

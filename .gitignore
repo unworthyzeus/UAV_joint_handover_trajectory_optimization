@@ -23,6 +23,7 @@ wandb/
 !/results/connectivity_experiment/confirmatory_v2/full_seed_210[1-5]/checkpoint.pt
 !/results/connectivity_experiment/confirmatory_v2/arrival_seed_210[1-5]/checkpoint.pt
 !/results/reward_comparison/confirmatory_v15/original_seed_210[1-5]/checkpoint.pt
+!/results/service_reward_v21/confirmatory/service_seed_210[1-5]/checkpoint.pt
 *.h5
 *.hdf5
 *.npy
