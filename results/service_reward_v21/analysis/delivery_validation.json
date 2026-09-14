@@ -12,7 +12,7 @@
   "new_success_rates_checked": 12,
   "new_paired_means_checked": 20,
   "new_paired_intervals_checked": 10,
-  "local_links_checked": 100,
+  "local_links_checked": 102,
   "paper_pages": 8,
   "paper_sha256": "869bcb83d878c74fd5d2dac65cbf86e1aac5274c2162eafae9c1f53b0cc148a8",
   "paper_visual_review": "Passed: all eight final rendered pages reviewed; pages 1-6 retain legible equations, tables and three figures, page 7 contains the new paired and completion tables, and page 8 contains both seed tables, observations and references. No clipping, overlaps, unresolved text or isolated near-empty continuation pages.",

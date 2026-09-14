@@ -72,6 +72,7 @@ def main():
     paths=['README.md','docs/README.md','docs/12_task_status.md','docs/13_logbook.md',
            'docs/35_dataset_and_model_setup.md','paper/README.md']
     paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'docs').glob('4[5-9]_*.md')]
+    paths += ['docs/50_clear_metric_descriptions_and_units.md']
     links=0
     for name in paths:
         p=ROOT/name;t=p.read_text(encoding='utf-8');tables(t)

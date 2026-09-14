@@ -24,17 +24,19 @@ evaluation of those models on the old tests.
 | --- | --- | --- | --- |
 | Joint success | Higher | Primary: reaching and stopping at the goal within time and sampled connectivity limits. | Mission and constraints: printed pp. 10-11, Eqs. (11)-(12); comparable source success rate NR. |
 | Flight time | Lower on common successes | An early failed flight is not a faster completed mission. | Source does not terminate on arrival, printed p. 12, Sec. 5.2. |
-| SNR or SINR | Higher | A less negative dB value is higher. Source SNR is not our interference inclusive SINR. | Printed p. 10, Eq. (8); p. 18, Fig. 6; p. 20, Fig. 8. |
+| SNR and SINR (dB), reported separately | Higher | SNR compares the desired signal with noise; SINR also includes interference. Higher SINR means a cleaner radio link. V2's lower SINR indicates worse signal quality on the matched successful flights. | Printed p. 10, Eq. (8); p. 18, Fig. 6; p. 20, Fig. 8. |
 | Outage and failures | Lower | Zero outage among successes follows from the success definition; all failures still count. | Original outage bars: printed pp. 18, 20, Figs. 6, 8. |
-| Interference | Lower | More negative dBm denotes less power; lower linear watts also denotes less power. Cross study physical and statistical definitions differ. | Printed p. 10, Eq. (9); pp. 18, 20, Figs. 6, 8. |
-| Energy | Higher remaining; lower consumed | These directions are opposite. Source bars labeled kW cannot be converted into our consumed kJ by assumption. | Printed p. 10, Eq. (10); p. 15, Table 3; pp. 18, 20, Figs. 6, 8. |
+| Interference power (µW) | Lower | Unwanted received power from other transmitters. The README converts source readings to the same unit as ours, while distinguishing source uplink medians from our downlink means. The small V2 reduction is inconclusive. | Printed p. 10, Eq. (9); pp. 18, 20, Figs. 6, 8. |
+| Consumed energy (kJ) | Lower | Estimated energy spent completing a successful mission under our engineering model. V2 consumes more on the matched flights. No compatible source consumed energy result is available. | Different energy model: printed p. 10, Eq. (10); p. 15, Table 3. |
+| Source remaining energy display (printed kW) | Intended to show energy left; physical unit unresolved | The source labels an energy display with a power unit. Its bar readings remain in a separate row and cannot support a physical energy comparison. | Printed p. 10, Eq. (10); p. 15, Table 3; pp. 18, 20, Figs. 6, 8. |
 | Handovers | Usually lower while maintaining service | Fewer switches can reduce control overhead, but excessive reluctance to switch can worsen service. | Source counts are shown on an unexplained scaled axis, printed pp. 18, 20, Figs. 6, 8. |
 | Delay proxy | Lower | Backlog divided by capacity, not a tracked packet latency distribution. | Printed p. 9, Eq. (4); numerical source delay results NR. |
 | Fixed V2 radio cost | Lower under fixed weights | Combines transformed delay, interference, handovers and flight duration. It does not establish improvement in every component. | Different from the source objective/reward, printed p. 10, Eq. (11); p. 12, Eqs. (13)-(14). |
 
-The original source approximations and units retain the reading convention
-in note 44. Their statistical aggregation and physical meaning are not
-silently made equivalent to our common success means.
+The original source approximations retain the reading convention in note 44.
+The README now converts interference to µW and separates incompatible
+quantities into their own rows, as recorded in note 50. Matching units does
+not make their statistical aggregation or physical meaning equivalent.
 
 ## Interpretation of the Existing Results
 

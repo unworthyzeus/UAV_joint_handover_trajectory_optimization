@@ -41,6 +41,7 @@ confirmation and supersedes earlier uncertainty about dataset identity.
 | [47: V2.1 development results](47_service_reward_development.md) | Every pilot, the selected service reward and unsuccessful stronger penalty candidates |
 | [48: V2.1 fresh evaluation](48_service_reward_results.md) | New 54012/54013 results, completion first verdict, all seeds, failures and matched service metrics |
 | [49: V2.1 models and reproduction](49_service_reward_models_and_reproduction.md) | Five additional final weights, dataset location, standalone evaluation and separate reproduction labels |
+| [50: Clear metric descriptions and consistent units](50_clear_metric_descriptions_and_units.md) | Physical meaning, common interference units and separate rows for incompatible source quantities |
 | [Current status](12_task_status.md) | Completed current work and remaining research questions |
 | [Paper](../paper/README.md) | Current manuscript and build commands |
 

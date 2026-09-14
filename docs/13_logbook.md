@@ -336,3 +336,21 @@ connectivity remain limitations. The next research decision is a separately
 declared investigation of RSS failures and controller constraints, followed
 by new evaluation routes if further tuning is undertaken. No such additional
 experiment is claimed here.
+
+## 2026-09-14: Physical Metric Explanations and Consistent Row Units
+
+Rewrote the README's result descriptions after the user identified unhelpful
+sign explanations and mixed units. Descriptions now explain the physical
+meaning and the measured tradeoff. Converted every source interference
+reading in both numerical comparison tables to µW. Split source SNR,
+unresolved remaining energy bars and scaled handover CDF readings from our
+SINR, consumed energy and executed counts. All original readings remain
+available with their source locations. Note 50 records the conversions,
+verification and remaining ambiguity; note 45 uses the revised explanations.
+
+The source readings remain approximate, and matching units does not make
+different statistics or radio models comparable. No experiment, model,
+statistic, figure or paper changed. Updated the reporting audits to check
+the conversions and row separation. Further source interpretation requires
+the original plotting code or raw records; this correction requires no new
+training or evaluation.
