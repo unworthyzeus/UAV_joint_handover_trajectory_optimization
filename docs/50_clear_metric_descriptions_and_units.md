@@ -19,7 +19,8 @@ These explanations replace commentary about the ordering of negative numbers.
 ## Unit and Quantity Rules
 
 Each source comparison row now declares its unit once, applying it to every
-numerical result in that row. Both README interference comparisons use µW.
+numerical result in that row. All README interference results use µW, with
+source uplink and our downlink results in separate rows.
 The approximate source readings are converted with:
 
 ```text
@@ -33,7 +34,7 @@ locations remain printed p. 18, Fig. 6 and p. 20, Fig. 8. Three displayed
 decimals describe the conversion; they do not increase the precision of
 the original visual readings. Note 44 retains the source scale and method.
 
-Three source quantities now have separate rows:
+Four source quantities now have separate rows:
 
 1. Source SNR is separate from our SINR. Both use dB, but the denominator,
    source arithmetic and reported statistic differ [printed p. 10, Eq. (8)].
@@ -43,6 +44,24 @@ Three source quantities now have separate rows:
 3. Source handover CDF positions are separate from executed handovers per
    flight. The printed scaling and reference to 200 episodes do not specify
    how to recover a count [printed pp. 18, 20, Figs. 6, 8].
+4. Source uplink interference is separate from our downlink interference.
+   Our uplink cells say not evaluated; source downlink cells say not reported.
+   A numerical comparison requires the same link direction and quantity,
+   not only the same unit [printed p. 10, Eq. (9)].
+
+This fourth separation addresses the user's subsequent correction: the
+first unit revision still placed source uplink and our downlink results
+together. Removed the source uplink figures from the paired downlink table
+as well, and separated the corresponding physical model definitions.
+No matched uplink measurement or model is introduced by this table edit.
+
+Following the user's additional instruction, every result metric row now
+states "higher is better" or "lower is better" explicitly. Success columns
+carry the same direction for every controller. Handovers retain the service
+condition; remaining energy and raw handover displays state the intended
+direction alongside their unresolved interpretation. Trajectory behavior
+refers to higher mission success, without assigning a numeric preference
+to path shape. Parameter values and sample counts are not performance scores.
 
 Removed outage durations from the failure count row and replaced the
 trajectory row's sample counts with descriptions of trajectory behavior.
@@ -60,10 +79,13 @@ figure, paper, dataset or frozen experiment implementation changes. All
 completion and service conclusions remain the same.
 
 The metric audit checks the 28 current means in the expanded comparison,
-28 means in the preceding paired table, all displayed conversions in both
-interference rows, completion and failure counts, and separation of the
-incompatible source quantities. The delivery audit checks Markdown links,
+28 means in the preceding paired table, all five displayed source interference
+conversions, completion and failure counts, and separation of the incompatible
+source quantities. It also rejects rows that mix uplink and downlink and
+verifies the missing measurement labels. The delivery audit checks Markdown links,
 the four source freezes, all twenty weights and the existing paper hash.
+The metric audit also requires an explicit better direction in every result
+metric row and in the success column headings.
 
 ```powershell
 python scripts/audit_metric_interpretation.py

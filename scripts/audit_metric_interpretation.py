@@ -17,7 +17,7 @@ table=get_table('Outcome, unit and preferred direction')
 assert all(len(r)==6 for r in table)
 rows={r[0]:r for r in table[2:]}
 metrics=[('Arrival flight time (s)','time_s',1),('SINR (dB)','sinr_mean_db',1),
-         ('Interference power (µW)','interference_mean_w',1e6),('Consumed energy proxy (kJ)','energy_proxy_j',.001),
+         ('Downlink interference (µW)','interference_mean_w',1e6),('Consumed energy proxy (kJ)','energy_proxy_j',.001),
          ('Executed handovers (count per flight)','handovers',1),('Transmission delay proxy (s)','delay_proxy_mean_s',1),
          ('Accumulated radio cost (dimensionless)','radio_cost_sum',1)]
 count=0
@@ -49,16 +49,18 @@ for row,(prefix,metric,scale) in zip(paired[2:],[metrics[i] for i in [0,4,5,3,1,
 
 # Convert each retained source interference reading, preserving its approximate
 # status and median interpretation rather than treating it as a new mean.
-interference=next(r for label,r in rows.items() if label.startswith('Interference power'))
+source_interference=next(r for label,r in rows.items() if label.startswith('Source uplink interference'))
+interference=next(r for label,r in rows.items() if label.startswith('Downlink interference'))
 source_dbm=[[-35,-28],[-40,-40,-38]]
 for col,values in zip([1,2],source_dbm):
     converted=' / '.join(f'≈{1000*10**(value/10):.3f}' for value in values)
-    assert converted in interference[col]
-assert 'dBm' not in ' '.join(interference)
-paired_interference=next(r for r in paired[2:] if r[0].startswith('Interference'))
-for value in source_dbm[0]:
-    assert f'≈{1000*10**(value/10):.3f} µW' in paired_interference[-1]
-assert 'dBm' not in ' '.join(paired_interference)
+    assert converted in source_interference[col]
+assert source_interference[3:5]==['Not evaluated','Not evaluated']
+assert interference[1:3]==['NR','NR']
+paired_interference=next(r for r in paired[2:] if r[0].startswith('Downlink interference'))
+assert 'downlink result NR' in paired_interference[-1]
+assert '≈' not in paired_interference[-1]
+assert 'dBm' not in ' '.join(interference+source_interference+paired_interference)
 energy=next(r for label,r in rows.items() if label.startswith('Consumed energy proxy'))
 source_energy=next(r for label,r in rows.items() if label.startswith('Source remaining energy display'))
 assert 'kW' not in ' '.join(energy) and 'kJ' not in ' '.join(source_energy)
@@ -67,6 +69,15 @@ assert all('NC:' in cell for cell in source_energy[3:5])
 source_handovers=next(r for label,r in rows.items() if label.startswith('Source handover CDF'))
 assert all('NC:' in cell for cell in source_handovers[3:5])
 assert 'less negative' not in text and 'more negative' not in text
+direction_tables=[table,paired,get_table('Metric and preferred direction'),get_table('First failure')]
+direction_rows=0
+for metric_table in direction_tables:
+    for row in metric_table[2:]:
+        assert re.search(r'\b(higher|lower)\b.*\bis better\b',row[0]),row[0]
+        direction_rows+=1
+for header in ['New standard success','New longer success','Standard joint success','Longer joint success']:
+    assert '| '+header+' (higher is better) |' in text
+assert '| Observed success difference (higher is better for V2) |' in text
 
 for split in ['test','longer_test']:
     c=s['contrasts'][f'full_minus_original_{split}']
@@ -84,6 +95,8 @@ for file in files:
         elif block:
             assert len(set(block))==1,(file,block)
             block=[]
+        if line.startswith('|'):
+            assert not ('uplink' in line.lower() and 'downlink' in line.lower()),(file,line)
     assert t.count('```')%2==0,file
     for url in re.findall(r'\[[^\]]+\]\(([^)]+)\)',t):
         if '://' in url: continue
@@ -95,7 +108,9 @@ assert text.count('Historical V1 was')==1
 prior=subprocess.check_output(['git','show','d53b293:results/reward_comparison/analysis_v15/statistics.json'],cwd=root)
 assert prior==(root/'results/reward_comparison/analysis_v15/statistics.json').read_bytes()
 out={'source_comparison_current_means_checked':count,'paired_table_means_checked':28,
-     'source_interference_unit_conversions_checked':7,'incompatible_source_quantities_separated':True,
+     'source_interference_unit_conversions_checked':5,'incompatible_source_quantities_separated':True,
+     'uplink_and_downlink_rows_separate':True,'missing_direction_results_not_invented':True,
+     'result_rows_with_explicit_better_direction':direction_rows,
      'success_rates_checked':4,'first_failure_counts_checked':8,
      'derived_changes_checked':10,'local_links_checked':link_count,
      'existing_statistics_unchanged':True,'all_source_plot_readings_remain_approximate':True}

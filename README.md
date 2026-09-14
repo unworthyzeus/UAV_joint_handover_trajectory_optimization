@@ -40,7 +40,7 @@ PPO setting, split and reproduction command.
 
 The following results use **new seeds 54012 and 54013: 500 standard and 500 longer routes**, five training seeds per learned arm and 18,000 final episodes including references. They are separate from the 53012/53013 tables below; results from different test sets are not pooled.
 
-| Controller | New standard success | New longer success | Episodes per split | Original thesis comparison |
+| Controller | New standard success (higher is better) | New longer success (higher is better) | Episodes per split | Original thesis comparison |
 | --- | ---: | ---: | ---: | --- |
 | V2.1 service | 95.48% | 88.60% | 2,500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
 | Full V2 | 96.92% | 91.84% | 2,500 | Comparable original joint success NR [printed pp. 16-20, Sec. 7/Figs. 5-8]; V1.5 is our reward control, not the source agent. |
@@ -53,11 +53,11 @@ The following results use **new seeds 54012 and 54013: 500 standard and 500 long
 
 | Metric and preferred direction | New standard: full V2 / V2.1 | Paired difference, 95% interval | New longer: full V2 / V2.1 | Paired difference, 95% interval | Original thesis comparison |
 | --- | --- | --- | --- | --- | --- |
-| Flight time (s), lower | 28.347 / 28.594 | +0.246 [0.020, 0.520] | 60.409 / 60.785 | +0.376 [0.039, 0.747] | Comparable mean arrival time NR; source continues after arrival [p. 12, Sec. 5.2]. |
-| Delay proxy (s), lower | 4.742 / 1.291 | -3.451 [-3.957, -2.962] | 6.199 / 1.583 | -4.616 [-4.957, -4.287] | Queue/rate defined [p. 9, Eq. (4)]; numerical delay results NR in Figs. 6 and 8 [pp. 18, 20]. |
-| Handovers, lower with service | 0.402 / 9.839 | +9.437 [8.968, 9.897] | 1.442 / 23.058 | +21.616 [20.923, 22.287] | CDF raw scale is not a mean executed count per successful flight [pp. 18, 20, Figs. 6, 8]. |
-| Consumed energy (kJ), lower | 7.873 / 7.868 | -0.005 [-0.014, 0.005] | 19.057 / 19.032 | -0.025 [-0.049, 0.002] | No compatible consumed energy result reported; source remaining energy uses a different model and an unresolved unit label [p. 10, Eq. (10); pp. 18, 20]. |
-| SINR (dB), higher | -8.916 / -7.457 | +1.459 [1.296, 1.628] | -9.745 / -7.978 | +1.767 [1.662, 1.870] | Source SNR and its CDF medians are not this metric [p. 10, Eq. (8); pp. 18, 20]. |
+| Flight time (s), lower is better | 28.347 / 28.594 | +0.246 [0.020, 0.520] | 60.409 / 60.785 | +0.376 [0.039, 0.747] | Comparable mean arrival time NR; source continues after arrival [p. 12, Sec. 5.2]. |
+| Delay proxy (s), lower is better | 4.742 / 1.291 | -3.451 [-3.957, -2.962] | 6.199 / 1.583 | -4.616 [-4.957, -4.287] | Queue/rate defined [p. 9, Eq. (4)]; numerical delay results NR in Figs. 6 and 8 [pp. 18, 20]. |
+| Handovers, lower is better while preserving service | 0.402 / 9.839 | +9.437 [8.968, 9.897] | 1.442 / 23.058 | +21.616 [20.923, 22.287] | CDF raw scale is not a mean executed count per successful flight [pp. 18, 20, Figs. 6, 8]. |
+| Consumed energy (kJ), lower is better | 7.873 / 7.868 | -0.005 [-0.014, 0.005] | 19.057 / 19.032 | -0.025 [-0.049, 0.002] | No compatible consumed energy result reported; source remaining energy uses a different model and an unresolved unit label [p. 10, Eq. (10); pp. 18, 20]. |
+| SINR (dB), higher is better | -8.916 / -7.457 | +1.459 [1.296, 1.628] | -9.745 / -7.978 | +1.767 [1.662, 1.870] | Source SNR and its CDF medians are not this metric [p. 10, Eq. (8); pp. 18, 20]. |
 
 These service means use **2335 standard and 2086 longer common successful pairs**. All failed flights still count in completion rates. Secondary intervals are descriptive and are not adjusted for multiple comparisons. Smaller delay does not imply fewer handovers, and a new reward is not an overall better controller unless the relevant metrics support that conclusion.
 
@@ -142,7 +142,7 @@ training replications.
 
 ### Mission Completion
 
-| Controller | Standard joint success | Longer joint success | Episodes per split | Original thesis counterpart and reported joint success |
+| Controller | Standard joint success (higher is better) | Longer joint success (higher is better) | Episodes per split | Original thesis counterpart and reported joint success |
 | --- | ---: | ---: | ---: | --- |
 | PPO original reward (V1.5) | 95.7% | 85.8% | 1,000 | Written equal policy reward is the source; original PPO joint success NR. These percentages belong to our V1.5 agent [p. 15, Table 3; pp. 17-18, Sec. 7.1/Figs. 5-6]. |
 | PPO full reward (V2) | 95.7% | 87.3% | 1,000 | No corresponding replacement reward arm; original PPO joint success NR [pp. 16-20, Secs. 6.3-7.2]. |
@@ -155,7 +155,7 @@ training replications.
 The primary comparison is full V2 minus original V1.5 on standard routes.
 Intervals use 5,000 crossed seed/route bootstrap draws, seed 63000.
 
-| Contrast | Observed success difference | 95% interval | Original thesis comparison |
+| Contrast | Observed success difference (higher is better for V2) | 95% interval | Original thesis comparison |
 | --- | ---: | --- | --- |
 | Standard, primary | 0.0 percentage points | [-2.8, 2.7] | NR: source compares PPO with greedy and changes policy weights; no matched replacement reward success contrast or confidence interval [p. 16, Sec. 6.3; pp. 17-20, Secs. 7.1-7.2]. |
 | Longer, secondary | +1.5 percentage points | [-2.9, 6.1] | NR: no separately declared longer route success contrast or confidence interval [p. 16, Sec. 6.3; pp. 17-20, Secs. 7.1-7.2]. |
@@ -176,13 +176,13 @@ objectives.
 
 | Metric | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 | Original thesis result and comparability |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Flight time (s); lower | 31.252 | 28.112 | 65.394 | 60.145 | NR as a mean arrival time on common successful flights; source continues after arrival [p. 12, Sec. 5.2; pp. 17-20, Figs. 5-8]. |
-| Handovers; lower while preserving service | 6.843 | 0.443 | 15.826 | 1.528 | CDFs on an unexplained 1e-2 axis scale; source PPO is lower than greedy. NC with our mean executed counts per successful flight [p. 18, Fig. 6; p. 20, Fig. 8; readings below]. |
-| Delay proxy (s); lower | 1.942 | 5.827 | 2.857 | 6.818 | D = q/r is defined, but no numerical delay result is reported in the five metric panels, including the delay priority experiment [p. 9, Eq. (4); pp. 18, 20, Figs. 6, 8]. |
-| Energy proxy (kJ); lower | 7.651 | 7.788 | 18.523 | 18.957 | No compatible consumed energy result reported. The source remaining energy display is a different quantity, retained in its own row below [p. 18, Fig. 6; p. 10, Eq. (10)]. |
-| SINR (dB); higher | -8.322 | -9.305 | -8.773 | -9.957 | SINR NR. The source reports SNR, which excludes interference, using different arithmetic and a CDF median; its readings are retained separately below [p. 10, Eq. (8); p. 18, Fig. 6]. |
-| Interference (µW); lower | 0.753 | 0.748 | 0.794 | 0.791 | Uplink CDF medians ≈0.316 µW for PPO and ≈1.585 µW for greedy, converted from the printed scale. Same units, but NC with our mean cochannel downlink power [p. 10, Eq. (9); p. 18, Fig. 6]. |
-| Accumulated radio cost; lower under fixed weights | 7.094 | 5.309 | 16.800 | 13.803 | NR for our transformed cost accumulated until joint arrival; source objective and positive reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
+| Flight time (s); lower is better | 31.252 | 28.112 | 65.394 | 60.145 | NR as a mean arrival time on common successful flights; source continues after arrival [p. 12, Sec. 5.2; pp. 17-20, Figs. 5-8]. |
+| Handovers; lower is better while preserving service | 6.843 | 0.443 | 15.826 | 1.528 | CDFs on an unexplained 1e-2 axis scale; source PPO is lower than greedy. NC with our mean executed counts per successful flight [p. 18, Fig. 6; p. 20, Fig. 8; readings below]. |
+| Delay proxy (s); lower is better | 1.942 | 5.827 | 2.857 | 6.818 | D = q/r is defined, but no numerical delay result is reported in the five metric panels, including the delay priority experiment [p. 9, Eq. (4); pp. 18, 20, Figs. 6, 8]. |
+| Energy proxy (kJ); lower is better | 7.651 | 7.788 | 18.523 | 18.957 | No compatible consumed energy result reported. The source remaining energy display is a different quantity, retained in its own row below [p. 18, Fig. 6; p. 10, Eq. (10)]. |
+| SINR (dB); higher is better | -8.322 | -9.305 | -8.773 | -9.957 | SINR NR. The source reports SNR, which excludes interference, using different arithmetic and a CDF median; its readings are retained separately below [p. 10, Eq. (8); p. 18, Fig. 6]. |
+| Downlink interference (µW); lower is better | 0.753 | 0.748 | 0.794 | 0.791 | Comparable downlink result NR in the source. Its differently defined interference metric is retained in a separate row below [p. 10, Eq. (9); p. 18, Fig. 6]. |
+| Accumulated radio cost; lower is better under fixed weights | 7.094 | 5.309 | 16.800 | 13.803 | NR for our transformed cost accumulated until joint arrival; source objective and positive reward are different quantities [p. 10, Eq. (11); p. 12, Eqs. (13)-(14)]. |
 
 Full V2 reduces handovers by 93.5% on standard pairs and 90.3% on longer
 pairs, with flights shorter by 3.14 s and 5.25 s. Its delay proxy increases
@@ -204,9 +204,9 @@ successes. Each episode contributes its first failure reason.
 
 | First failure | Standard V1.5 | Standard V2 | Longer V1.5 | Longer V2 | Original thesis result |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Serving RSS below minimum | 40 | 34 | 136 | 112 | Failed mission count NR. Source outage duration is a different quantity, retained in its own row below; it does not supply our first violation counts [p. 18, Fig. 6]. |
-| Buffer overflow | 3 | 9 | 6 | 15 | Overflow failure count NR. The source discusses removing a buffer dump reward penalty, not a measured zero overflow rate [pp. 20-21, Sec. 7.3]. |
-| Total failed missions | 43 | 43 | 142 | 127 | Joint failed mission total NR; neither trajectory plots nor outage bars establish this count [pp. 17-20, Figs. 5-8]. |
+| Serving RSS below minimum; lower is better | 40 | 34 | 136 | 112 | Failed mission count NR. Source outage duration is a different quantity, retained in its own row below; it does not supply our first violation counts [p. 18, Fig. 6]. |
+| Buffer overflow; lower is better | 3 | 9 | 6 | 15 | Overflow failure count NR. The source discusses removing a buffer dump reward penalty, not a measured zero overflow rate [pp. 20-21, Sec. 7.3]. |
+| Total failed missions; lower is better | 43 | 43 | 142 | 127 | Joint failed mission total NR; neither trajectory plots nor outage bars establish this count [pp. 17-20, Figs. 5-8]. |
 
 Neither of these two arms has an energy, boundary or timeout failure in these
 tests. Full has fewer observed RSS failures but more buffer failures. These
@@ -237,30 +237,33 @@ aggregation; placing numbers together does not make those statistics equivalent.
 
 | Outcome, unit and preferred direction | Original equal PPO / greedy, Fig. 6 | Original priority PPO D / I / H, Fig. 8 | Our V1.5 / full V2: standard | Our V1.5 / full V2: longer | Meaning and interpretation |
 | --- | --- | --- | --- | --- | --- |
-| Joint mission success (%): higher | NR / NR | NR / NR / NR | 95.7% / 95.7% | 85.8% / 87.3% | Fraction of flights reaching and stopping at the goal within the time and connectivity limits. Neither split establishes a completion improvement. The source supplies no comparable success rate. |
-| Arrival flight time (s): lower on common successes | NR / NR | NR / NR / NR | 31.252 / 28.112 | 65.394 / 60.145 | Time needed to finish a successful mission. V2 finishes sooner. Source episode duration includes time after arrival, so it cannot serve as the same measure [p. 12, Sec. 5.2]. |
-| Source SNR (dB): higher intended | CDF median ≈124 / ≈127 | CDF median ≈122-123 for all three | NC: SINR reported separately | NC: SINR reported separately | SNR describes signal strength relative to noise alone. The source uses its printed arithmetic; these readings cannot quantify an advantage over our SINR [p. 10, Eq. (8)]. |
-| SINR (dB): higher | NR: source reports SNR | NR: source reports SNR | Mean -8.322 / -9.305 | Mean -8.773 / -9.957 | Desired signal power relative to interference plus noise; higher values mean a cleaner radio link. V2's SINR is lower by 0.983 and 1.184 dB, so signal quality worsens. |
-| Outage duration (s): lower | Bar ≈0 / ≈2 | Bar ≈0 / ≈1 / ≈1 | 0 / 0 on successes | 0 / 0 on successes | Time below the required signal threshold. Our successes must have zero sampled outage. Reliability is assessed using all flights, including failures; zero outage within this selected subset does not prove better reliability. |
-| Interference power (µW): lower | Uplink CDF median ≈0.316 / ≈1.585 | Uplink CDF median ≈0.100 / ≈0.100 / ≈0.158 | Mean downlink 0.753 / 0.748 | Mean downlink 0.794 / 0.791 | Unwanted received power from other transmitters. V2's small reduction is inconclusive. Units now match, but source uplink medians and our downlink means remain different measurements [p. 10, Eq. (9)]. |
-| Consumed energy proxy (kJ): lower | NR | NR | 7.651 / 7.788 | 18.523 / 18.957 | Estimated energy spent completing the flight. V2 consumes more on both splits. This is an engineering estimate under our energy model, not a measured battery discharge. |
-| Source remaining energy display (printed kW): physical unit unresolved | Bar ≈370 / ≈440 | Bar ≈310 / ≈260 / ≈770 | NC: no matching quantity | NC: no matching quantity | The source intends to show energy left, but labels its axis with a power unit. These values are retained as plot readings only; no energy conversion is justified [p. 10, Eq. (10); p. 15, Table 3]. |
-| Executed handovers (count per flight): lower while preserving service | NR as an executed count per flight | NR as an executed count per flight | Mean 6.843 / 0.443 | Mean 15.826 / 1.528 | Switches between serving base stations. V2 switches less often but has higher delay and lower SINR. Fewer switches alone do not establish better communication. |
-| Source handover CDF (raw plotted x): normalization unresolved | Median ≈0.0046 / ≈0.0129 | Median ≈0.0025 / ≈0.0041 / ≈0.0033 | NC: no matching normalized quantity | NC: no matching normalized quantity | Source axes mention "over 200 episodes" and a 1e-2 scale without specifying normalization. The readings cannot be converted into executed handovers per flight [pp. 18, 20, Figs. 6, 8]. |
-| Transmission delay proxy (s): lower | NR / NR | NR / NR / NR | Mean 1.942 / 5.827 | Mean 2.857 / 6.818 | Queued data divided by current service capacity. V2 has more queued work relative to its service rate. This measures backlog pressure, not the time individual packets actually wait [p. 9, Eq. (4)]. |
-| Accumulated radio cost (dimensionless): lower under fixed weights | NR / NR | NR / NR / NR | 7.094 / 5.309 | 16.800 / 13.803 | Weighted communication penalties summed until arrival. V2's lower total coexists with worse delay and SINR; it does not mean every service metric improves. Source objective/reward are different quantities [pp. 10, 12, Eqs. (11), (13)-(14)]. |
-| RSS first failures (flights): lower | NR / NR | NR / NR / NR | 40 / 34 out of 1,000 | 136 / 112 out of 1,000 | Flights ending because the serving signal falls below the RSS limit. V2 has fewer observed RSS failures, but total completion remains the primary comparison [pp. 18, 20, Figs. 6, 8]. |
-| Buffer first failures (flights): lower | NR / NR | NR / NR / NR | 3 / 9 out of 1,000 | 6 / 15 out of 1,000 | Flights ending because queued data exceed buffer capacity. V2 has more overflows. Source removal of a dump reward penalty supplies no measured overflow count [pp. 20-21, Sec. 7.3]. |
-| Trajectory behavior: successful feasible arrival first | PPO prioritizes radio metrics; greedy prioritizes destination | Wandering and overshoot discussed | Both rewards use goal and braking guidance | Same guidance on longer routes | A useful trajectory must reach the goal while satisfying connectivity. Straightness alone says little about communication quality; the shared guidance also prevents attributing straight paths solely to reward changes [pp. 17, 19, Figs. 5, 7]. |
+| Joint mission success (%): higher is better | NR / NR | NR / NR / NR | 95.7% / 95.7% | 85.8% / 87.3% | Fraction of flights reaching and stopping at the goal within the time and connectivity limits. Neither split establishes a completion improvement. The source supplies no comparable success rate. |
+| Arrival flight time (s): lower is better on common successes | NR / NR | NR / NR / NR | 31.252 / 28.112 | 65.394 / 60.145 | Time needed to finish a successful mission. V2 finishes sooner. Source episode duration includes time after arrival, so it cannot serve as the same measure [p. 12, Sec. 5.2]. |
+| Source SNR (dB): higher is better (source interpretation) | CDF median ≈124 / ≈127 | CDF median ≈122-123 for all three | NC: SINR reported separately | NC: SINR reported separately | SNR describes signal strength relative to noise alone. The source uses its printed arithmetic; these readings cannot quantify an advantage over our SINR [p. 10, Eq. (8)]. |
+| SINR (dB): higher is better | NR: source reports SNR | NR: source reports SNR | Mean -8.322 / -9.305 | Mean -8.773 / -9.957 | Desired signal power relative to interference plus noise; higher values mean a cleaner radio link. V2's SINR is lower by 0.983 and 1.184 dB, so signal quality worsens. |
+| Outage duration (s): lower is better | Bar ≈0 / ≈2 | Bar ≈0 / ≈1 / ≈1 | 0 / 0 on successes | 0 / 0 on successes | Time below the required signal threshold. Our successes must have zero sampled outage. Reliability is assessed using all flights, including failures; zero outage within this selected subset does not prove better reliability. |
+| Source uplink interference (µW): lower is better | CDF median ≈0.316 / ≈1.585 | CDF median ≈0.100 / ≈0.100 / ≈0.158 | Not evaluated | Not evaluated | Interference metric labeled uplink in the source [p. 10, Eq. (9)]. Values are approximate readings of its plotted medians. Our study has no matched uplink evaluation. |
+| Downlink interference (µW): lower is better | NR | NR | Mean 0.753 / 0.748 | Mean 0.794 / 0.791 | Unwanted cochannel power received at the UAV from other base stations. V2's small reduction is inconclusive. The source supplies no corresponding downlink result. |
+| Consumed energy proxy (kJ): lower is better | NR | NR | 7.651 / 7.788 | 18.523 / 18.957 | Estimated energy spent completing the flight. V2 consumes more on both splits. This is an engineering estimate under our energy model, not a measured battery discharge. |
+| Source remaining energy display (printed kW): higher is better (intended; unit unresolved) | Bar ≈370 / ≈440 | Bar ≈310 / ≈260 / ≈770 | NC: no matching quantity | NC: no matching quantity | The source intends to show energy left, but labels its axis with a power unit. These values are retained as plot readings only; no energy conversion is justified [p. 10, Eq. (10); p. 15, Table 3]. |
+| Executed handovers (count per flight): lower is better while preserving service | NR as an executed count per flight | NR as an executed count per flight | Mean 6.843 / 0.443 | Mean 15.826 / 1.528 | Switches between serving base stations. V2 switches less often but has higher delay and lower SINR. Fewer switches alone do not establish better communication. |
+| Source handover CDF (raw plotted x): lower is better (intended; normalization unresolved) | Median ≈0.0046 / ≈0.0129 | Median ≈0.0025 / ≈0.0041 / ≈0.0033 | NC: no matching normalized quantity | NC: no matching normalized quantity | Source axes mention "over 200 episodes" and a 1e-2 scale without specifying normalization. The readings cannot be converted into executed handovers per flight [pp. 18, 20, Figs. 6, 8]. |
+| Transmission delay proxy (s): lower is better | NR / NR | NR / NR / NR | Mean 1.942 / 5.827 | Mean 2.857 / 6.818 | Queued data divided by current service capacity. V2 has more queued work relative to its service rate. This measures backlog pressure, not the time individual packets actually wait [p. 9, Eq. (4)]. |
+| Accumulated radio cost (dimensionless): lower is better under fixed weights | NR / NR | NR / NR / NR | 7.094 / 5.309 | 16.800 / 13.803 | Weighted communication penalties summed until arrival. V2's lower total coexists with worse delay and SINR; it does not mean every service metric improves. Source objective/reward are different quantities [pp. 10, 12, Eqs. (11), (13)-(14)]. |
+| RSS first failures (flights): lower is better | NR / NR | NR / NR / NR | 40 / 34 out of 1,000 | 136 / 112 out of 1,000 | Flights ending because the serving signal falls below the RSS limit. V2 has fewer observed RSS failures, but total completion remains the primary comparison [pp. 18, 20, Figs. 6, 8]. |
+| Buffer first failures (flights): lower is better | NR / NR | NR / NR / NR | 3 / 9 out of 1,000 | 6 / 15 out of 1,000 | Flights ending because queued data exceed buffer capacity. V2 has more overflows. Source removal of a dump reward penalty supplies no measured overflow count [pp. 20-21, Sec. 7.3]. |
+| Trajectory behavior: higher mission success is better | PPO prioritizes radio metrics; greedy prioritizes destination | Wandering and overshoot discussed | Both rewards use goal and braking guidance | Same guidance on longer routes | A useful trajectory must reach the goal while satisfying connectivity. Straightness alone says little about communication quality; the shared guidance also prevents attributing straight paths solely to reward changes [pp. 17, 19, Figs. 5, 7]. |
 
 **Unit convention.** The unit in each row label applies to every numerical
 result in that row. Interference uses `P(µW) = 1000 × 10^(P(dBm)/10)`:
 the source readings -35, -28, -40 and -38 dBm become approximately 0.316,
 1.585, 0.100 and 0.158 µW. These remain approximate plot readings; conversion
-does not make an uplink CDF median equivalent to a downlink mean. Source
-SNR, the unresolved remaining energy display and the normalized handover
-axis have their own rows, preserving the reported values without mixing
-incompatible quantities. See the [unit and wording correction](docs/50_clear_metric_descriptions_and_units.md).
+does not make an uplink CDF median equivalent to a downlink mean. They have
+separate rows: our uplink result is not evaluated and the source downlink
+result is not reported. Source SNR, the unresolved remaining energy display
+and the normalized handover axis also have their own rows. Each numerical
+comparison must match the quantity and link direction as well as the unit.
+See the [unit and wording correction](docs/50_clear_metric_descriptions_and_units.md).
 
 The source's qualitative finding is lower interference and fewer handovers
 for PPO than greedy [printed p. 17, Sec. 7.1]. In the priority comparison,
@@ -482,7 +485,8 @@ Missing original details mean unknown, not proven absent.
 | Motion | Inertial vector velocity and trapezoidal position update | Source scalar speed and chosen direction, p. 9, Eq. (2) |
 | Bounds | Acceleration norm 5 m/s², hard speed cap 25 m/s | Acceleration -5 to 5 m/s² in five bins; eight directions; speed threshold 100 m/s [p. 15, Table 3] |
 | Step (s) | 1 | Source table 0.1; prose 0.001, originally written as a millisecond [pp. 14-15] |
-| Interference | Sum linear cochannel downlink power, excluding serving station | Sum of neighboring RSS values, labeled uplink [p. 10, Eq. (9)]; cochannel occupancy and linear unit handling are not explicit in that equation |
+| Downlink interference | Sum linear cochannel power received at the UAV, excluding serving station | No corresponding downlink interference definition or result provided in Eq. (9) [p. 10] |
+| Source uplink interference | Not evaluated in this study | Sum of neighboring RSS values, labeled uplink [p. 10, Eq. (9)]; cochannel occupancy and linear unit handling are not explicit in that equation |
 | Noise | -112.41 dBm plus 9 dB = -103.41 dBm, converted to watts | Thermal noise -112.41 dBm and noise figure 9 dB, retained [p. 15, Table 3] |
 | Rate | 1.44e6 × log2(1 + linear SINR) bit/s | Printed r = bandwidth + log2(SNR), with SNR = RSS minus thermal noise minus noise figure [p. 10, Eqs. (7)-(8)]; our dimensional service formula is different |
 | Bandwidth | Eight 180 kHz blocks per group; 12 groups | 12 groups, eight blocks per group, 180 kHz per block, retained [p. 15, Table 3] |

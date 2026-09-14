@@ -354,3 +354,24 @@ statistic, figure or paper changed. Updated the reporting audits to check
 the conversions and row separation. Further source interpretation requires
 the original plotting code or raw records; this correction requires no new
 training or evaluation.
+
+## 2026-09-14: Separate Uplink and Downlink Comparisons
+
+The user correctly identified that converting units had left different link
+directions in the same comparison row. Split source uplink and our downlink
+interference into separate result and physical definition rows. Removed
+source uplink numbers from the paired downlink table. Our uplink result is
+marked not evaluated, and the source downlink result is marked not reported;
+neither is zero or inferred from the other direction.
+
+Updated notes 45 and 50 and the metric audit, which now verifies direction
+separation as well as units and saved numbers. No model, evaluation, statistic
+or paper changed. A matched interference comparison would require an
+explicitly defined and evaluated common radio quantity; table edits do not
+supply that missing experiment.
+
+The user also requested explicit higher/lower guidance in every result row.
+Added "higher is better" or "lower is better" to all metric labels and
+success column headings. Retained the service qualification for handovers
+and intended direction caveats for unresolved source scales. The audit checks
+every result metric label; this is a reporting change only.

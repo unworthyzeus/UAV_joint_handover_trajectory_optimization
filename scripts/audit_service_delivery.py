@@ -48,7 +48,7 @@ def main():
         assert json.loads(p.read_text())['episodes']==json.loads((ROOT/'results/service_reward_v21/replay'/p.name).read_text())['episodes'],p
     readme=(ROOT/'README.md').read_text(encoding='utf-8'); ts=tables(readme)
     assert all(any('original' in c.lower() for c in t[0]) for t in ts)
-    completion=next(t for t in ts if t[0][1]=='New standard success')
+    completion=next(t for t in ts if t[0][1]=='New standard success (higher is better)')
     arms=['service','full','original','straight_radio','joint_mpc','joint_lookahead']
     for row,arm in zip(completion[2:],arms):
         for i,split in [(1,'test'),(2,'longer_test')]:

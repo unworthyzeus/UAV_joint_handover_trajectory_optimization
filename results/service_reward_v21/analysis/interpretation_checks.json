@@ -1,8 +1,11 @@
 {
   "source_comparison_current_means_checked": 28,
   "paired_table_means_checked": 28,
-  "source_interference_unit_conversions_checked": 7,
+  "source_interference_unit_conversions_checked": 5,
   "incompatible_source_quantities_separated": true,
+  "uplink_and_downlink_rows_separate": true,
+  "missing_direction_results_not_invented": true,
+  "result_rows_with_explicit_better_direction": 31,
   "success_rates_checked": 4,
   "first_failure_counts_checked": 8,
   "derived_changes_checked": 10,
